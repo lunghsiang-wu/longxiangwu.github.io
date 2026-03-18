@@ -1,6 +1,6 @@
 name: "website"
 title: "Longxiang Wu"
-output_dir: "_site"
+output_dir: "."
 base_url: https://longxiangwu.netlify.app/
 collections:
   posts:
