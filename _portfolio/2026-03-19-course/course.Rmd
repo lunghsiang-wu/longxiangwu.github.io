@@ -1,5 +1,5 @@
 ---
-title: "Face Recognition Combined with Principal Component Analysis"
+title: "Course Evaluation"
 description: "A feature selection project"
 author:
   - name: "Longxiang Wu"

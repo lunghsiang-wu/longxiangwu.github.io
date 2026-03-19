@@ -89,7 +89,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Face Recognition Combined with Principal Component Analysis</title>
+  <title>Course Evaluation</title>
 
   <meta property="description" itemprop="description" content="A feature selection project"/>
 
@@ -100,21 +100,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta name="article:author" content="Longxiang Wu"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Face Recognition Combined with Principal Component Analysis"/>
+  <meta property="og:title" content="Course Evaluation"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="A feature selection project"/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Face Recognition Combined with Principal Component Analysis"/>
+  <meta property="twitter:title" content="Course Evaluation"/>
   <meta property="twitter:description" content="A feature selection project"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Face Recognition Combined with Principal Component Analysis"]},{"type":"character","attributes":{},"value":["A feature selection project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Longxiang Wu"]}]}]},{"type":"character","attributes":{},"value":["2025-3-2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Course Evaluation"]},{"type":"character","attributes":{},"value":["A feature selection project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Longxiang Wu"]}]}]},{"type":"character","attributes":{},"value":["2025-3-2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1522,7 +1522,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Face Recognition Combined with Principal Component Analysis","description":"A feature selection project","authors":[{"author":"Longxiang Wu","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-03-02T00:00:00.000+08:00","citationText":"Wu, 2025"}
+{"title":"Course Evaluation","description":"A feature selection project","authors":[{"author":"Longxiang Wu","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-03-02T00:00:00.000+08:00","citationText":"Wu, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1532,7 +1532,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Face Recognition Combined with Principal Component Analysis</h1>
+<h1>Course Evaluation</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
@@ -1872,7 +1872,7 @@ max       5.000000     5.000000     5.000000  </code></pre>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Further observe how the positive correlation strength is</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(x<span class="op">=</span><span class="st">&#39;difficulty&#39;</span>,y<span class="op">=</span><span class="st">&#39;attendance&#39;</span>,data<span class="op">=</span>data,kind<span class="op">=</span><span class="st">&#39;reg&#39;</span>,x_estimator<span class="op">=</span> np.mean,order<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
-<pre><code>&lt;seaborn.axisgrid.JointGrid object at 0x15cd51d90&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.JointGrid object at 0x1567bb650&gt;</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="course_files/figure-html5/unnamed-chunk-11-5.png" alt="" width="576" /></p>
 </div>
@@ -1931,12 +1931,12 @@ max       5.000000     5.000000     5.000000  </code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>FS_list<span class="op">=</span>FS_MIC(label, df_feature, N)</span></code></pre></div>
-<pre><code>(&#39;Q10&#39;, 0.8973863352780675)
-(&#39;Q8&#39;, 0.8260257808094558)
-(&#39;Q11&#39;, 0.8116708272538613)
-(&#39;Q12&#39;, 0.7963917804798797)
-(&#39;Q7&#39;, 0.7933911437910659)
-(&#39;Q5&#39;, 0.7886344596330099)</code></pre>
+<pre><code>(&#39;Q10&#39;, 0.8990188330111302)
+(&#39;Q8&#39;, 0.8188702488281994)
+(&#39;Q11&#39;, 0.817884163768265)
+(&#39;Q7&#39;, 0.7901018651580864)
+(&#39;Q5&#39;, 0.7894039904751091)
+(&#39;Q12&#39;, 0.7853382407942195)</code></pre>
 <p><img src="course_files/figure-html5/unnamed-chunk-15-7.png" alt="" width="576" /></p>
 </div>
 <p>Through the mutual information MIC method, we have selected six key characteristics that affect Q9, namely Q10, Q7, Q11, Q8, Q5 and Q6. Next, we will further observe the impact of these key characteristics on the popularity distribution of the course in order to find out the relationship between them.</p>
@@ -1959,7 +1959,7 @@ max       5.000000     5.000000     5.000000  </code></pre>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Further observe how the positive correlation strength is</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(x<span class="op">=</span><span class="st">&#39;Q10&#39;</span>,y<span class="op">=</span><span class="st">&#39;Q9&#39;</span>,data<span class="op">=</span>data,kind<span class="op">=</span><span class="st">&#39;reg&#39;</span>,x_estimator<span class="op">=</span> np.mean)</span></code></pre></div>
-<pre><code>&lt;seaborn.axisgrid.JointGrid object at 0x15d371d90&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.JointGrid object at 0x156771dd0&gt;</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="course_files/figure-html5/unnamed-chunk-17-11.png" alt="" width="576" /></p>
 </div>
