@@ -1,0 +1,258 @@
+---
+title: "Diagnosis of Malignant Mesothelioma Using Principal Component Analysis"
+description: "An dimension reduction project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-1-3
+output:
+  distill::distill_article:
+    self_contained: false
+preview: pca.webp
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+
+
+
+
+
+
+
+
+Malignant mesothelioma (MM), also known as diffuse malignant pleural mesothelioma. Malignant mesothelioma is a malignant tumour that is primary to the pleum and highly aggressive. Malignant pleural mesothelioma is the most common type of primary pleural tumour. The clinical manifestations are related to invasive behaviour, which usually locally invades the pleural cavity and surrounding structures. If left untreated, the medid survival is 4 to 12 months. The following is a list of some of the main factors related to the occurrence of the disease:
+
+- Asbestos contact;
+
+- Ape kidney virus 40 (SV40) infection;
+
+- Genetic tendency;
+
+- Molecular mechanism;
+
+- Rural life.
+
+For the diagnosis of malignant mesothelioma, a classification model can be established based on some clinical monitoring indicators (such as asbestos exposure, white blood cells, platelet count, serum lactate dehydrogenase, etc.) as characteristics, and then predict whether the disease is affected. Since the number of features in this case is relatively large (34), we will first use principal component analysis (PCA) to downgrade the feature data first. After that, the decision tree algorithm is reused for model training, and the performance of the trained model before and after dimension reduction is compared.
+
+### 1 Data source
+We use the "Mesotheliomas disease data set Data Set" data set in the UCI database, which contains 324 sample points. Each sample contains 34 characteristic variables, and 1 category variable is (the diagnosis result is health/disease). The list of variables is as follows:
+
+| List | Type | Example |
+|------|------|------|
+| age | Int | 47 |
+| gender | Int | 1 |
+| city | Int | 0 |
+| asbestos exposure | Int | 1 |
+| type of MM | Int | 0 |
+| duration of asbestos exposure | Int | 20 |
+| diagnosis method | Int | 1 |
+| keep side | Int | 0 |
+| cytology | Int | 1 |
+| duration of symptoms | Float | 24 |
+| dyspnoea | Int | 1 |
+| ache on chest | Int | 1 |
+| weakness | Int | 0 |
+| habit of cigarette | Int | 2 |
+| performance status | Int | 1 |
+| white blood | Int | 8050 |
+| cell count (WBC) | Int | 9 |
+| hemoglobin (HGB) | Int | 1 |
+| platelet count (PLT) | Int | 274 |
+| sedimentation | Int | 60 |
+| blood lactic dehydrogenise (LDH) | Int | 258 |
+| …… | …… | …… |
+| class of diagnosis | Int | 0 |
+
+
+### 2 Data explore and preprocessing
+First, use the read_excel() function in pandas to load the data into the data box:
+
+<!-- #endregion -->
+
+```{python}
+import numpy as np
+import pandas as pd
+df = pd.read_csv("结合主成分分析进行恶性间皮瘤诊断.csv")
+df.head(5)
+```
+
+Through preliminary observation, it is found that there is no missing value in all variables. We can verify that there is indeed no missing value in the data.
+
+```{python}
+df_value_ravel = df.values.ravel()
+print('The number of missing values in the data：',len(df_value_ravel[df_value_ravel==np.nan]))
+```
+
+### 2.1 Data standardisation
+Principal component analysis must start from a variable table with the same framework. Because it is necessary to assign the total variance of the variable to the characteristic root, the variable must have the same physical unit, and the variance sum is meaningful (the unit of variance is the square of the variable unit), or the variable is dimensionless data, such as standardised or logarithmic converted data. Therefore, we need to standardise the data before building the model. Commonly used standardisation methods include min-max standardisation and z-score standardisation. In this example, we directly adopt the z-score standardisation method.
+
+First of all, explain how to use the scale function in the preprocessing library in sklearn: sklearn.preprocessing.scale(X, axis=0, with_mean=True,wi th_std=True,copy=True) According to different parameters, the data set can be standardised along any axis.
+
+Parameter explanation:
+
+- X: array or matrix
+
+- axis: int type, the initial value is 0, axis is used to calculate means and standard deviations. If it is 0, each feature (column) is standardised separately, and if it is 1, each observation sample (row) is standardised.
+
+- with_mean: boolean type, the default is True, indicating that the data mean is standardised to 0
+
+- with_std: boolean type, defaulted to True, indicating that the data variance is standardised to 1
+
+We will adopt the default parameters.
+
+```{python}
+from sklearn import preprocessing
+X = df.iloc[:,:-1]
+y = df['class of diagnosis']
+
+perm = np.random.permutation(len(X))
+X= X.loc[perm]
+y=y[perm]
+X = preprocessing.scale(X)
+```
+
+### 3 Use PCA for dimension reduction processing
+PCA is to transform the basis of the space by finding the direction in which the data changes the fastest (largest variance) in the high-dimensional space, and then select the important spatial base to reduce the dimension of the data, so as to reduce the dimension of the data while maintaining the data characteristics as much as possible.
+
+### 3.1 Function prototype and parameter description
+Here, we use the PCA algorithm in the decomposition library in the sklearn module to realise principal component analysis. The original form of the function is as follows: sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False)
+
+Parameter description:
+
+- n_components:
+
+    - Meaning: The number of main components to be retained in the PCA algorithm n, that is, the number of retained features n
+
+    - Type: int or string, default to None, and all components are retained. Assigned to int, for example, n_components=1, will reduce the original data to one dimension. Assigned to string, such as n_components='mle', will automatically select the number of features n to meet the required variance percentage.
+
+- copy:
+
+    - Meaning: Indicates whether to copy a copy of the original training data when running the algorithm. If it is True, the value of the original training data will not change after running the PCA algorithm, because it is calculated on a copy of the original data; if it is False, the value of the original training data will change after running the PCA algorithm, because it is a dimension reduction calculation on the original data.
+
+    - Type: bool, True or False, default to True.
+
+- whiten:
+
+    - Meaning: whitening, so that each feature has the same variance.
+
+    - Type: bool, default to False
+    
+### 3.2 Attributes of PCA objects
+- components_: Return the component with the maximum variance.
+
+- explained_varianceratio: returns the variance contribution rate of the reserved n main components.
+
+- ncomponents: Return the number of retained components n.
+
+### 3.3 The method of PCA object
+- fit(X,y=None) fit() can be said to be a common method in scikit-learn. Every algorithm that needs to be trained will have a fit() method, which is actually the "training" step in the algorithm. Because PCA is an unsupervised learning algorithm, y here is naturally equal to None.
+
+- fit(X), which means using data X to train the PCA model.
+
+- Function return value: the object itself that calls the fit method. For example, pca.fit(X) means that X is used to train the pca object.
+
+- fit_transform(X) uses X to train the PCA model and returns the data after dimension reduction. newX=pca.fit_transform(X), newX is the data after dimension reduction.
+
+- inverse_transform() converts the downgraded data into raw data, X=pca.inverse_transform(newX)
+
+- transform(X) converts data X into reduced-dimensional data. When the model is trained, the transform method can be used to reduce the dimension for the newly entered data.
+
+### 3.4 PCA processing process
+We set up a PCA object and select the dimension to be retained as 22. The code is as follows:
+
+
+```{python}
+from sklearn.decomposition import PCA
+pca = PCA(copy=True, n_components=22, whiten=False)
+X_new = pca.fit_transform(X)
+print('The variance contribution rate of the reserved n main components is：')
+print(pca.explained_variance_ratio_) 
+print('The characteristic vectors of the main component of the top 3 are：')
+print(pca.components_[0:2])
+print('The cumulative contribution rate of variance is：')
+print(sum(pca.explained_variance_ratio_))
+```
+
+It can be seen that after reducing 34 characteristic variables to 22 characteristic variables, the cumulative variance contribution rate is 86.48%. It shows that the newly generated features have a high ability to comprehensively describe the original data.
+
+### 3 Model training
+In order to check the classification performance of data after PCA dimension reduction, we use the tree.DecisionTreeClassifier class in the sklearn package. Divide the data into 80% of the data as the training set and 20% of the data as the test set.
+
+
+```{python}
+from sklearn import tree
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X_new, y, test_size=.2, random_state=0)
+```
+
+Training model
+
+```{python}
+clf = tree.DecisionTreeClassifier()
+clf.fit(X_train,y_train)
+print(clf)
+```
+
+### 4 Model performance evaluation
+First, use the predict() function to obtain the prediction results of the support vector machine model trained in the previous section on the test set, and then use the relevant function in sklearn.metrics to evaluate the performance of the model.
+
+```{python}
+from sklearn import metrics
+y_predict = clf.predict(X_test)
+print(metrics.classification_report(y_test, y_predict))
+print(metrics.confusion_matrix(y_test,y_predict))
+```
+
+The diagonal elements in the above confusion matrix represent the correct predicted number of the model, and the sum of the diagonal elements represents the number of samples predicted correctly by the model as a whole.
+
+Now, let's use this to calculate the prediction accuracy of the model in the test set.
+
+```{python}
+print("Accuracy:", metrics.accuracy_score(y_test, y_predict))
+```
+
+It can be seen that the predicted accuracy rate (Accuaray) of the model obtained by training is 81.54% in 20% of the test samples of the original set.
+
+
+### 5 Performance comparison of models trained using data before and after dimension reduction
+In order to test that the model trained by using the data after dimension reduction can still maintain high performance compared with the model trained by the data before dimension reduction, the model training for data that has not been reduced in dimension, the code is as follows:
+
+
+```{python}
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2,random_state=0)
+clf2 = tree.DecisionTreeClassifier()
+clf2.fit(X_train,y_train)
+y_predict = clf2.predict(X_test)
+print(metrics.classification_report(y_test, y_predict))
+print(metrics.confusion_matrix(y_test,y_predict))
+```
+
+The diagonal elements in the above confusion matrix represent the correct predicted number of the model, and the sum of the diagonal elements represents the number of samples predicted correctly by the model as a whole. Now, let's use this to calculate the prediction accuracy of the model in the test set.
+
+```{python}
+print("Accuracy:", metrics.accuracy_score(y_test, y_predict))
+```
+
+It can be seen that the prediction accuracy rate (Accuaray) of the model obtained by training is 100% in 20% of the test samples of the original set.
+
+After comparison, the precision after dimension reduction is 0.89, which is 0.11 less than before dimension reduction; the recall after dimension reduction is 0.88, which is 0.12 smaller than before dimension reduction; f1-score after dimension reduction is 0.88, 0.12 less than before dimension reduction; the correct rate after dimension reduction is 0.88 It is 0.12 lower than before dimension reduction. It can be seen that the model trained using the data after dimension reduction can still maintain higher performance than the model trained with the data before dimension reduction.

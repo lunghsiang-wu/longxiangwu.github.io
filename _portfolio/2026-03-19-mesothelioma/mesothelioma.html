@@ -89,636 +89,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Longxiang Wu: Portfolio</title>
+  <title>Diagnosis of Malignant Mesothelioma Using Principal Component Analysis</title>
+
+  <meta property="description" itemprop="description" content="An dimension reduction project"/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2025-01-03"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-01-03"/>
+  <meta name="article:author" content="Longxiang Wu"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Longxiang Wu: Portfolio"/>
+  <meta property="og:title" content="Diagnosis of Malignant Mesothelioma Using Principal Component Analysis"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="An dimension reduction project"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Longxiang Wu"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Longxiang Wu: Portfolio"/>
-  <meta property="twitter:creator" content="@Longxiang Wu"/>
+  <meta property="twitter:title" content="Diagnosis of Malignant Mesothelioma Using Principal Component Analysis"/>
+  <meta property="twitter:description" content="An dimension reduction project"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","twitter","listing"]}},"value":[{"type":"character","attributes":{},"value":["Portfolio"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creator"]}},"value":[{"type":"character","attributes":{},"value":["@Longxiang Wu"]}]},{"type":"character","attributes":{},"value":["portfolio"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview"]}},"value":[{"type":"character","attributes":{},"value":["Diagnosis of Malignant Mesothelioma Using Principal Component Analysis"]},{"type":"character","attributes":{},"value":["An dimension reduction project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Longxiang Wu"]}]}]},{"type":"character","attributes":{},"value":["2025-1-3"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["pca.webp"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["mesothelioma_files/anchor-4.2.2/anchor.min.js","mesothelioma_files/bowser-1.9.3/bowser.min.js","mesothelioma_files/distill-2.2.21/template.v2.js","mesothelioma_files/header-attrs-2.30/header-attrs.js","mesothelioma_files/jquery-3.6.0/jquery-3.6.0.js","mesothelioma_files/jquery-3.6.0/jquery-3.6.0.min.js","mesothelioma_files/jquery-3.6.0/jquery-3.6.0.min.map","mesothelioma_files/popper-2.6.0/popper.min.js","mesothelioma_files/tippy-6.2.7/tippy-bundle.umd.min.js","mesothelioma_files/tippy-6.2.7/tippy-light-border.css","mesothelioma_files/tippy-6.2.7/tippy.css","mesothelioma_files/tippy-6.2.7/tippy.umd.min.js","mesothelioma_files/webcomponents-2.0.0/webcomponents.js","pca.webp","结合主成分分析进行恶性间皮瘤诊断.csv"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2097,765 +1500,374 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      28px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       22px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        16px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="mesothelioma_files/header-attrs-2.30/header-attrs.js"></script>
+  <script src="mesothelioma_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="mesothelioma_files/popper-2.6.0/popper.min.js"></script>
+  <link href="mesothelioma_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="mesothelioma_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="mesothelioma_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="mesothelioma_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="mesothelioma_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="mesothelioma_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="mesothelioma_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Portfolio","authors":[]}
+{"title":"Diagnosis of Malignant Mesothelioma Using Principal Component Analysis","description":"An dimension reduction project","authors":[{"author":"Longxiang Wu","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-01-03T00:00:00.000+08:00","citationText":"Wu, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Longxiang Wu</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blog.html">Blog</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="longxiang_wu_cv.html">CV</a>
-<a href="https://github.com/lunghsiang-wu">
-<i class="fa fa-github" aria-hidden="true"></i>
-</a>
-<a href="www.linkedin.com/in/longxiang-wu-003506106">
-<i class="fa fa-linkedin" aria-hidden="true"></i>
-</a>
-<a href="https://fosstodon.org/@longxiangwu">
-<i class="fab fa-mastodon" aria-hidden="true"></i>
-</a>
-<a href="blog.xml">
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Portfolio">Portfolio</h1>
-<a href="portfolio/2026-03-19-mesothelioma/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 2, 2025</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-mesothelioma/pca.webp"/>
-</div>
-<div class="description">
-<h2>Diagnosis of Malignant Mesothelioma Using Principal Component Analysis</h2>
-<div class="dt-tags"></div>
-<p>An dimension reduction project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-handwritten/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 20, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-handwritten/handwritten_files/figure-html5/unnamed-chunk-6-1.png"/>
-</div>
-<div class="description">
-<h2>Dimension Reduction of Handwritten Digit Images</h2>
-<div class="dt-tags"></div>
-<p>An dimension reduction project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-retail/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 30, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-retail/association.png"/>
-</div>
-<div class="description">
-<h2>Association Rule Mining in Retail Shopping Records</h2>
-<div class="dt-tags"></div>
-<p>An association rule mining project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-survey/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 30, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-survey/fptree.png"/>
-</div>
-<div class="description">
-<h2>Survey on Hobbies and Lifestyle Habits</h2>
-<div class="dt-tags"></div>
-<p>An association rule mining project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-filmrec/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-filmrec/film.jpg"/>
-</div>
-<div class="description">
-<h2>Film Recommendation</h2>
-<div class="dt-tags"></div>
-<p>An association rule mining project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-cluster/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-cluster/cluster_files/figure-html5/unnamed-chunk-5-1.png"/>
-</div>
-<div class="description">
-<h2>Clustering of the Happiness Index of Various Countries</h2>
-<div class="dt-tags"></div>
-<p>A clustering project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-kmeans/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 20, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-kmeans/kmeans.png"/>
-</div>
-<div class="description">
-<h2>Using K-Means Clustering to Segment the Youth Market</h2>
-<div class="dt-tags"></div>
-<p>A clustering project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-adaboost/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-adaboost/kobe.png"/>
-</div>
-<div class="description">
-<h2>Using AdaBoost to Predict Whether Kobe Bryant's Shot is a Hit</h2>
-<div class="dt-tags"></div>
-<p>A integrated model project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-svm/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">May 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-svm/ocr-picture.webp"/>
-</div>
-<div class="description">
-<h2>Using a Support Vector Machine for Optical Character Recognition</h2>
-<div class="dt-tags"></div>
-<p>A classification project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-knn/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 29, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-knn/knn.png"/>
-</div>
-<div class="description">
-<h2>Using the K Nearest Neighbour Algorithm to Diagnose Breast Cancer</h2>
-<div class="dt-tags"></div>
-<p>A classification project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-desisontrees1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 28, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-desisontrees1/desisontrees1_files/figure-html5/unnamed-chunk-11-1.png"/>
-</div>
-<div class="description">
-<h2>Using Decision Trees for Personal Credit Risk Assessment</h2>
-<div class="dt-tags"></div>
-<p>A classification project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-linearregression/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 14, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-linearregression/linearregression_files/figure-html5/unnamed-chunk-3-1.png"/>
-</div>
-<div class="description">
-<h2>Apply Linear Regression to Predict Medical Expenses</h2>
-<div class="dt-tags"></div>
-<p>A linear regression project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-vastcar/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-vastcar/vastcar_files/figure-html5/unnamed-chunk-8-1.png"/>
-</div>
-<div class="description">
-<h2>Vast Car Price Out-of-Group Value Detection</h2>
-<div class="dt-tags"></div>
-<p>A data preprocessing project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-londonmarathon/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 13, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu  </div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-londonmarathon/londonmarathon_files/figure-html5/unnamed-chunk-4-1.png"/>
-</div>
-<div class="description">
-<h2>London Marathon Data Analysis</h2>
-<div class="dt-tags"></div>
-<p>This is a project of analysing London Marathon datasets, accomplished by a team led by the author.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Portfolio</h1>
+<h1>Diagnosis of Malignant Mesothelioma Using Principal Component Analysis</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p>An dimension reduction project</p>
 </div>
 
+<div class="d-byline">
+  Longxiang Wu  
+  
+<br/>2025-1-3
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!-- #region -->
+<p>Malignant mesothelioma (MM), also known as diffuse malignant pleural mesothelioma. Malignant mesothelioma is a malignant tumour that is primary to the pleum and highly aggressive. Malignant pleural mesothelioma is the most common type of primary pleural tumour. The clinical manifestations are related to invasive behaviour, which usually locally invades the pleural cavity and surrounding structures. If left untreated, the medid survival is 4 to 12 months. The following is a list of some of the main factors related to the occurrence of the disease:</p>
+<ul>
+<li><p>Asbestos contact;</p></li>
+<li><p>Ape kidney virus 40 (SV40) infection;</p></li>
+<li><p>Genetic tendency;</p></li>
+<li><p>Molecular mechanism;</p></li>
+<li><p>Rural life.</p></li>
+</ul>
+<p>For the diagnosis of malignant mesothelioma, a classification model can be established based on some clinical monitoring indicators (such as asbestos exposure, white blood cells, platelet count, serum lactate dehydrogenase, etc.) as characteristics, and then predict whether the disease is affected. Since the number of features in this case is relatively large (34), we will first use principal component analysis (PCA) to downgrade the feature data first. After that, the decision tree algorithm is reused for model training, and the performance of the trained model before and after dimension reduction is compared.</p>
+<h3 id="data-source">1 Data source</h3>
+<p>We use the “Mesotheliomas disease data set Data Set” data set in the UCI database, which contains 324 sample points. Each sample contains 34 characteristic variables, and 1 category variable is (the diagnosis result is health/disease). The list of variables is as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>List</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>age</td>
+<td>Int</td>
+<td>47</td>
+</tr>
+<tr class="even">
+<td>gender</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>city</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>asbestos exposure</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>type of MM</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>duration of asbestos exposure</td>
+<td>Int</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>diagnosis method</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>keep side</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>cytology</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>duration of symptoms</td>
+<td>Float</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>dyspnoea</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>ache on chest</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>weakness</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>habit of cigarette</td>
+<td>Int</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>performance status</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>white blood</td>
+<td>Int</td>
+<td>8050</td>
+</tr>
+<tr class="odd">
+<td>cell count (WBC)</td>
+<td>Int</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>hemoglobin (HGB)</td>
+<td>Int</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>platelet count (PLT)</td>
+<td>Int</td>
+<td>274</td>
+</tr>
+<tr class="even">
+<td>sedimentation</td>
+<td>Int</td>
+<td>60</td>
+</tr>
+<tr class="odd">
+<td>blood lactic dehydrogenise (LDH)</td>
+<td>Int</td>
+<td>258</td>
+</tr>
+<tr class="even">
+<td>……</td>
+<td>……</td>
+<td>……</td>
+</tr>
+<tr class="odd">
+<td>class of diagnosis</td>
+<td>Int</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-explore-and-preprocessing">2 Data explore and preprocessing</h3>
+<p>First, use the read_excel() function in pandas to load the data into the data box:</p>
+<!-- #endregion -->
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;结合主成分分析进行恶性间皮瘤诊断.csv&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>   age  gender  ...  C-reactive protein (CRP)  class of diagnosis
+0   47       1  ...                        34                   0
+1   55       1  ...                        42                   0
+2   29       1  ...                        43                   1
+3   39       1  ...                        21                   0
+4   47       1  ...                        11                   0
+
+[5 rows x 35 columns]</code></pre>
+</div>
+<p>Through preliminary observation, it is found that there is no missing value in all variables. We can verify that there is indeed no missing value in the data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_value_ravel <span class="op">=</span> df.values.ravel()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;The number of missing values in the data：&#39;</span>,<span class="bu">len</span>(df_value_ravel[df_value_ravel<span class="op">==</span>np.nan]))</span></code></pre></div>
+<pre><code>The number of missing values in the data： 0</code></pre>
+</div>
+<h3 id="data-standardisation">2.1 Data standardisation</h3>
+<p>Principal component analysis must start from a variable table with the same framework. Because it is necessary to assign the total variance of the variable to the characteristic root, the variable must have the same physical unit, and the variance sum is meaningful (the unit of variance is the square of the variable unit), or the variable is dimensionless data, such as standardised or logarithmic converted data. Therefore, we need to standardise the data before building the model. Commonly used standardisation methods include min-max standardisation and z-score standardisation. In this example, we directly adopt the z-score standardisation method.</p>
+<p>First of all, explain how to use the scale function in the preprocessing library in sklearn: sklearn.preprocessing.scale(X, axis=0, with_mean=True,wi th_std=True,copy=True) According to different parameters, the data set can be standardised along any axis.</p>
+<p>Parameter explanation:</p>
+<ul>
+<li><p>X: array or matrix</p></li>
+<li><p>axis: int type, the initial value is 0, axis is used to calculate means and standard deviations. If it is 0, each feature (column) is standardised separately, and if it is 1, each observation sample (row) is standardised.</p></li>
+<li><p>with_mean: boolean type, the default is True, indicating that the data mean is standardised to 0</p></li>
+<li><p>with_std: boolean type, defaulted to True, indicating that the data variance is standardised to 1</p></li>
+</ul>
+<p>We will adopt the default parameters.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> preprocessing</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.iloc[:,:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">&#39;class of diagnosis&#39;</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>perm <span class="op">=</span> np.random.permutation(<span class="bu">len</span>(X))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span> X.loc[perm]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>y[perm]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> preprocessing.scale(X)</span></code></pre></div>
+</div>
+<h3 id="use-pca-for-dimension-reduction-processing">3 Use PCA for dimension reduction processing</h3>
+<p>PCA is to transform the basis of the space by finding the direction in which the data changes the fastest (largest variance) in the high-dimensional space, and then select the important spatial base to reduce the dimension of the data, so as to reduce the dimension of the data while maintaining the data characteristics as much as possible.</p>
+<h3 id="function-prototype-and-parameter-description">3.1 Function prototype and parameter description</h3>
+<p>Here, we use the PCA algorithm in the decomposition library in the sklearn module to realise principal component analysis. The original form of the function is as follows: sklearn.decomposition.PCA(n_components=None, copy=True, whiten=False)</p>
+<p>Parameter description:</p>
+<ul>
+<li><p>n_components:</p>
+<ul>
+<li><p>Meaning: The number of main components to be retained in the PCA algorithm n, that is, the number of retained features n</p></li>
+<li><p>Type: int or string, default to None, and all components are retained. Assigned to int, for example, n_components=1, will reduce the original data to one dimension. Assigned to string, such as n_components=‘mle’, will automatically select the number of features n to meet the required variance percentage.</p></li>
+</ul></li>
+<li><p>copy:</p>
+<ul>
+<li><p>Meaning: Indicates whether to copy a copy of the original training data when running the algorithm. If it is True, the value of the original training data will not change after running the PCA algorithm, because it is calculated on a copy of the original data; if it is False, the value of the original training data will change after running the PCA algorithm, because it is a dimension reduction calculation on the original data.</p></li>
+<li><p>Type: bool, True or False, default to True.</p></li>
+</ul></li>
+<li><p>whiten:</p>
+<ul>
+<li><p>Meaning: whitening, so that each feature has the same variance.</p></li>
+<li><p>Type: bool, default to False</p></li>
+</ul></li>
+</ul>
+<h3 id="attributes-of-pca-objects">3.2 Attributes of PCA objects</h3>
+<ul>
+<li><p>components_: Return the component with the maximum variance.</p></li>
+<li><p>explained_varianceratio: returns the variance contribution rate of the reserved n main components.</p></li>
+<li><p>ncomponents: Return the number of retained components n.</p></li>
+</ul>
+<h3 id="the-method-of-pca-object">3.3 The method of PCA object</h3>
+<ul>
+<li><p>fit(X,y=None) fit() can be said to be a common method in scikit-learn. Every algorithm that needs to be trained will have a fit() method, which is actually the “training” step in the algorithm. Because PCA is an unsupervised learning algorithm, y here is naturally equal to None.</p></li>
+<li><p>fit(X), which means using data X to train the PCA model.</p></li>
+<li><p>Function return value: the object itself that calls the fit method. For example, pca.fit(X) means that X is used to train the pca object.</p></li>
+<li><p>fit_transform(X) uses X to train the PCA model and returns the data after dimension reduction. newX=pca.fit_transform(X), newX is the data after dimension reduction.</p></li>
+<li><p>inverse_transform() converts the downgraded data into raw data, X=pca.inverse_transform(newX)</p></li>
+<li><p>transform(X) converts data X into reduced-dimensional data. When the model is trained, the transform method can be used to reduce the dimension for the newly entered data.</p></li>
+</ul>
+<h3 id="pca-processing-process">3.4 PCA processing process</h3>
+<p>We set up a PCA object and select the dimension to be retained as 22. The code is as follows:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(copy<span class="op">=</span><span class="va">True</span>, n_components<span class="op">=</span><span class="dv">22</span>, whiten<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>X_new <span class="op">=</span> pca.fit_transform(X)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;The variance contribution rate of the reserved n main components is：&#39;</span>)</span></code></pre></div>
+<pre><code>The variance contribution rate of the reserved n main components is：</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca.explained_variance_ratio_) </span></code></pre></div>
+<pre><code>[0.12553081 0.07154234 0.06331551 0.05455819 0.04755711 0.04629502
+ 0.04300128 0.03680922 0.03525149 0.03303236 0.03250686 0.03247517
+ 0.02996476 0.02870988 0.02767058 0.02588683 0.02505337 0.02263919
+ 0.02165174 0.02126867 0.02044553 0.01958815]</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;The characteristic vectors of the main component of the top 3 are：&#39;</span>)</span></code></pre></div>
+<pre><code>The characteristic vectors of the main component of the top 3 are：</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca.components_[<span class="dv">0</span>:<span class="dv">2</span>])</span></code></pre></div>
+<pre><code>[[-0.07226296  0.04919076 -0.00729629  0.01612169  0.01787884 -0.0736354
+  -0.01715455 -0.00796956 -0.08280908 -0.00329767 -0.03747524 -0.05541792
+  -0.06134797  0.06570297  0.34735628 -0.04421487  0.05467926 -0.06011151
+  -0.20734354 -0.11755069 -0.28734282 -0.05831704  0.10016904  0.02967766
+   0.01025695 -0.1270108  -0.30164822 -0.27161576  0.3662886  -0.02511632
+  -0.32240568 -0.29888796 -0.31615277 -0.27309709]
+ [-0.14549557  0.00154012  0.43650205 -0.53809498 -0.14102176 -0.51684086
+   0.09539106 -0.09988499 -0.11205484  0.03726002  0.13523726  0.07508918
+  -0.22544025  0.12328454  0.03290527  0.01368637  0.00802218  0.15038872
+   0.02987633 -0.05496272  0.12746521  0.02513513  0.07876572  0.02759405
+  -0.02883099  0.09695859  0.012005    0.01005032 -0.0271272  -0.14574855
+   0.04349126  0.01734347 -0.00912368 -0.04822   ]]</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;The cumulative contribution rate of variance is：&#39;</span>)</span></code></pre></div>
+<pre><code>The cumulative contribution rate of variance is：</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>(pca.explained_variance_ratio_))</span></code></pre></div>
+<pre><code>0.8647540518932395</code></pre>
+</div>
+<p>It can be seen that after reducing 34 characteristic variables to 22 characteristic variables, the cumulative variance contribution rate is 86.48%. It shows that the newly generated features have a high ability to comprehensively describe the original data.</p>
+<h3 id="model-training">3 Model training</h3>
+<p>In order to check the classification performance of data after PCA dimension reduction, we use the tree.DecisionTreeClassifier class in the sklearn package. Divide the data into 80% of the data as the training set and 20% of the data as the test set.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> tree</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X_new, y, test_size<span class="op">=</span><span class="fl">.2</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
+</div>
+<p>Training model</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> tree.DecisionTreeClassifier()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>clf.fit(X_train,y_train)</span></code></pre></div>
+<style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier()</pre></div></div></div></div></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(clf)</span></code></pre></div>
+<pre><code>DecisionTreeClassifier()</code></pre>
+</div>
+<h3 id="model-performance-evaluation">4 Model performance evaluation</h3>
+<p>First, use the predict() function to obtain the prediction results of the support vector machine model trained in the previous section on the test set, and then use the relevant function in sklearn.metrics to evaluate the performance of the model.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>y_predict <span class="op">=</span> clf.predict(X_test)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(metrics.classification_report(y_test, y_predict))</span></code></pre></div>
+<pre><code>              precision    recall  f1-score   support
+
+           0       0.77      0.77      0.77        44
+           1       0.52      0.52      0.52        21
+
+    accuracy                           0.69        65
+   macro avg       0.65      0.65      0.65        65
+weighted avg       0.69      0.69      0.69        65</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(metrics.confusion_matrix(y_test,y_predict))</span></code></pre></div>
+<pre><code>[[34 10]
+ [10 11]]</code></pre>
+</div>
+<p>The diagonal elements in the above confusion matrix represent the correct predicted number of the model, and the sum of the diagonal elements represents the number of samples predicted correctly by the model as a whole.</p>
+<p>Now, let’s use this to calculate the prediction accuracy of the model in the test set.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accuracy:&quot;</span>, metrics.accuracy_score(y_test, y_predict))</span></code></pre></div>
+<pre><code>Accuracy: 0.6923076923076923</code></pre>
+</div>
+<p>It can be seen that the predicted accuracy rate (Accuaray) of the model obtained by training is 81.54% in 20% of the test samples of the original set.</p>
+<h3 id="performance-comparison-of-models-trained-using-data-before-and-after-dimension-reduction">5 Performance comparison of models trained using data before and after dimension reduction</h3>
+<p>In order to test that the model trained by using the data after dimension reduction can still maintain high performance compared with the model trained by the data before dimension reduction, the model training for data that has not been reduced in dimension, the code is as follows:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">.2</span>,random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>clf2 <span class="op">=</span> tree.DecisionTreeClassifier()</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>clf2.fit(X_train,y_train)</span></code></pre></div>
+<style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier()</pre></div></div></div></div></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>y_predict <span class="op">=</span> clf2.predict(X_test)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(metrics.classification_report(y_test, y_predict))</span></code></pre></div>
+<pre><code>              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        44
+           1       1.00      1.00      1.00        21
+
+    accuracy                           1.00        65
+   macro avg       1.00      1.00      1.00        65
+weighted avg       1.00      1.00      1.00        65</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(metrics.confusion_matrix(y_test,y_predict))</span></code></pre></div>
+<pre><code>[[44  0]
+ [ 0 21]]</code></pre>
+</div>
+<p>The diagonal elements in the above confusion matrix represent the correct predicted number of the model, and the sum of the diagonal elements represents the number of samples predicted correctly by the model as a whole. Now, let’s use this to calculate the prediction accuracy of the model in the test set.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accuracy:&quot;</span>, metrics.accuracy_score(y_test, y_predict))</span></code></pre></div>
+<pre><code>Accuracy: 1.0</code></pre>
+</div>
+<p>It can be seen that the prediction accuracy rate (Accuaray) of the model obtained by training is 100% in 20% of the test samples of the original set.</p>
+<p>After comparison, the precision after dimension reduction is 0.89, which is 0.11 less than before dimension reduction; the recall after dimension reduction is 0.88, which is 0.12 smaller than before dimension reduction; f1-score after dimension reduction is 0.88, 0.12 less than before dimension reduction; the correct rate after dimension reduction is 0.88 It is 0.12 lower than before dimension reduction. It can be seen that the model trained using the data after dimension reduction can still maintain higher performance than the model trained with the data before dimension reduction.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
