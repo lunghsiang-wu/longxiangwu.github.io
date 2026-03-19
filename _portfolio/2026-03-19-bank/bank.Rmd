@@ -1,23 +1,997 @@
 ---
 title: "Bank Telemarketing"
-description: |
-  A short description of the post.
+description: "A feature selection project"
 author:
-  - name: Longxiang Wu
-    url: {}
-date: 2026-03-19
+  - name: "Longxiang Wu"
+date: 2025-3-20
 output:
   distill::distill_article:
     self_contained: false
 ---
-
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+library(reticulate)
+use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+<!-- #region -->
 
 
+
+### 0 Experiment evironment
+
+```{python}
+# !pip freeze | grep pandas;
+# !pip freeze | grep numpy;
+# !pip freeze | grep matplotlib;
+# !pip freeze | grep seaborn;
+# !pip freeze | grep scikit-learn;
+# !pip freeze | grep tqdm;
+```
+
+```{python}
+# Ignore the warning message
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+### 1 Data explore
+The data of this case comes from the information of a Portuguese bank to promote fixed deposit products. You can refer to its official website. The data set collects 17 characteristics, including basic customer information, marketing activity information and socio-economic environment information. The target characteristics are whether customers order products.
+
+The following is an introduction to the meaning of 17 characteristics:
+
+
+```{python}
+# %config InlineBackend.figure_format='retina'
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+with open("bank_introduction.txt", "r") as f:
+    lines = f.read().splitlines()
+
+df_intro = pd.DataFrame(lines, columns=["intro"])
+
+for i in range(len(df_intro)):
+    print(df_intro["intro"][i])
+```
+
+The basic information of customers includes age, occupation, marital status, education level, housing loans and personal loans, etc.; marketing activity information includes call method, number of calls and last marketing results, etc.; socio-economic environment information includes employment change rate, consumer price index and consumer information index, etc.
+
+Read the data:
+
+```{python}
+# To display all columns, add the following command.
+pd.set_option('display.max_columns',None)
+df=pd.read_csv("bank-additional-full.csv",sep=";")
+data=df.copy()
+data.head()
+```
+
+Observe the basic information of the data set:
+
+```{python}
+data.info()
+```
+
+Observation found:
+
+1) The dimension of the data set is (41188, 17);
+
+2) Statistics show that all the features are complete, but many object types of features use unknown to represent missing, so missing values need to be processed;
+
+3) There are 11 characteristics of object types, which need to be numerically converted.
+
+```{python}
+data.describe()
+```
+
+Observing the commonly used statistics of each feature, it is found that there are obvious quantitative differences between the data, which needs to be standardised.
+
+
+### 2 Data preprocessing
+#### Missing value processing
+First, find all the object type characteristics and count the number of missing values in them.
+
+```{python}
+# Find the object type characteristics
+col=data.columns
+object_list=[]
+for i in range(len(col)):
+    if type(data[col[i]][0])!=np.int64 and type(data[col[i]][0])!=np.float64:
+        object_list.append(col[i])
+```
+
+You can also directly use the `select_dtypes` method of `DataFrame` to specify the choice of `object`:
+
+```{python}
+# Find the object type characteristics
+object_data = data.select_dtypes(include=['object'])
+object_columns = object_data.columns
+object_list = object_columns.tolist()
+```
+
+```{python}
+# Count the number of missing values of each characteristic
+missing_list = []
+for item in object_columns:
+    try:
+        missing_num = object_data[item].value_counts().loc['unknown']
+        print("The number of missing data about %s :" % item, missing_num)
+        missing_list.append(item)
+    except Exception as e:
+        print("The number of missing data about %s :" % item, '0')
+```
+
+In addition to `default` and `education`, the number of missing values is small, and the missing sample can be discarded directly; for `default` and `education`, fill in the missing values with plurality.
+
+```{python}
+new_data=data[data["job"]!="unknown"][data["marital"]!="unknown"][data["housing"]!="unknown"][data["loan"]!="unknown"]
+new_data.head()
+```
+
+```{python}
+# Discard some missing samples
+new_data=data[data["job"]!="unknown"][data["marital"]!="unknown"][data["housing"]!="unknown"][data["loan"]!="unknown"]
+new_data.index=range(len(new_data))
+
+# Fill in the missing values with a large number of numbers
+new_data["default"].replace('unknown', new_data["default"].value_counts().index[0], inplace=True)
+new_data['education'].replace('unknown', new_data["education"].value_counts().index[0], inplace=True)
+```
+
+```{python}
+# Check the situation after filling
+print (" This is the new distribution of default:")
+print (new_data["default"].value_counts())
+print (" This is the new distribution of education:")
+print (new_data["education"].value_counts())
+```
+
+### Numerical conversion
+
+```{python}
+# Use one-hot variables to represent object type features.
+object_list.remove("y")
+for item in object_list:
+    dummies=pd.get_dummies(new_data[item],prefix=item)
+    new_data=pd.concat([new_data,dummies],axis=1)
+    del new_data[item]
+    
+# Numericalisation of target characteristics
+new_data["label"]=0
+new_data["label"][new_data["y"]=="yes"]=1
+new_data["label"][new_data["y"]=="no"]=0
+del new_data["y"] 
+```
+
+### Visualisation
+
+```{python}
+corr = new_data.corr()
+mask = np.zeros_like(corr, dtype=bool)
+mask[np.triu_indices_from(mask)] = True
+f, ax = plt.subplots(figsize=(10, 10))
+cmap = sns.diverging_palette(220, 10, as_cmap=True)
+sns.heatmap(corr, mask=mask, cmap=cmap, vmax=1.0,
+            square=True, xticklabels=2, yticklabels=2,
+            linewidths=.3, cbar_kws={"shrink": .5}, ax=ax)
+plt.show()
+```
+
+```{python}
+new_data.columns
+```
+
+The bottom line of the vertical coordinate is the target feature. It can be seen that there are still many features related to it. The darkest colour is the feature duration. Further observe the relationship between them:
+
+```{python}
+f, ax1 = plt.subplots(1, 1, figsize=(6,4))
+sns.boxplot(x="label",y='duration',data=new_data,ax=ax1)
+plt.show()
+```
+
+It is easy to find that the characteristic duration has a great impact on the target characteristics, but pay attention to the characteristic information:
+
+duration: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
+
+This shows that the feature duration is not available at any time, so we should abandon the feature when building the model.
+
+
+### 0-1 Standardlisation
+
+```{python}
+from sklearn import  preprocessing as prep
+x=new_data.copy()
+del x["label"]
+del x["duration"]
+y=new_data["label"]
+minmax_scale=prep.MinMaxScaler().fit( x[ x.columns])
+x[ x.columns]=minmax_scale.transform( x[ x.columns])
+x.head()
+```
+
+### 3 Feature selection and model establishment
+The requirement of this case is to find the key features that affect the ordered products and establish model predictions, so it is more appropriate to choose encapsulated and embedded feature selection methods. Here we try two embedded methods: regularised models and tree-based models. After data preprocessing, there are a total of 56 features. In order to effectively reduce the number of features, we adopt L1 regularisation, because in this case, the model effect is more important than stability; the tree-based model adopts the ExtraTrees model, which is an integrated model similar to a random forest, and the integrated model is selected. In order to improve the prediction effect of the model, the criteria for selecting branch nodes have tried Gini impurity and Entropy entropy respectively.
+
+First, randomly divide the training set and the test set in a ratio of 7:3:
+
+
+```{python}
+# Randomly divide the training set and the test set
+from sklearn.model_selection import train_test_split
+train_x, test_x, train_y, test_y = train_test_split(x, y, test_size=0.3, random_state=0)
+```
+
+First, define the functions that need to be used after three:
+
+- The function evaluate(pred,test_y) is used to evaluate the classification results;
+
+- The function find_name(new_feature, df_feature) is used to output the name of the key feature;
+
+- The function FS_importance(arr_importance, col, N) is used to select features according to the importance of features.
+
+```{python}
+from sklearn import metrics
+from sklearn.metrics import classification_report 
+
+"""
+The function evaluate(pred,test_y) is used to evaluate the classification results;
+
+Input: real classification, predicted classification results
+
+Output: classification accuracy, confusion matrix, etc.
+"""
+def evaluate(pred,test_y):
+    
+    # The accuracy rate of output classification
+    print("Accuracy: %.4f"  % (metrics.accuracy_score(test_y,pred)))
+    
+    # Output various indicators to measure the classification effect
+    print(classification_report(test_y, pred)) 
+    
+    # More intuitively, we draw a confusion matrix through seaborn.
+    # %matplotlib inline
+    plt.figure(figsize=(6,4))
+    colorMetrics = metrics.confusion_matrix(test_y,pred)
+    
+    # Coordinate y represents test_y, that is, the real category, and coordinate x represents the estimated category pred
+    sns.heatmap(colorMetrics,annot=True,fmt='d',xticklabels=[0,1],yticklabels=[0,1])
+    plt.show()
+    
+"""
+The function find_name(new_feature, df_feature) is used to output the name of the key feature;
+
+Input: original features, selected key features;
+
+Output: the name of the key feature
+"""
+def find_name(new_feature, df_feature):
+    
+    # Define the list to store the key feature name
+    feature_name=[]
+    col=df_feature.columns
+    
+    # Find the name information of key features
+    for i in range(int(new_feature.shape[0])):
+        for j in range(df_feature.shape[1]):
+            
+            # The discrimination standard is that the feature vector in new_feature is consistent with the feature vector in df_feature.
+            if np.mean(abs(new_feature[i]-df_feature[col[j]]))==0:
+                feature_name.append(col[j])
+                print (i+1,col[j]) 
+                break
+    return feature_name
+
+"""
+The function FS_importance(arr_importance, col, N) is used to select features according to the importance of features.
+
+Input: feature importance, feature name set, number of selected features
+
+Output: the first N characteristics according to the importance of the characteristics
+"""
+def FS_importance(arr_importance, col, N):
+    
+    # Dictionary storage    
+    dict_order=dict(zip(col, arr_importance))
+    
+    # Sort by the importance of the characteristics
+    new_feature = sorted(dict_order.items(), key=lambda item: item[1], reverse=True)
+    feature_top, score=zip(*new_feature)
+    return list(feature_top[:N])
+```
+
+### 3.1 Regularised 
+This section consists of three parts:
+
+1) Feature selection: Feature selection adopts L1 regularisation, and the model effect when the punishment coefficient C takes different values is tried respectively. The model effect is measured by the average accuracy rate obtained from the 50% cross-verification on the training set. Through graph comparison, the punishment coefficient that makes the model effect the best is found;
+
+2) Establish a model on the feature subset: use the optimal subset obtained in the feature selection to establish a model;
+
+3) Establish a model on the collection of features: Use the original collection of features to establish a model, compare it with the model effect of Part 2, and observe the impact of feature selection on the model effect.
+
+### Feature selection
+Discuss the impact of different penalty coefficients on the feature selection effect, and carry out 50% cross-verification on the training set to verify the model effect. The baseline is the average accuracy rate of the model obtained by 50% cross-verification on the training set with the feature set.
+
+
+
+```{python}
+# Import the modules required for cross-verification and feature selection
+import tqdm
+from sklearn import model_selection
+from sklearn.svm import LinearSVC
+from sklearn.feature_selection import SelectFromModel
+
+# Define a model without regularisation
+lsvc = LinearSVC(C=1e-5)
+
+# Cross-validation calculates the average accuracy rate of the complete collection of application features
+score=model_selection.cross_val_score(lsvc, train_x, train_y, cv=5)
+
+# Explore the impact of different parameters on the effect of feature selection
+# xx represents the set of parameters
+acc_subset=[]
+xx=np.array(range(5,205,5))*0.01
+for i in tqdm.tqdm(xx):
+    
+    # Define a model for L1 regularised feature selection
+    lsvc_l1 = LinearSVC(C=i, penalty="l1", dual=False)
+    
+    # Cross-verification calculates the average accuracy of the application feature subset
+    scores=model_selection.cross_val_score(lsvc_l1, train_x, train_y, cv=5)
+    acc_subset.append(scores.mean())
+```
+
+Draw a picture to observe the impact of different penalty coefficients on the feature selection effect:
+
+```{python}
+# yy represents the average accuracy rate of applied feature subsets under different parameters.
+# y0 represents the average accuracy rate of the complete collection of application features, which is used as the baseline.
+yy=acc_subset
+y0=[score.mean()]*len(xx)
+
+# Compare the difference between the complete collection of features and the subset of features
+fig=plt.figure(figsize=(18,6))
+ax1=fig.add_subplot(1,2,1)
+plt.plot(xx,yy,"bo-")
+plt.plot(xx,y0,"r-")
+ax1.set_xlabel("The value of the parameter C")
+ax1.set_ylabel("Mean accuracy on training set by CV")
+ax1.set_title("Comparison between feature universal set and subset")
+ax1.set_ylim([score.mean()-0.01,max(yy)+0.01])
+ax1.set_xlim([min(xx),max(xx)])
+
+# Observe the differences between different characteristic subsets
+ax2=fig.add_subplot(1,2,2)
+plt.plot(xx,yy,"bo-")
+plt.plot(xx,y0,"r-")
+ax2.set_xlabel("The value of the parameter C")
+ax2.set_ylabel("Mean accuracy on training set by CV")
+ax2.set_title("Comparison among different parameters")
+ax2.set_ylim([min(yy)-0.001,max(yy)+0.001])
+ax2.set_xlim([min(xx),max(xx)])
+plt.show()
+```
+
+The horizontal coordinates of the above two diagrams are the punishment coefficients, and the vertical coordinates are the average accuracy rate obtained by cross-verification. Observe the left figure, the accuracy rate of the model applied feature subsets under different punishment coefficients in the blue folding table, and the red straight line is our baseline, that is, the accuracy rate obtained by applying the feature set on the same model. It can be found that the blue line is above the red line, which shows that the model effect after L1 regularisation feature selection has been significantly improved. Furthermore, we also want to observe the difference between different feature subsets. The right figure enlarges the blue line. We can see that when the punishment coefficient is 1.7, the model effect is the best, so we can try to use L1 regularisation with a punishment coefficient of 1.7 for feature selection.
+
+### Build a model on the feature subset
+Establish a LinearSVC model on the optimal subset obtained in the previous part, and output the feature name selected by L1 regularisation.
+
+
+```{python}
+# Establish an L1 regularisation model
+lsvc_l1 = LinearSVC(C=1.7, penalty="l1", dual=False).fit(train_x, train_y)
+pred=lsvc_l1.predict(test_x)
+
+# Output the characteristic name selected by L1 regularisation
+model = SelectFromModel(lsvc_l1,prefit=True)
+new_train_x = model.transform(train_x).T
+FS_result=find_name(new_train_x, train_x)
+```
+
+Evaluate_subset the values of various evaluation indicators of the model in the list:
+
+```{python}
+from sklearn import metrics
+#accuracy
+acc_subset = metrics.accuracy_score(test_y,pred)
+
+#precision
+precision_subset = metrics.precision_score(test_y,pred,average='weighted')
+
+#recall
+recall_subset = metrics.recall_score(test_y,pred,average='weighted')
+
+#f1-score
+f1_subset = metrics.f1_score(test_y,pred,average='weighted')
+evaluate_subset = [acc_subset,precision_subset,recall_subset,f1_subset]
+```
+
+The detailed evaluation of the model effect is shown in the confusion matrix in the figure below:
+
+```{python}
+evaluate(pred,test_y)
+```
+
+### Comparison: Establish a model on the complete collection of features
+Build the same `LinearSVC` model on the feature collection:
+
+```{python}
+# Establish a model without regularisation (set C to a number close to 0)
+lsvc = LinearSVC(C=1e-5)
+lsvc_model = lsvc.fit(train_x,train_y)
+pred=lsvc_model.predict(test_x)
+```
+
+More detailed evaluation of the model effect:
+
+```{python}
+#accuracy
+acc_all = metrics.accuracy_score(test_y,pred)
+
+#precision
+precision_all = metrics.precision_score(test_y,pred,average='weighted')
+
+#recall
+recall_all = metrics.recall_score(test_y,pred,average='weighted')
+
+#f1-score
+f1_all = metrics.f1_score(test_y,pred,average='weighted')
+evaluate_all = [acc_all,precision_all,recall_all,f1_all]
+```
+
+```{python}
+evaluate(pred,test_y)
+```
+
+More intuitively compare the difference in the model effect brought by the feature subset and the feature set:
+
+```{python}
+index=["accuracy","precision","recall","f1-score"]
+data = zip(evaluate_all,evaluate_subset)
+df=pd.DataFrame(data,columns=["universal set","subset"],index=index)
+df.plot(kind="bar",figsize=(10,8))
+plt.ylim([0.75,0.95])
+plt.show()
+```
+
+The model established by applying the feature subset has better performance in all aspects, which shows that it is necessary to select features before modelling. In particular, using the model obtained from the data collection to predict the negative class (label value is 0) of the samples of all test sets, this model is actually meaningless.
+
+### 3.2 Tree-based model
+This section consists of three parts:
+
+1) Feature selection: Feature selection tried to take Gini impurity and Entropy as indicators, and compared the impact of selecting different numbers of characteristics on the model effect. The model effect is measured by the average accuracy rate obtained by 50% cross-verification on the training set. Through graph comparison, it is found that the model effect The number of the best characteristics;
+
+2) Establish a model on the feature subset: use the optimal subset obtained in the feature selection to establish a model;
+
+3) Establish a model on the collection of features: Use the original collection of features to establish a model, compare it with the model effect of Part 2, and observe the impact of feature selection on the model effect.
+
+### Feature selection
+
+The index is characterised by Gini inpurity and Entropy, and the impact of selecting different features on the feature selection effect is discussed. 50% cross-verification is carried out on the training set to verify the model effect. The baseline is the average accuracy rate of the model obtained by 50% cross-verification on the training set.
+
+
+```{python}
+# Define a model with Gini impurity as the classification indicator
+from sklearn.ensemble import ExtraTreesClassifier
+clf_gini = ExtraTreesClassifier(criterion='gini')
+
+# Fit the model on the training set to obtain the characteristic importance score.
+clf_gini = clf_gini.fit(train_x, train_y)
+importance_gini=clf_gini.feature_importances_ 
+
+# Cross-validation calculates the average accuracy rate of the complete collection of application features
+score_gini=model_selection.cross_val_score(clf_gini, train_x, train_y, cv=5)
+
+# Define a model with Entropy entropy as the classification indicator
+from sklearn.ensemble import ExtraTreesClassifier
+clf_entropy = ExtraTreesClassifier(criterion='entropy')
+
+# Fit the model on the training set to obtain the characteristic importance score.
+clf_entropy = clf_entropy.fit(train_x, train_y)
+importance_entropy=clf_entropy.feature_importances_
+
+# Cross-validation calculates the average accuracy rate of the complete collection of application features
+score_entropy=model_selection.cross_val_score(clf_entropy, train_x, train_y, cv=5)
+```
+
+```{python}
+# Take Gini impurity as the indicator
+# Explore the influence of different numbers of features on the effect of feature selection
+# xx represents the set of the number of features.
+acc_subset_gini=[]
+xx=np.array(range(1,56,1))
+for i in tqdm.tqdm(xx):
+    
+    # Define the ExtraTrees model
+    clf_gini = ExtraTreesClassifier(criterion='gini')
+    
+    # Choose characteristics according to the importance of characteristics
+    feature=FS_importance(importance_gini, train_x.columns, i)
+    new_train_x=train_x[feature]
+    
+    # Cross-verification calculates the average accuracy of the application feature subset
+    scores=model_selection.cross_val_score(clf_gini, new_train_x, train_y, cv=5)
+    acc_subset_gini.append(scores.mean())
+```
+
+```{python}
+# Take Entropy Entropy As The Indicator
+# Explore the influence of different numbers of features on the effect of feature selection
+# xx represents the set of the number of features.
+acc_subset_entropy=[]
+xx=np.array(range(1,56,1))
+for i in tqdm.tqdm(xx):
+    
+    # Define the ExtraTrees model
+    clf_entropy = ExtraTreesClassifier(criterion='entropy')
+    
+    # Choose characteristics according to the importance of characteristics
+    feature=FS_importance(importance_entropy, train_x.columns, i)
+    new_train_x=train_x[feature]
+    
+    # Cross-verification calculates the average accuracy of the application feature subset
+    scores=model_selection.cross_val_score(clf_entropy, new_train_x, train_y, cv=5)
+    acc_subset_entropy.append(scores.mean())
+```
+
+Draw a picture to observe the impact of different characteristics on the feature selection effect:
+
+```{python}
+# Take Gini impurity as the indicator
+# yy represents the average accuracy rate of applied feature subsets under different characteristics.
+# y0 represents the average accuracy rate of the complete collection of application features, which is used as the baseline.
+yy=acc_subset_gini
+y0=[score_gini.mean()]*len(xx)
+
+# Compare the difference between the complete collection of features and the subset of features
+fig=plt.figure(figsize=(18,6))
+ax1=fig.add_subplot(1,2,1)
+plt.plot(xx,yy,"bo-")
+plt.plot(xx,y0,"r-")
+ax1.set_xlabel("The number of features")
+ax1.set_ylabel("Mean accuracy on training set by CV")
+ax1.set_title("Comparison among feature numbers by Gini")
+ax1.set_ylim([min(yy)-0.001,max(yy)+0.001])
+ax1.set_xlim([min(xx),max(xx)])
+
+# yy represents the average accuracy rate of applied feature subsets under different parameters.
+# y0 represents the average accuracy rate of the complete collection of application features, which is used as the baseline.
+yy=acc_subset_entropy
+y0=[score_entropy.mean()]*len(xx)
+
+# Observe the differences between different characteristic subsets
+ax2=fig.add_subplot(1,2,2)
+plt.plot(xx,yy,"bo-")
+plt.plot(xx,y0,"r-")
+ax2.set_xlabel("The number of features")
+ax2.set_ylabel("Mean accuracy on training set by CV")
+ax2.set_title("Comparison among feature numbers by Entropy")
+ax2.set_ylim([min(yy)-0.001,max(yy)+0.001])
+ax2.set_xlim([min(xx),max(xx)])
+plt.show()
+```
+
+The horizontal coordinates of the above two figures are the number of features, and the vertical coordinates are the average accuracy rate obtained by cross-verification. The model accuracy rate of the application of feature subsets under different features in the blue folding table, and the red straight line is our baseline, that is, the accuracy rate obtained by applying the full set of features on the same model, different The left figure uses Gini impurity as the indicator for feature selection, while the right figure takes Entropy as the indicator for feature selection. It can be found that the number of features has a great impact on the effect of feature selection. On some feature subsets (for example, when the number of features is 2, 5, 6, 55), the model can achieve better results than baseline; but on some other feature subsets (such as when the number of features is 14, 15, 16), the model On the contrary, the effect of the mould has been reduced a lot. It is found from the figure that when the feature subset contains 2 features, the model effect is the best. However, after testing, it is found that when the number of features is too small, although the accuracy rate is indeed high, it will cause a very low F1 value. In the end, we choose the feature subset with the number of features of 6 obtained with Entropy as the indicator as the optimal subset candidate. We would like to remind everyone that for classification problems, we can't just look at the accuracy rate. Other indicators are also very important. The selection of characteristic subsets should be considered comprehensively from many aspects.
+
+The first 6 key characteristics are as follows:
+
+```{python}
+print ("The most important 6 features computed by mini:")
+print(FS_importance(importance_gini, train_x.columns, 6))
+print ("The most important 6 features computed by entropy:")
+print(FS_importance(importance_entropy, train_x.columns, 6))
+```
+
+### Build a model on the feature subset
+
+Establish the ExtraTrees model on the optimal subset obtained in the previous part, and output the feature name selected with entropy as the indicator.
+
+```{python}
+# Define the ExtraTrees model
+clf_entropy = ExtraTreesClassifier(criterion='entropy')
+    
+# Choose characteristics according to the importance of characteristics
+feature=FS_importance(importance_entropy, train_x.columns, 6)
+new_train_x=train_x[feature]
+new_test_x=test_x[feature]
+
+clf_entropy = clf_entropy.fit(new_train_x, train_y) 
+pred=clf_entropy.predict(new_test_x)
+```
+
+Detailed evaluation of the model effect:
+
+```{python}
+#accuracy
+acc_subset = metrics.accuracy_score(test_y,pred)
+
+#precision
+precision_subset = metrics.precision_score(test_y,pred,average='weighted')
+
+#recall
+recall_subset = metrics.recall_score(test_y,pred,average='weighted')
+
+#f1-score
+f1_subset = metrics.f1_score(test_y,pred,average='weighted')
+evaluate_subset = [acc_subset,precision_subset,recall_subset,f1_subset]
+```
+
+```{python}
+evaluate(pred,test_y)
+```
+
+### Comparison: Establish a model on the complete collection of features
+Build the same ExtraTrees model on the collection of features:
+
+```{python}
+from sklearn.ensemble import ExtraTreesClassifier
+clf_entropy = ExtraTreesClassifier(criterion='entropy')
+clf_entropy = clf_entropy.fit(train_x, train_y) 
+pred=clf_entropy.predict(test_x)
+```
+
+Detailed evaluation of the model effect:
+
+```{python}
+#accuracy
+acc_all = metrics.accuracy_score(test_y,pred)
+
+#precision
+precision_all = metrics.precision_score(test_y,pred,average='weighted')
+
+#recall
+recall_all = metrics.recall_score(test_y,pred,average='weighted')
+
+#f1-score
+f1_all = metrics.f1_score(test_y,pred,average='weighted')
+evaluate_all = [acc_all,precision_all,recall_all,f1_all]
+```
+
+```{python}
+evaluate(pred,test_y)
+```
+
+More intuitively compare the difference in the model effect brought by the feature subset and the feature set:
+
+```{python}
+index=["accuracy","precision","recall","f1-score"]
+data = zip(evaluate_all,evaluate_subset)
+df=pd.DataFrame(data,columns=["universal set","subset"],index=index)
+df.plot(kind="bar",figsize=(10,8))
+plt.ylim([0.85,0.91])
+plt.show()
+```
+
+The model established by applying the feature subset has better performance in all aspects, which shows that it is necessary to select features before modelling.
+
+### 4 Feature understanding and evaluation
+We have tried three feature selection methods: L1 regularisation, Gini impurity, and Entropy. All three methods believe that feature age and campaign have the greatest impact on whether to order products, so we want to further observe how this influence relationship is.
+
+
+```{python}
+# Further observe the relationship between age and label
+sns.jointplot(x='age',y='label',data=new_data,kind='reg',x_estimator= np.mean,order=2)
+plt.show()
+```
+
+Because label is a discrete variable, it can be replaced by its mean. It can be found that there is a secondary relationship between age and label. Middle-aged people do not like to order products, but young people and the elderly people order products at a higher rate. The discovery can guide banks to position the target audience of telemarketing more accurately.
+
+```{python}
+# Further observe the relationship between campaign and label
+f, ax1 = plt.subplots(1, 1, sharex=True, figsize=(6, 4))
+c1, c2 = sns.color_palette('Set1', 2)
+sns.kdeplot(new_data['campaign'][new_data["label"]==1], shade=True, color=c1, label='Yes',ax=ax1)
+sns.kdeplot(new_data['campaign'][new_data["label"]==0], shade=True, color=c2, label='No', ax=ax1)
+plt.show()
+```
+
+The characteristic campaign represents the number of contacts with customers, the red distribution represents the campaign data distribution of the ordered products, and the blue distribution represents the campaign data distribution that does not order. It can be found that the red distribution is more biased towards 0 and the numerical distribution is smaller, which shows that when the number of contacts is less, customers are more inclined to order products. For banks, the frequent contact of salespeople to customers should be controlled.
+
+### 5 Data downsiming
+In this section, we first downsize the data set train_x containing 56 features, use different methods to reduce the data and conduct visual analysis on the two-dimensional plane, and finally analyze the impact of data downsizing on the model prediction effect.
+
+Let's first list the variables that will be used later and have been defined before:
+| Dataset Name | Meaning |
+|--------------|---------|
+| `train_x` | Training dataset with 56 features |
+| `test_x` | Test dataset with 56 features |
+| `train_y` | True labels for training set |
+| `test_y` | True labels for test set |
+
+
+```{python}
+# Use index descending to arrange DataFrame
+train_x.sort_index(inplace=True)
+train_y.sort_index(inplace=True)
+new_train_x.sort_index(inplace=True)
+train_x.head()
+```
+
+### Data dimension reduction and visual analysis process
+
+The dimension reduction method to be shown in this case and the module of sklearn are shown in the following table:
+
+| sklearn Module | Method Called | Dimensionality Reduction Method |
+|----------------|---------------|---------------------------------|
+| decomposition | PCA<br>KernelPCA | PCA<br>KPCA |
+| discriminant_analysis | LinearDiscriminantAnalysis | LDA |
+| manifold | MDS<br>Isomap<br>LocallyLinearEmbedding<br>TSNE<br>SpectralEmbedding | MDS<br>Isomap<br>LLE<br>t-SNE<br>Spectral Embedding |
+
+The process of calling the above methods for dimension reduction is similar:
+
+- First, create an instance according to the specific method: instance name = sklearn module. Called method (setting of some parameters)
+
+- Then convert the data: the converted data variable name = instance name.fit_transform(X), and some methods such as LDA dimension reduction also need to provide the label y
+
+- Finally, visualize the converted data: enter the converted data and title, and draw a diagram of the two-dimensional space.
+
+
+```{python}
+from sklearn import (manifold, decomposition, discriminant_analysis)
+# %matplotlib inline
+# %config InlineBackend.figure_format = 'retina' #The retina high-definition display mode of the picture
+```
+
+After importing the necessary packages, we begin to create instances of different dimension reduction classes:
+
+```{python}
+# When creating an instance, there are more parameters that can be adjusted. You might as well try more.
+pca = decomposition.PCA(n_components=2)
+lda = discriminant_analysis.LinearDiscriminantAnalysis(n_components=1)
+kpca = decomposition.KernelPCA(n_components=2, kernel="rbf", fit_inverse_transform=True, gamma=.8)
+mds = manifold.MDS(n_components=2, n_init=1, max_iter=100)
+iso = manifold.Isomap(n_components=2, n_neighbors=2)
+lle = manifold.LocallyLinearEmbedding(n_components=2, n_neighbors=3, eigen_solver='dense')
+tsne = manifold.TSNE(n_components=2, init='pca', random_state=10)
+spectral = manifold.SpectralEmbedding(n_components=2, random_state=10, eigen_solver='arpack')
+names = ['PCA', 'LDA', 'KPCA', 'MDS', 'ISOMAP', 'LLE', 't-SNE', 'Spectral Embedding']
+algorithms = [pca, lda, kpca, mds, iso, lle, tsne, spectral]
+```
+
+Next, the results of different dimension reduction methods can be visualized on the two-dimensional plane in turn.
+
+### Diminsion on the complete collection of features
+
+```{python}
+#The hexadecimal color code represents light green and orange respectively.
+colors = ['#5dbe80','#efab40'] 
+```
+
+```{python}
+"""
+The function plot_2d(datax,datay) is used to reduce the dimension of datax data;
+
+Input: unlabeled datax, labeled data datay;
+
+Output: None
+"""
+def plot_2d(datax, datay):
+    for i, algorithm in enumerate(algorithms):
+        if algorithm == lda:
+            lda.set_params(n_components=1)
+            x_2d = algorithm.fit_transform(datax, datay)
+        else:
+            x_2d = algorithm.fit_transform(datax)
+            plt.subplot(2, 4, i+1)
+            for j, label in enumerate(datay.unique()):
+                plt.scatter(x_2d[datay==label, 0],
+                            x_2d[datay==label, 1],
+                            color=colors[j],
+                            label=label)
+            plt.legend(loc='best', frameon=True, edgecolor='k', shadow=False, scatterpoints=1)
+            plt.title(names[i])
+            plt.xticks([])
+            plt.yticks([])
+```
+
+```{python}
+fig, axes = plt.subplots(2,4,figsize=(15,10))
+
+# There is too much data and the operation is too slow. We only select the first 3,000 lines for visualization.
+plot_2d(train_x.iloc[0:3000], train_y.iloc[0:3000])
+```
+
+It can be seen that the two-dimensional plane cannot see the embedded structure of the original data. Next, let's see whether the data dimension reduction will affect the performance of the model.
+
+### The degree of explanation of the main component of PCA dimension reduction to the original data variance
+After using PCA or LDA dimension reduction, we can obtain the degree of interpretation of the component to the original data variance after dimension reduction through the explained_variance_ratio_ method. Here we take PCA as an example.
+
+```{python}
+# Build a pca_var_explained_df data box to facilitate subsequent drawing with seaborn
+components = 10
+pca = decomposition.PCA(n_components=components).fit(train_x)
+pca_var_explained_df = pd.DataFrame({'principal component':np.arange(1,components+1),
+                                    'variance_explained':pca.explained_variance_ratio_})
+pca_var_explained_df
+```
+
+Then we take each main component as the horizontal coordinate, and the corresponding degree of interpretation of the original data is the vertical coordinate to make a bar chart:
+
+```{python}
+ax = sns.barplot(x='principal component',
+                 y='variance_explained',
+                 data=pca_var_explained_df,
+                 palette="Set1")
+ax.set_title('PCA - Variance explained')
+```
+
+It can be seen that for the data set train_x we use, the main component obtained from PCA dimension reduction has a low degree of interpretation of the original data variance.
+
+### Construct model prediction and evaluation functions
+
+Use the Extratree model to discuss here.
+
+
+```{python}
+"""
+The function model_evaluate is used to calculate the impact of mapping data to different dimensions of low-dimensional space on model performance;
+Input----------------------------------------------
+     n_components：Low-dimensional space dimension，Int
+     names_specified：Specify the dimension reduction method to be used，List
+     train_x：Training set without label column，DataFrame or ndarray
+     train_y：Training set label，DataFrame or ndarray
+     test_x：Test set without labelled column，DataFrame or ndarray
+     test_y：Test set label，DataFrame or ndarray
+    ----------------------------------------------
+Output
+    f1_all：ExtratreeThe integrated classifier predicts the F1 score on the test set，Dictionary
+"""
+def model_evaluate(n_components, names_specified, train_x, train_y, test_x, test_y):
+    
+    f1_all = {}
+    
+    pca = decomposition.PCA(n_components=n_components)
+    lda = discriminant_analysis.LinearDiscriminantAnalysis(n_components=1)  # fixed: max 1 for binary classification
+    kpca = decomposition.KernelPCA(n_components=n_components, kernel="rbf", fit_inverse_transform=True, gamma=.8)
+    mds = manifold.MDS(n_components=n_components, n_init=1, max_iter=100)
+    iso = manifold.Isomap(n_components=n_components, n_neighbors=2)
+    llle = manifold.LocallyLinearEmbedding(n_components=2, n_neighbors=3, eigen_solver='dense')
+    tsne = manifold.TSNE(n_components=n_components, init='pca', random_state=10)
+    spectral = manifold.SpectralEmbedding(n_components=n_components, random_state=10, eigen_solver='arpack')
+    
+    algorithms = [pca, lda, kpca, mds, iso, lle, tsne, spectral]
+    name_algorithm = {}
+    for name, algorithm in zip(names, algorithms):
+        name_algorithm[name] = algorithm
+    
+    algorithms_specified = []
+    for name in names_specified:
+        algorithms_specified.append(name_algorithm[name])
+    
+    for i, algorithm in enumerate(algorithms_specified):
+        if algorithm == lda:
+            dimen_reduct = algorithm.fit(train_x, train_y)
+            train_x_embed = dimen_reduct.transform(train_x)
+            test_x_embed = dimen_reduct.transform(test_x)
+            clf_entropy = ExtraTreesClassifier(criterion='entropy')
+            model = clf_entropy.fit(train_x_embed, train_y)
+            pred = model.predict(test_x_embed)
+            f1_all[names_specified[i]] = metrics.f1_score(test_y, pred, average='weighted')
+        else:
+            if hasattr(algorithm, 'transform'):
+                dimen_reduct = algorithm.fit(train_x)
+                train_x_embed = dimen_reduct.transform(train_x)
+                test_x_embed = dimen_reduct.transform(test_x)
+                clf_entropy = ExtraTreesClassifier(criterion='entropy')
+                model = clf_entropy.fit(train_x_embed, train_y)
+                pred = model.predict(test_x_embed)
+                f1_all[names_specified[i]] = metrics.f1_score(test_y, pred, average='weighted')
+    return f1_all
+```
+
+For example, we map the data to the two-dimensional space and then build the model. The prediction performance of Extratree obtained is as follows (due to the large consumption of running time for some dimension reduction methods that need to calculate the distance, we only select 5,000 lines of the previous training set for modelling, and readers can try to use the complete training set for modelling):
+
+```{python}
+model_evaluate(n_components=2, names_specified=names, train_x=train_x.iloc[:5000], train_y=train_y.iloc[:5000], test_x=test_x, test_y=test_y)
+```
+
+### The influence of the number of features n_components on model performance after dimension reduction
+It can be seen that since we only model the data dimension reduction class containing the transform method, we only got the model F1 score after processing the four dimension reduction methods of ISOMAP, KPCA, LLE and PCA. Take PCA as an example. Next, we examine the differences in the model prediction performance obtained by using the PCA method to map data in different low-dimensional spaces and then construct the model, and store the results in the nested dictionary f1:
+
+```{python}
+f1={}
+names_specified=['PCA']
+# Take {2,3,...,10} dimensions for modelling in low-dimensional space.
+for n_components in range(2,11):
+    f1[n_components]=model_evaluate(n_components, names_specified, train_x, train_y, test_x, test_y)
+f1
+```
+
+After obtaining the prediction result, in order to facilitate the drawing, we need to convert the results into dataframe. The final result of the conversion is expected to be the data box diff_n_components of the model F1 under different dimension reduction methods (after-dimensional name is the column name):
+
+```{python}
+# Build a pca_var_explained_df data frame to facilitate subsequent drawing with seaborn
+components = 10
+diff_n_components = pd.DataFrame({'n_components':f1.keys()})
+for name in names_specified:
+    
+    # Get the model prediction result f1_score and convert it into a data box f1_score_df
+    for name in names_specified:
+        f1_score=[]
+        for key in f1.keys():
+            f1_score.append(f1[key][name])
+        f1_score_df = pd.DataFrame({name:f1_score})
+        
+        # Splice f1_score_df with diff_n_component
+        diff_n_components = pd.concat([diff_n_components,f1_score_df],axis=1)
+diff_n_components
+```
+
+```{python}
+for name in names_specified:
+    ax = sns.barplot(x='n_components',
+                     y=name,
+                     data=diff_n_components,
+                     palette="Set1")
+    ax.set_title('model evaluation under different dimensionality')
+    plt.ylim(0.80,0.89)
+```
+
+It can be seen from the results that n_components has little impact on the performance of the model.
+
+### The impact of data dimension reduction on the predictive performance of the model
+The above is only analysed from the perspective of the parameters of the model, so what we are most concerned about is whether the data dimension reduction has a significant impact on the performance of the constructed model, and how is the difference from the model performance obtained by the feature selection method. The data sets we are going to use are:
+| Dataset Name | Meaning |
+|--------------|---------|
+| `train_x` | Training dataset with 56 features |
+| `test_x` | Test dataset with 56 features |
+| `new_train_x` | Training dataset with 6 features obtained from feature selection |
+| `new_test_x` | Test dataset with 6 features obtained from feature selection |
+| `train_y` | True labels for training set |
+| `test_y` | True labels for test set |
+
+
+```{python}
+x_labels = ['Original','Feature Selection','Dimensionality Reduction (PCA)']
+f1_scores = []
+datasets = []
+
+# Model prediction performance under the original data set (56 characteristics)
+clf_entropy = ExtraTreesClassifier(criterion='entropy')
+clf_entropy = clf_entropy.fit(train_x, train_y) 
+pred=clf_entropy.predict(test_x)
+f1_scores.append(metrics.f1_score(test_y,pred,average='weighted'))
+
+# Model prediction performance under the data set (6 characteristics) obtained by the feature selection method
+clf_entropy = ExtraTreesClassifier(criterion='entropy')
+clf_entropy = clf_entropy.fit(new_train_x, train_y) 
+pred=clf_entropy.predict(new_test_x)
+f1_scores.append(metrics.f1_score(test_y,pred,average='weighted'))
+
+# PCA data dimension reduction method obtains (mapped to 6-dimensional) model prediction performance
+f1_scores.append(f1[6]['PCA'])
+
+f1_scores
+```
+
+```{python}
+tmp = zip(x_labels,f1_scores)
+method_comp = pd.DataFrame(tmp,columns=["methods","f1_score"])
+
+ax = sns.barplot(x='methods',
+                 y='f1_score',
+                 data=method_comp,
+                 palette="Set1")
+ax.set_title('model evaluation under different methods')
+plt.ylim(0.80,0.89)
+```
+
+The feature selection method does have an improvement effect on the model, but for the data dimension reduction method, the effect is not as good as the feature selection method, which is related to the specific data set. When the data characteristics reach tens of thousands of levels, the data dimension reduction is beneficial to the interpretation of the model.
