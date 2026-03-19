@@ -1,0 +1,218 @@
+---
+title: "Face Recognition Combined with Principal Component Analysis"
+description: "An dimension reduction project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-2-17
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+Face Recognition is a biometric identification technology based on a person's facial feature information. Use a camera or camera to capture images or video streams containing faces, and automatically detect and track faces in the images, and then perform a series of related technologies on the detected faces, which are usually also called portrait recognition and facial recognition.
+
+Because the dimension of the image is often relatively high, the two-dimensional image is first greyscaled into a channel image, and then converted into a column vector. Assuming that the image size is 20 pixels * 20 pixels, then this vector is 400 dimensions. The traditional machine learning classification algorithm often fails to catch the main features when facing a large number of features, so the classification performance of the trained model is low.
+
+A classic algorithm for solving the problem of face recognition is the Eigenface method, which is essentially PCA dimension reduction. The feature face method uses principal component analysis for dimension reduction and feature extraction. Principal component analysis is a widely used data dimension reduction technology. This method selects the eigenvectors corresponding to the first few maximum eigenvalues of the original data covariance matrix to form a set of bases to achieve the purpose of best characterising the original data. Because the feature vectors extracted from the main component analysis still look like human faces when returned to images, these feature vectors are called "feature faces".
+
+In this case, we will use the All images aligned with funneling data set on the Labelled Faces in the Wild website, and use the SVM classification algorithm to classify downsized pictures.
+
+### 1 Data source
+We use a data set containing 1,288 samples of photos of some famous dignitaries, which needs to be obtained through the fetch_lfw_people function in the sklearn.datasets package.
+
+### 2 Data explore and preprocessing
+First, use the fetch_lfw_people() function in the sklearn.datasets package to load the data into memory:
+
+
+```{python}
+from time import time
+import pylab as pl
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import fetch_lfw_people
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+from sklearn.decomposition import PCA
+from sklearn.svm import SVC
+
+#Choose no less than 70 face-cloth images of dignitaries
+lfw_people = fetch_lfw_people(min_faces_per_person=70, resize=0.4)
+#Get the number of samples and the size information of the picture
+n_samples, h, w = lfw_people.images.shape
+np.random.seed(42)
+#Get the characteristic two-dimensional array of all samples
+X = lfw_people.data
+n_features = X.shape[1]
+#Category array of dignitaries
+y = lfw_people.target
+#The name array corresponding to the category of dignitaries
+target_names = lfw_people.target_names
+n_classes = target_names.shape[0]
+print("Data set information:")
+print("Number of samples: %d" % n_samples)
+print("The number of features of each picture before downsized: %d" % n_features)
+print("The number of dignitaries (the number of different people): %d" % n_classes)
+```
+
+Through preliminary observation, it is found that there is no missing value in all variables. We can verify that there are indeed no missing values in the data.
+
+```{python}
+value_ravel = X.ravel()
+print('The number of missing values in the data：',len(value_ravel[value_ravel==np.nan]))
+```
+
+### 2.1 Dealing with unbalanced data
+Since this is a classification problem, we need to check whether the data in the data set is balanced. And the following code can get how many samples there are for each category:
+
+
+```{python}
+print('Distribution of various categories of samples in the data：')
+print(pd.Series(y).value_counts().sort_index())
+```
+
+We can see that the distribution of samples belonging to different categories in the data is unbalanced. Therefore, we need to process the unbalanced data. Here we have chosen the sampling method to balance the data. First of all, we need to install the imbalanced-learn package to process the unbalanced data.
+
+```{python}
+from imblearn.over_sampling import RandomOverSampler
+ros = RandomOverSampler()
+X, y = ros.fit_resample(X, y)
+```
+
+The distribution of the categories after sampling is:
+
+```{python}
+print(pd.Series(y).value_counts().sort_index())
+```
+
+Data becomes balanced.
+
+### 2.2 Data standardisation
+Since the value of each dimension of the image is a greyscale value within [0,255] and belongs to the same dimension, there is no need for data standardisation.
+
+### 3 PCA dimension reduction processing
+Due to the high dimension of the original image, there are 1,850 features, which is not conducive to training classification models. Therefore, we first carry out PCA dimension reduction processing on the original data. Divide the data into 80% of the data as the training set and 20% of the data as the test set.
+
+
+```{python}
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+We reduce the 1850-dimensional feature to the n_components dimension. Here we choose n_components=150-dimensional, that is, we choose 150 main components.
+
+```{python}
+n_components = 150
+print('Extract the most important %d characteristic faces from the %d faces in the training set, that is, reduce the data to %d dimension.' % (X_train.shape[0] , n_components,n_components))
+pca = PCA(n_components=n_components, whiten=True, svd_solver='randomized').fit(X_train)
+eigenfaces = pca.components_.reshape((n_components, h, w))
+print('Cumulative variance contribution rate of 150 main components after dimension reduction：%.2f ' % round(sum(pca.explained_variance_ratio_),2))
+X_train_pca = pca.transform(X_train)
+X_test_pca = pca.transform(X_test)
+```
+
+### 4 Model Training
+In order to realise face recognition, that is, to identify who the characters in the image are. On the data that has been downsized, we will use the SVC class in the sklearn.svm package to build an SVM-based face recognition model. There are two main parameters that can be set in SVC: the kernel function parameter kernel and the constraint penalty parameter C. The commonly used values of kernel function parameter kernel and their corresponding meanings are as follows:
+
+- "linear": linear kernel function
+
+- "poly": polynomial kernel function
+
+- "rbf": radial kernel function
+
+- "sigmoid": sigmoid kernel function
+
+The SVC model has two very important parameters C and gamma. Among them, C is the penalty coefficient, that is, the tolerance for error. The higher the C, the more inability to tolerate errors is, and it is easy to over-mit. The smaller C, the easier it is to be under-mit. Gamma is a parameter that the RBF function comes with after selecting it as the kernel. It implicitly determines the distribution after the data is mapped to a new feature space. The larger the gamma, the fewer support vectors, and the smaller the gamma value, the more support vectors. The number of support vectors affects the speed of training and prediction.
+
+We use the GridSearchCV class in the sklearn.grid_search package to construct the model.
+
+
+```{python}
+param_grid = {
+             'C': [1e3, 5e3, 1e4, 5e4, 1e5],
+              'gamma': [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1],
+              }
+clf = GridSearchCV(SVC(kernel='rbf', class_weight='balanced'), param_grid)
+clf = clf.fit(X_train_pca, y_train)
+print("The best classification model found by Grid search is:")
+print(clf.best_estimator_)
+```
+
+### 5 Model performance evaluation
+
+First, use the predict() function to obtain the prediction results of the support vector machine model trained in the previous section on the test set, and then use the classification_report() and confusion_matrix() functions in sklearn.metrics to evaluate the performance of the model.
+
+```{python}
+y_predict = clf.predict(X_test_pca)
+print(classification_report(y_test, y_predict, target_names=target_names))
+print(confusion_matrix(y_test, y_predict, labels=range(n_classes)))
+```
+
+The diagonal elements in the above confusion matrix represent the correct predicted number of the model, and the sum of the diagonal elements represents the number of samples predicted correctly by the model as a whole.
+
+Now, let's use this to calculate the prediction accuracy of the model in the test set.
+
+```{python}
+print("Accuracy:", accuracy_score(y_test, y_predict))
+```
+
+It can be seen that the prediction accuracy rate (Accuaray) of the model obtained by training is 98.65% in 20% of the test samples of the original set.
+
+
+### 6 Characteristic face examples and prediction results visualisation
+After getting the model performance obtained from training, we can check the characteristic faces extracted by dimension reduction before:
+
+
+```{python}
+#Drawing function, by default, the first 3*4=12 images of the images in the array of images to be drawn will be drawn.
+def plot_gallery(images, titles, h, w, n_row=3, n_col=4):
+    """Helper function to plot a gallery of portraits"""
+    pl.figure(figsize=(1.8 * n_col, 2.4 * n_row))
+    pl.subplots_adjust(bottom=0, left=.01, right=.99, top=.90, hspace=.35)
+    for i in range(n_row * n_col):
+        pl.subplot(n_row, n_col, i + 1)
+        pl.imshow(images[i].reshape((h, w)), cmap=pl.cm.gray)
+        pl.title(titles[i], size=12)
+        pl.xticks(())
+        pl.yticks(())
+eigenface_titles = ["eigenface %d" % i for i in range(eigenfaces.shape[0])]
+plot_gallery(eigenfaces, eigenface_titles, h, w)
+```
+
+In addition, we can intuitively express the results of face recognition with a trained classification model. The first 12 predictions are all correct:
+
+```{python}
+#Generate the title of the picture in the test set
+def title(y_pred, y_test, target_names, i):
+    pred_name = target_names[y_pred[i]].rsplit(' ', 1)[-1]
+    true_name = target_names[y_test[i]].rsplit(' ', 1)[-1]
+    return 'predicted: %s\ntrue:      %s' % (pred_name, true_name)
+
+prediction_titles = [title(y_predict, y_test, target_names, i)
+                         for i in range(y_predict.shape[0])]
+
+plot_gallery(X_test, prediction_titles, h, w)
+pl.show()
+```
+

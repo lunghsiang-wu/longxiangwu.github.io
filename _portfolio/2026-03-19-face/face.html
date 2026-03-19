@@ -89,636 +89,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Longxiang Wu: Portfolio</title>
+  <title>Face Recognition Combined with Principal Component Analysis</title>
+
+  <meta property="description" itemprop="description" content="An dimension reduction project"/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2025-02-17"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-02-17"/>
+  <meta name="article:author" content="Longxiang Wu"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Longxiang Wu: Portfolio"/>
+  <meta property="og:title" content="Face Recognition Combined with Principal Component Analysis"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="An dimension reduction project"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Longxiang Wu"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Longxiang Wu: Portfolio"/>
-  <meta property="twitter:creator" content="@Longxiang Wu"/>
+  <meta property="twitter:title" content="Face Recognition Combined with Principal Component Analysis"/>
+  <meta property="twitter:description" content="An dimension reduction project"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","twitter","listing"]}},"value":[{"type":"character","attributes":{},"value":["Portfolio"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creator"]}},"value":[{"type":"character","attributes":{},"value":["@Longxiang Wu"]}]},{"type":"character","attributes":{},"value":["portfolio"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Face Recognition Combined with Principal Component Analysis"]},{"type":"character","attributes":{},"value":["An dimension reduction project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Longxiang Wu"]}]}]},{"type":"character","attributes":{},"value":["2025-2-17"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["face_files/figure-html5/unnamed-chunk-11-1.png","face_files/figure-html5/unnamed-chunk-12-3.png"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2097,782 +1500,244 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      28px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       22px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        16px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="face_files/header-attrs-2.30/header-attrs.js"></script>
+  <script src="face_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="face_files/popper-2.6.0/popper.min.js"></script>
+  <link href="face_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="face_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="face_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="face_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="face_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="face_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="face_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Portfolio","authors":[]}
+{"title":"Face Recognition Combined with Principal Component Analysis","description":"An dimension reduction project","authors":[{"author":"Longxiang Wu","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-02-17T00:00:00.000+08:00","citationText":"Wu, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Longxiang Wu</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blog.html">Blog</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="longxiang_wu_cv.html">CV</a>
-<a href="https://github.com/lunghsiang-wu">
-<i class="fa fa-github" aria-hidden="true"></i>
-</a>
-<a href="www.linkedin.com/in/longxiang-wu-003506106">
-<i class="fa fa-linkedin" aria-hidden="true"></i>
-</a>
-<a href="https://fosstodon.org/@longxiangwu">
-<i class="fab fa-mastodon" aria-hidden="true"></i>
-</a>
-<a href="blog.xml">
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Portfolio">Portfolio</h1>
-<a href="portfolio/2026-03-19-face/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 16, 2025</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-face/face_files/figure-html5/unnamed-chunk-11-1.png"/>
-</div>
-<div class="description">
-<h2>Face Recognition Combined with Principal Component Analysis</h2>
-<div class="dt-tags"></div>
-<p>An dimension reduction project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-mesothelioma/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 3, 2025</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-mesothelioma/pca.webp"/>
-</div>
-<div class="description">
-<h2>Diagnosis of Malignant Mesothelioma Using Principal Component Analysis</h2>
-<div class="dt-tags"></div>
-<p>An dimension reduction project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-handwritten/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 20, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-handwritten/handwritten_files/figure-html5/unnamed-chunk-6-1.png"/>
-</div>
-<div class="description">
-<h2>Dimension Reduction of Handwritten Digit Images</h2>
-<div class="dt-tags"></div>
-<p>An dimension reduction project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-retail/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 30, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-retail/association.png"/>
-</div>
-<div class="description">
-<h2>Association Rule Mining in Retail Shopping Records</h2>
-<div class="dt-tags"></div>
-<p>An association rule mining project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-survey/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 30, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="portfolio/2026-03-19-survey/fptree.png"/>
-</div>
-<div class="description">
-<h2>Survey on Hobbies and Lifestyle Habits</h2>
-<div class="dt-tags"></div>
-<p>An association rule mining project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-filmrec/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-filmrec/film.jpg"/>
-</div>
-<div class="description">
-<h2>Film Recommendation</h2>
-<div class="dt-tags"></div>
-<p>An association rule mining project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-cluster/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-cluster/cluster_files/figure-html5/unnamed-chunk-5-1.png"/>
-</div>
-<div class="description">
-<h2>Clustering of the Happiness Index of Various Countries</h2>
-<div class="dt-tags"></div>
-<p>A clustering project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-kmeans/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 20, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-kmeans/kmeans.png"/>
-</div>
-<div class="description">
-<h2>Using K-Means Clustering to Segment the Youth Market</h2>
-<div class="dt-tags"></div>
-<p>A clustering project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-adaboost/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-adaboost/kobe.png"/>
-</div>
-<div class="description">
-<h2>Using AdaBoost to Predict Whether Kobe Bryant's Shot is a Hit</h2>
-<div class="dt-tags"></div>
-<p>A integrated model project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-svm/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">May 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-svm/ocr-picture.webp"/>
-</div>
-<div class="description">
-<h2>Using a Support Vector Machine for Optical Character Recognition</h2>
-<div class="dt-tags"></div>
-<p>A classification project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-knn/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 29, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-knn/knn.png"/>
-</div>
-<div class="description">
-<h2>Using the K Nearest Neighbour Algorithm to Diagnose Breast Cancer</h2>
-<div class="dt-tags"></div>
-<p>A classification project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-desisontrees1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 28, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-desisontrees1/desisontrees1_files/figure-html5/unnamed-chunk-11-1.png"/>
-</div>
-<div class="description">
-<h2>Using Decision Trees for Personal Credit Risk Assessment</h2>
-<div class="dt-tags"></div>
-<p>A classification project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-linearregression/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 14, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-linearregression/linearregression_files/figure-html5/unnamed-chunk-3-1.png"/>
-</div>
-<div class="description">
-<h2>Apply Linear Regression to Predict Medical Expenses</h2>
-<div class="dt-tags"></div>
-<p>A linear regression project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-vastcar/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 1, 2024</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-vastcar/vastcar_files/figure-html5/unnamed-chunk-8-1.png"/>
-</div>
-<div class="description">
-<h2>Vast Car Price Out-of-Group Value Detection</h2>
-<div class="dt-tags"></div>
-<p>A data preprocessing project</p>
-</div>
-</a>
-<a href="portfolio/2026-03-19-londonmarathon/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 13, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Longxiang Wu  </div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="portfolio/2026-03-19-londonmarathon/londonmarathon_files/figure-html5/unnamed-chunk-4-1.png"/>
-</div>
-<div class="description">
-<h2>London Marathon Data Analysis</h2>
-<div class="dt-tags"></div>
-<p>This is a project of analysing London Marathon datasets, accomplished by a team led by the author.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Portfolio</h1>
+<h1>Face Recognition Combined with Principal Component Analysis</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p>An dimension reduction project</p>
 </div>
 
+<div class="d-byline">
+  Longxiang Wu  
+  
+<br/>2025-2-17
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!-- #region -->
+<p>Face Recognition is a biometric identification technology based on a person’s facial feature information. Use a camera or camera to capture images or video streams containing faces, and automatically detect and track faces in the images, and then perform a series of related technologies on the detected faces, which are usually also called portrait recognition and facial recognition.</p>
+<p>Because the dimension of the image is often relatively high, the two-dimensional image is first greyscaled into a channel image, and then converted into a column vector. Assuming that the image size is 20 pixels * 20 pixels, then this vector is 400 dimensions. The traditional machine learning classification algorithm often fails to catch the main features when facing a large number of features, so the classification performance of the trained model is low.</p>
+<p>A classic algorithm for solving the problem of face recognition is the Eigenface method, which is essentially PCA dimension reduction. The feature face method uses principal component analysis for dimension reduction and feature extraction. Principal component analysis is a widely used data dimension reduction technology. This method selects the eigenvectors corresponding to the first few maximum eigenvalues of the original data covariance matrix to form a set of bases to achieve the purpose of best characterising the original data. Because the feature vectors extracted from the main component analysis still look like human faces when returned to images, these feature vectors are called “feature faces”.</p>
+<p>In this case, we will use the All images aligned with funneling data set on the Labelled Faces in the Wild website, and use the SVM classification algorithm to classify downsized pictures.</p>
+<h3 id="data-source">1 Data source</h3>
+<p>We use a data set containing 1,288 samples of photos of some famous dignitaries, which needs to be obtained through the fetch_lfw_people function in the sklearn.datasets package.</p>
+<h3 id="data-explore-and-preprocessing">2 Data explore and preprocessing</h3>
+<p>First, use the fetch_lfw_people() function in the sklearn.datasets package to load the data into memory:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> time</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pylab <span class="im">as</span> pl</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_lfw_people</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, confusion_matrix, accuracy_score</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Choose no less than 70 face-cloth images of dignitaries</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>lfw_people <span class="op">=</span> fetch_lfw_people(min_faces_per_person<span class="op">=</span><span class="dv">70</span>, resize<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Get the number of samples and the size information of the picture</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>n_samples, h, w <span class="op">=</span> lfw_people.images.shape</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#Get the characteristic two-dimensional array of all samples</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> lfw_people.data</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>n_features <span class="op">=</span> X.shape[<span class="dv">1</span>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Category array of dignitaries</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> lfw_people.target</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#The name array corresponding to the category of dignitaries</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>target_names <span class="op">=</span> lfw_people.target_names</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>n_classes <span class="op">=</span> target_names.shape[<span class="dv">0</span>]</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Data set information:&quot;</span>)</span></code></pre></div>
+<pre><code>Data set information:</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Number of samples: </span><span class="sc">%d</span><span class="st">&quot;</span> <span class="op">%</span> n_samples)</span></code></pre></div>
+<pre><code>Number of samples: 1288</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The number of features of each picture before downsized: </span><span class="sc">%d</span><span class="st">&quot;</span> <span class="op">%</span> n_features)</span></code></pre></div>
+<pre><code>The number of features of each picture before downsized: 1850</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The number of dignitaries (the number of different people): </span><span class="sc">%d</span><span class="st">&quot;</span> <span class="op">%</span> n_classes)</span></code></pre></div>
+<pre><code>The number of dignitaries (the number of different people): 7</code></pre>
+</div>
+<p>Through preliminary observation, it is found that there is no missing value in all variables. We can verify that there are indeed no missing values in the data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>value_ravel <span class="op">=</span> X.ravel()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;The number of missing values in the data：&#39;</span>,<span class="bu">len</span>(value_ravel[value_ravel<span class="op">==</span>np.nan]))</span></code></pre></div>
+<pre><code>The number of missing values in the data： 0</code></pre>
+</div>
+<h3 id="dealing-with-unbalanced-data">2.1 Dealing with unbalanced data</h3>
+<p>Since this is a classification problem, we need to check whether the data in the data set is balanced. And the following code can get how many samples there are for each category:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Distribution of various categories of samples in the data：&#39;</span>)</span></code></pre></div>
+<pre><code>Distribution of various categories of samples in the data：</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Series(y).value_counts().sort_index())</span></code></pre></div>
+<pre><code>0     77
+1    236
+2    121
+3    530
+4    109
+5     71
+6    144
+Name: count, dtype: int64</code></pre>
+</div>
+<p>We can see that the distribution of samples belonging to different categories in the data is unbalanced. Therefore, we need to process the unbalanced data. Here we have chosen the sampling method to balance the data. First of all, we need to install the imbalanced-learn package to process the unbalanced data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> RandomOverSampler</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ros <span class="op">=</span> RandomOverSampler()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> ros.fit_resample(X, y)</span></code></pre></div>
+</div>
+<p>The distribution of the categories after sampling is:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.Series(y).value_counts().sort_index())</span></code></pre></div>
+<pre><code>0    530
+1    530
+2    530
+3    530
+4    530
+5    530
+6    530
+Name: count, dtype: int64</code></pre>
+</div>
+<p>Data becomes balanced.</p>
+<h3 id="data-standardisation">2.2 Data standardisation</h3>
+<p>Since the value of each dimension of the image is a greyscale value within [0,255] and belongs to the same dimension, there is no need for data standardisation.</p>
+<h3 id="pca-dimension-reduction-processing">3 PCA dimension reduction processing</h3>
+<p>Due to the high dimension of the original image, there are 1,850 features, which is not conducive to training classification models. Therefore, we first carry out PCA dimension reduction processing on the original data. Divide the data into 80% of the data as the training set and 20% of the data as the test set.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div>
+</div>
+<p>We reduce the 1850-dimensional feature to the n_components dimension. Here we choose n_components=150-dimensional, that is, we choose 150 main components.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>n_components <span class="op">=</span> <span class="dv">150</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Extract the most important </span><span class="sc">%d</span><span class="st"> characteristic faces from the </span><span class="sc">%d</span><span class="st"> faces in the training set, that is, reduce the data to </span><span class="sc">%d</span><span class="st"> dimension.&#39;</span> <span class="op">%</span> (X_train.shape[<span class="dv">0</span>] , n_components,n_components))</span></code></pre></div>
+<pre><code>Extract the most important 2968 characteristic faces from the 150 faces in the training set, that is, reduce the data to 150 dimension.</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span>n_components, whiten<span class="op">=</span><span class="va">True</span>, svd_solver<span class="op">=</span><span class="st">&#39;randomized&#39;</span>).fit(X_train)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>eigenfaces <span class="op">=</span> pca.components_.reshape((n_components, h, w))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Cumulative variance contribution rate of 150 main components after dimension reduction：</span><span class="sc">%.2f</span><span class="st"> &#39;</span> <span class="op">%</span> <span class="bu">round</span>(<span class="bu">sum</span>(pca.explained_variance_ratio_),<span class="dv">2</span>))</span></code></pre></div>
+<pre><code>Cumulative variance contribution rate of 150 main components after dimension reduction：0.95 </code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>X_train_pca <span class="op">=</span> pca.transform(X_train)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>X_test_pca <span class="op">=</span> pca.transform(X_test)</span></code></pre></div>
+</div>
+<h3 id="model-training">4 Model Training</h3>
+<p>In order to realise face recognition, that is, to identify who the characters in the image are. On the data that has been downsized, we will use the SVC class in the sklearn.svm package to build an SVM-based face recognition model. There are two main parameters that can be set in SVC: the kernel function parameter kernel and the constraint penalty parameter C. The commonly used values of kernel function parameter kernel and their corresponding meanings are as follows:</p>
+<ul>
+<li><p>“linear”: linear kernel function</p></li>
+<li><p>“poly”: polynomial kernel function</p></li>
+<li><p>“rbf”: radial kernel function</p></li>
+<li><p>“sigmoid”: sigmoid kernel function</p></li>
+</ul>
+<p>The SVC model has two very important parameters C and gamma. Among them, C is the penalty coefficient, that is, the tolerance for error. The higher the C, the more inability to tolerate errors is, and it is easy to over-mit. The smaller C, the easier it is to be under-mit. Gamma is a parameter that the RBF function comes with after selecting it as the kernel. It implicitly determines the distribution after the data is mapped to a new feature space. The larger the gamma, the fewer support vectors, and the smaller the gamma value, the more support vectors. The number of support vectors affects the speed of training and prediction.</p>
+<p>We use the GridSearchCV class in the sklearn.grid_search package to construct the model.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>param_grid <span class="op">=</span> {</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>             <span class="st">&#39;C&#39;</span>: [<span class="fl">1e3</span>, <span class="fl">5e3</span>, <span class="fl">1e4</span>, <span class="fl">5e4</span>, <span class="fl">1e5</span>],</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;gamma&#39;</span>: [<span class="fl">0.0001</span>, <span class="fl">0.0005</span>, <span class="fl">0.001</span>, <span class="fl">0.005</span>, <span class="fl">0.01</span>, <span class="fl">0.1</span>],</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>              }</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> GridSearchCV(SVC(kernel<span class="op">=</span><span class="st">&#39;rbf&#39;</span>, class_weight<span class="op">=</span><span class="st">&#39;balanced&#39;</span>), param_grid)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> clf.fit(X_train_pca, y_train)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The best classification model found by Grid search is:&quot;</span>)</span></code></pre></div>
+<pre><code>The best classification model found by Grid search is:</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(clf.best_estimator_)</span></code></pre></div>
+<pre><code>SVC(C=1000.0, class_weight=&#39;balanced&#39;, gamma=0.01)</code></pre>
+</div>
+<h3 id="model-performance-evaluation">5 Model performance evaluation</h3>
+<p>First, use the predict() function to obtain the prediction results of the support vector machine model trained in the previous section on the test set, and then use the classification_report() and confusion_matrix() functions in sklearn.metrics to evaluate the performance of the model.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>y_predict <span class="op">=</span> clf.predict(X_test_pca)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, y_predict, target_names<span class="op">=</span>target_names))</span></code></pre></div>
+<pre><code>                   precision    recall  f1-score   support
+
+     Ariel Sharon       1.00      1.00      1.00       101
+     Colin Powell       0.98      0.95      0.96       116
+  Donald Rumsfeld       1.00      0.98      0.99       105
+    George W Bush       0.93      0.98      0.96       112
+Gerhard Schroeder       1.00      1.00      1.00       101
+      Hugo Chavez       1.00      1.00      1.00       105
+       Tony Blair       1.00      1.00      1.00       102
+
+         accuracy                           0.99       742
+        macro avg       0.99      0.99      0.99       742
+     weighted avg       0.99      0.99      0.99       742</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix(y_test, y_predict, labels<span class="op">=</span><span class="bu">range</span>(n_classes)))</span></code></pre></div>
+<pre><code>[[101   0   0   0   0   0   0]
+ [  0 110   0   6   0   0   0]
+ [  0   0 103   2   0   0   0]
+ [  0   2   0 110   0   0   0]
+ [  0   0   0   0 101   0   0]
+ [  0   0   0   0   0 105   0]
+ [  0   0   0   0   0   0 102]]</code></pre>
+</div>
+<p>The diagonal elements in the above confusion matrix represent the correct predicted number of the model, and the sum of the diagonal elements represents the number of samples predicted correctly by the model as a whole.</p>
+<p>Now, let’s use this to calculate the prediction accuracy of the model in the test set.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accuracy:&quot;</span>, accuracy_score(y_test, y_predict))</span></code></pre></div>
+<pre><code>Accuracy: 0.9865229110512129</code></pre>
+</div>
+<p>It can be seen that the prediction accuracy rate (Accuaray) of the model obtained by training is 98.65% in 20% of the test samples of the original set.</p>
+<h3 id="characteristic-face-examples-and-prediction-results-visualisation">6 Characteristic face examples and prediction results visualisation</h3>
+<p>After getting the model performance obtained from training, we can check the characteristic faces extracted by dimension reduction before:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Drawing function, by default, the first 3*4=12 images of the images in the array of images to be drawn will be drawn.</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_gallery(images, titles, h, w, n_row<span class="op">=</span><span class="dv">3</span>, n_col<span class="op">=</span><span class="dv">4</span>):</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Helper function to plot a gallery of portraits&quot;&quot;&quot;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    pl.figure(figsize<span class="op">=</span>(<span class="fl">1.8</span> <span class="op">*</span> n_col, <span class="fl">2.4</span> <span class="op">*</span> n_row))</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    pl.subplots_adjust(bottom<span class="op">=</span><span class="dv">0</span>, left<span class="op">=</span><span class="fl">.01</span>, right<span class="op">=</span><span class="fl">.99</span>, top<span class="op">=</span><span class="fl">.90</span>, hspace<span class="op">=</span><span class="fl">.35</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_row <span class="op">*</span> n_col):</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        pl.subplot(n_row, n_col, i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        pl.imshow(images[i].reshape((h, w)), cmap<span class="op">=</span>pl.cm.gray)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        pl.title(titles[i], size<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>        pl.xticks(())</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>        pl.yticks(())</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>eigenface_titles <span class="op">=</span> [<span class="st">&quot;eigenface </span><span class="sc">%d</span><span class="st">&quot;</span> <span class="op">%</span> i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(eigenfaces.shape[<span class="dv">0</span>])]</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>plot_gallery(eigenfaces, eigenface_titles, h, w)</span></code></pre></div>
+<p><img src="face_files/figure-html5/unnamed-chunk-11-1.png" alt="" width="691" /></p>
+</div>
+<p>In addition, we can intuitively express the results of face recognition with a trained classification model. The first 12 predictions are all correct:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate the title of the picture in the test set</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> title(y_pred, y_test, target_names, i):</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    pred_name <span class="op">=</span> target_names[y_pred[i]].rsplit(<span class="st">&#39; &#39;</span>, <span class="dv">1</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    true_name <span class="op">=</span> target_names[y_test[i]].rsplit(<span class="st">&#39; &#39;</span>, <span class="dv">1</span>)[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&#39;predicted: </span><span class="sc">%s</span><span class="ch">\n</span><span class="st">true:      </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (pred_name, true_name)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>prediction_titles <span class="op">=</span> [title(y_predict, y_test, target_names, i)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                         <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(y_predict.shape[<span class="dv">0</span>])]</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>plot_gallery(X_test, prediction_titles, h, w)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>pl.show()</span></code></pre></div>
+<p><img src="face_files/figure-html5/unnamed-chunk-12-3.png" alt="" width="691" /></p>
+</div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
