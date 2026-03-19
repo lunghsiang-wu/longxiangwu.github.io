@@ -11,7 +11,7 @@ links:
     url: "https://fosstodon.org/\\@longxiangwu"
   - label: '<i class="fas fa-envelope"></i> Email'
     url: "longxiangwu@outlook.com"
-base_url: https://longxiangwu.github.io
+base_url: https://lunghsiang-wu.github.io/longxiangwu/
 preview: longxiangwu.png
 twitter:
   creator: "@Longxiang Wu"
@@ -29,8 +29,8 @@ meta() %>%
   #meta_name("github-repo" = "jhelvy/jhelvy.com") %>%
   meta_viewport() %>%
   meta_social(
-    title = "https://longxiangwu.github.io",
-    url = "https://longxiangwu.github.io",
+    title = "https://lunghsiang-wu.github.io/longxiangwu/",
+    url = "https://lunghsiang-wu.github.io/longxiangwu/",
     image = "https://github.com/lunghsiang-wu/longxiangwu/blob/master/longxiangwu.png?raw=true",
     image_alt = "A photo of Longxiang Wu",
     og_type = "website",
