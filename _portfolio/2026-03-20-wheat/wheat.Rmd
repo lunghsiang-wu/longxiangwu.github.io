@@ -1,0 +1,532 @@
+---
+title: "Classification of Wheat Grains"
+description: "An EM Algorithm project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-4-2
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+### Package version information
+
+
+```{python}
+# !pip freeze | grep numpy
+# !pip freeze | grep pandas
+# !pip freeze | grep scikit-learn
+```
+
+### Data preprocessing
+
+```{python}
+import numpy as np
+import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+Since the data set is stored in a `txt` file, the data is read by the `read_table()` function of `Pandas`, and the separator is `\t`.
+
+```{python}
+data = pd.read_table('seed.txt', sep='\t', names = ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7','label'])
+data.head()
+```
+
+Then, we subtract the value of `data['label']` by 1, and the value range of the label is [0, 1, 2].
+
+```{python}
+data['label'] = data['label'] - 1
+data.head()
+```
+
+```{python}
+data.shape
+```
+
+```{python}
+# Check for missing values
+np.sum(data.isnull())
+```
+
+```{python}
+# The value of label 1, 2, 3
+data['label'].value_counts()
+```
+
+```{python}
+class_label = np.unique(data['label'])
+class_label
+```
+
+```{python}
+data.info()
+```
+
+```{python}
+data.describe()
+```
+
+### Classification modelling
+#### Logistic regression
+
+
+```{python}
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
+```
+
+```{python}
+def evaluate(pred,test_y):
+    
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import sklearn.metrics as metrics
+    # The accuracy rate of output classification
+    print("Accuracy: %.4f"  % (metrics.accuracy_score(test_y,pred)))
+    
+    # Output various indicators to measure the classification effect
+    print(classification_report(test_y, pred)) 
+    
+    # More intuitively, we draw a confusion matrix through seaborn.
+    # %matplotlib inline
+    plt.figure(figsize=(6,4))
+    colorMetrics = metrics.confusion_matrix(test_y,pred)
+    
+    # Coordinate y represents test_y, that is, the real category, and coordinate x represents the estimated category pred
+    sns.heatmap(colorMetrics, annot=True, fmt='d', xticklabels=[1,2,3], yticklabels=[1,2,3])
+    plt.show()
+```
+
+```{python}
+## Data preparation
+
+X = data.iloc[:, :-1]
+y = data['label']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.25)
+```
+
+```{python}
+lr = LogisticRegression()
+param_dict = {'C': [0.001, 0.01, 0.1, 1, 10]}
+gs = GridSearchCV(lr, param_grid = param_dict, scoring='accuracy')
+gs.fit(X_train, y_train)
+```
+
+```{python}
+pd.DataFrame(gs.cv_results_)
+```
+
+```{python}
+print (gs.best_params_)
+print (gs.best_score_)
+```
+
+```{python}
+lr_cls = gs.best_estimator_
+score = cross_val_score(lr_cls, X_train, y_train, cv = 10, scoring = 'accuracy')
+print (np.mean(score))
+```
+
+```{python}
+evaluate(y_test, lr_cls.predict(X_test))
+```
+
+### Gaussian mix model
+#### Establish a model
+In this case, we use Python language to implement the Gaussian mix model. We divide the realisation process into two parts.
+
+Calculate Expectation steps
+
+In this step, we calculate the probability that each data record xn belongs to K labels $$\gamma_n(z_k) = p(z_k = 1 | x_n, \theta)$$.
+
+```{python}
+'''expectation_step函数
+
+输入参数：X: 数据集
+        pis: p(z = 1)的概率
+        mus: 高斯分布的均值
+        sigmas: 高斯分布的协方差
+
+返回参数： $x_{n}$分属K个标签的概率矩阵
+
+'''
+def expectation_step(X, pis, mus, sigmas):
+    
+    import numpy as np
+    from scipy.stats import multivariate_normal
+    
+    gammas  = np.array([value[0]*multivariate_normal(mean = value[1], cov = value[2]).pdf(X) for value in zip(pis, mus, sigmas)])
+    return gammas / gammas.sum(axis = 0)
+```
+
+- Calculate the Maximization step
+
+In this step, we aim at the logarithmic great likelihood function of complete data and update the parameters pis, mus, sigmas
+
+```{python}
+'''maximization_step函数
+
+输入参数：X: 数据集
+        gammas：$x_{n}$分属K个标签的概率矩阵
+        pis: p(z = 1)的概率
+        mus: 高斯分布的均值
+        sigmas: 高斯分布的协方差
+'''
+
+def maximization_step(X, gammas, pis, mus, sigmas):
+    
+    # renew pis
+    pis = gammas.sum(axis = 1)  / gammas.shape[1]
+
+    
+    # renew mus
+    mus = np.multiply(1.0/gammas.sum(axis = 1).reshape(-1, 1), np.dot(gammas, X))
+    
+    
+    # renew sigmas
+    
+    for k in range(len(sigmas)):
+      
+            
+        centered_X = X - mus[k]
+            
+        sigmas[k] = np.dot(np.multiply(gammas[k], centered_X.T), centered_X) / gammas[k].sum()
+        
+```
+
+Update the lower bound lower_bound of the maximum likelihood function.
+
+```{python}
+'''cal_lower_bound函数
+
+输入参数：X: 数据集
+        gammas：$x_{n}$分属K个标签的概率矩阵
+        pis: p(z = 1)的概率
+        mus: 训练得到的高斯分布的均值
+        sigmas: 训练得到的高斯分布的协方差
+
+返回参数：对数最大似然函数的下界
+
+'''
+
+def cal_lower_bound(X, gammas, pis, mus, sigmas):
+    
+    from scipy.stats import multivariate_normal
+
+    lower_bound = 0
+        
+    for gamma, pi, mu, sigma in zip(gammas, pis, mus, sigmas):
+    
+        lower_bound  += np.multiply(gamma, np.log(pi*multivariate_normal(mu, sigma).pdf(X)))
+
+    return lower_bound.sum()
+```
+
+Next, we implement the `train_GMM` function to calculate the statistical characteristics of each Gaussian distribution.
+
+```{python}
+'''train_GMM函数
+
+输入参数：X: 数据集
+        k: 高斯分布的个数
+        max_iter: 迭代的最高次数
+        alpha: 最大似然函数下界收敛的阈值
+        
+        
+返回参数：(mus, sigmas)以元组形式返回参数
+        mus: 高斯分布的均值 K times d
+        sigmas：高斯分布的协方差 d times d
+        
+'''
+def train_GMM(X, K, max_iter, alpha):
+
+    indicator = 0
+    lower_bound = 0
+   
+    # Initialisation
+    N, d = X.shape
+    d = d - 1
+
+    # Initialise pi, a one-dimensional array, that is, the vector of K times 1
+    pis = np.random.random(K)
+    pis /= pis.sum()
+
+    # Initialise mu, a two-dimensional array, that is, the matrix of K times d
+    #mus = np.random.random((K, d))
+    mus = np.array([X[X['label'] == num].mean()[:-1] for num in range(K)])
+
+    # Initialise the sigmas three-dimensional array, that is, an array with a length of K and an element of d times d matrix
+    sigmas = np.array([np.eye(d)] * K)
+    
+    X_hat = X.iloc[:,:-1].values
+    while indicator <= max_iter:
+    
+        lower_bound_old = lower_bound
+    
+        # E-step
+        gammas = expectation_step(X_hat, pis, mus, sigmas)
+        
+        # M-step
+        maximization_step(X_hat, gammas, pis, mus, sigmas)
+        
+        # Update 下界
+        lower_bound = cal_lower_bound(X_hat, gammas, pis, mus, sigmas)
+    
+        # Check the termination conditions
+        if abs(lower_bound - lower_bound_old) < alpha:
+            print ('reach stopping criterion!')
+            break
+    
+        # The number of update iterations
+        indicator += 1
+    return (mus, sigmas)
+```
+
+After calculating the parameters of the Gaussian distribution, we need to determine the probability of the sample coming from each distribution. That is to say, substitute the sample into the density function of the distribution, calculate its density, take the distribution with the maximum value as the overall distribution of the sample, and attribute the sample to the class where the sample is located.
+
+```{python}
+'''predict函数
+
+输入参数： X：数据集
+        mus: 各个高斯分布的均值  K time d
+        sigmas: 各个高斯分布的协方差   K times 1 元素为d times d 矩阵
+
+输出参数：数据集的各个数据记录所对应的标签(如0,1,2)
+
+'''
+
+def predict(X, mus, sigmas):
+    
+    from scipy.stats import multivariate_normal
+
+    labels = np.zeros(X.shape[0])
+    
+    for index, item in enumerate(X.iloc[:,:-1].values):
+    
+        probs = [multivariate_normal(mu, sigma).pdf(item) for mu, sigma in zip(mus, sigmas)]
+    
+        labels[index] = probs.index(max(probs))
+        
+    return labels
+```
+
+### Algorithm verification
+We man-madely generate 300 data samples from 3 different Gaussian distributions to form a verification data set.
+
+
+```{python}
+# Generate data from Gaussian mixed distribution
+# The data set comes from 3 Gaussian distributions, each of which produces 100 data samples, and the dimension of the data set is 2
+#np.random.seed(5)
+
+mus = [[0, 4], [-2, 0], [4, 4]]
+
+sigs = [[[3, 0], [0, 0.5]], [[1, 0], [0, 2]], [[1, 0], [0,1]]]
+
+
+# Data set X
+multi_data = [np.random.multivariate_normal(mu, sig, 100) for mu, sig in zip(mus, sigs)]
+
+data = np.vstack(multi_data)
+
+## The category labels of the data set are 0, 1, 2
+labels = [[value]*100 for value in range(3)]
+## Flatten the nested array labels
+multi_labels = [y for x in labels for y in x]
+
+
+# Data set tag merge
+final_data = []
+
+for v1, v2 in zip(data, multi_labels):
+    list_v1 = v1.tolist()
+    list_v1.append(v2)
+    final_data.append(list_v1) 
+
+##np.random.shuffle(final_data)
+```
+
+Convert the data set into the DataFrame format in Pandas.
+
+```{python}
+final_data = pd.DataFrame(final_data, columns = ['x1', 'x2', 'label'])
+final_data.head()
+```
+
+After the test data set is ready, we substitute final_data into the function for calculation.
+
+```{python}
+mus, sigmas = train_GMM(final_data, 3, 1000, 1e-5)
+```
+
+```{python}
+# The average value generated according to the training set
+mus
+```
+
+```{python}
+# Covariance generated according to the training set
+sigmas
+```
+
+```{python}
+# The labelled predicted on the training set
+
+label_pred = predict(final_data, mus, sigmas)
+print (label_pred)
+```
+
+```{python}
+## Model evaluation
+evaluate(label_pred, final_data['label'].values)
+```
+
+### Use the Gaussian function of sklearn
+
+```{python}
+from sklearn.mixture import GaussianMixture
+```
+
+```{python}
+gmm_model = GaussianMixture(n_components = 3, covariance_type = 'diag', init_params='random', max_iter=200)
+
+gmm_model.means_init = np.array([final_data[final_data['label'] == num].mean(axis = 0)[:-1] for num in range(3)])
+
+gmm_model.fit(final_data.iloc[:,:-1])
+
+y_pred = gmm_model.predict(final_data.iloc[:,:-1])
+
+
+
+diff = y_pred  - final_data['label'].values
+
+evaluate(y_pred, final_data['label'].values)
+```
+
+Next, we check the mean and covariance matrix obtained from the training.
+
+```{python}
+gmm_model.means_
+```
+
+```{python}
+gmm_model.covariances_
+```
+
+#### Real data set
+Use the Gaussian Mixture model in sklearn to check whether the data set is suitable for using the Gaussian hybrid model.
+
+
+```{python}
+gmm_model = GaussianMixture(n_components = 3, covariance_type = 'diag', init_params='random', max_iter=200)
+
+gmm_model.means_init = np.array([final_data[final_data['label'] == num].mean(axis = 0)[:-1] for num in range(3)])
+
+gmm_model.fit(final_data.iloc[:,:-1])
+
+y_pred = gmm_model.predict(final_data.iloc[:,:-1])
+
+
+
+diff = y_pred  - final_data['label'].values
+
+evaluate(y_pred, final_data['label'].values)
+```
+
+The accuracy rate is close to 90%, and the data set can be classified using the Gaussian hybrid model, that is, it is considered that all parts of the data set obey the Gaussian distribution. Next, we use a customised model to fit the data set.
+
+First, use the data set to train the model. We set the number of Gaussian distributions in the model to 3, the number of iterations to 2000, and the threshold of the termination condition to 1e-5.
+
+```{python}
+EPSILON = 1e-6  # numerical stability constant
+
+def expectation_step(X, pis, mus, sigmas):
+    gammas = []
+    for pi, mu, sigma in zip(pis, mus, sigmas):
+        # Regularize sigma before computing pdf
+        sigma_reg = sigma + np.eye(sigma.shape[0]) * EPSILON
+        pdf_vals = multivariate_normal(mu, sigma_reg, allow_singular=True).pdf(X)
+        gammas.append(pi * pdf_vals)
+    
+    gammas = np.array(gammas)  # shape: (K, N)
+    
+    # Avoid division by zero in normalization
+    total = gammas.sum(axis=0, keepdims=True)
+    total = np.where(total == 0, EPSILON, total)
+    gammas /= total
+    
+    return list(gammas)
+
+
+def maximization_step(X, gammas, pis, mus, sigmas):
+    N = X.shape[0]
+    for k, gamma in enumerate(gammas):
+        Nk = gamma.sum() + EPSILON  # avoid division by zero
+        
+        pis[k] = Nk / N
+        mus[k] = (gamma[:, None] * X).sum(axis=0) / Nk
+        
+        diff = X - mus[k]
+        sigmas[k] = (gamma[:, None] * diff).T @ diff / Nk
+        
+        # Regularize covariance to prevent collapse
+        sigmas[k] += np.eye(sigmas[k].shape[0]) * EPSILON
+
+
+def cal_lower_bound(X, gammas, pis, mus, sigmas):
+    lower_bound = 0
+    for gamma, pi, mu, sigma in zip(gammas, pis, mus, sigmas):
+        sigma_reg = sigma + np.eye(sigma.shape[0]) * EPSILON
+        
+        pdf_vals = multivariate_normal(mu, sigma_reg, allow_singular=True).pdf(X)
+        
+        # Clip before log to avoid log(0) = -inf
+        log_vals = np.log(np.clip(pi * pdf_vals, EPSILON, None))
+        
+        lower_bound += np.multiply(gamma, log_vals)
+    
+    return lower_bound.sum()
+```
+
+The `train_GMM()` function returns the parameter values of each Gaussian distribution component.
+
+```{python}
+## Mean value
+mus
+```
+
+```{python}
+## Covariance matrix
+sigmas
+```
+
+
+
+
