@@ -1,0 +1,160 @@
+---
+title: "Survey on Skirt Styles"
+description: "An EM Algorithm project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-5-28
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+### Package version information
+
+```{python}
+# !pip freeze | grep pandas
+# !pip freeze | grep numpy
+# !pip freeze | grep scikit-learn
+```
+
+### Data preprocessing
+
+```{python}
+import pandas as pd
+import numpy as np
+```
+
+```{python}
+data = pd.read_csv('dress-recommendation.csv')
+data.head()
+```
+
+```{python}
+data.info()
+```
+
+```{python}
+data['Style'].value_counts()
+```
+
+#### Characteristic coding
+
+```{python}
+dummpy_list = ['Style', 'Price', 'Size', 'Season', 'NeckLine', 'SleeveLength', 'waiseline','Material', 'FabricType','Decoration','Pattern Type']
+transfer_list = [pd.get_dummies(data[[feature]], prefix = feature+'_') for feature in dummpy_list]
+```
+
+```{python}
+transfer_list.append(data[['Rating','Recommendation']])
+```
+
+```{python}
+new_data = pd.concat(transfer_list, axis = 1)
+```
+
+#### The balance of data labels
+
+```{python}
+new_data['Recommendation'].value_counts()
+```
+
+### Custom evaluation function
+
+```{python}
+def evaluate(pred,test_y):
+    
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import sklearn.metrics as metrics
+    # The accuracy rate of output classification
+    print("Accuracy: %.4f"  % (metrics.accuracy_score(test_y,pred)))
+    
+    # Output various indicators to measure the classification effect
+    print(metrics.classification_report(test_y, pred)) 
+    
+    # More intuitively, we draw a confusion matrix through seaborn.
+    # %matplotlib inline
+    plt.figure(figsize=(6,4))
+    colorMetrics = metrics.confusion_matrix(test_y,pred)
+    
+    # Coordinate y represents test_y, that is, the real category, and coordinate x represents the estimated category pred
+    sns.heatmap(colorMetrics, annot=True, fmt='d', xticklabels=[0,1],yticklabels=[0,1])
+    plt.show()
+```
+
+### Gaussian Mixture Model
+
+```{python}
+from sklearn.mixture import GaussianMixture
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(new_data.iloc[:,:-1], new_data['Recommendation'], test_size = .3, random_state = 0)
+```
+
+The value of the western difference matrix is: {'full', 'tied', 'diag', 'spherical'}, and the default value is full.
+
+- 'full'
+
+Each component of the Gaussian hybrid model has its own independent covariance matrix.
+
+- 'tied'
+
+All components of the Gaussian hybrid model share the same covariance matrix.
+
+- 'diag'
+
+Each component of the Gaussian hybrid model has its own diagonalised covariance matrix.
+
+- 'spherical'
+
+Each component of the hybrid model has a variance.
+
+```{python}
+cov_type = ['full', 'tied', 'diag', 'spherical']
+
+model_list = [GaussianMixture(n_components = 2, covariance_type = cov_name, init_params='random', max_iter=20) for cov_name in cov_type]
+```
+
+```{python}
+# labels
+reco_label = np.unique(y_train)
+
+mean_list = np.array([X_train[y_train == value].mean(axis = 0) for value in reco_label])
+mean_list
+```
+
+### Evaluate the Gaussian mixture model
+
+```{python}
+for gmm_model in model_list:
+    
+    gmm_model.means_ = mean_list
+    gmm_model.fit(X_train)
+    
+    y_pred = gmm_model.predict(X_test)
+    evaluate(y_test, y_pred)
+```
+
+
