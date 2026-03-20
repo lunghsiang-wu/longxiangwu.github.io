@@ -1,6 +1,6 @@
 ---
 title: "Chinese Word Segmentation"
-description: "An EM Algorithm project"
+description: "A probabilistic graphical models project"
 author:
   - name: "Longxiang Wu"
 date: 2025-6-15
