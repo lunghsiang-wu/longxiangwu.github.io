@@ -1,0 +1,251 @@
+---
+title: "Chinese Word Segmentation"
+description: "An EM Algorithm project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-6-15
+output:
+  distill::distill_article:
+    self_contained: false
+preview: chinese.png
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+
+### Package version information
+
+```{python}
+#encoding=utf-8
+
+# !pip freeze | grep genius
+# !pip freeze | grep jieba
+```
+
+### Data preparation
+
+Save the Chinese text mentioned in the case in the variable word_text, and import the Chinese participle third-party library jieba and genius. Based on the prefix dictionary, jieba constructs a word diagram from sentences and generates a directed acyclic diagram composed of all possible words; for unregistered words, the hidden Markov model is used to identify them. Genius, on the other hand, uses the conditional airport algorithm to divide Chinese words.
+
+```{python}
+import jieba
+import genius
+
+
+word_text = u'''加强专业人才培养。创新人才培养模式，建立健全多层次、多类型的大数据人才培养体系。鼓励高校设立数据科学和数据工程相关专业，重点培养专业化数据工程师等大数据专业人才。
+鼓励采取跨校联合培养等方式开展跨学科大数据综合型人才培养，大力培养具有统计分析、计算机技术、经济管理等多学科知识的跨界复合型人才。鼓励高等院校、职业院校和企业合作，加强职业技能人才实践培养，积极培育大数据技术和应用创新型人才。'''
+
+print (word_text)
+```
+
+### Chinese word segmentation model
+#### Chinese word segmentation
+
+
+This case will describe how to divide the Chinese text in combination with the text. The identification of singular words and unregistered words is the focus of Chinese participles. For the model, unregistered words are unknown new words. To judge whether a group of Chinese characters should appear as a word as a whole, it needs to be combined with the context of the context and other aspects of knowledge. The model algorithm cannot be fully automated and does not require human intervention. At present, the relatively mature unregistered word recognition technology includes common Chinese name recognition, etc.
+
+In the process of specific participles, unregistered words usually appear as two adjacent phrases after the text is processed by the first participle model. In fact, the identification process of unregistered words is to find adjacent but actually do not need to be cut phrases, and then connect them to appear as a whole.
+
+From another perspective, Chinese participle is essentially a process of labelling each character in the text. Therefore, we can divide the character labels into four categories.
+
+| **B** | **M** | **E** | **S** |
+|-------|-------|-------|-------|
+| 词的开始 | 词的中间 | 词的结束 | 单个字符(汉字)的词 |
+
+举例来说，对句子我爱北京天安门进行分词后的结果为我/爱/北京/天安门。根据字符的标签，我们还可以将分词结果表达为我S爱S北B京E天B安M门E 那么对这句话来说，，也就是说，我们要通过“你现在应该去幼儿园了”这个观察序列来确定状态序列，也就是HMM的“解码问题”。比如这句话的解码结果就是：“SBEBESBMES”。
+
+如果我们把字符的标签看作字符所在的状态，字符为可观察的字符序列，那么我们可以通过观察字符序列来去确定字符的状态序列。因此，我们可以使用隐马尔科夫模型和条件随机场模型来记性中文分词，也就是序列标注。
+
+
+
+#### Segementation technique
+- Hidden Markov Model
+
+The Hidden Markov Model treats the result of word segmentation as a sequence of hidden states of the model, and determines the hidden state sequence by observing the character sequence, which is the decoding problem of the Hidden Markov Model.
+
+To review, the main parameters of the Hidden Markov Model $model = (A, B, \omega)$ are:
+
+- State set $Q$
+- Observation set $O$
+- Transition probability matrix $A$
+- Emission probability matrix $B$
+- Initial state distribution $\Omega$
+
+The specific form of the decoding problem is:
+
+Given model and observation sequence M, find the state sequence $N$ that maximizes the conditional probability $P(N|M)$.
+
+- Conditional Random Field
+
+The prerequisite assumption of the Hidden Markov Model when computing the conditional probability $P(N|M)$ is feature independence, which prevents the model from considering contextual information. The Conditional Random Field addresses this problem well.
+
+The Conditional Random Field model still treats Chinese word segmentation as a character tagging problem. The process of using the Conditional Random Field model for Chinese word segmentation is to tag the characters in a sentence, then treat the characters between tag B and tag E, as well as single characters tagged as S, as a complete word.
+
+The applications of Conditional Random Field (CRF) in natural language processing are mainly in the following scenarios:
+
+- Word segmentation (segmenting complete sentences and converting them into a set of words)
+- Part-of-speech tagging (tagging the part of speech of words, such as verbs, nouns, etc.)
+- Named entity recognition (identifying words with certain patterns such as person names, place names, etc.)
+
+### Third-party Library Implementation
+
+- jieba
+
+The jieba library mainly uses the function `cut()` to implement the Chinese word segmentation process. The main input parameter of the `cut()` function is the text to be segmented, where `cut_all` indicates whether to switch between full mode or precise mode.
+
+Inside the `cut()` function, `__cut()` is called again to implement the Hidden Markov Model. Furthermore, the `__cut()` function calls the Viterbi algorithm to find the hidden state sequence corresponding to the input text, and then segments based on the hidden state sequence.
+
+```{python}
+seg_list = jieba.cut(word_text, cut_all=True)
+
+## 全模式
+print (u"全模式：  \n")
+print ("/ ".join(seg_list))
+```
+
+In full mode, the cut() function returns all possible participle combinations, such as 人才/ 人才培养/ 培养/ 体系/. Of course, we can also switch to the precise mode and give the most important participle combination that the model thinks.
+
+```{python}
+seg_list = jieba.cut(word_text, cut_all=False)
+
+## 精确模式
+
+print (u"精确模式：   \n")
+print ("/ ".join(seg_list))
+```
+
+As a result, jieba divides the term big data into two independent words. This shows that it is not in line with the rules of reality. In jiebe, our department adjusts the word frequency so that the model can identify the big data as a whole.
+
+```{python}
+jieba.suggest_freq(u'大数据', True)
+
+seg_list = jieba.cut(word_text, cut_all=False)
+
+## 人为干预
+
+print (u"人为调整词频：   \n")
+print ("/ ".join(seg_list)) 
+```
+
+- genius
+
+In genius, `seg_text()` is responsible for the specific Chinese word segmentation process. This function has multiple parameters to choose from:
+
+| 参数 | 说明 |
+|-------------|----------------------|
+| use_combine | 使用字典进行词合并 |
+| use_pinyin | 对拼音进行分词处理 |
+| use_tagging | 进行词性标注 |
+| use_break | 对分词结构打断处理 |
+
+Here, we need to note that the Chinese text of the input parameter must be unicode encoded.
+
+Next, let's illustrate with an example. The Chinese text used is:
+
+> 鼓励高校设立数据科学和shuju工程相关专业，重点培养专业化数据工程师等大数据专业rencai
+
+The common part-of-speech reference table is:
+
+| 词性缩写 | 说明 |
+|----------|------|
+| v | 动词 |
+| j | 简称略语 |
+| n | 名词 |
+| w | 标点符号 |
+| d | 副词 |
+| a | 形容词 |
+| c | 连词 |
+| e | 叹词 |
+
+```{python}
+sample_text = u'''鼓励高校设立数据科学和shuju工程相关专业，重点培养专业化数据工程师等大数据专业人才。'''
+
+seg_list = genius.seg_text(sample_text,
+                          use_combine = True,
+                          use_break = False,
+                          use_tagging = True,
+                          use_pinyin_segment = False)
+
+print ('\n'.join(['%s\t%s' % (word.text, word.tagging) for word in seg_list]))
+```
+
+We set the value of the parameter `use_pinyin_segment` to `True` and the value of `use_tagging` to `False`.
+
+```{python}
+seg_list = genius.seg_text(sample_text,
+                          use_combine = True,
+                          use_break = False,
+                          use_tagging = False,
+                          use_pinyin_segment = True)
+
+print ('\n'.join([word.text for word in seg_list]))
+```
+
+After understanding the basic settings of the parameters, we make Chinese participles of word_text.
+
+```{python}
+seg_list = genius.seg_text(word_text,
+                           use_combine = True,
+                           use_break = False,
+                           use_tagging = False,
+                           use_pinyin_segment = False)
+
+print (u'使用CRF模型进行中文分词： \n')
+
+print ('/ '.join([word.text for word in seg_list]))
+```
+
+The `seg_keywords()` function is another participle function in the `genius` library. The result of the participle retains the ambiguous participle combination, which is similar to the full mode of the `cut()` function in `jieba` acne. The word division results of this participle function are mostly applicable to search engines.
+
+```{python}
+seg_list = genius.seg_keywords(sample_text,
+                               use_break = True,
+                               use_tagging = True,
+                               use_pinyin_segment = False,
+                               use_combine = False)
+
+
+print ('\n'.join(['%s\t%s' % (word.text, word.tagging) for word in seg_list]))
+```
+
+Judging from the output results, big data gives a variety of possible participle combinations. Then, we use `word_text` text to view the word division results.
+
+```{python}
+seg_list = genius.seg_keywords(word_text,
+                               use_break = True,
+                               use_tagging = False,
+                               use_pinyin_segment = False,
+                               use_combine = False)
+
+
+print ('\ '.join([word.text for word in seg_list]))
+```
+
+Of course, `genius` also provides the `extract_tag()` function to extract keywords from the text. Keep the default value of the parameter unchanged. We try to extract keywords from `word_text`.
+
+```{python}
+tag_list = genius.extract_tag(word_text)
+print('\ '.join(tag_list))
+```
+
+For `genius`, the expectation used to train the airport model comes from a news article from the People's Daily in January 1998. We know that although the conditions of the entry model are more and more effective in training, the expected categories and text coverage. Therefore, improving the quality of the corpus (standard version) can further improve the accuracy of the word division model.
+
