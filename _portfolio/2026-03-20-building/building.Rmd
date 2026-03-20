@@ -1,0 +1,190 @@
+---
+title: "Building Energy Efficiency"
+description: "An EM Algorithm project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-5-3
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+### Data preprocessing
+
+```{python}
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+```
+
+```{python}
+data = pd.read_csv('energy-efficiency.csv')
+type(data.values)
+```
+
+```{python}
+data.head()
+```
+
+```{python}
+data.info()
+```
+
+```{python}
+data.describe()
+```
+
+### Data standardisation
+
+```{python}
+scaler = StandardScaler().fit(data)
+```
+
+```{python}
+scaler.mean_
+```
+
+```{python}
+scaler.scale_
+```
+
+```{python}
+scaled_data = scaler.transform(data)
+scaled_data
+```
+
+### Data visualisation
+
+```{python}
+from sklearn.manifold import TSNE
+from sklearn.datasets import load_iris
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+```
+
+```{python}
+iris = load_iris()
+X_tsne = TSNE(n_components=3, learning_rate=100).fit_transform(scaled_data)
+X_pca = PCA(n_components=3).fit_transform(scaled_data)
+
+plt.figure(figsize=(10, 5))
+plt.subplot(121)
+plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c = scaled_data[:,-2])
+plt.subplot(122)
+plt.scatter(X_pca[:, 0], X_pca[:, 1], c = scaled_data[:, -2])
+```
+
+```{python}
+from mpl_toolkits.mplot3d import Axes3D
+
+X_tsne = TSNE(n_components=3, learning_rate=100).fit_transform(scaled_data)
+X_pca = PCA(n_components=3).fit_transform(scaled_data)
+fig = plt.figure(figsize=(10, 5))
+ax = fig.add_subplot(121, projection='3d')
+ax.scatter(X_tsne[:, 0], X_tsne[:, 1], X_tsne[:, 2], c = scaled_data[:,-2])
+ax = fig.add_subplot(122, projection='3d')
+ax.scatter(X_pca[:, 0], X_pca[:, 1], X_pca[:, 2], c = scaled_data[:,-2])
+plt.show()
+```
+
+### KMeans clustering model
+
+```{python}
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+estimator = KMeans(n_clusters=3)
+estimator.fit(data.values)
+labels = estimator.labels_
+```
+
+```{python}
+X_tsne = TSNE(n_components=2, learning_rate=100).fit_transform(scaled_data)
+
+plt.figure(figsize=(10, 5))
+
+plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c = labels)
+plt.show()
+```
+
+### Gaussian Mixture Model
+Assuming that the data records in the data set come from different data distributions, the Gaussian Mixture Model can be used to cluster the data set. GMM uses the EM algorithm to determine the parameters of the distribution of each component.
+
+Given $z$ is a $K$-dimensional random latent variable, where $z_k \in \{0, 1\}$, $\sum_k z_k = 1$, and the distribution of $z$ is $p(z_k = 1) = \pi_k$
+
+$$p(x) = \sum_{z} p(z)p(x|z)$$
+
+$$= \sum_{k=1}^{K} p(z) \prod_{k=1}^{K} \left(\mathcal{N}(x|\mu_k, \Sigma_k)\right)^{z_k} = \sum_{k=1}^{K} \pi_k \mathcal{N}(x|\mu_k, \Sigma_k)$$
+
+From the formula above, we can see that the GMM model is essentially a linear superposition of K Gaussian models. Furthermore, for clustering problems, we focus on $p(z_k = 1|x, \theta)$, which is the posterior probability that data point $x$ belongs to cluster $k$.
+
+We present the EM framework for parameter estimation in Gaussian Mixture Models:
+
+- **Expectation step**: Compute $P(z_k = 1|x_n, \theta)$, denoted as $\gamma_n(z_k)$
+
+$$\gamma_n(z_k) = \frac{p(z_k=1)p(x_n|z_k=1)}{p(x_n)} = \frac{p(z_k=1)p(x_n|z_k=1)}{\sum_{j=1}^{K}p(z_j=1)p(x_n|z_j=1)} = \frac{\pi_k \mathcal{N}(x_n|\mu_k,\Sigma_k)}{\sum_{k=1}^{K}\pi_k \mathcal{N}(x|\mu_k)}$$
+
+- **Maximization step**: Maximize the lower bound of the log-likelihood $LB(\theta, \theta^{old})$, i.e., the expectation of the log-likelihood
+
+$$LB(\theta, \theta^{old}) = \mathbb{E}(\log p(x,z|\theta)) = \mathbb{E}\left(\sum_{n=1}^{N} \log p(x_n, z_n|\theta)\right)$$
+
+$$= \sum_{n=1}^{N} \mathbb{E}(\log(p(z_n)p(x_n|z_n))) = \sum_{n=1}^{N} \mathbb{E}\left(\log\left(\prod_{k=1}^{K}(\pi_k p(x_n|\theta_k))^{z_k}\right)\right)$$
+
+$$= \sum_{n}\sum_{k} \mathbb{E}(z_k)\log(\pi_k p(x_n|\theta_k)) = \sum_{n}\sum_{k} \gamma_n(z_k)\log\pi_k + \sum_{n}\sum_{k}\gamma_n(z_k)\log p(x_n|\theta_k)$$
+
+Taking the partial derivatives of the above expression, the closed-form solutions for the parameters are:
+
+$$\pi_k = \frac{1}{N}\sum_{n=1}^{N}\gamma_n(z_k)$$
+
+$$\mu_k = \sum_{n=1}^{N}\frac{\gamma_n(z_k)x_n}{\gamma(z_k)}$$
+
+$$\Sigma_k = \frac{\sum_{n=1}^{N}\gamma_n(z_k)x_n x_n^T}{\gamma(z_k)} - \mu_k\mu_k^T$$
+
+```{python}
+from sklearn.mixture import GaussianMixture
+import matplotlib.pyplot as plt
+```
+
+```{python}
+gmm_random = GaussianMixture(n_components=3, covariance_type='full', init_params='random').fit(scaled_data)
+
+labels_random = gmm_random.predict(scaled_data)
+```
+
+```{python}
+gmm_kmeans = GaussianMixture(n_components=3, covariance_type='full').fit(scaled_data)
+
+labels_kmeans = gmm_random.predict(scaled_data)
+```
+
+```{python}
+X_tsne = TSNE(n_components=2, learning_rate=100).fit_transform(scaled_data)
+
+#plt.figure(figsize=(10, 5))
+plt.subplot(121)
+plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c = labels_random)
+plt.subplot(122)
+plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c = labels_kmeans)
+plt.show()
+```
