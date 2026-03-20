@@ -1,0 +1,3182 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+<title>Longxiang Wu: Facial Recognition</title>
+
+<meta property="description" itemprop="description" content="A deep learning project"/>
+
+<link rel="canonical" href="https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2025-11-21"/>
+<meta property="article:created" itemprop="dateCreated" content="2025-11-21"/>
+<meta name="article:author" content="Longxiang Wu"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Longxiang Wu: Facial Recognition"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="A deep learning project"/>
+<meta property="og:url" content="https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/"/>
+<meta property="og:image" content="https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/facial_files/figure-html5/unnamed-chunk-6-1.png"/>
+<meta property="og:image:width" content="3840"/>
+<meta property="og:image:height" content="960"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Longxiang Wu"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="Longxiang Wu: Facial Recognition"/>
+<meta property="twitter:description" content="A deep learning project"/>
+<meta property="twitter:url" content="https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/"/>
+<meta property="twitter:image" content="https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/facial_files/figure-html5/unnamed-chunk-6-1.png"/>
+<meta property="twitter:image:width" content="3840"/>
+<meta property="twitter:image:height" content="960"/>
+
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="Longxiang Wu: Facial Recognition"/>
+<meta name="citation_fulltext_html_url" content="https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/"/>
+<meta name="citation_online_date" content="2025/11/21"/>
+<meta name="citation_publication_date" content="2025/11/21"/>
+<meta name="citation_author" content="Longxiang Wu"/>
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Facial Recognition"]},{"type":"character","attributes":{},"value":["A deep learning project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Longxiang Wu"]}]}]},{"type":"character","attributes":{},"value":["2025-11-21"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/"]},{"type":"character","attributes":{},"value":["https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["facial_files/figure-html5/unnamed-chunk-17-7.png","facial_files/figure-html5/unnamed-chunk-19-9.png","facial_files/figure-html5/unnamed-chunk-20-11.png","facial_files/figure-html5/unnamed-chunk-20-12.png","facial_files/figure-html5/unnamed-chunk-6-1.png","facial_files/figure-html5/unnamed-chunk-6-2.png","facial_files/figure-html5/unnamed-chunk-6-3.png","gen/0_0_3379.png","gen/0_0_3500.png","gen/0_0_5570.png","gen/0_0_561.png","gen/0_0_5760.png","gen/0_0_5848.png","gen/0_0_5864.png","gen/0_0_6404.png","gen/0_0_6423.png","gen/0_0_6799.png","gen/0_0_7528.png","gen/0_0_8282.png","gen/0_0_8313.png","gen/0_0_847.png","gen/0_0_9240.png","gen/1_0_1073.png","gen/1_0_2329.png","gen/1_0_233.png","gen/1_0_2361.png","gen/1_0_4490.png","gen/1_0_4690.png","gen/1_0_4964.png","gen/1_0_5185.png","gen/1_0_568.png","gen/1_0_7119.png","gen/1_0_7180.png","gen/1_0_7195.png","gen/1_0_8266.png","gen/1_0_8432.png","gen/1_0_8857.png","gen/1_0_9063.png","gen/1_0_9691.png","gen/1_0_9956.png","gen/10_0_2011.png","gen/10_0_2031.png","gen/10_0_2164.png","gen/10_0_2321.png","gen/10_0_2360.png","gen/10_0_2609.png","gen/10_0_2874.png","gen/10_0_3016.png","gen/10_0_3206.png","gen/10_0_4070.png","gen/10_0_4441.png","gen/10_0_4632.png","gen/10_0_471.png","gen/10_0_4854.png","gen/10_0_546.png","gen/10_0_5822.png","gen/10_0_6085.png","gen/10_0_6865.png","gen/10_0_690.png","gen/10_0_857.png","gen/10_0_9369.png","gen/11_0_1584.png","gen/11_0_1662.png","gen/11_0_1674.png","gen/11_0_1827.png","gen/11_0_191.png","gen/11_0_2130.png","gen/11_0_2843.png","gen/11_0_3863.png","gen/11_0_3947.png","gen/11_0_4129.png","gen/11_0_4659.png","gen/11_0_4759.png","gen/11_0_4770.png","gen/11_0_504.png","gen/11_0_622.png","gen/11_0_6336.png","gen/11_0_6894.png","gen/11_0_7409.png","gen/11_0_7478.png","gen/11_0_7519.png","gen/11_0_776.png","gen/11_0_8870.png","gen/11_0_8922.png","gen/11_0_9322.png","gen/11_0_9486.png","gen/11_0_9504.png","gen/11_0_9542.png","gen/12_0_2054.png","gen/12_0_2376.png","gen/12_0_283.png","gen/12_0_3680.png","gen/12_0_3738.png","gen/12_0_3905.png","gen/12_0_4202.png","gen/12_0_4498.png","gen/12_0_4667.png","gen/12_0_4718.png","gen/12_0_4820.png","gen/12_0_510.png","gen/12_0_5779.png","gen/12_0_6842.png","gen/12_0_6927.png","gen/12_0_7020.png","gen/12_0_7193.png","gen/12_0_7229.png","gen/12_0_8038.png","gen/12_0_8279.png","gen/12_0_8347.png","gen/12_0_8420.png","gen/12_0_8531.png","gen/12_0_8533.png","gen/12_0_9021.png","gen/12_0_9381.png","gen/12_0_9925.png","gen/13_0_1237.png","gen/13_0_2138.png","gen/13_0_2371.png","gen/13_0_2744.png","gen/13_0_2847.png","gen/13_0_3075.png","gen/13_0_3184.png","gen/13_0_3510.png","gen/13_0_4184.png","gen/13_0_4436.png","gen/13_0_5543.png","gen/13_0_5563.png","gen/13_0_5926.png","gen/13_0_6563.png","gen/13_0_6916.png","gen/13_0_6949.png","gen/13_0_712.png","gen/13_0_8098.png","gen/13_0_8262.png","gen/13_0_8456.png","gen/13_0_8763.png","gen/13_0_9020.png","gen/13_0_9497.png","gen/13_0_9801.png","gen/14_0_1456.png","gen/14_0_1854.png","gen/14_0_3722.png","gen/14_0_393.png","gen/14_0_4157.png","gen/14_0_421.png","gen/14_0_5225.png","gen/14_0_650.png","gen/14_0_7149.png","gen/14_0_7253.png","gen/14_0_7674.png","gen/14_0_7707.png","gen/14_0_8678.png","gen/14_0_8717.png","gen/14_0_9164.png","gen/14_0_9457.png","gen/14_0_9565.png","gen/14_0_9993.png","gen/15_0_1388.png","gen/15_0_1519.png","gen/15_0_2283.png","gen/15_0_2292.png","gen/15_0_2447.png","gen/15_0_3040.png","gen/15_0_3460.png","gen/15_0_3538.png","gen/15_0_4456.png","gen/15_0_4536.png","gen/15_0_530.png","gen/15_0_545.png","gen/15_0_5622.png","gen/15_0_5932.png","gen/15_0_6926.png","gen/15_0_7026.png","gen/15_0_709.png","gen/15_0_7781.png","gen/15_0_8511.png","gen/15_0_8998.png","gen/15_0_9236.png","gen/16_0_1465.png","gen/16_0_1837.png","gen/16_0_194.png","gen/16_0_2326.png","gen/16_0_2760.png","gen/16_0_2888.png","gen/16_0_3642.png","gen/16_0_3738.png","gen/16_0_4111.png","gen/16_0_4190.png","gen/16_0_4215.png","gen/16_0_440.png","gen/16_0_4427.png","gen/16_0_4522.png","gen/16_0_4893.png","gen/16_0_4933.png","gen/16_0_5461.png","gen/16_0_5960.png","gen/16_0_6450.png","gen/16_0_6660.png","gen/16_0_7071.png","gen/16_0_7209.png","gen/16_0_781.png","gen/16_0_7993.png","gen/16_0_8505.png","gen/16_0_8511.png","gen/16_0_8543.png","gen/16_0_8677.png","gen/16_0_9450.png","gen/16_0_9926.png","gen/17_0_1003.png","gen/17_0_1458.png","gen/17_0_2163.png","gen/17_0_22.png","gen/17_0_3040.png","gen/17_0_3276.png","gen/17_0_3842.png","gen/17_0_5552.png","gen/17_0_6092.png","gen/17_0_658.png","gen/17_0_8088.png","gen/17_0_9057.png","gen/18_0_1059.png","gen/18_0_1640.png","gen/18_0_1849.png","gen/18_0_2031.png","gen/18_0_2198.png","gen/18_0_2315.png","gen/18_0_253.png","gen/18_0_2643.png","gen/18_0_2920.png","gen/18_0_3294.png","gen/18_0_3423.png","gen/18_0_3640.png","gen/18_0_4245.png","gen/18_0_4548.png","gen/18_0_4979.png","gen/18_0_5.png","gen/18_0_5480.png","gen/18_0_5507.png","gen/18_0_5717.png","gen/18_0_6026.png","gen/18_0_6628.png","gen/18_0_7019.png","gen/18_0_7257.png","gen/18_0_7715.png","gen/18_0_8559.png","gen/18_0_8879.png","gen/18_0_9124.png","gen/18_0_9484.png","gen/18_0_9666.png","gen/18_0_9713.png","gen/19_0_1254.png","gen/19_0_1930.png","gen/19_0_2275.png","gen/19_0_2608.png","gen/19_0_2958.png","gen/19_0_3120.png","gen/19_0_37.png","gen/19_0_3747.png","gen/19_0_3995.png","gen/19_0_4132.png","gen/19_0_5778.png","gen/19_0_5796.png","gen/19_0_596.png","gen/19_0_6112.png","gen/19_0_6135.png","gen/19_0_6207.png","gen/19_0_6650.png","gen/19_0_6760.png","gen/19_0_7463.png","gen/19_0_8143.png","gen/2_0_1850.png","gen/2_0_2165.png","gen/2_0_2198.png","gen/2_0_2310.png","gen/2_0_2361.png","gen/2_0_2518.png","gen/2_0_2947.png","gen/2_0_3207.png","gen/2_0_4248.png","gen/2_0_4273.png","gen/2_0_440.png","gen/2_0_4539.png","gen/2_0_4753.png","gen/2_0_5246.png","gen/2_0_7565.png","gen/2_0_7710.png","gen/2_0_8451.png","gen/2_0_8455.png","gen/2_0_8648.png","gen/2_0_8746.png","gen/2_0_9059.png","gen/2_0_9434.png","gen/2_0_9444.png","gen/2_0_9804.png","gen/20_0_1282.png","gen/20_0_131.png","gen/20_0_2063.png","gen/20_0_2306.png","gen/20_0_2850.png","gen/20_0_3114.png","gen/20_0_317.png","gen/20_0_3253.png","gen/20_0_3458.png","gen/20_0_477.png","gen/20_0_5136.png","gen/20_0_5754.png","gen/20_0_5767.png","gen/20_0_6601.png","gen/20_0_6741.png","gen/20_0_6784.png","gen/20_0_7207.png","gen/20_0_7212.png","gen/20_0_7382.png","gen/20_0_8390.png","gen/20_0_8458.png","gen/20_0_8763.png","gen/20_0_8772.png","gen/20_0_8953.png","gen/20_0_8971.png","gen/20_0_9362.png","gen/20_0_9650.png","gen/21_0_1130.png","gen/21_0_1523.png","gen/21_0_1597.png","gen/21_0_1816.png","gen/21_0_1898.png","gen/21_0_2409.png","gen/21_0_301.png","gen/21_0_3847.png","gen/21_0_3914.png","gen/21_0_4204.png","gen/21_0_4695.png","gen/21_0_4718.png","gen/21_0_5185.png","gen/21_0_5792.png","gen/21_0_6911.png","gen/21_0_6986.png","gen/21_0_735.png","gen/21_0_8054.png","gen/21_0_8158.png","gen/21_0_8883.png","gen/21_0_9004.png","gen/21_0_9292.png","gen/21_0_9402.png","gen/21_0_9575.png","gen/21_0_9676.png","gen/21_0_996.png","gen/21_0_9996.png","gen/22_0_1338.png","gen/22_0_1629.png","gen/22_0_1832.png","gen/22_0_1987.png","gen/22_0_2007.png","gen/22_0_2422.png","gen/22_0_3301.png","gen/22_0_3302.png","gen/22_0_4221.png","gen/22_0_4389.png","gen/22_0_4648.png","gen/22_0_5066.png","gen/22_0_542.png","gen/22_0_5577.png","gen/22_0_6526.png","gen/22_0_6843.png","gen/22_0_7245.png","gen/22_0_7815.png","gen/22_0_7839.png","gen/22_0_8561.png","gen/22_0_8764.png","gen/22_0_9344.png","gen/22_0_9571.png","gen/22_0_9711.png","gen/22_0_9761.png","gen/22_0_9888.png","gen/22_0_9946.png","gen/23_0_2216.png","gen/23_0_2806.png","gen/23_0_2981.png","gen/23_0_3411.png","gen/23_0_3426.png","gen/23_0_3626.png","gen/23_0_4301.png","gen/23_0_4425.png","gen/23_0_4612.png","gen/23_0_4990.png","gen/23_0_5030.png","gen/23_0_5085.png","gen/23_0_5114.png","gen/23_0_6341.png","gen/23_0_6437.png","gen/23_0_6625.png","gen/23_0_6670.png","gen/23_0_7055.png","gen/23_0_7856.png","gen/23_0_7964.png","gen/23_0_8422.png","gen/23_0_8442.png","gen/23_0_8556.png","gen/23_0_8776.png","gen/23_0_9250.png","gen/23_0_9272.png","gen/23_0_9737.png","gen/24_0_1390.png","gen/24_0_149.png","gen/24_0_2285.png","gen/24_0_2454.png","gen/24_0_267.png","gen/24_0_4361.png","gen/24_0_4629.png","gen/24_0_5070.png","gen/24_0_5431.png","gen/24_0_5672.png","gen/24_0_5951.png","gen/24_0_6039.png","gen/24_0_6480.png","gen/24_0_6601.png","gen/24_0_7679.png","gen/24_0_7776.png","gen/24_0_8241.png","gen/24_0_8521.png","gen/24_0_8616.png","gen/24_0_8982.png","gen/24_0_9111.png","gen/24_0_9270.png","gen/24_0_9399.png","gen/24_0_9508.png","gen/25_0_1387.png","gen/25_0_1926.png","gen/25_0_2159.png","gen/25_0_2603.png","gen/25_0_3073.png","gen/25_0_3092.png","gen/25_0_3098.png","gen/25_0_3138.png","gen/25_0_3701.png","gen/25_0_4311.png","gen/25_0_4760.png","gen/25_0_5106.png","gen/25_0_5109.png","gen/25_0_5251.png","gen/25_0_5751.png","gen/25_0_5781.png","gen/25_0_6011.png","gen/25_0_6285.png","gen/25_0_6367.png","gen/25_0_6399.png","gen/25_0_667.png","gen/25_0_7599.png","gen/25_0_7642.png","gen/25_0_8193.png","gen/25_0_900.png","gen/25_0_9033.png","gen/25_0_9949.png","gen/26_0_1093.png","gen/26_0_1383.png","gen/26_0_2062.png","gen/26_0_237.png","gen/26_0_2742.png","gen/26_0_3027.png","gen/26_0_3132.png","gen/26_0_3328.png","gen/26_0_4534.png","gen/26_0_5103.png","gen/26_0_5126.png","gen/26_0_5317.png","gen/26_0_5606.png","gen/26_0_6502.png","gen/26_0_724.png","gen/26_0_8382.png","gen/26_0_8627.png","gen/26_0_8969.png","gen/26_0_9306.png","gen/26_0_9404.png","gen/26_0_9785.png","gen/27_0_1163.png","gen/27_0_1344.png","gen/27_0_1425.png","gen/27_0_2353.png","gen/27_0_2670.png","gen/27_0_2925.png","gen/27_0_2930.png","gen/27_0_304.png","gen/27_0_3520.png","gen/27_0_3575.png","gen/27_0_3820.png","gen/27_0_4166.png","gen/27_0_4391.png","gen/27_0_4557.png","gen/27_0_5288.png","gen/27_0_5441.png","gen/27_0_5769.png","gen/27_0_6400.png","gen/27_0_6417.png","gen/27_0_6587.png","gen/27_0_6661.png","gen/27_0_679.png","gen/27_0_7829.png","gen/27_0_8940.png","gen/27_0_9218.png","gen/27_0_9354.png","gen/27_0_9604.png","gen/28_0_1751.png","gen/28_0_1797.png","gen/28_0_3014.png","gen/28_0_3518.png","gen/28_0_3737.png","gen/28_0_434.png","gen/28_0_5020.png","gen/28_0_5310.png","gen/28_0_5318.png","gen/28_0_5449.png","gen/28_0_5576.png","gen/28_0_5611.png","gen/28_0_5761.png","gen/28_0_5842.png","gen/28_0_589.png","gen/28_0_5909.png","gen/28_0_6078.png","gen/28_0_7098.png","gen/28_0_7112.png","gen/28_0_7478.png","gen/28_0_772.png","gen/28_0_8136.png","gen/28_0_8218.png","gen/28_0_8806.png","gen/29_0_1721.png","gen/29_0_1982.png","gen/29_0_2488.png","gen/29_0_2920.png","gen/29_0_2945.png","gen/29_0_4539.png","gen/29_0_4569.png","gen/29_0_6304.png","gen/29_0_638.png","gen/29_0_670.png","gen/29_0_6825.png","gen/29_0_6832.png","gen/29_0_6968.png","gen/29_0_7547.png","gen/29_0_771.png","gen/29_0_7766.png","gen/29_0_8635.png","gen/29_0_8827.png","gen/29_0_9068.png","gen/29_0_9075.png","gen/29_0_9975.png","gen/3_0_1030.png","gen/3_0_1091.png","gen/3_0_1251.png","gen/3_0_1265.png","gen/3_0_1337.png","gen/3_0_2261.png","gen/3_0_2786.png","gen/3_0_324.png","gen/3_0_3910.png","gen/3_0_4136.png","gen/3_0_4292.png","gen/3_0_518.png","gen/3_0_552.png","gen/3_0_5588.png","gen/3_0_5764.png","gen/3_0_5961.png","gen/3_0_6290.png","gen/3_0_6555.png","gen/3_0_7073.png","gen/3_0_7419.png","gen/3_0_7509.png","gen/3_0_7692.png","gen/3_0_8456.png","gen/3_0_8472.png","gen/3_0_8488.png","gen/3_0_9339.png","gen/3_0_9398.png","gen/30_0_1204.png","gen/30_0_1250.png","gen/30_0_1592.png","gen/30_0_1969.png","gen/30_0_2700.png","gen/30_0_2921.png","gen/30_0_3205.png","gen/30_0_3441.png","gen/30_0_378.png","gen/30_0_4356.png","gen/30_0_454.png","gen/30_0_4980.png","gen/30_0_6404.png","gen/30_0_6885.png","gen/30_0_6939.png","gen/30_0_7498.png","gen/30_0_7821.png","gen/30_0_7895.png","gen/30_0_8221.png","gen/30_0_8272.png","gen/30_0_9088.png","gen/31_0_1127.png","gen/31_0_1725.png","gen/31_0_2184.png","gen/31_0_3787.png","gen/31_0_4130.png","gen/31_0_4618.png","gen/31_0_47.png","gen/31_0_4858.png","gen/31_0_5056.png","gen/31_0_5482.png","gen/31_0_5570.png","gen/31_0_5632.png","gen/31_0_5673.png","gen/31_0_6337.png","gen/31_0_6608.png","gen/31_0_7806.png","gen/31_0_7964.png","gen/31_0_829.png","gen/31_0_8544.png","gen/31_0_8729.png","gen/31_0_9219.png","gen/32_0_1141.png","gen/32_0_1754.png","gen/32_0_1760.png","gen/32_0_1836.png","gen/32_0_1958.png","gen/32_0_3001.png","gen/32_0_3293.png","gen/32_0_3690.png","gen/32_0_393.png","gen/32_0_3969.png","gen/32_0_4069.png","gen/32_0_4404.png","gen/32_0_4863.png","gen/32_0_4968.png","gen/32_0_6551.png","gen/32_0_680.png","gen/32_0_6865.png","gen/32_0_7648.png","gen/32_0_7773.png","gen/32_0_8570.png","gen/32_0_8600.png","gen/32_0_8919.png","gen/32_0_9260.png","gen/32_0_9873.png","gen/33_0_1243.png","gen/33_0_2404.png","gen/33_0_2588.png","gen/33_0_274.png","gen/33_0_3065.png","gen/33_0_3668.png","gen/33_0_3827.png","gen/33_0_3888.png","gen/33_0_4103.png","gen/33_0_4158.png","gen/33_0_4206.png","gen/33_0_4443.png","gen/33_0_4488.png","gen/33_0_5194.png","gen/33_0_5784.png","gen/33_0_6007.png","gen/33_0_6044.png","gen/33_0_6065.png","gen/33_0_6120.png","gen/33_0_6364.png","gen/33_0_7260.png","gen/33_0_7792.png","gen/33_0_8310.png","gen/33_0_8384.png","gen/33_0_9555.png","gen/33_0_978.png","gen/33_0_9969.png","gen/34_0_1848.png","gen/34_0_1980.png","gen/34_0_2272.png","gen/34_0_2900.png","gen/34_0_3288.png","gen/34_0_3393.png","gen/34_0_3402.png","gen/34_0_3970.png","gen/34_0_4244.png","gen/34_0_4545.png","gen/34_0_4546.png","gen/34_0_4901.png","gen/34_0_5355.png","gen/34_0_5533.png","gen/34_0_664.png","gen/34_0_6996.png","gen/34_0_7619.png","gen/34_0_7838.png","gen/34_0_7969.png","gen/34_0_8294.png","gen/34_0_9235.png","gen/35_0_1199.png","gen/35_0_1289.png","gen/35_0_2230.png","gen/35_0_2398.png","gen/35_0_2515.png","gen/35_0_2565.png","gen/35_0_278.png","gen/35_0_3179.png","gen/35_0_3291.png","gen/35_0_3343.png","gen/35_0_3636.png","gen/35_0_4289.png","gen/35_0_4499.png","gen/35_0_4593.png","gen/35_0_481.png","gen/35_0_550.png","gen/35_0_6269.png","gen/35_0_6308.png","gen/35_0_6679.png","gen/35_0_6838.png","gen/35_0_7518.png","gen/35_0_7856.png","gen/35_0_7888.png","gen/35_0_806.png","gen/35_0_8779.png","gen/35_0_9632.png","gen/35_0_973.png","gen/36_0_1374.png","gen/36_0_1761.png","gen/36_0_1803.png","gen/36_0_1877.png","gen/36_0_2152.png","gen/36_0_2255.png","gen/36_0_2669.png","gen/36_0_2767.png","gen/36_0_3675.png","gen/36_0_3692.png","gen/36_0_4052.png","gen/36_0_4332.png","gen/36_0_4695.png","gen/36_0_5051.png","gen/36_0_576.png","gen/36_0_5825.png","gen/36_0_6010.png","gen/36_0_7850.png","gen/36_0_8134.png","gen/36_0_8626.png","gen/36_0_8673.png","gen/36_0_8778.png","gen/36_0_9327.png","gen/36_0_9930.png","gen/37_0_1383.png","gen/37_0_1800.png","gen/37_0_1960.png","gen/37_0_2012.png","gen/37_0_271.png","gen/37_0_3218.png","gen/37_0_3444.png","gen/37_0_3870.png","gen/37_0_4013.png","gen/37_0_4508.png","gen/37_0_4544.png","gen/37_0_4913.png","gen/37_0_510.png","gen/37_0_5160.png","gen/37_0_5488.png","gen/37_0_5999.png","gen/37_0_681.png","gen/37_0_7694.png","gen/37_0_8007.png","gen/37_0_8806.png","gen/37_0_8960.png","gen/37_0_9067.png","gen/37_0_9653.png","gen/37_0_9709.png","gen/38_0_1223.png","gen/38_0_1441.png","gen/38_0_184.png","gen/38_0_1970.png","gen/38_0_2184.png","gen/38_0_2372.png","gen/38_0_2401.png","gen/38_0_252.png","gen/38_0_2601.png","gen/38_0_2779.png","gen/38_0_3404.png","gen/38_0_3683.png","gen/38_0_3970.png","gen/38_0_4005.png","gen/38_0_4116.png","gen/38_0_4405.png","gen/38_0_4537.png","gen/38_0_4778.png","gen/38_0_484.png","gen/38_0_5379.png","gen/38_0_5736.png","gen/38_0_5972.png","gen/38_0_6475.png","gen/38_0_6497.png","gen/38_0_6586.png","gen/38_0_6620.png","gen/38_0_7528.png","gen/38_0_7667.png","gen/38_0_8081.png","gen/38_0_9975.png","gen/39_0_1938.png","gen/39_0_2301.png","gen/39_0_3777.png","gen/39_0_3875.png","gen/39_0_4709.png","gen/39_0_4787.png","gen/39_0_5321.png","gen/39_0_5375.png","gen/39_0_5611.png","gen/39_0_5779.png","gen/39_0_5877.png","gen/39_0_6413.png","gen/39_0_7250.png","gen/39_0_7547.png","gen/39_0_7600.png","gen/39_0_7730.png","gen/39_0_8208.png","gen/39_0_8270.png","gen/39_0_8290.png","gen/39_0_8465.png","gen/39_0_8532.png","gen/39_0_8608.png","gen/39_0_8745.png","gen/39_0_946.png","gen/39_0_9648.png","gen/39_0_9718.png","gen/39_0_9719.png","gen/4_0_135.png","gen/4_0_2146.png","gen/4_0_2534.png","gen/4_0_2994.png","gen/4_0_3131.png","gen/4_0_3233.png","gen/4_0_3321.png","gen/4_0_3925.png","gen/4_0_4002.png","gen/4_0_4557.png","gen/4_0_4700.png","gen/4_0_4798.png","gen/4_0_5254.png","gen/4_0_6587.png","gen/4_0_6735.png","gen/4_0_7590.png","gen/4_0_769.png","gen/4_0_782.png","gen/4_0_7860.png","gen/4_0_8178.png","gen/4_0_8614.png","gen/4_0_882.png","gen/4_0_8914.png","gen/4_0_902.png","gen/4_0_9095.png","gen/4_0_954.png","gen/4_0_9772.png","gen/5_0_1518.png","gen/5_0_1736.png","gen/5_0_1992.png","gen/5_0_2232.png","gen/5_0_2313.png","gen/5_0_2901.png","gen/5_0_3034.png","gen/5_0_3216.png","gen/5_0_3314.png","gen/5_0_3407.png","gen/5_0_3491.png","gen/5_0_5546.png","gen/5_0_5968.png","gen/5_0_6302.png","gen/5_0_6870.png","gen/5_0_7378.png","gen/5_0_8650.png","gen/5_0_8901.png","gen/5_0_8928.png","gen/5_0_9138.png","gen/5_0_9762.png","gen/6_0_1000.png","gen/6_0_1135.png","gen/6_0_1421.png","gen/6_0_1561.png","gen/6_0_1599.png","gen/6_0_1768.png","gen/6_0_2509.png","gen/6_0_2531.png","gen/6_0_2560.png","gen/6_0_2577.png","gen/6_0_2720.png","gen/6_0_3155.png","gen/6_0_4736.png","gen/6_0_4941.png","gen/6_0_5334.png","gen/6_0_6574.png","gen/6_0_8129.png","gen/6_0_8148.png","gen/6_0_8926.png","gen/6_0_9230.png","gen/6_0_9859.png","gen/7_0_1633.png","gen/7_0_1844.png","gen/7_0_26.png","gen/7_0_2830.png","gen/7_0_2936.png","gen/7_0_3224.png","gen/7_0_39.png","gen/7_0_4010.png","gen/7_0_4034.png","gen/7_0_4079.png","gen/7_0_4250.png","gen/7_0_4311.png","gen/7_0_4381.png","gen/7_0_4448.png","gen/7_0_5151.png","gen/7_0_5284.png","gen/7_0_674.png","gen/7_0_7033.png","gen/7_0_7682.png","gen/7_0_8816.png","gen/7_0_9670.png","gen/8_0_1038.png","gen/8_0_1467.png","gen/8_0_1728.png","gen/8_0_1858.png","gen/8_0_1987.png","gen/8_0_2501.png","gen/8_0_2506.png","gen/8_0_2525.png","gen/8_0_3465.png","gen/8_0_3528.png","gen/8_0_3616.png","gen/8_0_4058.png","gen/8_0_4277.png","gen/8_0_4361.png","gen/8_0_4476.png","gen/8_0_4657.png","gen/8_0_4731.png","gen/8_0_4822.png","gen/8_0_5329.png","gen/8_0_5557.png","gen/8_0_5696.png","gen/8_0_6116.png","gen/8_0_6787.png","gen/8_0_7242.png","gen/8_0_793.png","gen/8_0_8212.png","gen/8_0_8518.png","gen/8_0_8538.png","gen/8_0_9714.png","gen/8_0_9846.png","gen/9_0_1077.png","gen/9_0_1239.png","gen/9_0_1402.png","gen/9_0_1690.png","gen/9_0_2318.png","gen/9_0_2630.png","gen/9_0_2886.png","gen/9_0_3018.png","gen/9_0_3217.png","gen/9_0_3338.png","gen/9_0_393.png","gen/9_0_4473.png","gen/9_0_4594.png","gen/9_0_4614.png","gen/9_0_4829.png","gen/9_0_4959.png","gen/9_0_5934.png","gen/9_0_60.png","gen/9_0_6263.png","gen/9_0_6330.png","gen/9_0_8007.png","gen/9_0_8499.png","gen/9_0_8646.png","gen/9_0_8996.png","gen/9_0_9167.png","gen/9_0_9563.png","gen/9_0_9973.png","structure.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+  font-size: 100%;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+hr.section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0px;
+}
+
+
+d-byline {
+  border-top: none;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+  border-top: none;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+/* tweak for Pandoc numbered line within distill */
+d-article pre.numberSource code > span {
+    left: -2em;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // separator
+  var separator = '<hr class="section-separator" style="clear: both"/>';
+  // prepend separator above appendix
+  $('.d-byline').before(separator);
+  $('.d-article').before(separator);
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme, except when numbering line
+  // in code chunk
+  $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      var author_name = front_matter.authors[i].author
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      const citeChild = $(this).children()[0]
+      // Do not process if @xyz has been used without escaping and without bibliography activated
+      // https://github.com/rstudio/distill/issues/466
+      if (citeChild === undefined) return true
+
+      if (citeChild.nodeName == "D-FOOTNOTE") {
+        var fn = citeChild
+        $(this).html(fn.shadowRoot.querySelector("sup"))
+        $(this).id = fn.id
+        fn.remove()
+      }
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        // Could use CSS.escape too here, we insure backward compatibility in navigator
+        return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // fix footnotes in tables (#411)
+    // replacing broken distill.pub feature
+    $('table d-footnote').each(function() {
+      // we replace internal showAtNode methode which is triggered when hovering a footnote
+      this.hoverBox.showAtNode = function(node) {
+        // ported from https://github.com/distillpub/template/pull/105/files
+        calcOffset = function(elem) {
+            let x = elem.offsetLeft;
+            let y = elem.offsetTop;
+            // Traverse upwards until an `absolute` element is found or `elem`
+            // becomes null.
+            while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                x += elem.offsetLeft;
+                y += elem.offsetTop;
+            }
+
+            return { left: x, top: y };
+        }
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+        const bbox = node.getBoundingClientRect();
+        const offset = calcOffset(node);
+        this.show([offset.left + bbox.width, offset.top + bbox.height]);
+      }
+    })
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    // ignore leaflet img layers (#106)
+    figures = figures.filter(':not(img[class*="leaflet"])')
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      28px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       22px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        16px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.30/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Facial Recognition","description":"A deep learning project","authors":[{"author":"Longxiang Wu","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-11-21T00:00:00.000+08:00","citationText":"Wu, 2025"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Longxiang Wu</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
+<a href="../../blog.html">Blog</a>
+<a href="../../portfolio.html">Portfolio</a>
+<a href="../../longxiang_wu_cv.html">CV</a>
+<a href="https://github.com/lunghsiang-wu">
+<i class="fa fa-github" aria-hidden="true"></i>
+</a>
+<a href="../../www.linkedin.com/in/longxiang-wu-003506106">
+<i class="fa fa-linkedin" aria-hidden="true"></i>
+</a>
+<a href="https://fosstodon.org/@longxiangwu">
+<i class="fab fa-mastodon" aria-hidden="true"></i>
+</a>
+<a href="../../blog.xml">
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Facial Recognition</h1>
+
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p>A deep learning project</p>
+</div>
+
+<div class="d-byline">
+  Longxiang Wu  
+  
+<br/>2025-11-21
+</div>
+
+<div class="d-article">
+<!-- #region -->
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">&#39;CUDA_VISIBLE_DEVICES&#39;</span>] <span class="op">=</span> <span class="st">&#39;7&#39;</span></span></code></pre></div>
+</div>
+<h3 id="experiment-environment">0 Experiment environment</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep pandas;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep numpy;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep matplotlib;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep seaborn;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep scikit-learn;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep os;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep tqdm;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep keras;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip freeze | grep tensorflow;</span></span></code></pre></div>
+</div>
+<h3 id="data-exploration">1 Data exploration</h3>
+<p>Olivetti Faces is a face data set organised by New York University. For specific information, please refer to the official website. The data set includes 400 pictures of 40 people. Each person’s 10 face images are collected at different times, light and expressions. The greyscale level of each picture is 8 digits. , the greyscale size of each pixel is between 0-255, and the size of each picture is 64×64.</p>
+<p>First, load the Olivetti Faces data set from sklearn’s datasets:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %config InlineBackend.figure_format=&#39;retina&#39;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the face data set</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_olivetti_faces</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>faces<span class="op">=</span>fetch_olivetti_faces()</span></code></pre></div>
+</div>
+<p>Observe the structure and composition of the data set:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>faces</span></code></pre></div>
+<pre><code>{&#39;data&#39;: array([[0.30991736, 0.3677686 , 0.41735536, ..., 0.15289256, 0.16115703,
+        0.1570248 ],
+       [0.45454547, 0.47107437, 0.5123967 , ..., 0.15289256, 0.15289256,
+        0.15289256],
+       [0.3181818 , 0.40082645, 0.49173555, ..., 0.14049587, 0.14876033,
+        0.15289256],
+       ...,
+       [0.5       , 0.53305787, 0.607438  , ..., 0.17768595, 0.14876033,
+        0.19008264],
+       [0.21487603, 0.21900827, 0.21900827, ..., 0.57438016, 0.59090906,
+        0.60330576],
+       [0.5165289 , 0.46280992, 0.28099173, ..., 0.35950413, 0.3553719 ,
+        0.38429752]], dtype=float32), &#39;images&#39;: array([[[0.30991736, 0.3677686 , 0.41735536, ..., 0.37190083,
+         0.3305785 , 0.30578512],
+        [0.3429752 , 0.40495867, 0.43801653, ..., 0.37190083,
+         0.338843  , 0.3140496 ],
+        [0.3429752 , 0.41735536, 0.45041323, ..., 0.38016528,
+         0.338843  , 0.29752067],
+        ...,
+        [0.21487603, 0.20661157, 0.2231405 , ..., 0.15289256,
+         0.16528925, 0.17355372],
+        [0.20247933, 0.2107438 , 0.2107438 , ..., 0.14876033,
+         0.16115703, 0.16528925],
+        [0.20247933, 0.20661157, 0.20247933, ..., 0.15289256,
+         0.16115703, 0.1570248 ]],
+
+       [[0.45454547, 0.47107437, 0.5123967 , ..., 0.19008264,
+         0.18595041, 0.18595041],
+        [0.446281  , 0.48347107, 0.5206612 , ..., 0.21487603,
+         0.2107438 , 0.2107438 ],
+        [0.49586776, 0.5165289 , 0.53305787, ..., 0.20247933,
+         0.20661157, 0.20661157],
+        ...,
+        [0.77272725, 0.78099173, 0.7933884 , ..., 0.1446281 ,
+         0.1446281 , 0.1446281 ],
+        [0.77272725, 0.7768595 , 0.7892562 , ..., 0.13636364,
+         0.13636364, 0.13636364],
+        [0.7644628 , 0.7892562 , 0.78099173, ..., 0.15289256,
+         0.15289256, 0.15289256]],
+
+       [[0.3181818 , 0.40082645, 0.49173555, ..., 0.40082645,
+         0.3553719 , 0.30991736],
+        [0.30991736, 0.3966942 , 0.47933885, ..., 0.40495867,
+         0.37603307, 0.30165288],
+        [0.26859504, 0.34710744, 0.45454547, ..., 0.3966942 ,
+         0.37190083, 0.30991736],
+        ...,
+        [0.1322314 , 0.09917355, 0.08264463, ..., 0.13636364,
+         0.14876033, 0.15289256],
+        [0.11570248, 0.09504132, 0.0785124 , ..., 0.1446281 ,
+         0.1446281 , 0.1570248 ],
+        [0.11157025, 0.09090909, 0.0785124 , ..., 0.14049587,
+         0.14876033, 0.15289256]],
+
+       ...,
+
+       [[0.5       , 0.53305787, 0.607438  , ..., 0.28512397,
+         0.23966943, 0.21487603],
+        [0.49173555, 0.5413223 , 0.60330576, ..., 0.29752067,
+         0.20247933, 0.20661157],
+        [0.46694216, 0.55785125, 0.6198347 , ..., 0.29752067,
+         0.17768595, 0.18595041],
+        ...,
+        [0.03305785, 0.46280992, 0.5289256 , ..., 0.17355372,
+         0.17355372, 0.1694215 ],
+        [0.1570248 , 0.5247934 , 0.53305787, ..., 0.16528925,
+         0.1570248 , 0.18595041],
+        [0.45454547, 0.5206612 , 0.53305787, ..., 0.17768595,
+         0.14876033, 0.19008264]],
+
+       [[0.21487603, 0.21900827, 0.21900827, ..., 0.71487606,
+         0.71487606, 0.6942149 ],
+        [0.20247933, 0.20661157, 0.20661157, ..., 0.7107438 ,
+         0.7066116 , 0.6942149 ],
+        [0.2107438 , 0.20661157, 0.20661157, ..., 0.6859504 ,
+         0.69008267, 0.6942149 ],
+        ...,
+        [0.2644628 , 0.25619835, 0.2603306 , ..., 0.5413223 ,
+         0.57438016, 0.59090906],
+        [0.26859504, 0.2644628 , 0.26859504, ..., 0.56198347,
+         0.58264464, 0.59504133],
+        [0.27272728, 0.26859504, 0.27272728, ..., 0.57438016,
+         0.59090906, 0.60330576]],
+
+       [[0.5165289 , 0.46280992, 0.28099173, ..., 0.5785124 ,
+         0.5413223 , 0.60330576],
+        [0.5165289 , 0.45041323, 0.29338843, ..., 0.58264464,
+         0.553719  , 0.5785124 ],
+        [0.5165289 , 0.44214877, 0.29338843, ..., 0.59917355,
+         0.5785124 , 0.54545456],
+        ...,
+        [0.39256197, 0.41322315, 0.38842976, ..., 0.33471075,
+         0.37190083, 0.3966942 ],
+        [0.39256197, 0.38429752, 0.40495867, ..., 0.3305785 ,
+         0.35950413, 0.37603307],
+        [0.3677686 , 0.40495867, 0.3966942 , ..., 0.35950413,
+         0.3553719 , 0.38429752]]], dtype=float32), &#39;target&#39;: array([ 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  1,  1,
+        1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  3,  3,  3,
+        3,  3,  3,  3,  3,  3,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  5,
+        5,  5,  5,  5,  5,  5,  5,  5,  5,  6,  6,  6,  6,  6,  6,  6,  6,
+        6,  6,  7,  7,  7,  7,  7,  7,  7,  7,  7,  7,  8,  8,  8,  8,  8,
+        8,  8,  8,  8,  8,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9, 10, 10,
+       10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+       11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13,
+       13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 15, 15, 15,
+       15, 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
+       17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 18, 18, 18, 18, 18, 18, 18,
+       18, 18, 18, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 20, 20,
+       20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22,
+       22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 23, 23,
+       23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 25, 25, 25,
+       25, 25, 25, 25, 25, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 27, 27,
+       27, 27, 27, 27, 27, 27, 27, 27, 28, 28, 28, 28, 28, 28, 28, 28, 28,
+       28, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 30, 30, 30, 30, 30, 30,
+       30, 30, 30, 30, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 32, 32, 32,
+       32, 32, 32, 32, 32, 32, 32, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33,
+       34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 35, 35, 35, 35, 35, 35, 35,
+       35, 35, 35, 36, 36, 36, 36, 36, 36, 36, 36, 36, 36, 37, 37, 37, 37,
+       37, 37, 37, 37, 37, 37, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 39,
+       39, 39, 39, 39, 39, 39, 39, 39, 39]), &#39;DESCR&#39;: &#39;.. _olivetti_faces_dataset:\n\nThe Olivetti faces dataset\n--------------------------\n\n`This dataset contains a set of face images`_ taken between April 1992 and\nApril 1994 at AT&amp;T Laboratories Cambridge. The\n:func:`sklearn.datasets.fetch_olivetti_faces` function is the data\nfetching / caching function that downloads the data\narchive from AT&amp;T.\n\n.. _This dataset contains a set of face images: https://cam-orl.co.uk/facedatabase.html\n\nAs described on the original website:\n\n    There are ten different images of each of 40 distinct subjects. For some\n    subjects, the images were taken at different times, varying the lighting,\n    facial expressions (open / closed eyes, smiling / not smiling) and facial\n    details (glasses / no glasses). All the images were taken against a dark\n    homogeneous background with the subjects in an upright, frontal position\n    (with tolerance for some side movement).\n\n**Data Set Characteristics:**\n\n=================   =====================\nClasses                                40\nSamples total                         400\nDimensionality                       4096\nFeatures            real, between 0 and 1\n=================   =====================\n\nThe image is quantized to 256 grey levels and stored as unsigned 8-bit\nintegers; the loader will convert these to floating point values on the\ninterval [0, 1], which are easier to work with for many algorithms.\n\nThe &quot;target&quot; for this database is an integer from 0 to 39 indicating the\nidentity of the person pictured; however, with only 10 examples per class, this\nrelatively small dataset is more interesting from an unsupervised or\nsemi-supervised perspective.\n\nThe original dataset consisted of 92 x 112, while the version available here\nconsists of 64x64 images.\n\nWhen using these images, please give credit to AT&amp;T Laboratories Cambridge.\n&#39;}</code></pre>
+</div>
+<p>Observation shows that the data set includes four parts:</p>
+<ol type="1">
+<li><p>DESCR mainly introduces the source of the data;</p></li>
+<li><p>data stores 400 images in the data set in the form of one-dimensional vectors;</p></li>
+<li><p>images store 400 images in the data set in the form of a two-dimensional matrix;</p></li>
+<li><p>Target stores the category information of 400 images in the data set, representing 40 people in 0-39 respectively.</p></li>
+</ol>
+<p>Let’s further observe the structure and types of data:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The shape of data:&quot;</span>,faces.data.shape, <span class="st">&quot;The data type of data:&quot;</span>,<span class="bu">type</span>(faces.data))</span></code></pre></div>
+<pre><code>The shape of data: (400, 4096) The data type of data: &lt;class &#39;numpy.ndarray&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The shape of images:&quot;</span>,faces.images.shape, <span class="st">&quot;The data type of images:&quot;</span>,<span class="bu">type</span>(faces.images))</span></code></pre></div>
+<pre><code>The shape of images: (400, 64, 64) The data type of images: &lt;class &#39;numpy.ndarray&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The shape of target:&quot;</span>,faces.target.shape, <span class="st">&quot;The data type of target:&quot;</span>,<span class="bu">type</span>(faces.target))</span></code></pre></div>
+<pre><code>The shape of target: (400,) The data type of target: &lt;class &#39;numpy.ndarray&#39;&gt;</code></pre>
+</div>
+<p>All data is stored in the form of numpy.ndarray, which is very convenient to use, because in the next step, we hope to build a convolutional neural network CNN to achieve face recognition, so the features should be stored in two-dimensional matrix images, so that the structural information of the images can be fully exploited.</p>
+<p>Next, let’s further observe a group of sample images:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    fig<span class="op">=</span>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">5</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    count<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">0</span>:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;This is the first person:&quot;</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">1</span>:</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;This is the second person:&quot;</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">2</span>:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;This is the third person:&quot;</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        ax1<span class="op">=</span>fig.add_subplot(<span class="dv">1</span>,<span class="dv">5</span>,count)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        plt.imshow(faces.images[<span class="dv">10</span><span class="op">*</span>i<span class="op">+</span>j],cmap<span class="op">=</span><span class="st">&quot;Greys_r&quot;</span>)     <span class="co"># Display the picture</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        plt.axis(<span class="st">&#39;off&#39;</span>)                                     <span class="co"># The coordinate axis is not displayed.</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    plt.show()    </span></code></pre></div>
+<pre><code>This is the first person:
+&lt;matplotlib.image.AxesImage object at 0x159be2d10&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x159dfc690&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x159e335d0&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x159e72210&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x159ea6090&gt;
+(-0.5, 63.5, 63.5, -0.5)
+This is the second person:
+&lt;matplotlib.image.AxesImage object at 0x159bd5f50&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x159f46d50&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x159fad790&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x159fe15d0&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x15a01dfd0&gt;
+(-0.5, 63.5, 63.5, -0.5)
+This is the third person:
+&lt;matplotlib.image.AxesImage object at 0x15a0563d0&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x15a09c610&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x15a0d2490&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x15a114790&gt;
+(-0.5, 63.5, 63.5, -0.5)
+&lt;matplotlib.image.AxesImage object at 0x15a1499d0&gt;
+(-0.5, 63.5, 63.5, -0.5)</code></pre>
+<p><img src="facial_files/figure-html5/unnamed-chunk-6-1.png" alt="" width="1920" /><img src="facial_files/figure-html5/unnamed-chunk-6-2.png" alt="" width="1920" /><img src="facial_files/figure-html5/unnamed-chunk-6-3.png" alt="" width="1920" /></p>
+</div>
+<p>Observations show that there are differences in angles, expressions and light in different images of each person. Although this difference between samples increases the difficulty of classification, it also requires the model to extract the high-order features of the human face, which enhances the generalisation ability of the model.</p>
+<h3 id="data-enhancement">2 Data enhancement</h3>
+<p>First, divide the training set and the test set:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define features and labels</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>faces.images</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>faces.target</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Randomly divide the training set and the test set in a ratio of 8:2</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>train_x, test_x, train_y, test_y <span class="op">=</span> train_test_split(x, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Record the categories that appear in the test set, and the later model evaluation needs to draw a confusing matrix.</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>index<span class="op">=</span><span class="bu">set</span>(test_y)</span></code></pre></div>
+</div>
+<p>Before data enhancement, it is necessary to convert the two-dimensional image into a three-channel image, because the flow function in keras only accepts three-channel image input. General RGB images are accompanied by three primary colour channels: red, green and blue, while greyscale images only have one channel. When greyscale images need to be converted into For three-channel RGB images, you only need to fill all three channels with original greyscale pixels.</p>
+<p>In the following loop block, we use the tqdm progress bar library to instantly display the running process of the loop block, which can help us know whether the program is running smoothly, which is very useful for calculating loops with high complexity.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tqdm</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the list train_x_RGB to store the converted three-channel image</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>train_x_RGB<span class="op">=</span>[]</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Use tqdm to output the running process</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> tqdm.tqdm(<span class="bu">range</span>(<span class="bu">len</span>(train_x))):</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define a three-dimensional array to store the converted three-channel image</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    image_RGB<span class="op">=</span>np.empty((<span class="dv">64</span>,<span class="dv">64</span>,<span class="dv">3</span>))</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fill three channels with greyscale pixels</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">64</span>):</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">64</span>):</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>            image_RGB[i][j]<span class="op">=</span>train_x[k][i][j]</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    train_x_RGB.append(image_RGB)</span></code></pre></div>
+<pre><code>  0%|          | 0/320 [00:00&lt;?, ?it/s]  2%|1         | 5/320 [00:00&lt;00:07, 44.39it/s]  3%|3         | 10/320 [00:00&lt;00:07, 43.65it/s]  5%|4         | 15/320 [00:00&lt;00:07, 43.04it/s]  6%|6         | 20/320 [00:00&lt;00:06, 44.48it/s]  8%|7         | 25/320 [00:00&lt;00:06, 46.14it/s]  9%|9         | 30/320 [00:00&lt;00:06, 46.29it/s] 11%|#         | 35/320 [00:00&lt;00:06, 45.93it/s] 12%|#2        | 40/320 [00:00&lt;00:06, 45.60it/s] 14%|#4        | 45/320 [00:00&lt;00:05, 46.30it/s] 16%|#5        | 50/320 [00:01&lt;00:05, 46.36it/s] 18%|#7        | 56/320 [00:01&lt;00:05, 47.73it/s] 19%|#9        | 61/320 [00:01&lt;00:05, 47.51it/s] 21%|##        | 67/320 [00:01&lt;00:05, 48.65it/s] 22%|##2       | 72/320 [00:01&lt;00:05, 48.65it/s] 24%|##4       | 77/320 [00:01&lt;00:05, 47.22it/s] 26%|##5       | 82/320 [00:01&lt;00:05, 45.89it/s] 27%|##7       | 87/320 [00:01&lt;00:05, 45.69it/s] 29%|##8       | 92/320 [00:01&lt;00:05, 45.37it/s] 30%|###       | 97/320 [00:02&lt;00:05, 43.72it/s] 32%|###1      | 102/320 [00:02&lt;00:05, 42.86it/s] 33%|###3      | 107/320 [00:02&lt;00:04, 44.35it/s] 35%|###5      | 112/320 [00:02&lt;00:04, 45.11it/s] 37%|###6      | 117/320 [00:02&lt;00:04, 46.43it/s] 38%|###8      | 122/320 [00:02&lt;00:04, 47.15it/s] 40%|###9      | 127/320 [00:02&lt;00:04, 45.33it/s] 41%|####1     | 132/320 [00:02&lt;00:04, 46.28it/s] 43%|####2     | 137/320 [00:02&lt;00:03, 46.27it/s] 44%|####4     | 142/320 [00:03&lt;00:03, 45.88it/s] 46%|####5     | 147/320 [00:03&lt;00:03, 44.95it/s] 48%|####7     | 152/320 [00:03&lt;00:03, 44.48it/s] 49%|####9     | 157/320 [00:03&lt;00:03, 45.60it/s] 51%|#####     | 162/320 [00:03&lt;00:03, 46.71it/s] 52%|#####2    | 168/320 [00:03&lt;00:03, 48.20it/s] 54%|#####4    | 173/320 [00:03&lt;00:03, 48.05it/s] 56%|#####5    | 178/320 [00:03&lt;00:02, 48.07it/s] 57%|#####7    | 183/320 [00:03&lt;00:02, 45.69it/s] 59%|#####8    | 188/320 [00:04&lt;00:02, 45.10it/s] 60%|######    | 193/320 [00:04&lt;00:02, 42.44it/s] 62%|######1   | 198/320 [00:04&lt;00:03, 32.10it/s] 63%|######3   | 202/320 [00:04&lt;00:03, 32.33it/s] 64%|######4   | 206/320 [00:04&lt;00:03, 29.89it/s] 66%|######5   | 210/320 [00:04&lt;00:03, 31.18it/s] 67%|######7   | 215/320 [00:04&lt;00:03, 34.17it/s] 69%|######8   | 220/320 [00:05&lt;00:02, 36.29it/s] 71%|#######   | 226/320 [00:05&lt;00:02, 41.95it/s] 72%|#######2  | 232/320 [00:05&lt;00:01, 45.86it/s] 74%|#######4  | 238/320 [00:05&lt;00:01, 48.75it/s] 76%|#######6  | 244/320 [00:05&lt;00:01, 49.90it/s] 78%|#######8  | 250/320 [00:05&lt;00:01, 50.23it/s] 80%|########  | 256/320 [00:05&lt;00:01, 51.79it/s] 82%|########2 | 263/320 [00:05&lt;00:01, 55.33it/s] 84%|########4 | 270/320 [00:05&lt;00:00, 57.65it/s] 86%|########6 | 276/320 [00:06&lt;00:00, 55.65it/s] 88%|########8 | 282/320 [00:06&lt;00:00, 54.49it/s] 90%|######### | 288/320 [00:06&lt;00:00, 54.09it/s] 92%|#########1| 294/320 [00:06&lt;00:00, 54.46it/s] 94%|#########3| 300/320 [00:06&lt;00:00, 55.72it/s] 96%|#########5| 306/320 [00:06&lt;00:00, 56.51it/s] 98%|#########7| 312/320 [00:06&lt;00:00, 55.95it/s] 99%|#########9| 318/320 [00:06&lt;00:00, 54.42it/s]100%|##########| 320/320 [00:06&lt;00:00, 46.35it/s]</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>train_x_RGB<span class="op">=</span>np.array(train_x_RGB)</span></code></pre></div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(train_x_RGB.shape)</span></code></pre></div>
+<pre><code>(320, 64, 64, 3)</code></pre>
+</div>
+<p>The dimension of each image has been changed to (64, 64, 3), indicating that it has been successfully converted to a three-channel image.</p>
+<p>In deep learning, in order to prevent overfitting, we usually need enough data. When we can’t get a sufficient amount of data, we can increase the amount of training data through the geometric transformation of the image. In order to make full use of the limited training set (only 320 samples), we will improve the data through a series of random transformations to prevent over-compilation and improve the generalisation ability of the model.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.image <span class="im">import</span> ImageDataGenerator</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the categories and degrees of random transformations</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>datagen <span class="op">=</span> ImageDataGenerator(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        rotation_range<span class="op">=</span><span class="dv">0</span>,            <span class="co"># The angle of random rotation of the image</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        width_shift_range<span class="op">=</span><span class="fl">0.01</span>,      <span class="co"># The magnitude of the horizontal offset of the image</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        height_shift_range<span class="op">=</span><span class="fl">0.01</span>,     <span class="co"># The magnitude of the vertical offset of the image</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        shear_range<span class="op">=</span><span class="fl">0.01</span>,            <span class="co"># Counterclockwise shear transformation angle</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        zoom_range<span class="op">=</span><span class="fl">0.01</span>,             <span class="co"># The amplitude of random scaling</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        horizontal_flip<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        fill_mode<span class="op">=</span><span class="st">&#39;nearest&#39;</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> tqdm.tqdm(<span class="bu">range</span>(<span class="bu">len</span>(train_x_RGB))):</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> train_x_RGB[i]</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> img.reshape((<span class="dv">1</span>,) <span class="op">+</span> img.shape)  <span class="co"># Dimensime conversion</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> batch <span class="kw">in</span> datagen.flow(img,batch_size<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>                        save_to_dir<span class="op">=</span><span class="st">&quot;/Users/Zhuanz/Library/CloudStorage/OneDrive-MaynoothUniversity/R projects/longxiangwu/longxiangwu/_portfolio/2026-03-20-facial/gen&quot;</span>,    <span class="co"># The generated image saving path</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>                        save_prefix<span class="op">=</span><span class="bu">str</span>(train_y[i]),     <span class="co"># After the generated image, it is named with its label, which is convenient to record its type.</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>                        save_format<span class="op">=</span><span class="st">&#39;png&#39;</span>):</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> count <span class="op">&gt;=</span> <span class="dv">3</span>:                  <span class="co"># Only save the first 3 enlarged images</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span>  </span></code></pre></div>
+<pre><code>  0%|          | 0/320 [00:00&lt;?, ?it/s]  1%|          | 3/320 [00:00&lt;00:11, 28.42it/s]  2%|1         | 6/320 [00:00&lt;00:20, 15.32it/s]  3%|2         | 9/320 [00:00&lt;00:16, 19.12it/s]  4%|4         | 13/320 [00:00&lt;00:12, 23.95it/s]  5%|5         | 17/320 [00:00&lt;00:11, 26.62it/s]  6%|6         | 20/320 [00:00&lt;00:12, 23.35it/s]  7%|7         | 23/320 [00:00&lt;00:11, 24.88it/s]  8%|8         | 27/320 [00:01&lt;00:11, 26.37it/s]  9%|9         | 30/320 [00:01&lt;00:12, 23.20it/s] 10%|#         | 33/320 [00:01&lt;00:12, 22.83it/s] 11%|#1        | 36/320 [00:01&lt;00:11, 24.24it/s] 12%|#2        | 39/320 [00:01&lt;00:12, 23.40it/s] 13%|#3        | 42/320 [00:01&lt;00:11, 24.52it/s] 14%|#4        | 45/320 [00:01&lt;00:11, 23.93it/s] 15%|#5        | 49/320 [00:02&lt;00:10, 25.75it/s] 16%|#6        | 52/320 [00:02&lt;00:10, 25.84it/s] 17%|#7        | 55/320 [00:02&lt;00:12, 22.05it/s] 18%|#8        | 58/320 [00:02&lt;00:11, 23.02it/s] 19%|#9        | 61/320 [00:02&lt;00:11, 21.95it/s] 20%|##        | 64/320 [00:02&lt;00:11, 22.29it/s] 21%|##        | 67/320 [00:02&lt;00:11, 22.92it/s] 22%|##1       | 70/320 [00:02&lt;00:10, 23.24it/s] 23%|##2       | 73/320 [00:03&lt;00:10, 23.97it/s] 24%|##3       | 76/320 [00:03&lt;00:09, 24.61it/s] 25%|##4       | 79/320 [00:03&lt;00:09, 25.95it/s] 26%|##5       | 82/320 [00:03&lt;00:09, 26.00it/s] 27%|##6       | 85/320 [00:03&lt;00:11, 20.81it/s] 28%|##7       | 88/320 [00:03&lt;00:10, 22.57it/s] 28%|##8       | 91/320 [00:03&lt;00:10, 21.55it/s] 29%|##9       | 94/320 [00:04&lt;00:09, 23.44it/s] 30%|###       | 97/320 [00:04&lt;00:09, 23.52it/s] 32%|###1      | 101/320 [00:04&lt;00:08, 25.89it/s] 32%|###2      | 104/320 [00:04&lt;00:08, 25.27it/s] 33%|###3      | 107/320 [00:04&lt;00:08, 24.68it/s] 34%|###4      | 110/320 [00:04&lt;00:08, 25.88it/s] 35%|###5      | 113/320 [00:04&lt;00:07, 26.81it/s] 36%|###6      | 116/320 [00:04&lt;00:09, 21.14it/s] 37%|###7      | 119/320 [00:05&lt;00:09, 20.95it/s] 38%|###8      | 122/320 [00:05&lt;00:08, 22.62it/s] 39%|###9      | 125/320 [00:05&lt;00:08, 22.77it/s] 40%|####      | 128/320 [00:05&lt;00:08, 23.67it/s] 41%|####      | 131/320 [00:05&lt;00:07, 24.96it/s] 42%|####1     | 134/320 [00:05&lt;00:07, 26.19it/s] 43%|####2     | 137/320 [00:05&lt;00:07, 23.00it/s] 44%|####3     | 140/320 [00:05&lt;00:08, 22.43it/s] 45%|####4     | 143/320 [00:06&lt;00:08, 20.21it/s] 46%|####5     | 146/320 [00:06&lt;00:09, 19.10it/s] 47%|####6     | 149/320 [00:06&lt;00:08, 20.76it/s] 48%|####7     | 152/320 [00:06&lt;00:07, 21.89it/s] 48%|####8     | 155/320 [00:06&lt;00:07, 22.46it/s] 49%|####9     | 158/320 [00:06&lt;00:07, 22.96it/s] 50%|#####     | 161/320 [00:07&lt;00:08, 19.00it/s] 51%|#####1    | 164/320 [00:07&lt;00:10, 15.23it/s] 52%|#####1    | 166/320 [00:07&lt;00:10, 15.14it/s] 53%|#####2    | 169/320 [00:07&lt;00:08, 17.15it/s] 54%|#####3    | 172/320 [00:07&lt;00:07, 19.73it/s] 55%|#####4    | 175/320 [00:07&lt;00:07, 19.96it/s] 56%|#####5    | 178/320 [00:07&lt;00:06, 21.99it/s] 57%|#####6    | 182/320 [00:08&lt;00:05, 24.75it/s] 58%|#####8    | 186/320 [00:08&lt;00:05, 26.14it/s] 59%|#####9    | 190/320 [00:08&lt;00:04, 27.67it/s] 61%|######    | 194/320 [00:08&lt;00:04, 28.35it/s] 62%|######1   | 197/320 [00:08&lt;00:04, 27.38it/s] 62%|######2   | 200/320 [00:08&lt;00:04, 26.27it/s] 63%|######3   | 203/320 [00:08&lt;00:04, 26.34it/s] 64%|######4   | 206/320 [00:08&lt;00:04, 26.85it/s] 65%|######5   | 209/320 [00:09&lt;00:04, 26.43it/s] 66%|######6   | 212/320 [00:09&lt;00:04, 26.89it/s] 67%|######7   | 215/320 [00:09&lt;00:03, 27.36it/s] 68%|######8   | 218/320 [00:09&lt;00:03, 27.67it/s] 69%|######9   | 221/320 [00:09&lt;00:04, 22.87it/s] 70%|#######   | 224/320 [00:09&lt;00:03, 24.38it/s] 71%|#######   | 227/320 [00:09&lt;00:03, 24.08it/s] 72%|#######2  | 231/320 [00:09&lt;00:03, 26.50it/s] 73%|#######3  | 234/320 [00:09&lt;00:03, 27.37it/s] 74%|#######4  | 238/320 [00:10&lt;00:02, 28.05it/s] 75%|#######5  | 241/320 [00:10&lt;00:02, 28.00it/s] 77%|#######6  | 245/320 [00:10&lt;00:02, 28.99it/s] 78%|#######7  | 249/320 [00:10&lt;00:02, 29.83it/s] 79%|#######8  | 252/320 [00:10&lt;00:02, 29.55it/s] 80%|#######9  | 255/320 [00:10&lt;00:02, 29.05it/s] 81%|########  | 259/320 [00:10&lt;00:02, 26.84it/s] 82%|########1 | 262/320 [00:11&lt;00:02, 20.50it/s] 83%|########2 | 265/320 [00:11&lt;00:02, 18.38it/s] 84%|########3 | 268/320 [00:11&lt;00:02, 20.54it/s] 85%|########4 | 271/320 [00:11&lt;00:02, 21.86it/s] 86%|########5 | 274/320 [00:11&lt;00:02, 22.85it/s] 87%|########6 | 277/320 [00:11&lt;00:01, 23.03it/s] 88%|########7 | 280/320 [00:11&lt;00:01, 24.38it/s] 88%|########8 | 283/320 [00:11&lt;00:01, 25.29it/s] 89%|########9 | 286/320 [00:12&lt;00:01, 26.34it/s] 90%|######### | 289/320 [00:12&lt;00:01, 26.80it/s] 92%|#########1| 293/320 [00:12&lt;00:00, 27.83it/s] 92%|#########2| 296/320 [00:12&lt;00:01, 23.04it/s] 93%|#########3| 299/320 [00:12&lt;00:00, 24.30it/s] 94%|#########4| 302/320 [00:12&lt;00:00, 24.48it/s] 95%|#########5| 305/320 [00:12&lt;00:00, 23.72it/s] 96%|#########6| 308/320 [00:13&lt;00:00, 24.72it/s] 97%|#########7| 311/320 [00:13&lt;00:00, 22.80it/s] 98%|#########8| 315/320 [00:13&lt;00:00, 25.53it/s]100%|#########9| 319/320 [00:13&lt;00:00, 27.24it/s]100%|##########| 320/320 [00:13&lt;00:00, 23.80it/s]</code></pre>
+</div>
+<p>Read the enhanced training set:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tqdm</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.image <span class="im">as</span> mpimg</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the training set data</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>train_x_enhance<span class="op">=</span>[]               </span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>train_y_enhance<span class="op">=</span>[]</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>fileDir <span class="op">=</span> <span class="vs">r&quot;/Users/Zhuanz/Library/CloudStorage/OneDrive-MaynoothUniversity/R projects/longxiangwu/longxiangwu/_portfolio/2026-03-20-facial/gen&quot;</span>                  <span class="co"># 数据所在的文件夹</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> root, dirs, files <span class="kw">in</span> os.walk(fileDir): </span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name <span class="kw">in</span> tqdm.tqdm(files):</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        path<span class="op">=</span><span class="bu">str</span>(root<span class="op">+</span> <span class="st">&#39;/&#39;</span> <span class="op">+</span> name)           <span class="co"># path</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        photo<span class="op">=</span>mpimg.imread(path)             <span class="co"># Read the image</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        photo_2D<span class="op">=</span>photo[:,:,<span class="dv">0</span>]                <span class="co"># The enhanced image is three-channel, and the slice is read as a two-dimensional matrix.</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        train_x_enhance.append(photo_2D)     <span class="co"># Add training set data</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        train_y_enhance.append(<span class="bu">int</span>(name.split(<span class="st">&quot;_&quot;</span>)[<span class="dv">0</span>])) <span class="co"># Get category information by string cutting</span></span></code></pre></div>
+<pre><code>  0%|          | 0/959 [00:00&lt;?, ?it/s]  4%|3         | 36/959 [00:00&lt;00:02, 353.69it/s]  8%|7         | 73/959 [00:00&lt;00:02, 363.11it/s] 12%|#1        | 115/959 [00:00&lt;00:02, 385.41it/s] 16%|#6        | 154/959 [00:00&lt;00:02, 368.36it/s] 20%|#9        | 191/959 [00:00&lt;00:02, 359.45it/s] 24%|##3       | 228/959 [00:00&lt;00:02, 312.80it/s] 28%|##7       | 266/959 [00:00&lt;00:02, 329.49it/s] 31%|###1      | 302/959 [00:00&lt;00:01, 336.20it/s] 35%|###5      | 338/959 [00:00&lt;00:01, 342.52it/s] 39%|###9      | 375/959 [00:01&lt;00:01, 349.22it/s] 43%|####2     | 411/959 [00:01&lt;00:01, 338.56it/s] 47%|####6     | 446/959 [00:01&lt;00:01, 335.62it/s] 50%|#####     | 482/959 [00:01&lt;00:01, 342.23it/s] 54%|#####4    | 518/959 [00:01&lt;00:01, 346.87it/s] 58%|#####7    | 553/959 [00:01&lt;00:01, 341.43it/s] 62%|######1   | 590/959 [00:01&lt;00:01, 348.93it/s] 65%|######5   | 627/959 [00:01&lt;00:00, 353.66it/s] 69%|######9   | 664/959 [00:01&lt;00:00, 357.36it/s] 73%|#######2  | 700/959 [00:02&lt;00:00, 356.99it/s] 77%|#######6  | 736/959 [00:02&lt;00:00, 355.91it/s] 81%|########  | 775/959 [00:02&lt;00:00, 364.36it/s] 85%|########4 | 813/959 [00:02&lt;00:00, 367.99it/s] 89%|########8 | 851/959 [00:02&lt;00:00, 369.95it/s] 93%|#########2| 890/959 [00:02&lt;00:00, 374.49it/s] 97%|#########6| 928/959 [00:02&lt;00:00, 366.69it/s]100%|##########| 959/959 [00:02&lt;00:00, 353.29it/s]</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>train_x_enhance<span class="op">=</span>np.array(train_x_enhance)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>train_y_enhance<span class="op">=</span>np.array(train_y_enhance)  </span></code></pre></div>
+</div>
+<h3 id="establish-a-convolutional-neural-network-model">3 Establish a convolutional neural network model¶</h3>
+<h3 id="define-the-evaluation-function">3.1 Define the evaluation function</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co">The function evaluate(pred,test_y) is used to evaluate the classification results;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co">Input: real classification, predicted classification results</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co">Output: classification accuracy, confusion matrix, etc.</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span></code></pre></div>
+<pre><code>&#39;\nThe function evaluate(pred,test_y) is used to evaluate the classification results;\n\nInput: real classification, predicted classification results\n\nOutput: classification accuracy, confusion matrix, etc.\n&#39;</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate(pred,test_y):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert three-dimensional classification results into one-dimensional arrays</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    pred_1D<span class="op">=</span>[]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(pred)):</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        some<span class="op">=</span><span class="bu">list</span>(pred[i])</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        max_index<span class="op">=</span>some.index(<span class="bu">max</span>(some))  <span class="co">#Record the index of the maximum value</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        pred_1D.append(max_index)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    pred_1D<span class="op">=</span>np.array(pred_1D)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert three-dimensional classification results into one-dimensional arrays</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    testy_1D<span class="op">=</span>[]</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(test_y)):</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        some<span class="op">=</span><span class="bu">list</span>(test_y[i])</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        max_index<span class="op">=</span>some.index(<span class="bu">max</span>(some))  <span class="co">#Record the index of the maximum value</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>        testy_1D.append(max_index)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    testy_1D<span class="op">=</span>np.array(testy_1D)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The accuracy rate of output classification</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Accuracy: </span><span class="sc">%.4f</span><span class="st">&quot;</span>  <span class="op">%</span> (metrics.accuracy_score(testy_1D,pred_1D)))</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Output various indicators to measure the classification effect</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(classification_report(testy_1D, pred_1D)) </span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># More intuitively, we draw a confusion matrix through seaborn.</span></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># %matplotlib inline</span></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>,<span class="dv">6</span>))</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    colorMetrics <span class="op">=</span> metrics.confusion_matrix(testy_1D,pred_1D)</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Coordinate y represents test_y, that is, the real category, and coordinate x represents the estimated category pred</span></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>    sns.heatmap(colorMetrics,annot<span class="op">=</span><span class="va">True</span>,fmt<span class="op">=</span><span class="st">&#39;d&#39;</span>,xticklabels<span class="op">=</span><span class="bu">list</span>(index),yticklabels<span class="op">=</span><span class="bu">list</span>(index))</span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div>
+</div>
+<h3 id="dimensial-conversion">3.2 Dimensial conversion</h3>
+<p>Keras has strict requirements for the format of input data:</p>
+<ol type="1">
+<li><p>One-dimensional convolutional layer Conv1D inputs a three-dimensional array, and two-dimensional convolutional layer Conv2D inputs a four-dimensional array;</p></li>
+<li><p>The label must be a one-hot variable.</p></li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.utils <span class="im">import</span> to_categorical</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversion of features: from 3D to 4D</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>train_x <span class="op">=</span> train_x.reshape(train_x.shape <span class="op">+</span> (<span class="dv">1</span>,))</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>train_x_enhance <span class="op">=</span> train_x_enhance.reshape(train_x_enhance.shape <span class="op">+</span> (<span class="dv">1</span>,))</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>test_x <span class="op">=</span> test_x.reshape(test_x.shape <span class="op">+</span> (<span class="dv">1</span>,))</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversion of labels: one-hot encoding</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>train_y <span class="op">=</span> to_categorical(train_y, <span class="dv">40</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>train_y_enhance <span class="op">=</span> to_categorical(train_y_enhance, <span class="dv">40</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>test_y <span class="op">=</span> to_categorical(test_y, <span class="dv">40</span>)</span></code></pre></div>
+</div>
+<h3 id="design-network-structure">3.3 Design network structure</h3>
+<p>The structure of the convolutional neural network is as follows:
+<img src="structure.png" /></p>
+<p>Introduce the required objects from the corresponding modules of keras:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.models <span class="im">import</span> Sequential</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Dense, Dropout, Activation, Flatten</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Conv2D, MaxPooling2D</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.optimizers <span class="im">import</span> Adam</span></code></pre></div>
+</div>
+<p>Define the network structure:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>seed <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(seed)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Sequential()</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co"># First convolutional layer</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>model.add(Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), padding<span class="op">=</span><span class="st">&#39;valid&#39;</span>, input_shape<span class="op">=</span>(<span class="dv">64</span>, <span class="dv">64</span>, <span class="dv">1</span>)))</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>model.add(Activation(<span class="st">&#39;relu&#39;</span>))</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>model.add(MaxPooling2D(pool_size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>)))</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Second convolutional layer</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>model.add(Conv2D(<span class="dv">64</span>, (<span class="dv">3</span>, <span class="dv">3</span>)))</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>model.add(Activation(<span class="st">&#39;relu&#39;</span>))</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>model.add(MaxPooling2D(pool_size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>)))</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>model.add(Dropout(<span class="fl">0.25</span>))</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>model.add(Flatten())</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fully connected layers</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>model.add(Dense(<span class="dv">512</span>))</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>model.add(Activation(<span class="st">&#39;tanh&#39;</span>))</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Softmax output layer</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>model.add(Dense(<span class="dv">40</span>))</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>model.add(Activation(<span class="st">&#39;softmax&#39;</span>))</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">compile</span>(loss<span class="op">=</span><span class="st">&#39;categorical_crossentropy&#39;</span>, optimizer<span class="op">=</span>Adam(), metrics<span class="op">=</span>[<span class="st">&#39;accuracy&#39;</span>])</span></code></pre></div>
+</div>
+<h3 id="model-training-and-evaluation">3.4 Model training and evaluation¶</h3>
+<p>Train the model with raw data:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Training model</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>model.fit(train_x, train_y, batch_size<span class="op">=</span><span class="dv">200</span>, epochs<span class="op">=</span><span class="dv">20</span>, validation_data<span class="op">=</span>(test_x, test_y))</span></code></pre></div>
+<pre><code>Epoch 1/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m7s[0m 7s/step - accuracy: 0.0350 - loss: 3.7104[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 945ms/step - accuracy: 0.0331 - loss: 3.9326[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m9s[0m 2s/step - accuracy: 0.0325 - loss: 4.0067 - val_accuracy: 0.0125 - val_loss: 4.2419
+Epoch 2/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.0250 - loss: 3.6856[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 675ms/step - accuracy: 0.0266 - loss: 3.6708[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 928ms/step - accuracy: 0.0271 - loss: 3.6658 - val_accuracy: 0.0625 - val_loss: 3.6935
+Epoch 3/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.1200 - loss: 3.5295[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 696ms/step - accuracy: 0.1209 - loss: 3.5324[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 968ms/step - accuracy: 0.1213 - loss: 3.5333 - val_accuracy: 0.1125 - val_loss: 3.4692
+Epoch 4/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.1550 - loss: 3.4063[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 677ms/step - accuracy: 0.1728 - loss: 3.3905[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 931ms/step - accuracy: 0.1787 - loss: 3.3853 - val_accuracy: 0.3500 - val_loss: 3.3711
+Epoch 5/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.4650 - loss: 3.2616[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 757ms/step - accuracy: 0.4981 - loss: 3.2198[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 1s/step - accuracy: 0.5092 - loss: 3.2059 - val_accuracy: 0.3375 - val_loss: 3.2587
+Epoch 6/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.5900 - loss: 3.0199[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 914ms/step - accuracy: 0.5825 - loss: 2.9859[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 1s/step - accuracy: 0.5800 - loss: 2.9746 - val_accuracy: 0.3250 - val_loss: 3.1146
+Epoch 7/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.6050 - loss: 2.7662[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 741ms/step - accuracy: 0.6338 - loss: 2.7222[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 992ms/step - accuracy: 0.6433 - loss: 2.7075 - val_accuracy: 0.4500 - val_loss: 2.8832
+Epoch 8/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 2s/step - accuracy: 0.8250 - loss: 2.4457[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 758ms/step - accuracy: 0.8203 - loss: 2.3882[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 1s/step - accuracy: 0.8188 - loss: 2.3690 - val_accuracy: 0.6500 - val_loss: 2.5454
+Epoch 9/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 2s/step - accuracy: 0.8550 - loss: 2.1005[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 714ms/step - accuracy: 0.8541 - loss: 2.0360[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 981ms/step - accuracy: 0.8537 - loss: 2.0145 - val_accuracy: 0.7000 - val_loss: 2.1457
+Epoch 10/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.8950 - loss: 1.7437[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 758ms/step - accuracy: 0.9006 - loss: 1.6695[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 1s/step - accuracy: 0.9025 - loss: 1.6448 - val_accuracy: 0.7125 - val_loss: 1.8043
+Epoch 11/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9450 - loss: 1.2917[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 736ms/step - accuracy: 0.9459 - loss: 1.2642[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 1s/step - accuracy: 0.9462 - loss: 1.2550 - val_accuracy: 0.7375 - val_loss: 1.5112
+Epoch 12/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9300 - loss: 0.9729[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 682ms/step - accuracy: 0.9306 - loss: 0.9358[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 946ms/step - accuracy: 0.9308 - loss: 0.9235 - val_accuracy: 0.7875 - val_loss: 1.2532
+Epoch 13/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9600 - loss: 0.6972[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 761ms/step - accuracy: 0.9566 - loss: 0.6686[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 1s/step - accuracy: 0.9554 - loss: 0.6591 - val_accuracy: 0.8000 - val_loss: 1.0062
+Epoch 14/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9600 - loss: 0.5005[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 719ms/step - accuracy: 0.9644 - loss: 0.4828[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 1s/step - accuracy: 0.9658 - loss: 0.4768 - val_accuracy: 0.8375 - val_loss: 0.7591
+Epoch 15/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9800 - loss: 0.3370[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 785ms/step - accuracy: 0.9822 - loss: 0.3224[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 1s/step - accuracy: 0.9829 - loss: 0.3176 - val_accuracy: 0.8375 - val_loss: 0.7472
+Epoch 16/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 2s/step - accuracy: 0.9700 - loss: 0.2807[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 737ms/step - accuracy: 0.9741 - loss: 0.2586[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 1s/step - accuracy: 0.9754 - loss: 0.2513 - val_accuracy: 0.8250 - val_loss: 0.6046
+Epoch 17/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9800 - loss: 0.1501[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 707ms/step - accuracy: 0.9837 - loss: 0.1453[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 973ms/step - accuracy: 0.9850 - loss: 0.1437 - val_accuracy: 0.9000 - val_loss: 0.4787
+Epoch 18/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0991[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 977ms/step - accuracy: 0.9969 - loss: 0.1128[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 1s/step - accuracy: 0.9958 - loss: 0.1173 - val_accuracy: 0.9125 - val_loss: 0.4273
+Epoch 19/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0733[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 819ms/step - accuracy: 0.9984 - loss: 0.0736[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 1s/step - accuracy: 0.9979 - loss: 0.0737 - val_accuracy: 0.9125 - val_loss: 0.3921
+Epoch 20/20
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 3s/step - accuracy: 1.0000 - loss: 0.0562[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 0.9984 - loss: 0.0602[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m4s[0m 1s/step - accuracy: 0.9979 - loss: 0.0615 - val_accuracy: 0.8875 - val_loss: 0.4098
+&lt;keras.src.callbacks.history.History object at 0x16d2c67d0&gt;</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model evaluation</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> model.evaluate(test_x, test_y, batch_size<span class="op">=</span><span class="dv">20</span>)</span></code></pre></div>
+<pre><code>[1m1/4[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 130ms/step - accuracy: 0.9500 - loss: 0.2131[1m3/4[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 45ms/step - accuracy: 0.8750 - loss: 0.4320 [1m4/4[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 47ms/step - accuracy: 0.8781 - loss: 0.4264[1m4/4[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 49ms/step - accuracy: 0.8800 - loss: 0.4231</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Test loss:&#39;</span>, score[<span class="dv">0</span>])</span></code></pre></div>
+<pre><code>Test loss: 0.40976932644844055</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Test accuracy:&#39;</span>, score[<span class="dv">1</span>])</span></code></pre></div>
+<pre><code>Test accuracy: 0.887499988079071</code></pre>
+</div>
+<p>More detailed model evaluation:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>pred<span class="op">=</span>model.predict(test_x)</span></code></pre></div>
+<pre><code>[1m1/3[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m0s[0m 437ms/step[1m2/3[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 73ms/step [1m3/3[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 191ms/step[1m3/3[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 191ms/step</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>evaluate(pred,test_y)</span></code></pre></div>
+<pre><code>Accuracy: 0.8875
+              precision    recall  f1-score   support
+
+           0       0.83      1.00      0.91         5
+           1       1.00      1.00      1.00         4
+           2       0.50      0.50      0.50         2
+           3       1.00      1.00      1.00         1
+           4       1.00      1.00      1.00         1
+           5       1.00      1.00      1.00         3
+           6       1.00      1.00      1.00         3
+           7       1.00      0.67      0.80         3
+           9       1.00      1.00      1.00         1
+          10       1.00      1.00      1.00         3
+          11       1.00      1.00      1.00         1
+          12       1.00      1.00      1.00         1
+          13       1.00      1.00      1.00         2
+          14       1.00      1.00      1.00         4
+          15       1.00      1.00      1.00         3
+          17       1.00      0.33      0.50         6
+          19       1.00      1.00      1.00         3
+          20       1.00      1.00      1.00         1
+          21       1.00      1.00      1.00         1
+          22       0.25      1.00      0.40         1
+          23       1.00      1.00      1.00         1
+          24       1.00      1.00      1.00         2
+          25       0.00      0.00      0.00         1
+          26       1.00      1.00      1.00         3
+          27       1.00      1.00      1.00         1
+          28       1.00      1.00      1.00         2
+          29       1.00      1.00      1.00         3
+          30       1.00      1.00      1.00         3
+          31       1.00      1.00      1.00         3
+          32       1.00      1.00      1.00         2
+          33       1.00      1.00      1.00         1
+          34       1.00      0.33      0.50         3
+          35       1.00      1.00      1.00         1
+          36       1.00      1.00      1.00         2
+          37       1.00      1.00      1.00         2
+          39       0.20      1.00      0.33         1
+
+    accuracy                           0.89        80
+   macro avg       0.91      0.91      0.89        80
+weighted avg       0.95      0.89      0.89        80</code></pre>
+<p><img src="facial_files/figure-html5/unnamed-chunk-17-7.png" alt="" width="864" /></p>
+</div>
+<p>Using the original data to train the model can achieve an accuracy rate of 90%, among which the most errors are to identify the 17th person as the 22nd person and the 34th person as the 39th person.</p>
+<p>Train the model with the enhanced data:</p>
+<p>Note: Before retraining the model, the model parameters must be reinitialised, otherwise it will be iterated from the last training result, resulting in errors.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Training model</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>model.fit(train_x_enhance, train_y_enhance, batch_size<span class="op">=</span><span class="dv">200</span>, epochs<span class="op">=</span><span class="dv">20</span>, validation_data<span class="op">=</span>(test_x, test_y))</span></code></pre></div>
+<pre><code>Epoch 1/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m8s[0m 2s/step - accuracy: 0.8350 - loss: 0.6375[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 0.8462 - loss: 0.6029[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 0.8531 - loss: 0.5685[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 0.8560 - loss: 0.5552[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 0.8579 - loss: 0.5450[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 1s/step - accuracy: 0.8592 - loss: 0.5381 - val_accuracy: 0.8125 - val_loss: 0.5809
+Epoch 2/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m6s[0m 2s/step - accuracy: 0.9350 - loss: 0.3435[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 0.9312 - loss: 0.3375[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 0.9275 - loss: 0.3415[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9278 - loss: 0.3331[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 0.9289 - loss: 0.3230[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 0.9296 - loss: 0.3162 - val_accuracy: 0.8250 - val_loss: 0.6174
+Epoch 3/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m7s[0m 2s/step - accuracy: 0.9650 - loss: 0.1616[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m4s[0m 1s/step - accuracy: 0.9675 - loss: 0.1562[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 0.9700 - loss: 0.1513[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9725 - loss: 0.1458[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 0.9740 - loss: 0.1421[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 1s/step - accuracy: 0.9751 - loss: 0.1396 - val_accuracy: 0.9375 - val_loss: 0.2329
+Epoch 4/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m6s[0m 2s/step - accuracy: 1.0000 - loss: 0.0719[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m4s[0m 1s/step - accuracy: 0.9987 - loss: 0.0720[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 0.9981 - loss: 0.0716[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 0.9976 - loss: 0.0710[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 2s/step - accuracy: 0.9970 - loss: 0.0701[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 2s/step - accuracy: 0.9967 - loss: 0.0694 - val_accuracy: 0.9125 - val_loss: 0.2998
+Epoch 5/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m7s[0m 2s/step - accuracy: 1.0000 - loss: 0.0425[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m4s[0m 1s/step - accuracy: 1.0000 - loss: 0.0438[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0418[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0402[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 0.9998 - loss: 0.0393[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 1s/step - accuracy: 0.9997 - loss: 0.0388 - val_accuracy: 0.9500 - val_loss: 0.2346
+Epoch 6/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m7s[0m 2s/step - accuracy: 1.0000 - loss: 0.0209[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m8s[0m 3s/step - accuracy: 1.0000 - loss: 0.0202[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m4s[0m 2s/step - accuracy: 1.0000 - loss: 0.0204[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m2s[0m 2s/step - accuracy: 1.0000 - loss: 0.0204[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 2s/step - accuracy: 1.0000 - loss: 0.0201[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m9s[0m 2s/step - accuracy: 1.0000 - loss: 0.0200 - val_accuracy: 0.9125 - val_loss: 0.2593
+Epoch 7/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m7s[0m 2s/step - accuracy: 1.0000 - loss: 0.0129[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m4s[0m 2s/step - accuracy: 1.0000 - loss: 0.0127[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m3s[0m 2s/step - accuracy: 1.0000 - loss: 0.0124[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0123[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0121[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 1s/step - accuracy: 1.0000 - loss: 0.0119 - val_accuracy: 0.9375 - val_loss: 0.2048
+Epoch 8/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m6s[0m 2s/step - accuracy: 1.0000 - loss: 0.0108[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m4s[0m 1s/step - accuracy: 1.0000 - loss: 0.0102[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0097[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0094[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0091[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 1.0000 - loss: 0.0089 - val_accuracy: 0.9375 - val_loss: 0.1948
+Epoch 9/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m5s[0m 1s/step - accuracy: 1.0000 - loss: 0.0058[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0056[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0055[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0056[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0055[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 1s/step - accuracy: 1.0000 - loss: 0.0055 - val_accuracy: 0.9375 - val_loss: 0.1769
+Epoch 10/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m5s[0m 1s/step - accuracy: 1.0000 - loss: 0.0053[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m4s[0m 2s/step - accuracy: 1.0000 - loss: 0.0052[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0050[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0050[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0049[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 1.0000 - loss: 0.0048 - val_accuracy: 0.9375 - val_loss: 0.1840
+Epoch 11/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m5s[0m 1s/step - accuracy: 1.0000 - loss: 0.0046[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0044[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0042[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0041[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0040[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 1s/step - accuracy: 1.0000 - loss: 0.0039 - val_accuracy: 0.9375 - val_loss: 0.1822
+Epoch 12/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m7s[0m 2s/step - accuracy: 1.0000 - loss: 0.0029[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0031[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0031[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0031[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0031[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 1.0000 - loss: 0.0031 - val_accuracy: 0.9375 - val_loss: 0.1682
+Epoch 13/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m5s[0m 1s/step - accuracy: 1.0000 - loss: 0.0028[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0028[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0028[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0028[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0027[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 1.0000 - loss: 0.0027 - val_accuracy: 0.9375 - val_loss: 0.1761
+Epoch 14/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m5s[0m 1s/step - accuracy: 1.0000 - loss: 0.0021[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m5s[0m 2s/step - accuracy: 1.0000 - loss: 0.0021[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m3s[0m 2s/step - accuracy: 1.0000 - loss: 0.0022[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 2s/step - accuracy: 1.0000 - loss: 0.0022[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0022[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 2s/step - accuracy: 1.0000 - loss: 0.0022 - val_accuracy: 0.9375 - val_loss: 0.1630
+Epoch 15/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m6s[0m 2s/step - accuracy: 1.0000 - loss: 0.0023[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m4s[0m 1s/step - accuracy: 1.0000 - loss: 0.0022[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0021[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0021[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0021[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 1.0000 - loss: 0.0021 - val_accuracy: 0.9375 - val_loss: 0.1569
+Epoch 16/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m6s[0m 2s/step - accuracy: 1.0000 - loss: 0.0017[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m5s[0m 2s/step - accuracy: 1.0000 - loss: 0.0017[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m3s[0m 2s/step - accuracy: 1.0000 - loss: 0.0018[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0018[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0018[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m8s[0m 2s/step - accuracy: 1.0000 - loss: 0.0018 - val_accuracy: 0.9375 - val_loss: 0.1621
+Epoch 17/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m6s[0m 2s/step - accuracy: 1.0000 - loss: 0.0019[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0018[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0018[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0018[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0018[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 1.0000 - loss: 0.0018 - val_accuracy: 0.9375 - val_loss: 0.1574
+Epoch 18/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m5s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m7s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014 - val_accuracy: 0.9375 - val_loss: 0.1613
+Epoch 19/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m5s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0013[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014 - val_accuracy: 0.9375 - val_loss: 0.1574
+Epoch 20/20
+[1m1/5[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m6s[0m 2s/step - accuracy: 1.0000 - loss: 0.0016[1m2/5[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m3s[0m 1s/step - accuracy: 1.0000 - loss: 0.0015[1m3/5[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m2s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m4/5[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m1s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014[1m5/5[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 1s/step - accuracy: 1.0000 - loss: 0.0014 - val_accuracy: 0.9375 - val_loss: 0.1602
+&lt;keras.src.callbacks.history.History object at 0x16dac8bd0&gt;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model evaluation</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> model.evaluate(test_x, test_y, batch_size<span class="op">=</span><span class="dv">20</span>)</span></code></pre></div>
+<pre><code>[1m1/4[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 124ms/step - accuracy: 1.0000 - loss: 0.0235[1m2/4[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 55ms/step - accuracy: 0.9625 - loss: 0.1147 [1m3/4[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 56ms/step - accuracy: 0.9528 - loss: 0.1373[1m4/4[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 60ms/step - accuracy: 0.9490 - loss: 0.1430[1m4/4[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 62ms/step - accuracy: 0.9467 - loss: 0.1464</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Test score:&#39;</span>, score[<span class="dv">0</span>])</span></code></pre></div>
+<pre><code>Test score: 0.1601635366678238</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Test accuracy:&#39;</span>, score[<span class="dv">1</span>])</span></code></pre></div>
+<pre><code>Test accuracy: 0.9375</code></pre>
+</div>
+<p>More detailed model evaluation:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>pred<span class="op">=</span>model.predict(test_x)</span></code></pre></div>
+<pre><code>[1m1/3[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m0s[0m 189ms/step[1m2/3[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 86ms/step [1m3/3[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 67ms/step</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>evaluate(pred,test_y)</span></code></pre></div>
+<pre><code>Accuracy: 0.9375
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00         5
+           1       1.00      1.00      1.00         4
+           2       0.67      1.00      0.80         2
+           3       1.00      1.00      1.00         1
+           4       1.00      1.00      1.00         1
+           5       1.00      1.00      1.00         3
+           6       1.00      1.00      1.00         3
+           7       1.00      1.00      1.00         3
+           9       1.00      1.00      1.00         1
+          10       1.00      1.00      1.00         3
+          11       1.00      1.00      1.00         1
+          12       1.00      1.00      1.00         1
+          13       1.00      1.00      1.00         2
+          14       0.67      1.00      0.80         4
+          15       1.00      1.00      1.00         3
+          17       1.00      0.50      0.67         6
+          18       0.00      0.00      0.00         0
+          19       1.00      1.00      1.00         3
+          20       1.00      1.00      1.00         1
+          21       1.00      1.00      1.00         1
+          22       1.00      1.00      1.00         1
+          23       1.00      1.00      1.00         1
+          24       1.00      1.00      1.00         2
+          25       0.00      0.00      0.00         1
+          26       1.00      1.00      1.00         3
+          27       1.00      1.00      1.00         1
+          28       1.00      1.00      1.00         2
+          29       1.00      1.00      1.00         3
+          30       1.00      1.00      1.00         3
+          31       1.00      1.00      1.00         3
+          32       1.00      1.00      1.00         2
+          33       1.00      1.00      1.00         1
+          34       1.00      1.00      1.00         3
+          35       0.00      0.00      0.00         1
+          36       1.00      1.00      1.00         2
+          37       1.00      1.00      1.00         2
+          39       0.50      1.00      0.67         1
+
+    accuracy                           0.94        80
+   macro avg       0.89      0.91      0.89        80
+weighted avg       0.94      0.94      0.93        80</code></pre>
+<p><img src="facial_files/figure-html5/unnamed-chunk-19-9.png" alt="" width="864" /></p>
+</div>
+<h3 id="results-analysis">Results analysis</h3>
+<p>Draw a bar chart to visually show the differences between the two models:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>index<span class="op">=</span>[<span class="st">&quot;loss&quot;</span>,<span class="st">&quot;accuracy&quot;</span>,<span class="st">&quot;precision&quot;</span>,<span class="st">&quot;recall&quot;</span>,<span class="st">&quot;f1-score&quot;</span>]</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>data<span class="op">=</span>np.array([[<span class="fl">0.571</span>,<span class="fl">0.291</span>],[<span class="fl">0.900</span>,<span class="fl">0.938</span>],[<span class="fl">0.93</span>,<span class="fl">0.94</span>],[<span class="fl">0.90</span>,<span class="fl">0.94</span>],[<span class="fl">0.90</span>,<span class="fl">0.93</span>]])</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.DataFrame(data,columns<span class="op">=</span>[<span class="st">&quot;original&quot;</span>,<span class="st">&quot;enhance&quot;</span>],index<span class="op">=</span>index)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>df.plot(kind<span class="op">=</span><span class="st">&quot;bar&quot;</span>)</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="fl">0.2</span>,<span class="dv">1</span>])</span></code></pre></div>
+<pre><code>(0.2, 1.0)</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="facial_files/figure-html5/unnamed-chunk-20-11.png" alt="" width="624" /><img src="facial_files/figure-html5/unnamed-chunk-20-12.png" alt="" width="768" /></p>
+</div>
+<p>The effect of the data-enhanced model is obviously better than that of the original data model, because the increase of training data can reduce over- fitting. When encountering a data set with a small amount of data, this method should be prioritised.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Wu (2025, Nov. 21). Longxiang Wu: Facial Recognition. Retrieved from https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{wu2025facial,
+  author = {Wu, Longxiang},
+  title = {Longxiang Wu: Facial Recognition},
+  url = {https://longxiangwu.netlify.app/portfolio/2026-03-20-facial/},
+  year = {2025}
+}</pre>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
