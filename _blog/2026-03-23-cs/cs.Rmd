@@ -1,7 +1,7 @@
 ---
 title: "What is Chi-Squared Test?"
 description: |
-  A short description of the post.
+  A goodness-of-fit test
 author:
   - name: Longxiang Wu
     url: https://lunghsiang-wu.github.io/longxiangwu/
