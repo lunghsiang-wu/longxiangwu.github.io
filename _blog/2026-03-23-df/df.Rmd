@@ -1,0 +1,30 @@
+---
+title: "What is Degrees of Freedom?"
+description: |
+  A parameter that appears in some probability distributions used in statistical inference, particularly the $t$-distribution, the chi-squared distribution, and the $F$-distribution.
+author:
+  - name: Longxiang Wu
+    url: https://lunghsiang-wu.github.io/longxiangwu/
+date: 2024-03-30
+preview: df.jpg
+output:
+  distill::distill_article:
+    self_contained: false
+    includes:
+      in_header: header.html
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+**degrees of freedom (df)** A \*parameter that appears in some \*probability distributions used in \*statistical inference, particularly the \*$t$-distribution, the \*chi-squared distribution, and the \*$F$-distribution. The phrase 'degrees of freedom' was introduced by Sir Ronald \*Fisher in 1922.
+
+In the case of the $t$-distribution, the term usually reflects the fact that the \*population variance has been estimated. The number of degrees of freedom is equal to the number of independent pieces of information concerning the variance. In the most familiar case of $n$ \*observations, $x_1, x_2, \ldots, x_n$ from a \*population with unknown \*mean and variance, there are $(n-1)$ independent deviations from the mean, since $x_n - \bar{x} = -\sum_{j=1}^{n-1}(x_j - \bar{x})$, where $\bar{x} = (\sum_{j=1}^{n} x_j)/n$. In this case, therefore, there are $(n-1)$ degrees of freedom.
+
+In the case of a \*random variable with a chi-squared distribution, if it can be expressed as the sum of squares of $m$ \*independent standard normal variables (*see* NORMAL DISTRIBUTION), then the distribution has $m$ degrees of freedom.
+
+In the case where the chi-squared distribution is used as a \*goodness-of-fit test, each independent parameter estimated from the data represents another constraint, so the number of degrees of freedom is $(c-1-p)$, where $c$ is the number of cells, $p$ is the number of parameters estimated from the sample data, and there is the constraint that the sum of the observed frequencies is the sum of the expected frequencies.
+
+In the case where the chi-squared distribution is used to test the \*null hypothesis of \*independence in a $J \times K$ \*contingency table, there are $(J-1)(K-1)$ degrees of freedom.

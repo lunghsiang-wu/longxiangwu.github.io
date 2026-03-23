@@ -1,5 +1,39 @@
 [
   {
+    "path": "blog/2026-03-21-cochran-armitage/",
+    "title": "What is Cochran-Armitage Test?",
+    "description": "A test whether there is a linear trend when the response is binary",
+    "author": [
+      {
+        "name": "Longxiang Wu",
+        "url": "https://lunghsiang-wu.github.io/longxiangwu/"
+      }
+    ],
+    "date": "2026-04-20",
+    "categories": [],
+    "contents": "\nCochran-Armitage test A test (named after *Cochran and *Armitage) for trend in a \\(2 \\times k\\) *contingency table where the columns correspond to categories of an *ordinal variable. Denote the *frequency in row \\(i\\) and column \\(j\\) by \\(f_{ij}\\) with \\(i = 1\\) or \\(2\\), and \\(j = 1, \\ldots, J\\), denote the row totals by \\(f_{10}\\) and \\(f_{20}\\), the column totals by \\(f_{o1}, \\ldots, f_{oJ}\\), and the grand total by \\(f_{oo}\\). The test examines the *null hypothesis that, as \\(j\\) increases, the population proportion for a given row consistently increases (or decreases). The test statistic is \\(T\\) given by\n\\[T = \\frac{\\sum_{j=1}^{J} t_j(f_{1j}f_{20} - f_{2j}f_{10})}{\\sqrt{f_{10}f_{20}\\left(\\sum_{j=1}^{J} t_j^2 f_{oj}(f_{oo} - f_{oj}) - 2\\sum_{j=1}^{J-1}\\sum_{k=j+1}^{J} t_j t_k f_{oj} f_{ok}\\right)/f_{oo}}},\\]\nwhere \\(t_1, \\ldots, t_k\\) are constants chosen by the user (the optimal choice is usually \\(t_j = j\\), for all \\(j\\)). In the absence of trend, \\(T\\) has an approximate standard *normal distribution.\nThe test is popularly used in the genetic context where \\(J = 3\\), the column categories are three possible genotypes labelled \\(aa\\), \\(Aa\\), and \\(AA\\), and the rows refer to two types of individual.\n\n\n\n",
+    "preview": "blog/2026-03-21-cochran-armitage/cochran.webp",
+    "last_modified": "2026-03-23T10:16:16+08:00",
+    "input_file": "cochran-armitage.knit.md"
+  },
+  {
+    "path": "blog/2026-03-23-df/",
+    "title": "What is Degrees of Freedom?",
+    "description": "A parameter that appears in some probability distributions used in statistical inference, particularly the $t$-distribution, the chi-squared distribution, and the $F$-distribution.",
+    "author": [
+      {
+        "name": "Longxiang Wu",
+        "url": "https://lunghsiang-wu.github.io/longxiangwu/"
+      }
+    ],
+    "date": "2024-03-30",
+    "categories": [],
+    "contents": "\ndegrees of freedom (df) A *parameter that appears in some *probability distributions used in *statistical inference, particularly the *\\(t\\)-distribution, the *chi-squared distribution, and the *\\(F\\)-distribution. The phrase ‘degrees of freedom’ was introduced by Sir Ronald *Fisher in 1922.\nIn the case of the \\(t\\)-distribution, the term usually reflects the fact that the *population variance has been estimated. The number of degrees of freedom is equal to the number of independent pieces of information concerning the variance. In the most familiar case of \\(n\\) *observations, \\(x_1, x_2, \\ldots, x_n\\) from a *population with unknown *mean and variance, there are \\((n-1)\\) independent deviations from the mean, since \\(x_n - \\bar{x} = -\\sum_{j=1}^{n-1}(x_j - \\bar{x})\\), where \\(\\bar{x} = (\\sum_{j=1}^{n} x_j)/n\\). In this case, therefore, there are \\((n-1)\\) degrees of freedom.\nIn the case of a *random variable with a chi-squared distribution, if it can be expressed as the sum of squares of \\(m\\) *independent standard normal variables (see NORMAL DISTRIBUTION), then the distribution has \\(m\\) degrees of freedom.\nIn the case where the chi-squared distribution is used as a *goodness-of-fit test, each independent parameter estimated from the data represents another constraint, so the number of degrees of freedom is \\((c-1-p)\\), where \\(c\\) is the number of cells, \\(p\\) is the number of parameters estimated from the sample data, and there is the constraint that the sum of the observed frequencies is the sum of the expected frequencies.\nIn the case where the chi-squared distribution is used to test the *null hypothesis of *independence in a \\(J \\times K\\) *contingency table, there are \\((J-1)(K-1)\\) degrees of freedom.\n\n\n\n",
+    "preview": "blog/2026-03-23-df/df.jpg",
+    "last_modified": "2026-03-23T10:07:45+08:00",
+    "input_file": "df.knit.md"
+  },
+  {
     "path": "blog/2026-03-23-discriminant/",
     "title": "What is Discriminant Analysis?",
     "description": "A procedure for the determination of the group to which an individual belongs, based on the characteristics of that individual",

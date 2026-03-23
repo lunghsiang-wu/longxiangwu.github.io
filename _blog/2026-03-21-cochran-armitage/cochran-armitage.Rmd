@@ -1,14 +1,17 @@
 ---
 title: "What is Cochran-Armitage Test?"
 description: |
-  A short description of the post.
+  A test whether there is a linear trend when the response is binary
 author:
   - name: Longxiang Wu
-    url: https://longxiangwu.netlify.app
-date: 2026-03-21
+    url: https://lunghsiang-wu.github.io/longxiangwu/
+date: 2026-04-20
+preview: cochran.webp
 output:
   distill::distill_article:
     self_contained: false
+    includes:
+      in_header: header.html
 ---
 
 
@@ -16,8 +19,11 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+**Cochran-Armitage test** A test (named after \*Cochran and \*Armitage) for trend in a $2 \times k$ \*contingency table where the columns correspond to categories of an \*ordinal variable. Denote the \*frequency in row $i$ and column $j$ by $f_{ij}$ with $i = 1$ or $2$, and $j = 1, \ldots, J$, denote the row totals by $f_{10}$ and $f_{20}$, the column totals by $f_{o1}, \ldots, f_{oJ}$, and the grand total by $f_{oo}$. The test examines the \*null hypothesis that, as $j$ increases, the population proportion for a given row consistently increases (or decreases). The test statistic is $T$ given by
 
+$$T = \frac{\sum_{j=1}^{J} t_j(f_{1j}f_{20} - f_{2j}f_{10})}{\sqrt{f_{10}f_{20}\left(\sum_{j=1}^{J} t_j^2 f_{oj}(f_{oo} - f_{oj}) - 2\sum_{j=1}^{J-1}\sum_{k=j+1}^{J} t_j t_k f_{oj} f_{ok}\right)/f_{oo}}},$$
 
+where $t_1, \ldots, t_k$ are constants chosen by the user (the optimal choice is usually $t_j = j$, for all $j$). In the absence of trend, $T$ has an approximate standard \*normal distribution.
+
+The test is popularly used in the genetic context where $J = 3$, the column categories are three possible genotypes labelled $aa$, $Aa$, and $AA$, and the rows refer to two types of individual.
