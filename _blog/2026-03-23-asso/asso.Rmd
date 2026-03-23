@@ -1,0 +1,54 @@
+---
+title: "What is Association?"
+description: |
+  
+author:
+  - name: Longxiang Wu
+    url: https://lunghsiang-wu.github.io/longxiangwu/
+date: 2024-08-15
+preview: asso.png
+output:
+  distill::distill_article:
+    self_contained: false
+    includes:
+      in_header: header.html
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+**association** Two \*variables are associated if they are not independent, i.e. if the value of one variable affects the value, or the \*distribution of the values, of the other. Thus, for a human population, height and weight are associated, and so are actual skin-colour and ethnicity. In the case of numerical variables an appropriate measure is the \*correlation coefficient. In the case of \*ordinal variables and \*categorical variables, an alternative **measure of association** is required.
+
+\*Yule used the term 'association' in his 1900 paper that proposed a measure suitable for the case of two variables each having two categories.
+
+For two categorical variables ($A$ and $B$ having, respectively, $J$ and $K$ categories) a measure with a probabilistic interpretation is **Goodman and Kruskal's lambda ($\lambda$)** suggested by \*Goodman and \*Kruskal in 1954. Suppose that we are asked to guess the category of $B$ for the next \*observation. An intelligent guess would be the category that was the commonest so far (with \*marginal total equal to $f_{om}$, say). Judging by the past data, the \*probability that our guess will be correct will be $P$, given by $P = f_{om}/f_{oo}$, where $f_{oo} = \sum_j \sum_k f_{jk}$, $f_{jo} = \sum_k f_{jk}$, $f_{ok} = \sum_j f_{jk}$ and $f_{jk}$ is the frequency of the $(j, k)$ category combination. Suppose now that the next observation belongs to category $j$ of variable $A$. Our best guess for the category of $B$ now corresponds to the maximum of $f_{j1}, f_{j2}, \ldots, f_{jK}$. The revised probability of our being correct will be estimated by
+
+$$\frac{\max_k(f_{jk})}{f_{jo}}.$$
+
+Since the estimated probability of the next observation belonging to category $j$ of $A$ is estimated as $f_{jo}/f_{oo}$, the estimated probability of being correct taking into account the category of $A$ for the next observation is $P_A$, given by
+
+$$P_A = \frac{\sum_{j=1}^{J} \max_k(f_{jk})}{f_{oo}}.$$
+
+The statistic $\lambda$, given by
+
+$$\lambda = \frac{P_A - P}{1 - P},$$
+
+is a measure of the \*proportional reduction in error resulting from knowledge about $A$.
+
+With \*ordinal variables there are more appropriate measures that take account of the ordering. Let $j$ and $j'$ be two categories of one ordinal variable, $A$, and let $k$ and $k'$ be two categories of a second ordinal variable, $B$. The quantities $S$, $D$ and $T_B$ are defined in terms of pairs of observations, one belonging to cell $(j, k)$ and the other to cell $(j', k')$:
+
+$S =$ the total number of pairs for which, when $j > j'$, $k > k'$;  
+$D =$ the total number of pairs for which, when $j > j'$, $k < k'$;  
+$T_B =$ the total number of pairs for which, when $j > j'$, $k = k'$.
+
+These quantities are calculated using every pair of observations. Two measures based on these statistics are **Goodman and Kruskal's gamma ($\gamma$)**, proposed by Goodman and Kruskal in 1954, which is given by
+
+$$\gamma = \frac{S - D}{S + D},$$
+
+and **Somers's $d_{BA}$**, proposed by the sociologist Robert H. Somers in 1962, which is the preferred measure when $B$ is believed to depend on $A$. The formula is
+
+$$d_{BA} = \frac{S - D}{S + D + T_B}.$$
+
+*See also* TWO-BY-TWO TABLE.
