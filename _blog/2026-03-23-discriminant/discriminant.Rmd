@@ -1,0 +1,35 @@
+---
+title: "What is Discriminant Analysis?"
+description: |
+  A procedure for the determination of the group to which an individual belongs, based on the characteristics of that individual
+author:
+  - name: Longxiang Wu
+    url: https://lunghsiang-wu.github.io/longxiangwu/
+date: 2024-02-25
+preview: LDA.jpg
+output:
+  distill::distill_article:
+    self_contained: false
+    includes:
+      in_header: header.html
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+A procedure for the determination of the group to which an individual belongs, based on the characteristics of that individual. Suppose we have measurements on $p$ characteristics for each of a sample of individuals. We know that each individual belongs to one of $g$ groups, but we do not know which. Discriminant analysis attempts to maximize the probability of correct allocation. It differs from cluster analysis in that we have an initial data set, the **training set**, whose group allocations are known.
+
+For the case $g = 2$, suppose that the $p \times 1$ vectors of sample means are $\bar{\mathbf{x}}_1$ and $\bar{\mathbf{x}}_2$. Let $n_1$ and $n_2$ be the numbers of members of the training set falling in the two groups and let $\mathbf{S}_1$ and $\mathbf{S}_2$ be the *variance-covariance matrices for the two parts of the training set. If we define the matrix $\mathbf{S}$ by
+
+$$\mathbf{S} = \frac{(n_1\mathbf{S}_1 + n_2\mathbf{S}_2)}{(n_1 + n_2)},$$
+
+a future individual with measurement vector $\mathbf{x}$ will be assigned to group 1 if and only if
+
+$$\mathbf{a'x} > \frac{1}{2}\mathbf{a}'(\bar{\mathbf{x}}_1 + \bar{\mathbf{x}}_2),$$
+
+where $\mathbf{a}'$ is the transpose of the vector $\mathbf{a}$ given by
+
+$$\mathbf{a} = \mathbf{S}^{-1}(\bar{\mathbf{x}}_1 - \bar{\mathbf{x}}_2).$$
+
+The function $\mathbf{a'x}$ is called **Fisher's linear discriminant function**. The terms 'discriminant analysis' and 'discriminant function' were coined by Sir Ronald Fisher in his articles in 1936 and 1938 that introduced the procedure. *See also* MACHINE LEARNING; NEURAL NET.
