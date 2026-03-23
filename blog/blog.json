@@ -1,5 +1,22 @@
 [
   {
+    "path": "blog/2026-03-23-cs/",
+    "title": "What is Chi-Squared Test?",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Longxiang Wu",
+        "url": "https://lunghsiang-wu.github.io/longxiangwu/"
+      }
+    ],
+    "date": "2024-05-30",
+    "categories": [],
+    "contents": "\nchi-squared test (Pearson goodness-of-fit test) A *goodness-of-fit test, introduced by Karl *Pearson in 1900, that is popular because of its simplicity. Let \\(O\\) denote the observed *frequency of an outcome in a *sample and let \\(E\\) denote the corresponding *expected frequency under some *model. The test statistic is \\(X^2\\), defined by\n\\[X^2 = \\Sigma r^2,\\]\nwhere the summation is over all the outcomes whose frequencies are being compared, and \\(r\\), the Pearson residual, is defined by\n\\[r = \\frac{O - E}{\\sqrt{E}}.\\]\nIt is important to note that the comparison involves frequencies and not proportions.\nIf there are \\(m\\) observed frequencies, and \\(p\\) *parameters have been estimated using these frequencies, then, if the model is correct, the observed value of \\(X^2\\) will approximate an observation from a *chi-squared distribution with \\((m - p - 1)\\) *degrees of freedom. In the case of a *continuous random variable, the frequencies will refer to ranges of values. For other random variables it is usual to combine together neighbouring rare values into a single category, since the chi-squared approximation fails if there are too many small expected frequencies.\nAs an example, suppose it is hypothesized that a type of sweet pea occurs in shades of white, red, pink, and blue, with proportions \\(\\frac{1}{4}p\\), \\((\\frac{3}{4} - 3p)\\), and \\(2p\\), respectively. A random sample of 120 seeds is sown. All germinate with 20 having white flowers, 10 having red flowers, 40 pink, and 50 blue. The question is whether these results are consistent with the hypothesis. In this case the *maximum likelihood estimate of \\(p\\) is 0.15, so the expected frequencies are 30, 18, 36, and 36. Thus\n\\[X^2 = \\frac{(20-30)^2}{30} + \\frac{(10-18)^2}{18} + \\frac{(40-36)^2}{36} + \\frac{(50-36)^2}{36} = 12.8.\\]\nThere are \\(4 - 1 - 1 = 2\\) degrees of freedom. Since 12.8 is a very large value (compared with the percentage points (Appendix VIII) of a \\(\\chi^2_2\\)-distribution), the hypothesis can confidently be rejected.\nOne situation in which the use of the chi-squared test is frequently encountered is as a test for *independence in a \\(J \\times K\\) *contingency table that cross-classifies the variables \\(A\\) and \\(B\\). Let the observed frequency of data belonging to category \\(j\\) of variable \\(A\\) and to category \\(k\\) of variable \\(B\\) be \\(f_{jk}\\). Write\n\\[f_{jo} = \\sum_{k=1}^{K} f_{jk}, \\qquad f_{ok} = \\sum_{j=1}^{J} f_{jk}, \\qquad f_{oo} = \\sum_{j=1}^{J}\\sum_{k=1}^{K} f_{jk}.\\]\nThen, according to the *null hypothesis of independence, the expected frequency \\(e_{jk}\\) is given by\n\\[e_{jk} = \\frac{f_{jo}f_{ok}}{f_{oo}},\\]\nand the test statistic \\(X^2\\) is given by\n\\[X^2 = \\sum_{j=1}^{J}\\sum_{k=1}^{K} \\frac{(f_{jk} - e_{jk})^2}{e_{jk}}.\\]\nIf the null hypothesis of independence is correct, then the distribution of \\(X^2\\) can be approximated by a chi-squared distribution with \\((J-1)(K-1)\\) degrees of freedom. In the special case where \\(J = K = 2\\) (a two-by-two table), the chi-squared approximation is improved by using the Yates-corrected chi-squared test (see TWO-BY-TWO TABLE).\nIn 1946 *Cramér suggested that a measure of *association could be based on the value of \\(X^2\\). This is Cramér’s V, given by\n\\[V = \\sqrt{\\frac{X^2}{Mf_{oo}}},\\]\nwhere \\(M\\) is the smaller of \\(J - 1\\) and \\(K - 1\\).\n\n\n\n",
+    "preview": "blog/2026-03-23-cs/cs.jpg",
+    "last_modified": "2026-03-23T10:30:11+08:00",
+    "input_file": "cs.knit.md"
+  },
+  {
     "path": "blog/2026-03-21-cochran-armitage/",
     "title": "What is Cochran-Armitage Test?",
     "description": "A test whether there is a linear trend when the response is binary",
@@ -9,11 +26,11 @@
         "url": "https://lunghsiang-wu.github.io/longxiangwu/"
       }
     ],
-    "date": "2026-04-20",
+    "date": "2024-04-20",
     "categories": [],
     "contents": "\nCochran-Armitage test A test (named after *Cochran and *Armitage) for trend in a \\(2 \\times k\\) *contingency table where the columns correspond to categories of an *ordinal variable. Denote the *frequency in row \\(i\\) and column \\(j\\) by \\(f_{ij}\\) with \\(i = 1\\) or \\(2\\), and \\(j = 1, \\ldots, J\\), denote the row totals by \\(f_{10}\\) and \\(f_{20}\\), the column totals by \\(f_{o1}, \\ldots, f_{oJ}\\), and the grand total by \\(f_{oo}\\). The test examines the *null hypothesis that, as \\(j\\) increases, the population proportion for a given row consistently increases (or decreases). The test statistic is \\(T\\) given by\n\\[T = \\frac{\\sum_{j=1}^{J} t_j(f_{1j}f_{20} - f_{2j}f_{10})}{\\sqrt{f_{10}f_{20}\\left(\\sum_{j=1}^{J} t_j^2 f_{oj}(f_{oo} - f_{oj}) - 2\\sum_{j=1}^{J-1}\\sum_{k=j+1}^{J} t_j t_k f_{oj} f_{ok}\\right)/f_{oo}}},\\]\nwhere \\(t_1, \\ldots, t_k\\) are constants chosen by the user (the optimal choice is usually \\(t_j = j\\), for all \\(j\\)). In the absence of trend, \\(T\\) has an approximate standard *normal distribution.\nThe test is popularly used in the genetic context where \\(J = 3\\), the column categories are three possible genotypes labelled \\(aa\\), \\(Aa\\), and \\(AA\\), and the rows refer to two types of individual.\n\n\n\n",
     "preview": "blog/2026-03-21-cochran-armitage/cochran.webp",
-    "last_modified": "2026-03-23T10:16:16+08:00",
+    "last_modified": "2026-03-23T10:31:16+08:00",
     "input_file": "cochran-armitage.knit.md"
   },
   {
