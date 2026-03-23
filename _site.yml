@@ -1,7 +1,7 @@
 name: "website"
 title: "Longxiang Wu"
 output_dir: "."
-base_url: https://longxiangwu.netlify.app/
+base_url: https://lunghsiang-wu.github.io/longxiangwu/
 collections:
   posts:
     disqus: longxiangwu
