@@ -24,7 +24,7 @@ Want to chat?  Go ahead, pipe up!  Feel free to contact me on [email](mailto:lon
 <center>
 :::: {style="display: flex; gap: 10px; align-items: flex-start;"}
 ::: {style="flex-shrink: 0;"}
-![An Introduction to Statistical Learning](ISL.jpg){style="height: 300px; width: auto;"}
+![The Elements of Statistical Learning](ESL.jpg){style="height: 300px; width: auto;"}
 :::
 ::: {style="flex-shrink: 0;"}
 ![Statistical Foudations of Data Science](SFDS.webp){style="height: 300px; width: auto;"}
@@ -34,6 +34,12 @@ Want to chat?  Go ahead, pipe up!  Feel free to contact me on [email](mailto:lon
 :::
 ::: {style="flex-shrink: 0;"}
 ![Introduction to Algorithms](IA.jpg){style="height: 300px; width: auto;"}
+:::
+::::
+
+:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
+::: {style="flex-shrink: 0;"}
+![Computer Age Statistical Inference](CASI.jpg){style="height: 300px; width: auto;"}
 :::
 ::::
 </center>
