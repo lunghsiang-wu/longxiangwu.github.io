@@ -43,3 +43,37 @@ Want to chat?  Go ahead, pipe up!  Feel free to contact me on [email](mailto:lon
 :::
 ::::
 </center>
+
+
+
+## Some Paintings by Claude Monet
+
+<center>
+:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
+::: {style="flex-shrink: 0;"}
+![](1.JPG){style="height: 300px; width: auto;"}
+:::
+::: {style="flex-shrink: 0;"}
+![](2.JPEG){style="height: 300px; width: auto;"}
+:::
+::::
+
+:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
+::: {style="flex-shrink: 0;"}
+![](3.JPEG){style="height: 300px; width: auto;"}
+:::
+::: {style="flex-shrink: 0;"}
+![](4.JPEG){style="height: 300px; width: auto;"}
+:::
+::::
+
+:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
+::: {style="flex-shrink: 0;"}
+![](6.JPEG){style="height: 300px; width: auto;"}
+:::
+::: {style="flex-shrink: 0;"}
+![](5.JPEG){style="height: 300px; width: auto;"}
+:::
+::::
+
+</center>
