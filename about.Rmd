@@ -7,12 +7,12 @@ title: "Longxiang Wu"
 ## Professional
 
 
-I am an enthusiastic data scientist with over ten years of experience collaborating with diverse partners across industry and technology. My work spans the full data pipeline — from exploratory analysis to production-ready predictive models. Notable projects include developing sales forecasting models for JD.com and conducting in-depth logistics data analysis to drive operational efficiency. I am a proud member of the Irish Statistical Association, reflecting my commitment to staying engaged with the broader data science community and upholding rigorous statistical standards in my practice.   
+I have over ten years of experience working with a variety of partners in the technology and industry sectors, and I am a data scientist who is enthusiastic. My responsibilities encompass the entire data pipeline, from exploratory analysis to production-ready predictive models. Notable projects include the development of sales forecasting models for JD.com and the conduct of in-depth logistics data analysis to enhance operational efficiency. I am a member of the Irish Statistical Association.
 
 
 ## Personal
 
-I am currently at an exciting and grounded stage of life — single, living with my family, and fully invested in both personal growth and professional development. I find that the closeness and support of family life brings a sense of perspective and balance that quietly informs the way I work: with patience, care, and a long-term mindset. Outside of data and algorithms, I am someone who values meaningful connections, continuous learning, and the belief that the best work comes from those who bring their whole selves to what they do.
+I am currently in a stable and fulfilling stage of life, living with my family and fully committed to both personal growth and professional development. The support and perspective offered by my family environment provide me with balance and inform my work approach, allowing me to operate with patience, care, and a long-term outlook. Beyond my professional interests in data and technology, I place a high value on building meaningful relationships, pursuing continuous learning, and bringing a holistic and authentic perspective to my work. I believe that the most impactful contributions come from individuals who are fully engaged both personally and professionally.
 
 
 ## Contact
