@@ -1,6 +1,6 @@
 ---
 title: "Face Recognition Combined with Principal Component Analysis"
-description: "An dimension reduction project"
+description: "A dimension reduction project"
 author:
   - name: "Longxiang Wu"
 date: 2025-2-17
@@ -24,7 +24,7 @@ jupyter:
 
 ```{r setup, include=FALSE}
 library(reticulate)
-use_python("/Users/Zhuanz/anaconda3/bin/python3.11", required = TRUE)
+use_python("/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14")
 # or use your conda environment
 use_condaenv("base", required = TRUE)
 ```
