@@ -15,10 +15,6 @@ I have over ten years of experience working with a variety of partners in the te
 I am currently in a stable and fulfilling stage of life, living with my family and fully committed to both personal growth and professional development. The support and perspective offered by my family environment provide me with balance and inform my work approach, allowing me to operate with patience, care, and a long-term outlook. Beyond my professional interests in data and technology, I place a high value on building meaningful relationships, pursuing continuous learning, and bringing a holistic and authentic perspective to my work. I believe that the most impactful contributions come from individuals who are fully engaged both personally and professionally.
 
 
-## Contact
-
-Want to chat?  Go ahead, pipe up!  Feel free to contact me on [email](mailto:longxiangwu@outlook.com){target="_blank"}, or [LinkedIn](www.linkedin.com/in/longxiang-wu-003506106){target="_blank"}. I hope to hear from you!
-
 ## Books I Am Reading
 
 <center>
@@ -44,9 +40,34 @@ Want to chat?  Go ahead, pipe up!  Feel free to contact me on [email](mailto:lon
 ::::
 </center>
 
+## Some Quotes
+<center>
+:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
+::: {style="flex-shrink: 0;"}
+![](Maxwell.png){style="height: 300px; width: auto;"}
+:::
+::::
+
+:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
+::: {style="flex-shrink: 0;"}
+![](Keynes.png){style="height: 300px; width: auto;"}
+:::
+::::
+
+:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
+::: {style="flex-shrink: 0;"}
+![](Wittgenstein.jpg){style="height: 300px; width: auto;"}
+:::
+::::
+
+</center>
 
 
-## Some Paintings by Claude Monet
+## Contact
+
+Want to chat?  Go ahead, pipe up!  Feel free to contact me on [email](mailto:longxiangwu@outlook.com){target="_blank"}, or [LinkedIn](www.linkedin.com/in/longxiang-wu-003506106){target="_blank"}. I hope to hear from you!
+
+## Paintings by Claude Monet
 
 <center>
 :::: {style="display: flex; gap: 10px; align-items: flex-start;"}
@@ -77,3 +98,4 @@ Want to chat?  Go ahead, pipe up!  Feel free to contact me on [email](mailto:lon
 ::::
 
 </center>
+

@@ -13,8 +13,8 @@
     "categories": [],
     "contents": "\nA method of determining the period of the cyclical term \\(S_t\\) in a time series of the form\n\\[X_t = S_t + \\epsilon_t\\]\nwhere \\(\\epsilon_t\\) represents the random fluctuations of the series about \\(S_t\\). The cyclical term is\nrepresented as a sum of sine and cosine terms so that \\(X_t\\) becomes\n\\[X_t = \\sum_i (A_i \\cos \\omega_i t + B_i \\sin \\omega_i t) + \\epsilon_t\\]\nFor certain series the periodicity of the cyclical component can be specified very accu-\nrately, as, for example, in the case of economic or geophysical series which contain a strict\n12-month cycle. In such cases, the coefficients \\(\\{A_i\\}\\), \\(\\{B_i\\}\\) can be estimated by regression\ntechniques. For many series, however, there may be several periodic terms present with\nunknown periods and so not only the coefficients \\(\\{A_i\\}\\), \\(\\{B_i\\}\\) have to be estimated but\nalso the unknown frequencies \\(\\{\\omega_i\\}\\). The so-called hidden periodicities can often be\ndetermined by examination of the periodogram which is a plot of \\(I(\\omega)\\) against \\(\\omega\\) where\n\\[I(\\omega) = \\frac{2}{N} \\left\\{ \\left[ \\sum_{i=1}^{N} X_t \\cos(\\omega t) \\right]^2 + \\left[ \\sum_{i=1}^{N} X_t \\sin(\\omega t) \\right]^2 \\right\\}\\]\nand \\(\\omega = 2\\pi p/N\\), \\(p = 1, 2, \\ldots, [N/2]\\); \\(N\\) is the length of the series. Large ordinates on this plot indicate the presence of a cyclical component at a particular frequency. As an\nexample of the application of this procedure Fig.1 shows the sunspot series and the\nFig.1 Sunspot activity and its periodogramperiodogram of this series based on 281 observations. It is clear that the ordinate at\n\\(\\omega = 2\\pi \\times 28/281\\), corresponding to a period of approximately 10 years, is appreciably\nlarger than the other ordinates. If several peaks are observed in the periodogram it\ncannot be concluded that each of these corresponds to a genuine periodic component in\n\\(X_t\\) since it is possible that peaks may occur due simply to random fluctuations in the noise\nterm \\(\\epsilon_t\\). Various procedures for formally assessing periodic ordinates are available of\nwhich the most commonly used are Schuster’s test, Walker’s test and Fisher’s g statistic.\n\n\n\n",
     "preview": "blog/2026-03-29-harmonic/1666424753792.jpeg",
-    "last_modified": "2026-03-29T10:54:03+08:00",
-    "input_file": "harmonic.knit.md"
+    "last_modified": "2026-03-29T10:54:04+08:00",
+    "input_file": {}
   },
   {
     "path": "blog/2026-03-29-fuzzy/",
@@ -31,7 +31,7 @@
     "contents": "\nA radically different approach to dealing with uncertainty than the traditional\nprobabilistic and statistical methods. The essential feature of a fuzzy set is a membership\nfunction that assigns a grade of membership between 0 and 1 to each member of the\nset. Mathematically a membership function of a fuzzy set \\(A\\) is a mapping from a space \\(\\chi\\) to\nthe unit interval \\(m_A : \\chi \\rightarrow [0, 1]\\). Because memberships take their values in the unit\ninterval, it is tempting to think of them as probabilities; however, memberships do not\nfollow the laws of probability and it is possible to allow an object to simultaneously hold\nnonzero degrees of membership in sets traditionally considered mutually exclusive.\nMethods derived from the theory have been proposed as alternatives to traditional\nstatistical methods in areas such as quality control, linear regression and forecasting,\nalthough they have not met with universal acceptance and a number of statisticians\nhave commented that they have found no solution using such an approach that could\nnot have been achieved as least as effectively using probability and statistics.\n\n\n\n",
     "preview": "blog/2026-03-29-fuzzy/1.jpg",
     "last_modified": "2026-03-29T10:39:20+08:00",
-    "input_file": "fuzzy.knit.md"
+    "input_file": {}
   },
   {
     "path": "blog/2026-03-29-fourier/",
@@ -47,8 +47,8 @@
     "categories": [],
     "contents": "\nA method of calculating the Fourier transform of a set of observations \\(x_0, x_1, \\ldots, x_{n-1}\\), i.e. calculating \\(d(\\omega_p)\\) given by\n\\[d(\\omega_p) = \\sum_{t=0}^{n-1} x_t e^{i\\omega_p t}, \\quad p = 0, 1, 2, \\ldots, n-1; \\quad \\omega_p = \\frac{2\\pi p}{n}\\]\nThe number of computations required to calculate \\(\\{d(\\omega_p)\\}\\) is \\(n^2\\) which can be very\nlarge. The FFT reduces the number of computations to \\(O(n \\log_2 n)\\), and operates in the\nfollowing way.\nLet \\(n = rs\\) where \\(r\\) and \\(s\\) are integers. Let \\(t = rt_1 + t_0\\), \\(t = 0, 1, 2, \\ldots, n-1\\);\n\\(t_1 = 0, 1, 2, \\ldots, s-1\\); \\(t_0 = 0, 1, 2, \\ldots, r-1\\). Further let \\(p = sp_1 + p_0\\),\n\\(p_1 = 0, 1, 2, \\ldots, r-1\\), \\(p_0 = 0, 1, \\ldots, s-1\\). The FFT can now be written\n\\[\\begin{aligned}\nd(\\omega_p) = \\sum_{t=0}^{n-1} x_t e^{i\\omega_p t} &= \\sum_{t_0=0}^{r-1} \\sum_{t_1=0}^{s-1} x_{rt_1+t_0} e^{\\frac{2\\pi ip}{n}(rt_1+t_0)} \\\\\n&= \\sum_{t_0=0}^{r-1} e^{\\frac{2\\pi ip}{n}t_0} a(p_0, t_0)\n\\end{aligned}\\]\nwhere\n\\[a(p_0, t_0) = \\sum_{t_1=0}^{s-1} x_{rt_1+t_0} e^{\\frac{2\\pi i t_1 p_0}{s}}\\]\nCalculation of \\(a(p_0, t_0)\\) requires only \\(s^2\\) operations, and \\(d(\\omega_p)\\) only \\(rs^2\\). The evaluation of\n\\(d(\\omega_p)\\) reduces to the evaluation of \\(a(p_0, t_0)\\) which is itself a Fourier transform. Following\nthe same procedure, the computation of \\(a(p_0, t_0)\\) can be reduced in a similar way. The\nprocedures can be repeated until a single term is reached.\n\n\n\n",
     "preview": "blog/2026-03-29-fourier/FFT-algorithm-1024x472.png",
-    "last_modified": "2026-03-29T10:31:05+08:00",
-    "input_file": "fourier.knit.md",
+    "last_modified": "2026-03-29T10:31:06+08:00",
+    "input_file": {},
     "preview_width": 1024,
     "preview_height": 472
   },
@@ -67,7 +67,7 @@
     "contents": "\nFactor analysis: A procedure that postulates that the correlations or covariances between a set\nof observed variables, \\(\\mathbf{x}' = [x_1, x_2, \\ldots, x_q]\\), arise from the relationship of these variables to\na small number of underlying, unobservable, latent variables, usually known as the\ncommon factors, \\(\\mathbf{f}' = [f_1, f_2, \\ldots, f_k]\\), where \\(k < q\\). Explicitly the model used is\n\\[\\mathbf{x} = \\Lambda\\mathbf{f} + \\mathbf{e}\\]\nwhere\n\\[\\Lambda = \\begin{pmatrix} \\lambda_{11} & \\lambda_{12} & \\cdots & \\lambda_{1k} \\\\ \\lambda_{21} & \\lambda_{22} & \\cdots & \\lambda_{2k} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\lambda_{q1} & \\lambda_{q2} & \\cdots & \\lambda_{qk} \\end{pmatrix}\\]\ncontains the regression coefficients (usually known in this context as factor loadings) of\nthe observed variables on the common factors. The matrix, \\(\\Lambda\\), is known as the loading\nmatrix. The elements of the vector \\(\\mathbf{e}\\) are known as specific variates. Assuming that the\ncommon factors are uncorrelated, in standardized form and also uncorrelated with the\nspecific variates, the model implies that the variance–covariance matrix of the observed\nvariables, \\(\\Sigma\\), is of the form\n\\[\\Sigma = \\Lambda\\Lambda' + \\Psi\\]\nwhere \\(\\Psi\\) is a diagonal matrix containing the variances of the specific variates. A number of\napproaches are used to estimate the parameters in the model, i.e. the elements of \\(\\Lambda\\) and \\(\\Psi\\),\nincluding principal factor analysis and maximum likelihood estimation. After the initial\nestimation phase an attempt is generally made to simplify the often difficult task of\ninterpreting the derived factors using a process known as factor rotation. In general the\naim is to produce a solution having what is known as simple structure, i.e. each common\nfactor affects only a small number of the observed variables. Although based on a well-\ndefined model the method is, in its initial stages at least, essentially exploratory and such\nexploratory factor analysis needs to be carefully differentiated from confirmatory factor\nanalysis in which a prespecified set of common factors with some variables constrained to\nhave zero loadings is tested for consistency with the correlations of the observed variables.\n\n\n\n",
     "preview": "blog/2026-03-29-factor/factor_analysis_illustration.png.webp",
     "last_modified": "2026-03-29T10:23:01+08:00",
-    "input_file": "factor.knit.md"
+    "input_file": {}
   },
   {
     "path": "blog/2026-03-29-eu/",
@@ -84,7 +84,7 @@
     "contents": "\nA model used in investigations of the rate of success of in vitro fertilization (IVF), defined\nin terms of the following two parameters.\n\\[\\begin{aligned}\ne &= \\text{Prob(of a viable embryo)} \\\\\nu &= \\text{Prob(of a receptive uterus)}\n\\end{aligned}\\]\nAssuming the two events, viable embryo and receptive uterus, are independent, the\nprobability of observing \\(j\\) implantations out of \\(i\\) transferred embryos is given by\n\\[P(j|i, u, e) = \\binom{i}{j} ue^j(1-e)^{i-j}, \\text{ for } j = 1, 2, 3, \\ldots, i.\\]\nThe probability of at least one implantation out of \\(i\\) transferred embryos is given by\n\\[P(j > 0 | i, u, e) = u[1 - (1-e)^i]\\]\nand the probability of no implantations by\n\\[P(j = 0 | i, u, e) = 1 - u[1 - (1-e)^i]\\]\nThe parameters \\(u\\) and \\(e\\) can be estimated by maximum likelihood estimation from observations\non the number of attempts at IVF with \\(j\\) implantations from \\(i\\) transferred.\n\n\n\n",
     "preview": {},
     "last_modified": "2026-03-29T10:11:34+08:00",
-    "input_file": "eu.knit.md"
+    "input_file": {}
   },
   {
     "path": "blog/2026-03-29-diggle/",
@@ -101,7 +101,7 @@
     "contents": "\nA model applicable to longitudinal data in which the dropout process may give rise to informative missing values. Specifically if the study protocol specifies a common set of \\(n\\) measurement times for all subjects, and \\(d\\) is used to represent the subject’s dropout time, with \\(D = d\\) if the values corresponding to times \\(d, d+1, \\ldots, n\\) are missing and \\(D = n+1\\) indicating that the subject did not drop out, then a statistical model involves the joint distribution of the observations \\(y\\) and \\(d\\). This joint distribution can be written in two equivalent ways,\n\\[\\begin{aligned}\nf(y, d) &= f(y)g(d|y) \\\\\n&= g(d)f(y|d)\n\\end{aligned}\\]\nModels derived from the first factorization are known as selection models and those derived\nfrom the second factorisation are called pattern mixture models. The Diggle–Kenward\nmodel is an example of the former which specifies a multivariate normal distribution for \\(f(y)\\)\nand a logistic regression for \\(g(d|y)\\). Explicitly if \\(p_t(y)\\) denotes the conditional probability\nof dropout at time \\(t\\), given \\(Y = y\\) then,\n\\[\\ln\\left\\{\\frac{p_t(y)}{1 - p_t(y)}\\right\\} = \\alpha_0 y_t + \\sum_{k=1}^{r} \\alpha_k y_{t-k}\\]\n\nDigit preference among different groups of observers. For zero, even, odd and five numerals.\nWhen the dropout mechanism is informative the probability of dropout at time t can depend on the unobserved \\(y_t\\).\n\n\n\n",
     "preview": "blog/2026-03-29-diggle/Latent-growth-model-assuming-missing-data-to-be-MAR-solid-black-to-calculate.png",
     "last_modified": "2026-03-29T09:50:47+08:00",
-    "input_file": "diggle.knit.md",
+    "input_file": {},
     "preview_width": 850,
     "preview_height": 622
   },
@@ -119,8 +119,8 @@
     "categories": [],
     "contents": "\nA procedure that uses the Taylor series expansion of a function of one or more\nrandom variables to obtain approximations to the expected value of the function and to its\nvariance. For example, writing a variable \\(x\\) as \\(x = \\mu + \\epsilon\\) where \\(E(x) = \\mu\\) and \\(E(\\epsilon) = 0\\),\nTaylor’s expansion gives\n\\[f(x) = f(\\mu) + \\epsilon \\frac{df(x)}{dx}\\bigg|_{x=\\mu} + \\frac{\\epsilon^2}{2} \\frac{d^2f(x)}{dx^2}\\bigg|_{x=\\mu} + \\cdots\\]\nIf terms involving \\(\\epsilon^2, \\epsilon^3\\), etc. are assumed to be negligible then\n\\[f(x) \\approx f(\\mu) + (x - \\mu)f'(\\mu)\\]\nSo that\n\\[\\text{var}[f(x)] \\approx [f'(\\mu)]^2 \\text{var}(x)\\]\nSo if \\(f(x) = \\ln x\\) then \\(\\text{var}(\\ln x) = (1/\\mu^2)\\text{var}(x)\\).\n\n\n\n",
     "preview": "blog/2026-03-29-delta/schematic.png",
-    "last_modified": "2026-03-29T09:33:15+08:00",
-    "input_file": "delta.knit.md",
+    "last_modified": "2026-03-29T09:33:17+08:00",
+    "input_file": {},
     "preview_width": 5966,
     "preview_height": 4371
   },
@@ -139,7 +139,7 @@
     "contents": "\nA scheme for augmenting observed data so as to make it more easy to analyse.\nA simple example is the estimation of missing values to balance a factorial design with\ndifferent numbers of observations in each cell. The term is most often used, however, in\nrespect of an iterative procedure, the data augmentation algorithm common in the computation\nof the posterior distribution in Bayesian inference. The basic idea behind this algorithm\nis to augment the observed data \\(y\\) by a quantity \\(z\\) which is usually referred to as latent\ndata. It is assumed that given both \\(y\\) and \\(z\\) it is possible to calculate or sample from the\naugmented data posterior distribution \\(p(\\theta|y,z)\\). To obtain the observed posterior \\(p(\\theta|y)\\),\nmultiple values (imputations) of \\(z\\) from the predictive distribution \\(p(z|y)\\) are generated and\nthe average of \\(p(\\theta|y,z)\\) over the imputations calculated. Because \\(p(z|y)\\) depends on \\(p(\\theta|y)\\)\nan iterative algorithm for calculating \\(p(\\theta|y)\\) results. Specifically, given the current\napproximation \\(g_i(\\theta)\\) to the observed posterior \\(p(\\theta|y)\\) the algorithm specifies:\ngenerate a sample \\(z^{(1)}, \\ldots, z^{(m)}\\) from the current approximation to the predictive\ndistribution \\(p(z|y)\\);\nupdate the approximation to \\(p(\\theta|y)\\) to be the mixture of augmented posteriors of \\(\\theta\\)\ngiven the augmented data from the step above, i.e.\n\\[g_{i+1}(\\theta) = \\frac{1}{m} \\sum_{j=1}^{m} p(\\theta|z^{(j)}, y)\\]\nThe two steps are then iterated.\n\n\n\n",
     "preview": "blog/2026-03-29-da/data-augmentation-image-augment.webp",
     "last_modified": "2026-03-29T09:22:10+08:00",
-    "input_file": "da.knit.md"
+    "input_file": {}
   },
   {
     "path": "blog/2026-03-29-ann/",
@@ -156,7 +156,7 @@
     "contents": "\nA mathematical structure modelled on the human neural network and designed to attack many statistical problems, particularly in the areas of pattern recognition, multivariate analysis, learning and memory. The essential feature of such a structure is a network of simple processing elements (artificial neurons) coupled together (either in the hardware or software), so that they can cooperate. From a set of ‘inputs’ and an associated set of parameters, the artificial neurons produce an ‘output’ that provides a possible solution to the problem under investigation. In many neural networks the relationship between the input received by a neuron and its output is determined by a generalized linear model. The most common form is the feed forward network which is essentially an extension of the idea of the perceptron. In such a network the vertices can be numbered so that all connections go from a vertex to one with a higher number; the vertices are arranged in layers, with connections only to higher layers. Each neuron sums its inputs to form a total input xj and applies a function fj to xj to give output yj. The links have weights wij which multiply the signals travelling along them by that factor. Many ideas and activities familiar to statisticians can be expressed in a neural network notation, including regression analysis, generalized additive models, and discriminant analysis. In any practical problem the stat istical equivalent of specifying the architecture of a suitable network is specifying a suitable model, and training the network to perform well with reference to a training set is equivalent to estimating the parameters of the model given a set of data.\n\n\n\n",
     "preview": "blog/2026-03-29-ann/Neural-Networks-Architecture.png",
     "last_modified": "2026-03-29T09:07:06+08:00",
-    "input_file": "ann.knit.md",
+    "input_file": {},
     "preview_width": 800,
     "preview_height": 504
   },
