@@ -1,5 +1,24 @@
 [
   {
+    "path": "blog/2026-03-29-ann/",
+    "title": "What is Artificial Neural Network?",
+    "description": "A mathematical structure modelled on the human neural network and designed to attack many statistical problems, particularly in the areas of pattern recognition, multivariate analysis, learning and memory.",
+    "author": [
+      {
+        "name": "Longxiang Wu",
+        "url": "https://lunghsiang-wu.github.io/longxiangwu/"
+      }
+    ],
+    "date": "2024-10-20",
+    "categories": [],
+    "contents": "\nA mathematical structure modelled on the human neural network and designed to attack many statistical problems, particularly in the areas of pattern recognition, multivariate analysis, learning and memory. The essential feature of such a structure is a network of simple processing elements (artificial neurons) coupled together (either in the hardware or software), so that they can cooperate. From a set of ‘inputs’ and an associated set of parameters, the artificial neurons produce an ‘output’ that provides a possible solution to the problem under investigation. In many neural networks the relationship between the input received by a neuron and its output is determined by a generalized linear model. The most common form is the feed forward network which is essentially an extension of the idea of the perceptron. In such a network the vertices can be numbered so that all connections go from a vertex to one with a higher number; the vertices are arranged in layers, with connections only to higher layers. Each neuron sums its inputs to form a total input xj and applies a function fj to xj to give output yj. The links have weights wij which multiply the signals travelling along them by that factor. Many ideas and activities familiar to statisticians can be expressed in a neural network notation, including regression analysis, generalized additive models, and discriminant analysis. In any practical problem the stat istical equivalent of specifying the architecture of a suitable network is specifying a suitable model, and training the network to perform well with reference to a training set is equivalent to estimating the parameters of the model given a set of data.\n\n\n\n",
+    "preview": "blog/2026-03-29-ann/Neural-Networks-Architecture.png",
+    "last_modified": "2026-03-29T09:07:06+08:00",
+    "input_file": "ann.knit.md",
+    "preview_width": 800,
+    "preview_height": 504
+  },
+  {
     "path": "blog/2026-03-23-ci/",
     "title": "What is Confidence Interval?",
     "description": "An α% confidence interval for an unknown population parameter θ, say, is an interval, calculated from sample values by a procedure such that if a large number of independent samples is taken, α% of the intervals obtained will contain θ",
