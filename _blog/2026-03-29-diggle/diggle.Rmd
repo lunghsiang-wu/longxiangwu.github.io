@@ -33,5 +33,10 @@ and a *logistic regression* for $g(d|y)$. Explicitly if $p_t(y)$ denotes the *co
 of dropout at time $t$, given $Y = y$ then,
 
 $$\ln\left\{\frac{p_t(y)}{1 - p_t(y)}\right\} = \alpha_0 y_t + \sum_{k=1}^{r} \alpha_k y_{t-k}$$
+<center>
+![Digit preference among different groups of observers. For zero, even, odd and five numerals.](1.jpg){width=50%}
+</center>
+
+When the dropout mechanism is informative the probability of dropout at time t can depend on the unobserved $y_t$.
 
 
