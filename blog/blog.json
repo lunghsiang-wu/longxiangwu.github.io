@@ -1,5 +1,22 @@
 [
   {
+    "path": "blog/2026-03-29-jacobian/",
+    "title": "What is Jacobian Leverage?",
+    "description": "An attempt to extend the concept of leverage in regression to non-linear models.",
+    "author": [
+      {
+        "name": "Longxiang Wu",
+        "url": "https://lunghsiang-wu.github.io/longxiangwu/"
+      }
+    ],
+    "date": "2025-09-11",
+    "categories": [],
+    "contents": "\nAn attempt to extend the concept of leverage in regression to non-linear models,\nof the form\n\\[y_i = f_i(\\mathbf{\\theta}) + \\epsilon_i \\qquad (i = 1, \\ldots, n)\\]\nwhere \\(f_i\\) is a known function of the vector of parameters \\(\\mathbf{\\theta}\\). Formally the Jacobian leverage,\n\\(\\hat{j}_{ik}\\) is the limit as \\(b \\rightarrow 0\\) of\n\\[\\{f_i(\\hat{\\mathbf{\\theta}}) - f_i[\\hat{\\mathbf{\\theta}}(k, b)]\\}/b\\]\nwhere \\(\\hat{\\mathbf{\\theta}}\\) is the least squares estimate of \\(\\mathbf{\\theta}\\) and \\(\\hat{\\mathbf{\\theta}}(k, b)\\) is the corresponding estimate when \\(y_k\\) is\nreplaced by \\(y_k + b\\). Collecting the \\(\\hat{j}_{ik}\\)s in an \\(n \\times n\\) matrix \\(\\mathbf{J}\\) give\n\\[\\hat{\\mathbf{J}} = \\hat{\\mathbf{V}}(\\hat{\\mathbf{V}}'\\hat{\\mathbf{V}} - [\\hat{\\mathbf{\\epsilon}}'][\\hat{\\mathbf{W}}])^{-1}\\hat{\\mathbf{V}}'\\]\nwhere \\(\\hat{\\mathbf{\\epsilon}}\\) is the \\(n \\times 1\\) vector of residuals with elements \\(\\mathbf{\\epsilon}_i = y_i - f_i(\\hat{\\mathbf{\\theta}})\\) and\n\\([\\hat{\\mathbf{\\epsilon}}'][\\hat{\\mathbf{W}}] = \\sum_{i=1}^{n} \\hat{\\mathbf{\\epsilon}}_i \\hat{\\mathbf{W}}_i\\): \\(\\mathbf{W}_i\\) denotes the Hessian matrix of \\(f_i(\\mathbf{\\theta})\\) and \\(\\hat{\\mathbf{V}}\\) is the matrix whose\n\\(i\\)th row is \\(\\partial f_i(\\mathbf{\\theta})/\\partial \\mathbf{\\theta}'\\) evaluated at \\(\\mathbf{\\theta} = \\hat{\\mathbf{\\theta}}\\). The elements of \\(\\mathbf{J}\\) can exhibit superleverage.\n\n\n\n",
+    "preview": "blog/2026-03-29-jacobian/jacobian.jpg",
+    "last_modified": "2026-03-29T13:20:27+08:00",
+    "input_file": "jacobian.knit.md"
+  },
+  {
     "path": "blog/2026-03-29-jacknife/",
     "title": "What is Jacknife?",
     "description": "A procedure for reducing bias in estimation and providing approximate confidence intervals in cases where these are difficult to obtain in the usual way.",
