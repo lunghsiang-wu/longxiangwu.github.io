@@ -1,0 +1,45 @@
+---
+title: "What is Data Augmentation?"
+description: |
+  A scheme for augmenting observed data so as to make it more easy to analyse.
+author:
+  - name: Longxiang Wu
+    url: https://lunghsiang-wu.github.io/longxiangwu/
+date: 2024-11-13
+preview: data-augmentation-image-augment.webp
+output:
+  distill::distill_article:
+    self_contained: false
+    includes:
+      in_header: header.html
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+A scheme for augmenting observed data so as to make it more easy to analyse.
+A simple example is the estimation of *missing values* to balance a *factorial design* with
+different numbers of observations in each cell. The term is most often used, however, in
+respect of an iterative procedure, the *data augmentation algorithm* common in the computation
+of the *posterior distribution* in *Bayesian inference*. The basic idea behind this algorithm
+is to augment the observed data $y$ by a quantity $z$ which is usually referred to as latent
+data. It is assumed that given both $y$ and $z$ it is possible to calculate or sample from the
+augmented data posterior distribution $p(\theta|y,z)$. To obtain the observed posterior $p(\theta|y)$,
+multiple values (imputations) of $z$ from the predictive distribution $p(z|y)$ are generated and
+the average of $p(\theta|y,z)$ over the imputations calculated. Because $p(z|y)$ depends on $p(\theta|y)$
+an iterative algorithm for calculating $p(\theta|y)$ results. Specifically, given the current
+approximation $g_i(\theta)$ to the observed posterior $p(\theta|y)$ the algorithm specifies:
+
+- generate a sample $z^{(1)}, \ldots, z^{(m)}$ from the current approximation to the predictive
+  distribution $p(z|y)$;
+- update the approximation to $p(\theta|y)$ to be the mixture of augmented posteriors of $\theta$
+  given the augmented data from the step above, i.e.
+
+$$g_{i+1}(\theta) = \frac{1}{m} \sum_{j=1}^{m} p(\theta|z^{(j)}, y)$$
+
+The two steps are then iterated. 
+
+
+
