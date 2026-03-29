@@ -10,7 +10,7 @@ links:
   - label: '<i class="fab fa-mastodon"></i> Mastodon'
     url: "https://fosstodon.org/\\@longxiangwu"
   - label: '<i class="fas fa-envelope"></i> Email'
-    url: "longxiangwu@outlook.com"
+    url: "mailto:longxiangwu@outlook.com"
 base_url: https://lunghsiang-wu.github.io/longxiangwu/
 preview: longxiangwu.png
 twitter:
