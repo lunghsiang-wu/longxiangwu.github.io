@@ -1,0 +1,52 @@
+---
+title: "What is Factor Analysis?"
+description: |
+ A procedure that postulates that the correlations or covariances between a set of observed variables.
+author:
+  - name: Longxiang Wu
+    url: https://lunghsiang-wu.github.io/longxiangwu/
+date: 2025-03-07
+preview: factor_analysis_illustration.png.webp
+output:
+  distill::distill_article:
+    self_contained: false
+    includes:
+      in_header: header.html
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+**Factor analysis:** A procedure that postulates that the correlations or covariances between a set
+of observed variables, $\mathbf{x}' = [x_1, x_2, \ldots, x_q]$, arise from the relationship of these variables to
+a small number of underlying, unobservable, *latent variables*, usually known as the
+*common factors*, $\mathbf{f}' = [f_1, f_2, \ldots, f_k]$, where $k < q$. Explicitly the model used is
+
+$$\mathbf{x} = \Lambda\mathbf{f} + \mathbf{e}$$
+
+where
+
+$$\Lambda = \begin{pmatrix} \lambda_{11} & \lambda_{12} & \cdots & \lambda_{1k} \\ \lambda_{21} & \lambda_{22} & \cdots & \lambda_{2k} \\ \vdots & \vdots & \ddots & \vdots \\ \lambda_{q1} & \lambda_{q2} & \cdots & \lambda_{qk} \end{pmatrix}$$
+
+contains the regression coefficients (usually known in this context as *factor loadings*) of
+the observed variables on the common factors. The matrix, $\Lambda$, is known as the *loading
+matrix*. The elements of the vector $\mathbf{e}$ are known as *specific variates*. Assuming that the
+common factors are uncorrelated, in standardized form and also uncorrelated with the
+specific variates, the model implies that the variance–covariance matrix of the observed
+variables, $\Sigma$, is of the form
+
+$$\Sigma = \Lambda\Lambda' + \Psi$$
+
+where $\Psi$ is a diagonal matrix containing the variances of the specific variates. A number of
+approaches are used to estimate the parameters in the model, i.e. the elements of $\Lambda$ and $\Psi$,
+including *principal factor analysis* and *maximum likelihood estimation*. After the initial
+estimation phase an attempt is generally made to simplify the often difficult task of
+interpreting the derived factors using a process known as *factor rotation*. In general the
+aim is to produce a solution having what is known as *simple structure*, i.e. each common
+factor affects only a small number of the observed variables. Although based on a well-
+defined model the method is, in its initial stages at least, essentially exploratory and such
+*exploratory factor analysis* needs to be carefully differentiated from *confirmatory factor
+analysis* in which a prespecified set of common factors with some variables constrained to
+have zero loadings is tested for consistency with the correlations of the observed variables.
+

@@ -1,5 +1,22 @@
 [
   {
+    "path": "blog/2026-03-29-factor/",
+    "title": "What is Factor Analysis?",
+    "description": "A procedure that postulates that the correlations or covariances between a set of observed variables.",
+    "author": [
+      {
+        "name": "Longxiang Wu",
+        "url": "https://lunghsiang-wu.github.io/longxiangwu/"
+      }
+    ],
+    "date": "2025-03-07",
+    "categories": [],
+    "contents": "\nFactor analysis: A procedure that postulates that the correlations or covariances between a set\nof observed variables, \\(\\mathbf{x}' = [x_1, x_2, \\ldots, x_q]\\), arise from the relationship of these variables to\na small number of underlying, unobservable, latent variables, usually known as the\ncommon factors, \\(\\mathbf{f}' = [f_1, f_2, \\ldots, f_k]\\), where \\(k < q\\). Explicitly the model used is\n\\[\\mathbf{x} = \\Lambda\\mathbf{f} + \\mathbf{e}\\]\nwhere\n\\[\\Lambda = \\begin{pmatrix} \\lambda_{11} & \\lambda_{12} & \\cdots & \\lambda_{1k} \\\\ \\lambda_{21} & \\lambda_{22} & \\cdots & \\lambda_{2k} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\lambda_{q1} & \\lambda_{q2} & \\cdots & \\lambda_{qk} \\end{pmatrix}\\]\ncontains the regression coefficients (usually known in this context as factor loadings) of\nthe observed variables on the common factors. The matrix, \\(\\Lambda\\), is known as the loading\nmatrix. The elements of the vector \\(\\mathbf{e}\\) are known as specific variates. Assuming that the\ncommon factors are uncorrelated, in standardized form and also uncorrelated with the\nspecific variates, the model implies that the variance–covariance matrix of the observed\nvariables, \\(\\Sigma\\), is of the form\n\\[\\Sigma = \\Lambda\\Lambda' + \\Psi\\]\nwhere \\(\\Psi\\) is a diagonal matrix containing the variances of the specific variates. A number of\napproaches are used to estimate the parameters in the model, i.e. the elements of \\(\\Lambda\\) and \\(\\Psi\\),\nincluding principal factor analysis and maximum likelihood estimation. After the initial\nestimation phase an attempt is generally made to simplify the often difficult task of\ninterpreting the derived factors using a process known as factor rotation. In general the\naim is to produce a solution having what is known as simple structure, i.e. each common\nfactor affects only a small number of the observed variables. Although based on a well-\ndefined model the method is, in its initial stages at least, essentially exploratory and such\nexploratory factor analysis needs to be carefully differentiated from confirmatory factor\nanalysis in which a prespecified set of common factors with some variables constrained to\nhave zero loadings is tested for consistency with the correlations of the observed variables.\n\n\n\n",
+    "preview": "blog/2026-03-29-factor/factor_analysis_illustration.png.webp",
+    "last_modified": "2026-03-29T10:23:01+08:00",
+    "input_file": "factor.knit.md"
+  },
+  {
     "path": "blog/2026-03-29-eu/",
     "title": "What is EU Model?",
     "description": "A model used in investigations of the rate of success of in vitro fertilization.",
