@@ -1,0 +1,299 @@
+---
+title: "Analysis of Internet Finance Credit Data"
+description: "A data analysis project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-12-28
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14")
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+
+### Project introduction
+
+Banks play a crucial role in the market economy. They decide who can get financing, under what conditions, and can make or destroy investment decisions. In order for the market and society to play a role, individuals and companies need to obtain credit. The credit score algorithm speculates on the probability of default, which is a method used by banks to determine whether to grant loans. The project gives financial-related data encountered by multiple users in the next two years.
+
+
+### Field name description
+* **SeriousDlqin2yrs**	
+People who are 90 days or more overdue - may breach the contract in the next two years	Y/N
+
+* **RevolvingUtilizationOfUnsecuredLines**	
+The total balance of credit cards and personal credit limits (except for installment debts such as real estate and car loans) divided by the sum of credit limits - the ratio of available credit lines percentage
+
+* **age**	 
+Borrower's age (year) - age	integer
+
+* **NumberOfTime30-59DaysPastDueNotWorse**	
+The number of 30-59 days overdue by the borrower, but there has been no worse situation in the past two years. - The number of 30-59 days overdue integer
+
+* **DebtRatio**	 
+Monthly debt, alimony and living expenses divided by total monthly income - debt ratio	percentage
+
+* **MonthlyIncome**	 
+Monthly Income - Monthly Income real
+
+* **NumberOfOpenCreditLinesAndLoans**	 
+Number of outstanding loans (installment payments, such as car loans or mortgages) and credit lines (such as credit cards) - number of credit	integer
+
+* **NumberOfTimes90DaysLate**	 
+The number of times the borrower is overdue for 90 days or more. - The number of overdue for 90 days+	integer
+
+* **NumberRealEstateLoansOrLines**	 
+The number of mortgages and real estate loans including the credit line for housing net - the number of fixed asset loans	integer
+
+* **NumberOfTime60-89DaysPastDueNotWorse**	 
+The number of times the borrower is overdue for 60-89 days, but there has been no worse situation in the past two years. - The number of overdues of 60-89 days	integer
+
+* **NumberOfDependents** 
+The number of dependants (spouses, children, etc.) not included in the family - the number of family members	integer
+
+```{python}
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import matplotlib
+plt.rcParams['font.sans-serif']=['SimHei']   # It is used to display Chinese labels normally.
+plt.rcParams['axes.unicode_minus']=False     # It is used to display negative signs normally.
+matplotlib.rc("font",family='Heiti TC')
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler,PowerTransformer
+
+import warnings
+warnings.filterwarnings('ignore')
+```
+
+### Preliminary exploration of data
+
+```{python}
+train = pd.read_csv('./input/cs-training.csv')
+train = train.drop('Unnamed: 0',axis=1)
+
+train.rename(columns = {'SeriousDlqin2yrs':'There may be breach of contract in the next two years.', 'RevolvingUtilizationOfUnsecuredLines':'The ratio of available credit limit', 'age':'Age',
+       'NumberOfTime30-59DaysPastDueNotWorse':'The number of overdue 30-59 days', 'DebtRatio':'Debt ratio', 'MonthlyIncome':'Monthly income',
+       'NumberOfOpenCreditLinesAndLoans':'Number of credit', 'NumberOfTimes90DaysLate':'The number of overdue for more than 90 days',
+       'NumberRealEstateLoansOrLines':'Number of fixed asset loans', 'NumberOfTime60-89DaysPastDueNotWorse':'The number of overdues of 60-89 days',
+       'NumberOfDependents':'Number of family members'},inplace=True)
+```
+
+```{python}
+test = pd.read_csv('./input/cs-test.csv')
+test = test.drop('Unnamed: 0',axis=1)
+
+test.rename(columns = {'SeriousDlqin2yrs':'There may be breach of contract in the next two years.', 'RevolvingUtilizationOfUnsecuredLines':'The ratio of available credit limit', 'age':'Age',
+       'NumberOfTime30-59DaysPastDueNotWorse':'The number of overdue 30-59 days', 'DebtRatio':'Debt ratio', 'MonthlyIncome':'Monthly income',
+       'NumberOfOpenCreditLinesAndLoans':'Number of credit', 'NumberOfTimes90DaysLate':'The number of overdue for more than 90 days',
+       'NumberRealEstateLoansOrLines':'Number of fixed asset loans', 'NumberOfTime60-89DaysPastDueNotWorse':'The number of overdues of 60-89 days',
+       'NumberOfDependents':'Number of family members'},inplace=True)
+```
+
+```{python}
+train.info()
+```
+
+```{python}
+train.head()
+```
+
+```{python}
+# The distribution of categories is very unbalanced, which will affect the construction
+print(train['There may be breach of contract in the next two years.'].value_counts())
+ 
+# Observe the number of missing values, the monthly income is missing 29731, and the number of family members is missing 3924
+train.isnull().sum()
+```
+
+```{python}
+cols = train.columns
+nullcounts = []
+value_counts = []
+for col in cols:
+    nullcounts.append(train[col].isnull().sum())
+    value_counts.append(train[col].shape[0] - train[col].isnull().sum())
+
+fig, ax = plt.subplots(figsize=(10,3))
+ax.barh(cols, value_counts, label='not missing')
+ax.barh(cols, nullcounts, label='missing', left=value_counts)
+ax.set_xlabel('Value Count')
+ax.set_ylabel('Labels')
+plt.show()
+```
+
+```{python}
+# Output the distribution diagram of each field
+# Most fields are obviously biased, and the subsequent modelling needs to consider bias correction processing.
+plt.figure(figsize=(20,20),dpi=300)
+plt.subplots_adjust(wspace =0.3, hspace =0.3)
+for n,i in enumerate(train.columns):
+    plt.subplot(4,3,n+1)
+    plt.title(i,fontsize=15)
+    plt.grid(linestyle='--')
+    train[i].hist(color='grey',alpha=0.5)
+```
+
+```{python}
+# Observe the abnormality of each field through the box diagram
+# There are more abnormal values (errors) of the debt ratio; there are more abnormal values (errors) of the available credit line ratio, and the theory should be less than or equal to 1
+# 'The number of 30-59 days overdue', 'liability ratio', 'monthly income', 'the number of 90 days overdue', 'the number of fixed asset loans', 'the number of 60-89 days overdue' abnormal values are very high, and it is difficult to observe the data distribution.
+# The abnormal value of age needs to be observed.
+plt.figure(figsize=(20,20),dpi=300)
+plt.subplots_adjust(wspace =0.3, hspace =0.3)
+for n,i in enumerate(train.columns):
+    plt.subplot(4,3,n+1)
+    plt.title(i,fontsize=15)
+    plt.grid(linestyle='--')
+    train[[i]].boxplot(sym='.')
+```
+
+### Correlation analysis
+
+```{python}
+# It can be seen from the figure that the three fields with the number of overdue strokes are extremely high, and the collinearity can be considered to be removed.
+plt.figure(figsize=(10,5),dpi=300)
+sns.heatmap(train.corr(),cmap='Reds',annot=True)
+```
+
+### Detailed analysis
+
+```{python}
+fig, axes = plt.subplots(1,2,figsize=(12,6))
+train['There may be breach of contract in the next two years.'].value_counts().plot.pie(explode=[0,0.1],autopct='%1.1f%%',ax=axes[0])
+axes[0].set_title('There may be breach of contract in the next two years.')
+sns.countplot(x='There may be breach of contract in the next two years.', data=train, ax=axes[1])
+axes[1].set_title('There may be breach of contract in the next two years.')
+plt.show()
+```
+
+```{python}
+sns.distplot(train["Age"])
+```
+
+```{python}
+train.rename(columns = {'SeriousDlqin2yrs':'There may be breach of contract in the next two years.', 'RevolvingUtilizationOfUnsecuredLines':'The ratio of available credit limit', 'age':'Age',
+       'NumberOfTime30-59DaysPastDueNotWorse':'The number of overdue 30-59 days', 'DebtRatio':'Debt ratio', 'MonthlyIncome':'Monthly income',
+       'NumberOfOpenCreditLinesAndLoans':'Number of credit', 'NumberOfTimes90DaysLate':'The number of overdue for more than 90 days',
+       'NumberRealEstateLoansOrLines':'Number of fixed asset loans', 'NumberOfTime60-89DaysPastDueNotWorse':'The number of overdues of 60-89 days',
+       'NumberOfDependents':'Number of family members'},inplace=True)
+```
+
+```{python}
+sns.distplot(train.loc[train["There may be breach of contract in the next two years."] == 0]["Age"])
+```
+
+```{python}
+sns.distplot(train.loc[train["There may be breach of contract in the next two years."] == 1]["Age"])
+```
+
+- It can be seen that there is a significant difference between the age distribution of users with 0 "may default in the next two years" and the age distribution of users with 1.
+
+```{python}
+sns.countplot(x='Number of family members',data=train[(train['Age']>=20)&(train['Age']<30)]);
+```
+
+```{python}
+sns.countplot(x='Number of family members',data=train[(train['Age']>=30)&(train['Age']<40)]);
+```
+
+### Data distribution analysis
+
+```{python}
+from sklearn.feature_selection import mutual_info_classif
+def plot_distributions_discrete(feature):
+    
+    _, axes = plt.subplots(1, 2, figsize=(12,4))
+    sns.histplot(train[feature], kde=True, label='Train',stat='density',
+                 discrete=True, color='steelblue', alpha=0.6, ax=axes[0])
+    sns.histplot(test[feature], kde=True, label='Test',stat='density',
+                 discrete=True, color='gold', alpha=0.25, ax=axes[0])
+    axes[0].legend()
+    axes[0].set_title('Distr Train set vs Distr Test set')
+
+    sns.boxplot(x='There may be breach of contract in the next two years.', y=feature, data=train, ax=axes[1], palette=['seagreen', 'tan'])
+    
+    X = train[[feature]].dropna()
+    MI = mutual_info_classif(X, train.loc[X.index, 'There may be breach of contract in the next two years.'], discrete_features=True,
+                             random_state=0)
+    axes[1].set_title('Distribution depending on the SeriousDlqin2yrs\n-> MI Score : ' + str(round(MI[0], 7)))
+
+    plt.suptitle('"{}" Be distributed'.format(feature), y=1.15);
+
+def plot_distributions_continuous(feature):
+    
+    _, axes = plt.subplots(1, 2, figsize=(12,4))
+    sns.kdeplot(train[feature].apply(np.log1p), label='Train',
+                color='steelblue', alpha=0.5, shade=True, edgecolor='k', ax=axes[0])
+    sns.kdeplot(test[feature].apply(np.log1p), label='Test',
+                color='gold', alpha=0.3, shade=True, edgecolor='k', ax=axes[0])
+
+    axes[0].legend()
+    axes[0].set_title('Distr Train set vs Distr Test set')
+    axes[0].set_xlabel('log-{}'.format(feature))
+
+    sns.boxplot(x='There may be breach of contract in the next two years.', y=train[feature],
+                data=train, ax=axes[1], palette=['seagreen', 'tan'])
+
+    X = train[[feature]].dropna()
+    MI = mutual_info_classif(X, train.loc[X.index, 'There may be breach of contract in the next two years.'], random_state=0)
+    axes[1].set_title('Distribution depending on the SeriousDlqin2yrs\n-> MI Score : ' + str(round(MI[0], 7)))
+    
+    plt.suptitle('"{}" Be distributed'.format(feature), y=1.15);
+```
+
+```{python}
+plot_distributions_discrete('Age')
+```
+
+It can be found from the picture
+
+- The age distribution of the training set and the test set is basically similar (blue is the training set, yellow is the test set, and green is displayed when superimposed on the picture)
+- The overall age of the people who have serious breach of contract is low.
+- Age as a whole conforms to the normal distribution
+
+Dealing with age, according to the law, you can only apply for a credit card if you are over 20 years old, so if you are under 20 years old, it can be considered as wrong data. Look at the quantity.
+
+```{python}
+plot_distributions_continuous('Debt ratio')
+```
+
+- The debt ratio is not too high normally, mainly concentrated around 1 (the logarithm is taken in the left figure, that is, around 0)
+- Consider taking the logarithm according to the left figure to process the out-of-group points greater than 9
+
+```{python}
+plot_distributions_continuous('Monthly income')
+```
+
+```{python}
+plot_distributions_continuous('The ratio of available credit limit')
+```
+
+### Project summary
+
+- The project conducts correlation analysis, which can quickly obtain the correlation score between the characteristics and make a preliminary collinear judgement.
+- Observe the abnormal situation of each field through the box diagram and analyse the data distribution
+- Carry out a variety of visualisation methods to quickly understand the basic situation of the data
+
+
