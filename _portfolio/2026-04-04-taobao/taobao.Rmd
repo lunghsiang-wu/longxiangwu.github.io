@@ -1,0 +1,335 @@
+---
+title: "Analysis of Sales Data for E-commerce Products on Taobao"
+description: "A data analysis project"
+author:
+  - name: "Longxiang Wu"
+date: 2025-12-15
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14")
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib
+import seaborn as sns
+import warnings
+from datetime import datetime
+warnings.filterwarnings("ignore")
+
+plt.rcParams['font.sans-serif'] = ['Heiti TC']
+plt.rcParams['axes.unicode_minus'] = False
+matplotlib.rc("font", family='Heiti TC')
+fontdict = {'fontsize': 15, 'horizontalalignment': 'center'}
+```
+## Data Preparation
+
+
+### Import data
+
+```{python}
+baby = pd.read_csv("sam_tianchi_mum_baby.csv")
+trade = pd.read_csv("sam_tianchi_mum_baby_trade_history.csv")
+```
+
+```{r}
+library(knitr)
+kable(head(py$baby))
+```
+
+```{r}
+library(knitr)
+kable(head(py$trade))
+```
+
+
+```{python cell_style="split"}
+baby.info()
+```
+
+```{python cell_style="split"}
+trade.info()
+```
+
+```{python cell_style="split"}
+trade.buy_mount.describe()
+```
+
+```{python cell_style="split"}
+quantity = trade.buy_mount.value_counts().sort_index()
+plt.figure(figsize=(10, 8))
+sns.scatterplot(x=quantity.index, y=quantity.values, alpha=0.3)
+plt.title("Distribution of purchase volume of a single order", fontdict=fontdict)
+plt.ylabel("Number of orders", fontdict=fontdict)
+plt.xlabel("Purchase quantity", fontdict=fontdict)
+plt.show()
+```
+
+### Data cleaning
+1. Retain orders within buy_amount[1,1000].
+2. Check whether there are any abnormal values missing values and deal with them.
+3. If the attribute of auction_id in trade is not specified, we will change it to item_id by default.
+4. The properties in the data set are all numbers. You need a corresponding dictionary to know what attributes correspond to. Delete them first.
+5. Change day to date form.
+
+```{python}
+# Keep the record within buy_mount[0,1000]
+trade = trade[(trade.buy_mount >= 1) & (trade.buy_mount <= 1000)]
+# Column rename
+trade.rename({"auction_id": "item_id"}, axis=1, inplace=True)
+# Take out the property for the time being and put it aside, and then analyse it later.
+property = trade.property
+trade.drop('property', axis=1, inplace=True)
+# Date type conversion
+baby['birthday'] = pd.to_datetime(baby.birthday.astype('str'))
+trade['day'] = pd.to_datetime(trade.day.astype('str'))
+```
+
+```{python cell_style="split"}
+# The time range of this statistical data is 2012/7/2-2015/2/5
+trade.day.describe()
+```
+
+```{python cell_style="split"}
+count_cat1 = trade.cat1.nunique()
+count_cat = trade.cat_id.nunique()
+count_item = trade.item_id.nunique()
+sales_volume = trade.buy_mount.sum()
+count_user = trade.user_id.nunique()
+print("Number of commodity categories:", count_cat1)
+print("Number of commodity categories:", count_cat)
+print("Number of commodities：", count_item)
+print("Total sales volume：", sales_volume)
+print("Number of users", count_user)
+```
+
+## Data analysis
+
+
+### Baby information analysis
+
+```{python}
+baby['gender'].value_counts()
+```
+
+```{python}
+baby = baby.loc[~(baby['gender'] == 2)]
+baby['gender'].value_counts()
+```
+
+```{python}
+male_to_female_series = baby['gender'].value_counts()
+male_to_female_series[0] / male_to_female_series[1]  # 1.1164383561643836
+```
+
+### Summarise purchase history data and baby information data
+
+```{python}
+trade = pd.merge(trade, baby, on='user_id', how='outer') 
+```
+
+```{python}
+trade.head()
+```
+
+```{python}
+trade.info()
+```
+
+### Understand the overall market situation according to the comparative analysis of time.
+
+```{python}
+# Check the sales trend by year and month
+# Group according to the year
+year_item = trade[['item_id', 'buy_mount', 'day']].groupby(by=trade.day.dt.year)[
+    'buy_mount'].sum()
+# Quarterly sales of each year
+year_quarter_item = trade[['item_id', 'buy_mount', 'day']].groupby(by=[trade.day.dt.year, trade.day.dt.quarter])[
+    'buy_mount'].sum()
+# Group according to the year
+year_month_item = trade[['item_id', 'buy_mount', 'day']].groupby(
+    by=[trade.day.dt.year, trade.day.dt.month])['buy_mount'].sum()
+```
+
+```{python}
+# Sales volume in each year
+plt.figure(figsize=(10, 5))
+sns.barplot(x=year_item.index, y=year_item.values)
+plt.title("Annual sales trend", fontdict=fontdict)
+plt.xlabel("Year", fontdict=fontdict)
+plt.ylabel("Sales", fontdict=fontdict)
+plt.show()
+```
+
+```{python}
+trade['buy_mount'].sum()
+```
+
+The total sales volume from 2012/7 to 2015/2 is 59,202 pieces. From the figure above, we can see that the overall sales volume of Taobao and Tmall platform mother and baby commodity market shows an upward trend, but the fluctuation is large.
+
+```{python}
+# Quarterly sales
+plt.figure(figsize=(10, 5))
+x_labels = [str(i) for i in year_quarter_item.index.values]  # Convert tuples to strings
+sns.barplot(x=x_labels, y=year_quarter_item.values)
+plt.title("Quarterly sales trend", fontdict=fontdict)
+plt.xlabel("(Year, Quarter)", fontdict=fontdict)
+plt.ylabel("Sales volume", fontdict=fontdict)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+1. Due to the lack of data in 2015, the real sales situation in the first quarter of 2015 cannot be reflected.
+2. Sales will decline to a certain extent in the first quarter of every year. The sales volume will increase significantly in the fourth quarter of each year.
+
+
+### Comparative analysis of time dimension
+
+```{python}
+x = [str(x[0])+"/"+str(x[1]) for x in year_month_item.index.values]
+y = [int(x) for x in year_month_item.values]
+
+plt.figure(figsize=(14, 5))
+plt.bar(x, y)
+plt.title("Monthly sales trend")
+plt.xlabel("Year/Month")
+plt.ylabel("Sales volume")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+1. Sales declined in the first quarter of 2013 and 2014, mainly concentrated in January and February.
+2. There will be a different degree of sales increase in May and November every year.
+
+
+### Targeted analysis
+- It can be seen from the figure above that there was a peak bulge in May and November from 2012 to 2014, and the overall trend was on the rise.
+
+```{python}
+trade['month'] = trade['day'].dt.to_period('M').dt.to_timestamp()
+trade['day_num'] = trade['day'].dt.day
+```
+
+```{python}
+# May
+sales13_05_series = trade[trade['month'] == '2013-05-01']
+sales14_05_series = trade[trade['month'] == '2014-05-01']
+
+sales13_05_sum_series = sales13_05_series.groupby('day_num')['buy_mount'].sum()
+sales14_05_sum_series = sales14_05_series.groupby('day_num')['buy_mount'].sum()
+
+plt.figure(figsize=(12, 5))
+plt.plot(sales13_05_sum_series, label='2013-05')
+plt.plot(sales14_05_sum_series, label='2014-05')
+plt.legend()
+plt.xlabel('Day')
+plt.ylabel('Sales')
+plt.title('May Sales per Day')
+plt.show()
+```
+
+```{python}
+# 11月
+sales12_11_series = trade[(trade['day'].dt.month == 11) & (trade['day'].dt.year == 2012)]
+sales13_11_series = trade[(trade['day'].dt.month == 11) & (trade['day'].dt.year == 2013)]
+sales14_11_series = trade[(trade['day'].dt.month == 11) & (trade['day'].dt.year == 2014)]
+
+sales12_11_sum_series = sales12_11_series.groupby('day_num')['buy_mount'].sum()
+sales13_11_sum_series = sales13_11_series.groupby('day_num')['buy_mount'].sum()
+sales14_11_sum_series = sales14_11_series.groupby('day_num')['buy_mount'].sum()
+
+plt.figure(figsize=(12, 5))
+plt.plot(sales12_11_sum_series, label='2012-11')
+plt.plot(sales13_11_sum_series, label='2013-11')
+plt.plot(sales14_11_sum_series, label='2014-11')
+plt.legend()
+plt.xlabel('Day')
+plt.ylabel('Sales')
+plt.title('November Sales per Day')
+plt.show()
+```
+
+### Analysis of repurchase rate
+
+```{python}
+# Product category repurchase rate
+# Group according to the product category, and then index the circular category to find the repurchase rate of each category.
+t = trade.groupby(by=['cat1', 'user_id']).size()
+purchase_dict={}
+for i in trade.cat1.unique():
+    c = t.loc[i].value_counts()
+    purchase_dict[i]=((c.sum()-c[:1])/c[:1]).values[0].round(4)
+plt.figure(figsize=(10,6))
+sns.barplot(x=list(purchase_dict.keys()),y=list(purchase_dict.values()))
+plt.title("Repurchase rate of major categories",fontdict=fontdict)
+plt.show()
+```
+
+The repurchase rate of each product category is also extremely low, not reaching 1%. Considering that most of the users' single purchases are the same and the repurchase rate is low, it shows that users' desire to buy back a single product is extremely low. Merchants should consider from the product perspective, such as product quality and shopping experience.
+
+
+### Commodity sales situation
+
+```{python cell_style="split"}
+# Sales of commodity categories
+cat = trade.groupby("cat1")['buy_mount'].sum()
+sns.barplot(x=cat.index, y=cat.values)
+plt.title("Sales of commodity categories")
+plt.xlabel("Commodity category")
+plt.show()
+```
+
+```{python cell_style="split"}
+# Per capita large-category purchase
+cat_aver_user = (trade.groupby("cat1")['buy_mount'].sum(
+) / trade.groupby("cat1")['user_id'].count()).sort_values(ascending=False)
+sns.barplot(x=cat_aver_user.index, y=cat_aver_user.values)
+plt.title("Per capita purchase of major categories of goods")
+plt.xlabel("Commodity category")
+plt.show()
+```
+
+```{python}
+# The number of subcategories under the general category
+cat_count = trade.groupby("cat1")['cat_id'].count()
+sns.barplot(x=cat_count.index, y=cat_count.values)
+plt.title("The number of subcategorys of commodities")
+plt.xlabel("Commodity category")
+plt.show()
+```
+
+Category 28 and 50008168 have the best sales. Although the sales volume of category 38 is low and the number of subcategories is the smallest, the per capita purchase volume is very high, which shows that users have less room for choice when purchasing products under 38 categories, but at the same time, users' demand for such products is very vigourous, which can appropriately increase the sub-category products under 38 categories to improve sales.
+
+
+### Project summary
+
+- May and November every year are the peak sales periods, which shows that the promotional effect of the shopping festival is obvious and should continue to be maintained;
+- The upward trend of the total number of users and total sales reflects that the influence of the store on the market is gradually expanding, and there is still a market space to be developed, but the speed is slowing down;
+- Due to the special nature of baby products, the life cycle of users is limited, so the business focus of the store should not only improve the repurchase rate, but also not ignore the acquisition of new users;
+
