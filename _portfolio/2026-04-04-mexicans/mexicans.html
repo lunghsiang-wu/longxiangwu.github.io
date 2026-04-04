@@ -1,0 +1,2632 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Visualisation of Data on Obesity Levels among Mexicans</title>
+
+  <meta property="description" itemprop="description" content="A data visualisation project"/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2026-01-02"/>
+  <meta property="article:created" itemprop="dateCreated" content="2026-01-02"/>
+  <meta name="article:author" content="Longxiang Wu"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Visualisation of Data on Obesity Levels among Mexicans"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="A data visualisation project"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Visualisation of Data on Obesity Levels among Mexicans"/>
+  <meta property="twitter:description" content="A data visualisation project"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Visualisation of Data on Obesity Levels among Mexicans"]},{"type":"character","attributes":{},"value":["A data visualisation project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Longxiang Wu"]}]}]},{"type":"character","attributes":{},"value":["2026-1-2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["input/ObesityDataSet_raw_and_data_sinthetic.csv","mexicans_files/figure-html5/unnamed-chunk-11-1.png","mexicans_files/figure-html5/unnamed-chunk-13-3.png","mexicans_files/figure-html5/unnamed-chunk-15-5.png","mexicans_files/figure-html5/unnamed-chunk-17-7.png","mexicans_files/figure-html5/unnamed-chunk-18-9.png","mexicans_files/figure-html5/unnamed-chunk-19-11.png","mexicans_files/figure-html5/unnamed-chunk-22-13.png","mexicans_files/figure-html5/unnamed-chunk-24-15.png","mexicans_files/figure-html5/unnamed-chunk-25-17.png","mexicans_files/figure-html5/unnamed-chunk-26-19.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+    font-size: 100%;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  hr.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0px;
+  }
+
+
+  d-byline {
+    border-top: none;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+    border-top: none;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // separator
+    var separator = '<hr class="section-separator" style="clear: both"/>';
+    // prepend separator above appendix
+    $('.d-byline').before(separator);
+    $('.d-article').before(separator);
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        var author_name = front_matter.authors[i].author
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="mexicans_files/header-attrs-2.30/header-attrs.js"></script>
+  <script src="mexicans_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="mexicans_files/popper-2.6.0/popper.min.js"></script>
+  <link href="mexicans_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="mexicans_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="mexicans_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="mexicans_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="mexicans_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="mexicans_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="mexicans_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Visualisation of Data on Obesity Levels among Mexicans","description":"A data visualisation project","authors":[{"author":"Longxiang Wu","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2026-01-02T00:00:00.000+08:00","citationText":"Wu, 2026"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Visualisation of Data on Obesity Levels among Mexicans</h1>
+
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p>A data visualisation project</p>
+</div>
+
+<div class="d-byline">
+  Longxiang Wu  
+  
+<br/>2026-1-2
+</div>
+
+<div class="d-article">
+<!-- #region -->
+<!-- #region toc=true -->
+<h1>
+Table of Contents<span class="tocSkip"></span>
+</h1>
+<div class="toc">
+<ul class="toc-item">
+<li>
+<span><a href="#1.-Import data set and necessary modules" data-toc-modified-id="1.-lead Enter the data set and the necessary modules-1">1. Import data sets and necessary modules</a></span>
+</li>
+<li>
+<span><a href="#2.-Visual analysis of obesity influencing factors" data-toc-modified-id="2.-Visual analysis of obesity influencing factors- Two">two. Visual analysis of factors affecting obesity</a></span>
+<ul class="toc-item">
+<li>
+<span><a href="#2.1-Explore the distribution of numerical fields" data-toc-modified-i d="2.1-Explore the distribution of numerical fields-2.1">2.1 Explore the distribution of numerical fields</a></span>
+</li>
+<li>
+<span><a href="#2.2-Use histograms to explore the distribution of numerical fields" data-toc-modified-id="2.2-Use histograms to explore the distribution of numerical fields-2.2">2.2 Use histograms to explore the distribution of numerical fields</a></span>
+</li>
+<li>
+<span><a h ref="#2.3-Use heat maps to explore the correlation of numerical fields" data-toc-modified-id="2.3-Use heat maps to explore the correlation of numerical fields-2.3">2.3 Use heat maps to explore the correlation of numerical fields</a> </span>
+</li>
+<li>
+<span><a href="#2.4-Use scatter diagrams to explore the relationship between age and the time of using technical equipment" data-toc-modified-id="2.4-Use scatter diagrams to explore age and use technology settings The relationship between time reserve-2.4">2.4 Use scatter charts to explore the relationship between age and the time of using technical equipment</a></span>
+</li>
+<li>
+<span><a href="#2.5-Use pie charts to explore the relationship between obesity and gender" data- toc-modified-id="2.5-Use pie charts to explore the relationship between obesity and gender-2.5">2.5 Use pie charts to explore the relationship between obesity and gender</a></span>
+</li>
+<li>
+<span><a href="#2 .6-Use column charts to explore the relationship between obesity and alcohol frequency" data-toc-modified-id="2.6-Use column charts to explore the relationship between obesity and alcohol frequency-2.6">2.6 Use column charts to explore the relationship between obesity and alcohol frequency&lt;/ A&gt;</span>
+</li>
+<li>
+<span><a href="#2.7-Use box diagrams to explore the relationship between obesity and age" data-toc-modified-id="2.7-Use box diagrams to explore the relationship between obesity and age -2.7">2.7 Use box line diagrams to explore the relationship between obesity and age</a></span>
+</li>
+</ul>
+</li>
+<li>
+<span><a href="#3.-summary" data-toc-modified-id ="3.-Summary-3">3. Summarise</a></span>
+</li>
+</ul>
+</div>
+<!-- #endregion -->
+<h1 id="import-data-sets-and-necessary-modules">1. Import data sets and necessary modules</h1>
+<p>First, check the types and meanings of each field.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Column Name</th>
+<th style="text-align: right;">Type</th>
+<th style="text-align: right;">Meaning Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><strong>Gender</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Gender</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>Age</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">Age</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>Height</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">Height(m)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>Weight</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">Weight(kg)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>family_history_with_overweight</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Whether the family member suffers from or suffers from overweight</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>FAVC</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Do you often eat high-calorie food</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>FCVC</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">The frequency of eating vegetables at ordinary times</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>NCP</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">Number of meals in a day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>CAEC</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Eating between meals</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>SMOKE</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Do you smoke</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>CH2O</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">Daily water intake (L)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>SCC</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Whether to detect daily calories</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>FAF</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">Frequency of movement (days)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>TUE</strong></td>
+<td style="text-align: right;">Floating point type</td>
+<td style="text-align: right;">Daily use time of technical equipment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>CALC</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Frequency of drinking</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>MTRANS</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Usually used means of transportation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>NObeyesdad</strong></td>
+<td style="text-align: right;">Character type</td>
+<td style="text-align: right;">Obesity level</td>
+</tr>
+</tbody>
+</table>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">&#39;ignore&#39;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;font.sans-serif&#39;</span>] <span class="op">=</span> [<span class="st">&#39;Heiti TC&#39;</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;axes.unicode_minus&#39;</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>matplotlib.rc(<span class="st">&quot;font&quot;</span>, family<span class="op">=</span><span class="st">&#39;Heiti TC&#39;</span>)</span></code></pre></div>
+</div>
+<p>First, read the data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">&#39;./input/ObesityDataSet_raw_and_data_sinthetic.csv&#39;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data.head()</span></code></pre></div>
+<pre><code>   Gender   Age  Height  ...        CALC                 MTRANS           NObeyesdad
+0  Female  21.0    1.62  ...          no  Public_Transportation        Normal_Weight
+1  Female  21.0    1.52  ...   Sometimes  Public_Transportation        Normal_Weight
+2    Male  23.0    1.80  ...  Frequently  Public_Transportation        Normal_Weight
+3    Male  27.0    1.80  ...  Frequently                Walking   Overweight_Level_I
+4    Male  22.0    1.78  ...   Sometimes  Public_Transportation  Overweight_Level_II
+
+[5 rows x 17 columns]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the basic information of the data set</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data.info()</span></code></pre></div>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 2111 entries, 0 to 2110
+Data columns (total 17 columns):
+ #   Column                          Non-Null Count  Dtype  
+---  ------                          --------------  -----  
+ 0   Gender                          2111 non-null   object 
+ 1   Age                             2111 non-null   float64
+ 2   Height                          2111 non-null   float64
+ 3   Weight                          2111 non-null   float64
+ 4   family_history_with_overweight  2111 non-null   object 
+ 5   FAVC                            2111 non-null   object 
+ 6   FCVC                            2111 non-null   float64
+ 7   NCP                             2111 non-null   float64
+ 8   CAEC                            2111 non-null   object 
+ 9   SMOKE                           2111 non-null   object 
+ 10  CH2O                            2111 non-null   float64
+ 11  SCC                             2111 non-null   object 
+ 12  FAF                             2111 non-null   float64
+ 13  TUE                             2111 non-null   float64
+ 14  CALC                            2111 non-null   object 
+ 15  MTRANS                          2111 non-null   object 
+ 16  NObeyesdad                      2111 non-null   object 
+dtypes: float64(8), object(9)
+memory usage: 280.5+ KB</code></pre>
+</div>
+<p>It can be seen from the results of the <code>info()</code> function that the data set contains a total of 2,111 data without missing data; according to the type of data, it can be seen that this data set contains 8 numerical fields and 9 non-numerical fields.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View descriptive statistics</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data.describe(include<span class="op">=</span><span class="st">&#39;all&#39;</span>)</span></code></pre></div>
+<pre><code>       Gender          Age  ...                 MTRANS      NObeyesdad
+count    2111  2111.000000  ...                   2111            2111
+unique      2          NaN  ...                      5               7
+top      Male          NaN  ...  Public_Transportation  Obesity_Type_I
+freq     1068          NaN  ...                   1580             351
+mean      NaN    24.312600  ...                    NaN             NaN
+std       NaN     6.345968  ...                    NaN             NaN
+min       NaN    14.000000  ...                    NaN             NaN
+25%       NaN    19.947192  ...                    NaN             NaN
+50%       NaN    22.777890  ...                    NaN             NaN
+75%       NaN    26.000000  ...                    NaN             NaN
+max       NaN    61.000000  ...                    NaN             NaN
+
+[11 rows x 17 columns]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data.head()</span></code></pre></div>
+<pre><code>   Gender   Age  Height  ...        CALC                 MTRANS           NObeyesdad
+0  Female  21.0    1.62  ...          no  Public_Transportation        Normal_Weight
+1  Female  21.0    1.52  ...   Sometimes  Public_Transportation        Normal_Weight
+2    Male  23.0    1.80  ...  Frequently  Public_Transportation        Normal_Weight
+3    Male  27.0    1.80  ...  Frequently                Walking   Overweight_Level_I
+4    Male  22.0    1.78  ...   Sometimes  Public_Transportation  Overweight_Level_II
+
+[5 rows x 17 columns]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data.describe()</span></code></pre></div>
+<pre><code>               Age       Height  ...          FAF          TUE
+count  2111.000000  2111.000000  ...  2111.000000  2111.000000
+mean     24.312600     1.701677  ...     1.010298     0.657866
+std       6.345968     0.093305  ...     0.850592     0.608927
+min      14.000000     1.450000  ...     0.000000     0.000000
+25%      19.947192     1.630000  ...     0.124505     0.000000
+50%      22.777890     1.700499  ...     1.000000     0.625350
+75%      26.000000     1.768464  ...     1.666678     1.000000
+max      61.000000     1.980000  ...     3.000000     2.000000
+
+[8 rows x 8 columns]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p>Through the descriptive statistical function <code>describe()</code>, we can see the mean, standard deviation, minimum, maximum and conential of the continuous data in this data set. At the same time, we can also see the number of different values and other indicators in the discrete data.</p>
+<p>Through these indicators, we can make a preliminary judgement on this data set. For example: in the field <code>Gender</code>, the number of <code>Male</code> reaches 1,068, and the total number is 2,111, so it can be preliminarily judged that the number of men and women is relatively equal; in the field <code>family_history_with_overweight</code>, the answer is The number of <code>yes</code> has reached 1,726. Since the total number of people is 2,111, it can be preliminarily judged that most people have a history of family obesity.</p>
+<h1 id="visual-analysis-of-factors-affecting-obesity">2. Visual analysis of factors affecting obesity</h1>
+<h2 id="explore-the-distribution-of-numerical-fields">2.1 Explore the distribution of numerical fields</h2>
+<p>By exploring non-numerical and numerical data separately, the specific distribution of the data and the data of each field can be seen more intuitively.
+Next, because the data of the fields <code>family_history_with_overweight</code>, <code>FAVC</code>, <code>SMOKE</code> and <code>SCC</code> are <code>yes</code> or <code>no</code> in non-numerical data, they can be displayed through a stacked bar chart. .</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>family_yes <span class="op">=</span> data[data[<span class="st">&#39;family_history_with_overweight&#39;</span>]<span class="op">==</span><span class="st">&#39;yes&#39;</span>][<span class="st">&#39;family_history_with_overweight&#39;</span>].count()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>family_no <span class="op">=</span> data[<span class="st">&#39;family_history_with_overweight&#39;</span>].count() <span class="op">-</span> family_yes</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>high_cal_yes <span class="op">=</span> data[data[<span class="st">&#39;FAVC&#39;</span>]<span class="op">==</span><span class="st">&#39;yes&#39;</span>][<span class="st">&#39;FAVC&#39;</span>].count()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>high_cal_no <span class="op">=</span> data[<span class="st">&#39;FAVC&#39;</span>].count() <span class="op">-</span> high_cal_yes</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>smo_cal_yes <span class="op">=</span> data[data[<span class="st">&#39;SMOKE&#39;</span>]<span class="op">==</span><span class="st">&#39;yes&#39;</span>][<span class="st">&#39;SMOKE&#39;</span>].count()</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>smo_cal_no <span class="op">=</span> data[<span class="st">&#39;SMOKE&#39;</span>].count() <span class="op">-</span> smo_cal_yes</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>test_cal_yes <span class="op">=</span> data[data[<span class="st">&#39;SCC&#39;</span>]<span class="op">==</span><span class="st">&#39;yes&#39;</span>][<span class="st">&#39;SCC&#39;</span>].count()</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>test_cal_no <span class="op">=</span> data[<span class="st">&#39;SCC&#39;</span>].count() <span class="op">-</span> test_cal_yes</span></code></pre></div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>high_cal_yes</span></code></pre></div>
+<pre><code>1866</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>high_cal_no</span></code></pre></div>
+<pre><code>245</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> [<span class="st">&#39;yes&#39;</span>, <span class="st">&#39;no&#39;</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Family obesity history&#39;</span>, <span class="st">&#39;high-calorie food&#39;</span>, <span class="st">&#39;smoking or not&#39;</span>, <span class="st">&#39;daily calorie detection&#39;</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>yes_lable <span class="op">=</span> [family_yes, high_cal_yes, smo_cal_yes, test_cal_yes]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>no_lable <span class="op">=</span> [family_no, high_cal_no, smo_cal_no, test_cal_no]</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="fl">0.355</span>    </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>ax.bar(labels, yes_lable, width, label<span class="op">=</span><span class="st">&#39;yes&#39;</span>,color <span class="op">=</span> <span class="st">&#39;seashell&#39;</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>ax.bar(labels, no_lable, width, label<span class="op">=</span><span class="st">&#39;no&#39;</span>,color <span class="op">=</span> <span class="st">&#39;plum&#39;</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;Number of people&#39;</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Non-numerical field distribution&#39;</span>)</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-11-1.png" alt="" width="624" /></p>
+</div>
+<p>It can be clearly seen from the figure that most Mexicans have a family history of obesity, and most of them have the habit of consuming high-calorie foods; almost all of the people surveyed do not smoke and do not have the habit of daily calorie testing.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&#39;CALC&#39;</span>].value_counts()</span></code></pre></div>
+<pre><code>CALC
+Sometimes     1401
+no             639
+Frequently      70
+Always           1
+Name: count, dtype: int64</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Sometimes&#39;</span>, <span class="st">&#39;no&#39;</span>, <span class="st">&#39;Frequently&#39;</span>, <span class="st">&#39;Always&#39;</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>plt.pie(values, labels<span class="op">=</span>labels, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>, </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        wedgeprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>))  <span class="co"># width&lt;1 makes it a donut</span></span></code></pre></div>
+<pre><code>([&lt;matplotlib.patches.Wedge object at 0x15c1502f0&gt;, &lt;matplotlib.patches.Wedge object at 0x15c19ddc0&gt;, &lt;matplotlib.patches.Wedge object at 0x15c2b0b60&gt;, &lt;matplotlib.patches.Wedge object at 0x15c2b1160&gt;], [Text(1.0461621663333946, 0.3399186987098808, &#39;Sometimes&#39;), Text(0.33991867422268784, 1.0461621742897658, &#39;no&#39;), Text(-1.0461621902025062, 0.3399186252483017, &#39;Frequently&#39;), Text(0.3399188211458418, -1.0461621265515308, &#39;Always&#39;)], [Text(0.5706339089091244, 0.1854101992962986, &#39;10.0%&#39;), Text(0.1854101859396479, 0.5706339132489631, &#39;20.0%&#39;), Text(-0.5706339219286397, 0.18541015922634638, &#39;30.0%&#39;), Text(0.18541026607955005, -0.5706338872099259, &#39;40.0%&#39;)])</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Test Chart&quot;</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-13-3.png" alt="" width="576" /></p>
+</div>
+<p>It can be seen from the picture that most people sometimes drink some alcohol, while the other majority do not drink, and a few often drink alcohol.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [data[data[<span class="st">&#39;CALC&#39;</span>]<span class="op">==</span><span class="st">&#39;Sometimes&#39;</span>][<span class="st">&#39;CALC&#39;</span>].count(), data[data[<span class="st">&#39;CAEC&#39;</span>]<span class="op">==</span><span class="st">&#39;Sometimes&#39;</span>][<span class="st">&#39;CAEC&#39;</span>].count()]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> [data[data[<span class="st">&#39;CALC&#39;</span>]<span class="op">==</span><span class="st">&#39;no&#39;</span>][<span class="st">&#39;CALC&#39;</span>].count(), data[data[<span class="st">&#39;CAEC&#39;</span>]<span class="op">==</span><span class="st">&#39;no&#39;</span>][<span class="st">&#39;CAEC&#39;</span>].count()]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>list3 <span class="op">=</span> [data[data[<span class="st">&#39;CALC&#39;</span>]<span class="op">==</span><span class="st">&#39;Frequently&#39;</span>][<span class="st">&#39;CALC&#39;</span>].count(), data[data[<span class="st">&#39;CAEC&#39;</span>]<span class="op">==</span><span class="st">&#39;Frequently&#39;</span>][<span class="st">&#39;CAEC&#39;</span>].count()]</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>list4 <span class="op">=</span> [data[data[<span class="st">&#39;CALC&#39;</span>]<span class="op">==</span><span class="st">&#39;Always&#39;</span>][<span class="st">&#39;CALC&#39;</span>].count(), data[data[<span class="st">&#39;CAEC&#39;</span>]<span class="op">==</span><span class="st">&#39;Always&#39;</span>][<span class="st">&#39;CAEC&#39;</span>].count()]</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list1)</span></code></pre></div>
+<pre><code>[1401, 1765]</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list2)</span></code></pre></div>
+<pre><code>[639, 51]</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list3)</span></code></pre></div>
+<pre><code>[70, 242]</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list4)</span></code></pre></div>
+<pre><code>[1, 53]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">&quot;Drinking frequency&quot;</span>, <span class="st">&quot;Eating between meals&quot;</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>occasionally <span class="op">=</span> [<span class="dv">1401</span>, <span class="dv">1765</span>]</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>nothing <span class="op">=</span> [<span class="dv">639</span>, <span class="dv">51</span>]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>always <span class="op">=</span> [<span class="dv">70</span>, <span class="dv">242</span>]</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>frequently <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">53</span>]</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="bu">len</span>(categories))</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&quot;#d65f5f&quot;</span>, <span class="st">&quot;#8c613c&quot;</span>, <span class="st">&quot;#dc7ec0&quot;</span>, <span class="st">&quot;#797979&quot;</span>]</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>ax.bar(x, occasionally, width, label<span class="op">=</span><span class="st">&#39;Occasionally&#39;</span>, color<span class="op">=</span>colors[<span class="dv">0</span>])</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>ax.bar(x, nothing,      width, label<span class="op">=</span><span class="st">&#39;Nothing&#39;</span>,      color<span class="op">=</span>colors[<span class="dv">1</span>], bottom<span class="op">=</span>occasionally)</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>ax.bar(x, always,       width, label<span class="op">=</span><span class="st">&#39;Always&#39;</span>,       color<span class="op">=</span>colors[<span class="dv">2</span>], bottom<span class="op">=</span>[i<span class="op">+</span>j <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(occasionally, nothing)])</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>ax.bar(x, frequently,   width, label<span class="op">=</span><span class="st">&#39;Frequently&#39;</span>,   color<span class="op">=</span>colors[<span class="dv">3</span>], bottom<span class="op">=</span>[i<span class="op">+</span>j<span class="op">+</span>k <span class="cf">for</span> i,j,k <span class="kw">in</span> <span class="bu">zip</span>(occasionally, nothing, always)])</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(x)</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(categories)</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&quot;Drinking frequency &amp; Eating between meals&quot;</span>)</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">&#39;center right&#39;</span>)</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-15-5.png" alt="" width="768" /></p>
+</div>
+<p>It can be seen from the figure that the number of people who drink occasionally is relatively large, almost twice the number of people who never drink; most people have the habit of occasionally eating between meals, and a smaller part of them have the habit of eating between meals.</p>
+<h2 id="use-histograms-to-explore-the-distribution-of-numerical-fields">2.2 Use histograms to explore the distribution of numerical fields</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data.columns[[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">13</span>]].tolist()</span></code></pre></div>
+<pre><code>[&#39;Gender&#39;, &#39;Age&#39;, &#39;Height&#39;, &#39;Weight&#39;, &#39;FCVC&#39;, &#39;NCP&#39;, &#39;CH2O&#39;, &#39;FAF&#39;, &#39;TUE&#39;]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>col1 <span class="op">=</span> data.columns[[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">12</span>,<span class="dv">13</span>]].tolist()</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">4</span>,figsize <span class="op">=</span> (<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>column_name <span class="op">=</span> [<span class="st">&#39;Age&#39;</span>, <span class="st">&#39;height (m)&#39;</span>, <span class="st">&#39;Weight (kg)&#39;</span>, <span class="st">&#39;Frequency of eating vegetables&#39;</span>, <span class="st">&#39;Number of meals in a day&#39;</span>, <span class="st">&#39;Daily drinking water (L)&#39;</span>, <span class="st">&#39;Frequency of exercise (days)&#39;</span>, <span class="st">&#39;Daily use of technical equipment&#39;</span>]</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>j<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(col1)):</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="bu">int</span>(<span class="st">&#39;24&#39;</span><span class="op">+</span><span class="bu">str</span>(i<span class="op">+</span><span class="dv">1</span>)))</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> data[col1[i]]</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>    sns.distplot(x,color <span class="op">=</span> <span class="st">&#39;lightpink&#39;</span>)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    tit<span class="op">=</span>column_name[j]</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    j <span class="op">=</span> j<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    plt.title(tit<span class="op">+</span><span class="st">&#39;Histogram&#39;</span>,size<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-17-7.png" alt="" width="768" /></p>
+</div>
+<p>According to the histogram distribution of each continuity feature above, the characteristics of each field can be judged. First of all, according to the histogram of <code>Age</code>, it can be seen that the age distribution of the people mainly studied in this data set is mostly between 20 and 25 years old; the overall distribution of weight is relatively concentrated, and there is no obvious outlying value.</p>
+<p>Regarding eating habits, most of the people included in this data usually eat vegetables between 2 and 3; among them, most of them eat 3 times a day, but there are also a considerable number of people who eat 1 time; the daily drinking water of the population is concentrated in 2L. In terms of daily life habits, from this histogram, it can be concluded that most people exercise frequently; among them, the time of use of electronic products is mostly distributed within 0-2 hours.</p>
+<h2 id="use-heat-maps-to-explore-the-correlation-of-numerical-fields">2.3 Use heat maps to explore the correlation of numerical fields</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sns.set_theme(style=&quot;white&quot;,font_scale=0.8)</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>data,</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                 columns<span class="op">=</span>data.columns)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> d.corr(numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> np.triu(np.ones_like(corr, dtype<span class="op">=</span><span class="bu">bool</span>))</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>f, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> sns.diverging_palette(<span class="dv">200</span>, <span class="dv">20</span>, as_cmap<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, mask<span class="op">=</span>mask, cmap<span class="op">=</span>cmap, vmax<span class="op">=</span><span class="fl">.6</span>, center<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>            square<span class="op">=</span><span class="va">True</span>, linewidths<span class="op">=</span><span class="fl">.8</span>, cbar_kws<span class="op">=</span>{<span class="st">&quot;shrink&quot;</span>: <span class="fl">.5</span>})</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>rc <span class="op">=</span> {<span class="st">&#39;font.sans-serif&#39;</span>: <span class="st">&#39;SimHei&#39;</span>,</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;axes.unicode_minus&#39;</span>: <span class="va">False</span>}</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(context<span class="op">=</span><span class="st">&#39;notebook&#39;</span>, style<span class="op">=</span><span class="st">&#39;ticks&#39;</span>, rc<span class="op">=</span>rc)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Numerical field heat map&#39;</span>)</span></code></pre></div>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-18-9.png" alt="" width="768" /></p>
+</div>
+<p>It can be seen from the figure that there is a relatively weak correlation between most features. There is a relatively strong positive correlation between <code>Height</code> and <code>Weight</code>, and there is a relatively strong negative correlation between <code>TUE</code> (the time of daily use of technical equipment) and <code>Age</code>. Therefore, it can be preliminarily judged that the age group of people around 25 years old included in this data set uses electronic devices for a long time.</p>
+<h2 id="use-scattering-diagrams-to-explore-the-relationship-between-age-and-time-of-using-technical-equipment">2.4 Use scattering diagrams to explore the relationship between age and time of using technical equipment</h2>
+<p>From the above heat map, it is preliminarily known that there is a strong negative correlation between age and the use of electronic devices. Next, use a scatter chart to specifically check the relationship between the two.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>data, x<span class="op">=</span>data[<span class="st">&#39;Age&#39;</span>], y<span class="op">=</span>data[<span class="st">&#39;TUE&#39;</span>],size <span class="op">=</span><span class="dv">8</span>,color <span class="op">=</span> <span class="st">&quot;#faceb6&quot;</span>,legend <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Age&#39;</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;TUE&#39;</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<pre><code>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei</code></pre>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-19-11.png" alt="" width="624" /></p>
+</div>
+<p>It can be seen from the figure that people around the age of 20 generally use technical equipment for a long time, and with age, the daily use of technical equipment is decreasing.</p>
+<h2 id="use-pie-charts-to-explore-the-relationship-between-obesity-and-gender">2.5 Use pie charts to explore the relationship between obesity and gender</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the different levels of obesity</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&#39;NObeyesdad&#39;</span>].unique()</span></code></pre></div>
+<pre><code>array([&#39;Normal_Weight&#39;, &#39;Overweight_Level_I&#39;, &#39;Overweight_Level_II&#39;,
+       &#39;Obesity_Type_I&#39;, &#39;Insufficient_Weight&#39;, &#39;Obesity_Type_II&#39;,
+       &#39;Obesity_Type_III&#39;], dtype=object)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data[data[<span class="st">&#39;Gender&#39;</span>]<span class="op">==</span><span class="st">&#39;Female&#39;</span>].groupby([<span class="st">&#39;NObeyesdad&#39;</span>]).size().tolist()</span></code></pre></div>
+<pre><code>[173, 141, 156, 2, 323, 145, 103]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Female &amp; Male obesity distribution</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>female_data <span class="op">=</span> data[data[<span class="st">&#39;Gender&#39;</span>]<span class="op">==</span><span class="st">&#39;Female&#39;</span>].groupby([<span class="st">&#39;NObeyesdad&#39;</span>]).size().tolist()</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>male_data <span class="op">=</span> data[data[<span class="st">&#39;Gender&#39;</span>]<span class="op">==</span><span class="st">&#39;Male&#39;</span>].groupby([<span class="st">&#39;NObeyesdad&#39;</span>]).size().tolist()</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>male_data.reverse()</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>inner_sizes <span class="op">=</span> data.groupby([<span class="st">&#39;Gender&#39;</span>]).size().tolist()</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>inner_labels <span class="op">=</span> [<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>]</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>obesity_types <span class="op">=</span> [<span class="st">&#39;Normal&#39;</span>, <span class="st">&#39;Overweight I&#39;</span>, <span class="st">&#39;Overweight II&#39;</span>,</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Obese I&#39;</span>, <span class="st">&#39;Olweight&#39;</span>, <span class="st">&#39;Obesity II&#39;</span>, <span class="st">&#39;Obesity III&#39;</span>]</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>outer_labels <span class="op">=</span> obesity_types <span class="op">+</span> obesity_types[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>outer_sizes <span class="op">=</span> female_data <span class="op">+</span> male_data</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>colors_inner <span class="op">=</span> [<span class="st">&#39;#44a0d6&#39;</span>, <span class="st">&#39;#fc7716&#39;</span>]</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>colors_outer <span class="op">=</span> [<span class="st">&#39;#74c476&#39;</span>,<span class="st">&#39;#9e9ac8&#39;</span>,<span class="st">&#39;#4c72b0&#39;</span>,<span class="st">&#39;#ee854a&#39;</span>,<span class="st">&#39;#6acc64&#39;</span>,<span class="st">&#39;#d65f5f&#39;</span>,<span class="st">&#39;#8c613c&#39;</span>,</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>                <span class="st">&#39;#dc7ec0&#39;</span>,<span class="st">&#39;#797979&#39;</span>,<span class="st">&#39;#d5bb67&#39;</span>,<span class="st">&#39;#82c6e2&#39;</span>,<span class="st">&#39;#faceb6&#39;</span>,<span class="st">&#39;#fae9b6&#39;</span>]</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner pie (Gender)</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>ax.pie(inner_sizes, labels<span class="op">=</span>inner_labels, radius<span class="op">=</span><span class="fl">0.4</span>,</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>       colors<span class="op">=</span>colors_inner, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>,</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>       pctdistance<span class="op">=</span><span class="fl">0.75</span>, labeldistance<span class="op">=</span><span class="fl">0.5</span>)</span></code></pre></div>
+<pre><code>([&lt;matplotlib.patches.Wedge object at 0x15c7f1100&gt;, &lt;matplotlib.patches.Wedge object at 0x15c1c8500&gt;], [Text(0.003720288043425487, 0.19996539564853202, &#39;Female&#39;), Text(-0.0037202880434254668, -0.19996539564853202, &#39;Male&#39;)], [Text(0.005580432065138231, 0.29994809347279805, &#39;49.4%&#39;), Text(-0.005580432065138201, -0.29994809347279805, &#39;50.6%&#39;)])</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Outer pie (Obesity type)</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>ax.pie(outer_sizes, labels<span class="op">=</span>outer_labels, radius<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>       colors<span class="op">=</span>colors_outer[:<span class="bu">len</span>(outer_sizes)],</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>       autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>, pctdistance<span class="op">=</span><span class="fl">0.85</span>,</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>       labeldistance<span class="op">=</span><span class="fl">1.05</span>, startangle<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>       wedgeprops<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.4</span>))</span></code></pre></div>
+<pre><code>([&lt;matplotlib.patches.Wedge object at 0x15c254260&gt;, &lt;matplotlib.patches.Wedge object at 0x15a84c740&gt;, &lt;matplotlib.patches.Wedge object at 0x15c255b20&gt;, &lt;matplotlib.patches.Wedge object at 0x15c257ef0&gt;, &lt;matplotlib.patches.Wedge object at 0x15c255280&gt;, &lt;matplotlib.patches.Wedge object at 0x15c152a50&gt;, &lt;matplotlib.patches.Wedge object at 0x15c152b70&gt;, &lt;matplotlib.patches.Wedge object at 0x15c153e90&gt;, &lt;matplotlib.patches.Wedge object at 0x15c152690&gt;, &lt;matplotlib.patches.Wedge object at 0x15c153f50&gt;, &lt;matplotlib.patches.Wedge object at 0x15c1523c0&gt;, &lt;matplotlib.patches.Wedge object at 0x15c150110&gt;, &lt;matplotlib.patches.Wedge object at 0x15c1539b0&gt;, &lt;matplotlib.patches.Wedge object at 0x15c257680&gt;], [Text(0.81231372353456, 0.21388411478512973, &#39;Normal&#39;), Text(0.6288765352939018, 0.5568790742672399, &#39;Overweight I&#39;), Text(0.33023953806352935, 0.7723612156883506, &#39;Overweight II&#39;), Text(0.14121135629579548, 0.8280455016803738, &#39;Obese I&#39;), Text(-0.26004982483348005, 0.7987328017579324, &#39;Olweight&#39;), Text(-0.711888956635093, 0.44588576274758845, &#39;Obesity II&#39;), Text(-0.8248057743738497, 0.15904538521929587, &#39;Obesity III&#39;), Text(-0.8157060429748462, -0.200558349251081, &#39;Obesity III&#39;), Text(-0.6230412473386178, -0.5634000391504597, &#39;Obesity II&#39;), Text(-0.4869391279207842, -0.6844635020947036, &#39;Olweight&#39;), Text(-0.14859938646682974, -0.8267516086114873, &#39;Obese I&#39;), Text(0.4400440809276116, -0.7155146447422119, &#39;Overweight II&#39;), Text(0.7323079963116752, -0.4114911888947072, &#39;Overweight I&#39;), Text(0.8308996734566011, -0.12331152683230268, &#39;Normal&#39;)], [Text(0.6575873000041677, 0.17314428339748597, &#39;8.2%&#39;), Text(0.5090905285712537, 0.4508068696449085, &#39;6.7%&#39;), Text(0.26733676890857133, 0.6252447936524743, &#39;7.4%&#39;), Text(0.11431395509659634, 0.6703225489793503, &#39;0.1%&#39;), Text(-0.21051652486519812, 0.6465932204707072, &#39;15.3%&#39;), Text(-0.5762910601331706, 0.36095514127185735, &#39;6.9%&#39;), Text(-0.6676999125883546, 0.12875102612990616, &#39;4.9%&#39;), Text(-0.6603334633605897, -0.16235675891754175, &#39;8.9%&#39;), Text(-0.5043667240360239, -0.4560857459789435, &#39;6.9%&#39;), Text(-0.3941888178406348, -0.5540895016957125, &#39;0.0%&#39;), Text(-0.12029474142552884, -0.6692751117331087, &#39;14.0%&#39;), Text(0.35622616075092367, -0.5792261409817906, &#39;9.2%&#39;), Text(0.5928207589189751, -0.3331119148195249, &#39;6.9%&#39;), Text(0.672633068988677, -0.09982361695948311, &#39;4.7%&#39;)])</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&quot;Gender &amp; Obesity Degree&quot;</span>, pad<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code></pre></div>
+<pre><code>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<pre><code>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei</code></pre>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-22-13.png" alt="" width="960" /></p>
+</div>
+<p>It can be seen from the figure that the proportion of men and women in this data set is relatively evenly distributed. Among them, there are more people with obesity level I among men, accounting for 13.97%, followed by overweight II and obesity III; among women with underweight people, accounting for 15.3%, followed by normal and overweight II. It can be seen that there are more obese men than women, and there are more underweight women.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>data.groupby([<span class="st">&#39;Gender&#39;</span>,<span class="st">&#39;NObeyesdad&#39;</span>]).size().reset_index().sort_values(<span class="dv">0</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<pre><code>    Gender           NObeyesdad    0
+4   Female     Obesity_Type_III  323
+10    Male      Obesity_Type_II  295
+9     Male       Obesity_Type_I  195
+13    Male  Overweight_Level_II  187
+0   Female  Insufficient_Weight  173
+2   Female       Obesity_Type_I  156
+8     Male        Normal_Weight  146
+5   Female   Overweight_Level_I  145
+12    Male   Overweight_Level_I  145
+1   Female        Normal_Weight  141
+6   Female  Overweight_Level_II  103
+7     Male  Insufficient_Weight   99
+3   Female      Obesity_Type_II    2
+11    Male     Obesity_Type_III    1</code></pre>
+</div>
+<h2 id="use-bar-charts-to-explore-the-relationship-between-obesity-and-alcohol-frequency">2.6 Use bar charts to explore the relationship between obesity and alcohol frequency</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.countplot(x<span class="op">=</span><span class="st">&#39;NObeyesdad&#39;</span>,order <span class="op">=</span> [<span class="st">&#39;Insufficient_Weight&#39;</span>, <span class="st">&#39;Normal_Weight&#39;</span>, <span class="st">&#39;Overweight_Level_I&#39;</span>, <span class="st">&#39;Overweight_Level_II&#39;</span>,</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">&#39;Obesity_Type_I&#39;</span>, <span class="st">&#39;Obesity_Type_II&#39;</span>,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">&#39;Obesity_Type_III&#39;</span>],hue<span class="op">=</span><span class="st">&#39;CALC&#39;</span>,data<span class="op">=</span>data, palette<span class="op">=</span><span class="st">&quot;Set2&quot;</span>)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(ax.get_xticklabels(),rotation<span class="op">=</span><span class="dv">30</span>,size <span class="op">=</span> <span class="dv">10</span>) </span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<pre><code>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei</code></pre>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-24-15.png" alt="" width="768" /></p>
+</div>
+<p>From this bar chart, it can be seen that there is no obvious causal relationship between drinking frequency and obesity symptoms, but most of the drinking frequency of people with obesity symptoms is `Sometimes’. Combined with the characteristics of the age distribution of the sub-data set, it can be found that young people around 25 years old often drink alcohol.</p>
+<h2 id="use-the-box-line-diagram-to-explore-the-relationship-between-obesity-and-age">2.7 Use the box line diagram to explore the relationship between obesity and age</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(x<span class="op">=</span>data[<span class="st">&#39;NObeyesdad&#39;</span>],order <span class="op">=</span> [<span class="st">&#39;Insufficient_Weight&#39;</span>, <span class="st">&#39;Normal_Weight&#39;</span>, <span class="st">&#39;Overweight_Level_I&#39;</span>, <span class="st">&#39;Overweight_Level_II&#39;</span>,</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">&#39;Obesity_Type_I&#39;</span>, <span class="st">&#39;Obesity_Type_II&#39;</span>,</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>       <span class="st">&#39;Obesity_Type_III&#39;</span>],y<span class="op">=</span>data[<span class="st">&#39;Age&#39;</span>],hue<span class="op">=</span>data[<span class="st">&#39;Gender&#39;</span>],palette<span class="op">=</span><span class="st">&quot;Set3&quot;</span>)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(ax.get_xticklabels(),rotation<span class="op">=</span><span class="dv">30</span>,size <span class="op">=</span> <span class="dv">10</span>) </span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.title(&#39;Age distribution of people with different degrees of obesity&#39;)</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<pre><code>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei</code></pre>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-25-17.png" alt="" width="960" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(x<span class="op">=</span>data[<span class="st">&#39;NObeyesdad&#39;</span>],order <span class="op">=</span> [<span class="st">&#39;Insufficient_Weight&#39;</span>, <span class="st">&#39;Normal_Weight&#39;</span>, <span class="st">&#39;Overweight_Level_I&#39;</span>, <span class="st">&#39;Overweight_Level_II&#39;</span>,</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">&#39;Obesity_Type_I&#39;</span>, <span class="st">&#39;Obesity_Type_II&#39;</span>,</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>       <span class="st">&#39;Obesity_Type_III&#39;</span>],y<span class="op">=</span>data[<span class="st">&#39;Age&#39;</span>],hue<span class="op">=</span>data[<span class="st">&#39;FAVC&#39;</span>],palette<span class="op">=</span><span class="st">&quot;Set3&quot;</span>)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(ax.get_xticklabels(),rotation<span class="op">=</span><span class="dv">30</span>,size <span class="op">=</span> <span class="dv">10</span>) </span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.title(&#39;Age distribution of people with different degrees of obesity&#39;)</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<pre><code>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: SimHei</code></pre>
+<p><img src="mexicans_files/figure-html5/unnamed-chunk-26-19.png" alt="" width="960" /></p>
+</div>
+<p>Through the box line diagram in the figure, the box line diagram of <code>Normal_Weight</code> and <code>Insufficient_Weight</code> is relatively concentrated, so it can be concluded that most of the normal weight and underweight people are concentrated around the age of 20; however, the distribution of obese people is relatively scattered, and the overall division Between the ages of 20 and 30, it can be concluded that people are more likely to suffer from obesity symptoms as the age approaches the age of 30. Among them, <code>Obesity_Type_I</code> has the largest population span, distributed from 20 to 50 years old, so it can be seen that there is no obvious correlation between obesity type I and age, and all ages may suffer from this obesity.</p>
+<h1 id="summary">3. Summary</h1>
+<p>The data is about the degree of obesity in Mexicans. First of all, by querying the basic information and distribution of numerical and non-numerical data, we have a general understanding of the data, and then preliminary judgement through the heat map, which fields need to explore the correlation between them; because of the age and There is a certain negative correlation between technical equipment, so draw a scatter plot to show this relationship. Then, this case explores the relationship between obesity degree and gender, drinking frequency and family obesity history, and shows it with pie charts, bar charts and box diagrams respectively.</p>
+<p>Through the graph obtained from the above exploratory analysis, three main points can be drawn: first, a basic situation about this data set is that the distribution of men and women is relatively balanced, both of them are around 20-25 years old; second, men are more prone to obesity symptoms than women, and obesity symptoms are easily affected by family obesity symptoms; finally , the younger the age, the longer the time to use technical equipment.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

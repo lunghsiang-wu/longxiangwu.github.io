@@ -1,0 +1,399 @@
+---
+title: "Visualisation of Data on Obesity Levels among Mexicans"
+description: "A data visualisation project"
+author:
+  - name: "Longxiang Wu"
+date: 2026-1-2
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+reticulate::use_python("/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region -->
+
+<!-- #region toc=true -->
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+
+<div class="toc"><ul class="toc-item"><li><span><a href="#1.-Import data set and necessary modules" data-toc-modified-id="1.-lead Enter the data set and the necessary modules-1">1. Import data sets and necessary modules</a></span></li><li><span><a href="#2.-Visual analysis of obesity influencing factors" data-toc-modified-id="2.-Visual analysis of obesity influencing factors- Two">two. Visual analysis of factors affecting obesity</a></span><ul class="toc-item"><li><span><a href="#2.1-Explore the distribution of numerical fields" data-toc-modified-i d="2.1-Explore the distribution of numerical fields-2.1">2.1 Explore the distribution of numerical fields</a></span></li><li><span><a href="#2.2-Use histograms to explore the distribution of numerical fields" data-toc-modified-id="2.2-Use histograms to explore the distribution of numerical fields-2.2">2.2 Use histograms to explore the distribution of numerical fields</a></span></li><li><span><a h ref="#2.3-Use heat maps to explore the correlation of numerical fields" data-toc-modified-id="2.3-Use heat maps to explore the correlation of numerical fields-2.3">2.3 Use heat maps to explore the correlation of numerical fields</a> </span></li><li><span><a href="#2.4-Use scatter diagrams to explore the relationship between age and the time of using technical equipment" data-toc-modified-id="2.4-Use scatter diagrams to explore age and use technology settings The relationship between time reserve-2.4">2.4 Use scatter charts to explore the relationship between age and the time of using technical equipment</a></span></li><li><span><a href="#2.5-Use pie charts to explore the relationship between obesity and gender" data- toc-modified-id="2.5-Use pie charts to explore the relationship between obesity and gender-2.5">2.5 Use pie charts to explore the relationship between obesity and gender</a></span></li><li><span><a href="#2 .6-Use column charts to explore the relationship between obesity and alcohol frequency" data-toc-modified-id="2.6-Use column charts to explore the relationship between obesity and alcohol frequency-2.6">2.6 Use column charts to explore the relationship between obesity and alcohol frequency</ A></span></li><li><span><a href="#2.7-Use box diagrams to explore the relationship between obesity and age" data-toc-modified-id="2.7-Use box diagrams to explore the relationship between obesity and age -2.7">2.7 Use box line diagrams to explore the relationship between obesity and age</a></span></li></ul></li><li><span><a href="#3.-summary" data-toc-modified-id ="3.-Summary-3">3. Summarise</a></span></li></ul></div>
+<!-- #endregion -->
+
+# 1. Import data sets and necessary modules
+
+
+First, check the types and meanings of each field.
+
+
+| Column Name | Type | Meaning Description |
+|-----:|-----:|-----:|
+|**Gender**|Character type|Gender|
+|**Age**|Floating point type|Age|
+|**Height**|Floating point type|Height(m)|
+|**Weight**|Floating point type|Weight(kg)|
+|**family_history_with_overweight**|Character type|Whether the family member suffers from or suffers from overweight|
+|**FAVC**|Character type|Do you often eat high-calorie food|
+|**FCVC**|Floating point type|The frequency of eating vegetables at ordinary times|
+|**NCP**|Floating point type|Number of meals in a day|
+|**CAEC**|Character type|Eating between meals|
+|**SMOKE**|Character type|Do you smoke|
+|**CH2O**|Floating point type|Daily water intake (L)|
+|**SCC**|Character type|Whether to detect daily calories|
+|**FAF**|Floating point type|Frequency of movement (days)|
+|**TUE**|Floating point type|Daily use time of technical equipment|
+|**CALC**|Character type|Frequency of drinking|
+|**MTRANS**|Character type|Usually used means of transportation|
+|**NObeyesdad**|Character type|Obesity level|
+
+```{python}
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt 
+import matplotlib
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+
+plt.rcParams['font.sans-serif'] = ['Heiti TC']
+plt.rcParams['axes.unicode_minus'] = False
+matplotlib.rc("font", family='Heiti TC')
+```
+
+First, read the data.
+
+```{python}
+data = pd.read_csv('./input/ObesityDataSet_raw_and_data_sinthetic.csv')
+data.head()
+```
+
+```{python}
+# Check the basic information of the data set
+data.info()
+```
+
+It can be seen from the results of the `info()` function that the data set contains a total of 2,111 data without missing data; according to the type of data, it can be seen that this data set contains 8 numerical fields and 9 non-numerical fields.
+
+```{python}
+# View descriptive statistics
+data.describe(include='all')
+```
+
+```{python}
+data.head()
+```
+
+```{python}
+data.describe()
+```
+
+```{python}
+
+```
+
+Through the descriptive statistical function `describe()`, we can see the mean, standard deviation, minimum, maximum and conential of the continuous data in this data set. At the same time, we can also see the number of different values and other indicators in the discrete data.
+
+Through these indicators, we can make a preliminary judgement on this data set. For example: in the field `Gender`, the number of `Male` reaches 1,068, and the total number is 2,111, so it can be preliminarily judged that the number of men and women is relatively equal; in the field `family_history_with_overweight`, the answer is The number of `yes` has reached 1,726. Since the total number of people is 2,111, it can be preliminarily judged that most people have a history of family obesity.
+
+
+# 2. Visual analysis of factors affecting obesity
+
+
+## 2.1 Explore the distribution of numerical fields
+
+
+By exploring non-numerical and numerical data separately, the specific distribution of the data and the data of each field can be seen more intuitively.
+Next, because the data of the fields `family_history_with_overweight`, `FAVC`, `SMOKE` and `SCC` are `yes` or `no` in non-numerical data, they can be displayed through a stacked bar chart. .
+
+```{python}
+family_yes = data[data['family_history_with_overweight']=='yes']['family_history_with_overweight'].count()
+family_no = data['family_history_with_overweight'].count() - family_yes
+
+high_cal_yes = data[data['FAVC']=='yes']['FAVC'].count()
+high_cal_no = data['FAVC'].count() - high_cal_yes
+
+smo_cal_yes = data[data['SMOKE']=='yes']['SMOKE'].count()
+smo_cal_no = data['SMOKE'].count() - smo_cal_yes
+
+test_cal_yes = data[data['SCC']=='yes']['SCC'].count()
+test_cal_no = data['SCC'].count() - test_cal_yes
+
+```
+
+```{python}
+high_cal_yes
+```
+
+```{python}
+high_cal_no
+```
+
+```{python}
+answer = ['yes', 'no']
+labels = ['Family obesity history', 'high-calorie food', 'smoking or not', 'daily calorie detection']
+yes_lable = [family_yes, high_cal_yes, smo_cal_yes, test_cal_yes]
+no_lable = [family_no, high_cal_no, smo_cal_no, test_cal_no]
+
+
+width = 0.355    
+
+fig, ax = plt.subplots()
+
+ax.bar(labels, yes_lable, width, label='yes',color = 'seashell')
+ax.bar(labels, no_lable, width, label='no',color = 'plum')
+
+ax.set_ylabel('Number of people')
+ax.set_title('Non-numerical field distribution')
+ax.legend()
+
+plt.show()
+```
+
+It can be clearly seen from the figure that most Mexicans have a family history of obesity, and most of them have the habit of consuming high-calorie foods; almost all of the people surveyed do not smoke and do not have the habit of daily calorie testing.
+
+```{python}
+data['CALC'].value_counts()
+```
+
+```{python}
+labels = ['Sometimes', 'no', 'Frequently', 'Always']
+values = [10, 20, 30, 40]
+
+plt.figure(figsize=(6, 6))
+plt.pie(values, labels=labels, autopct='%1.1f%%', 
+        wedgeprops=dict(width=0.5))  # width<1 makes it a donut
+plt.title("Test Chart")
+plt.tight_layout()
+plt.show()
+```
+
+It can be seen from the picture that most people sometimes drink some alcohol, while the other majority do not drink, and a few often drink alcohol.
+
+```{python}
+list1 = [data[data['CALC']=='Sometimes']['CALC'].count(), data[data['CAEC']=='Sometimes']['CAEC'].count()]
+list2 = [data[data['CALC']=='no']['CALC'].count(), data[data['CAEC']=='no']['CAEC'].count()]
+list3 = [data[data['CALC']=='Frequently']['CALC'].count(), data[data['CAEC']=='Frequently']['CAEC'].count()]
+list4 = [data[data['CALC']=='Always']['CALC'].count(), data[data['CAEC']=='Always']['CAEC'].count()]
+print(list1)
+print(list2)
+print(list3)
+print(list4)
+```
+
+```{python}
+categories = ["Drinking frequency", "Eating between meals"]
+occasionally = [1401, 1765]
+nothing = [639, 51]
+always = [70, 242]
+frequently = [1, 53]
+
+x = np.arange(len(categories))
+width = 0.5
+colors = ["#d65f5f", "#8c613c", "#dc7ec0", "#797979"]
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.bar(x, occasionally, width, label='Occasionally', color=colors[0])
+ax.bar(x, nothing,      width, label='Nothing',      color=colors[1], bottom=occasionally)
+ax.bar(x, always,       width, label='Always',       color=colors[2], bottom=[i+j for i,j in zip(occasionally, nothing)])
+ax.bar(x, frequently,   width, label='Frequently',   color=colors[3], bottom=[i+j+k for i,j,k in zip(occasionally, nothing, always)])
+
+ax.set_xticks(x)
+ax.set_xticklabels(categories)
+ax.set_title("Drinking frequency & Eating between meals")
+ax.legend(loc='center right')
+plt.tight_layout()
+plt.show()
+```
+
+It can be seen from the figure that the number of people who drink occasionally is relatively large, almost twice the number of people who never drink; most people have the habit of occasionally eating between meals, and a smaller part of them have the habit of eating between meals.
+
+
+## 2.2 Use histograms to explore the distribution of numerical fields
+
+```{python}
+data.columns[[0,1,2,3,6,7,10,12,13]].tolist()
+```
+
+```{python}
+col1 = data.columns[[1,2,3,6,7,10,12,13]].tolist()
+fig,ax = plt.subplots(2,4,figsize = (8,6))
+column_name = ['Age', 'height (m)', 'Weight (kg)', 'Frequency of eating vegetables', 'Number of meals in a day', 'Daily drinking water (L)', 'Frequency of exercise (days)', 'Daily use of technical equipment']
+
+j=0
+for i in range(0,len(col1)):
+    plt.subplot(int('24'+str(i+1)))
+    x = data[col1[i]]
+    sns.distplot(x,color = 'lightpink')
+    tit=column_name[j]
+    j = j+1
+    plt.title(tit+'Histogram',size=10)
+
+plt.tight_layout()
+plt.show()
+```
+
+According to the histogram distribution of each continuity feature above, the characteristics of each field can be judged. First of all, according to the histogram of `Age`, it can be seen that the age distribution of the people mainly studied in this data set is mostly between 20 and 25 years old; the overall distribution of weight is relatively concentrated, and there is no obvious outlying value.
+
+Regarding eating habits, most of the people included in this data usually eat vegetables between 2 and 3; among them, most of them eat 3 times a day, but there are also a considerable number of people who eat 1 time; the daily drinking water of the population is concentrated in 2L. In terms of daily life habits, from this histogram, it can be concluded that most people exercise frequently; among them, the time of use of electronic products is mostly distributed within 0-2 hours.
+
+
+## 2.3 Use heat maps to explore the correlation of numerical fields
+
+```{python}
+# sns.set_theme(style="white",font_scale=0.8)
+
+d = pd.DataFrame(data=data,
+                 columns=data.columns)
+
+corr = d.corr(numeric_only=True)
+mask = np.triu(np.ones_like(corr, dtype=bool))
+f, ax = plt.subplots(figsize=(8, 6))
+cmap = sns.diverging_palette(200, 20, as_cmap=True)
+sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.6, center=0,
+            square=True, linewidths=.8, cbar_kws={"shrink": .5})
+
+rc = {'font.sans-serif': 'SimHei',
+      'axes.unicode_minus': False}
+sns.set(context='notebook', style='ticks', rc=rc)
+ax.set_title('Numerical field heat map')
+```
+
+It can be seen from the figure that there is a relatively weak correlation between most features. There is a relatively strong positive correlation between `Height` and `Weight`, and there is a relatively strong negative correlation between `TUE` (the time of daily use of technical equipment) and `Age`. Therefore, it can be preliminarily judged that the age group of people around 25 years old included in this data set uses electronic devices for a long time.
+
+
+## 2.4 Use scattering diagrams to explore the relationship between age and time of using technical equipment
+
+
+From the above heat map, it is preliminarily known that there is a strong negative correlation between age and the use of electronic devices. Next, use a scatter chart to specifically check the relationship between the two.
+
+```{python}
+sns.scatterplot(data=data, x=data['Age'], y=data['TUE'],size =8,color = "#faceb6",legend = False)
+
+plt.xlabel('Age', fontsize=8)
+plt.ylabel('TUE', fontsize=8)
+
+plt.show()
+```
+
+It can be seen from the figure that people around the age of 20 generally use technical equipment for a long time, and with age, the daily use of technical equipment is decreasing.
+
+
+## 2.5 Use pie charts to explore the relationship between obesity and gender
+
+```{python}
+# Check the different levels of obesity
+data['NObeyesdad'].unique()
+```
+
+```{python}
+data[data['Gender']=='Female'].groupby(['NObeyesdad']).size().tolist()
+```
+
+```{python}
+# Female & Male obesity distribution
+female_data = data[data['Gender']=='Female'].groupby(['NObeyesdad']).size().tolist()
+male_data = data[data['Gender']=='Male'].groupby(['NObeyesdad']).size().tolist()
+male_data.reverse()
+
+inner_sizes = data.groupby(['Gender']).size().tolist()
+inner_labels = ["Female", "Male"]
+
+obesity_types = ['Normal', 'Overweight I', 'Overweight II',
+                 'Obese I', 'Olweight', 'Obesity II', 'Obesity III']
+outer_labels = obesity_types + obesity_types[::-1]
+outer_sizes = female_data + male_data
+
+colors_inner = ['#44a0d6', '#fc7716']
+colors_outer = ['#74c476','#9e9ac8','#4c72b0','#ee854a','#6acc64','#d65f5f','#8c613c',
+                '#dc7ec0','#797979','#d5bb67','#82c6e2','#faceb6','#fae9b6']
+
+fig, ax = plt.subplots(figsize=(10, 8))
+
+# Inner pie (Gender)
+ax.pie(inner_sizes, labels=inner_labels, radius=0.4,
+       colors=colors_inner, autopct='%1.1f%%',
+       pctdistance=0.75, labeldistance=0.5)
+
+# Outer pie (Obesity type)
+ax.pie(outer_sizes, labels=outer_labels, radius=0.8,
+       colors=colors_outer[:len(outer_sizes)],
+       autopct='%1.1f%%', pctdistance=0.85,
+       labeldistance=1.05, startangle=0,
+       wedgeprops=dict(width=0.4))
+
+ax.set_title("Gender & Obesity Degree", pad=20)
+plt.tight_layout()
+plt.show()
+```
+
+It can be seen from the figure that the proportion of men and women in this data set is relatively evenly distributed. Among them, there are more people with obesity level I among men, accounting for 13.97%, followed by overweight II and obesity III; among women with underweight people, accounting for 15.3%, followed by normal and overweight II. It can be seen that there are more obese men than women, and there are more underweight women.
+
+```{python}
+data.groupby(['Gender','NObeyesdad']).size().reset_index().sort_values(0, ascending=False)
+```
+
+## 2.6 Use bar charts to explore the relationship between obesity and alcohol frequency
+
+```{python}
+plt.figure(figsize=(8,6))
+ax = sns.countplot(x='NObeyesdad',order = ['Insufficient_Weight', 'Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II',
+       'Obesity_Type_I', 'Obesity_Type_II',
+       'Obesity_Type_III'],hue='CALC',data=data, palette="Set2")
+ax.set_xticklabels(ax.get_xticklabels(),rotation=30,size = 10) 
+plt.show()
+```
+
+From this bar chart, it can be seen that there is no obvious causal relationship between drinking frequency and obesity symptoms, but most of the drinking frequency of people with obesity symptoms is `Sometimes'. Combined with the characteristics of the age distribution of the sub-data set, it can be found that young people around 25 years old often drink alcohol.
+
+
+## 2.7 Use the box line diagram to explore the relationship between obesity and age
+
+```{python}
+plt.figure(figsize=(10,6))
+
+ax = sns.boxplot(x=data['NObeyesdad'],order = ['Insufficient_Weight', 'Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II',
+       'Obesity_Type_I', 'Obesity_Type_II',
+       'Obesity_Type_III'],y=data['Age'],hue=data['Gender'],palette="Set3")
+ax.set_xticklabels(ax.get_xticklabels(),rotation=30,size = 10) 
+# plt.title('Age distribution of people with different degrees of obesity')
+plt.show()
+```
+
+```{python}
+plt.figure(figsize=(10,6))
+
+ax = sns.boxplot(x=data['NObeyesdad'],order = ['Insufficient_Weight', 'Normal_Weight', 'Overweight_Level_I', 'Overweight_Level_II',
+       'Obesity_Type_I', 'Obesity_Type_II',
+       'Obesity_Type_III'],y=data['Age'],hue=data['FAVC'],palette="Set3")
+ax.set_xticklabels(ax.get_xticklabels(),rotation=30,size = 10) 
+# plt.title('Age distribution of people with different degrees of obesity')
+plt.show()
+```
+
+Through the box line diagram in the figure, the box line diagram of `Normal_Weight` and `Insufficient_Weight` is relatively concentrated, so it can be concluded that most of the normal weight and underweight people are concentrated around the age of 20; however, the distribution of obese people is relatively scattered, and the overall division Between the ages of 20 and 30, it can be concluded that people are more likely to suffer from obesity symptoms as the age approaches the age of 30. Among them, `Obesity_Type_I` has the largest population span, distributed from 20 to 50 years old, so it can be seen that there is no obvious correlation between obesity type I and age, and all ages may suffer from this obesity.
+
+
+# 3. Summary
+
+
+The data is about the degree of obesity in Mexicans. First of all, by querying the basic information and distribution of numerical and non-numerical data, we have a general understanding of the data, and then preliminary judgement through the heat map, which fields need to explore the correlation between them; because of the age and There is a certain negative correlation between technical equipment, so draw a scatter plot to show this relationship. Then, this case explores the relationship between obesity degree and gender, drinking frequency and family obesity history, and shows it with pie charts, bar charts and box diagrams respectively.
+
+Through the graph obtained from the above exploratory analysis, three main points can be drawn: first, a basic situation about this data set is that the distribution of men and women is relatively balanced, both of them are around 20-25 years old; second, men are more prone to obesity symptoms than women, and obesity symptoms are easily affected by family obesity symptoms; finally , the younger the age, the longer the time to use technical equipment.
+
