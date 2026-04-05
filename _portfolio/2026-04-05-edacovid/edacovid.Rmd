@@ -1,0 +1,696 @@
+---
+title: "Data Cleaning and Exploratory Analysis of the COVID-19 Pandemic"
+description: |
+  An EDA project
+author:
+  - name: "Longxiang Wu"
+date: 2026-1-15
+output:
+  distill::distill_article:
+    self_contained: false
+---
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.19.1
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+reticulate::use_python("/Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14", required = TRUE)
+# or use your conda environment
+use_condaenv("base", required = TRUE)
+```
+
+<!-- #region-->
+
+
+# Catalogue
+1. [Introduction to Data and Pandas Tools] (#1)<br>
+2. [Real-time data exploratory analysis](#2)<br>
+&emsp;2.1 [Real-time Data Exploratory Analysis of Countries Around the World](#2.1)<br>
+&emsp;2.2 [Exploratory analysis of real-time data of all provinces across the country](#2.2)<br>
+3. [Exploratory Analysis of Historical Data](#4)<br>
+&emsp;3.1 [Exploratory Analysis of National Historical Data](#3.1)<br>
+&emsp;3.2 [Exploratory Analysis of Historical Data of Countries around the World](#3.2)<br>
+4. [Summary](#4)<br>
+
+
+
+# <a id=1></a>1. Introduction to data and Pandas tools
+
+
+The main content of this project is the exploratory analysis of COVID-19 epidemic data, including real-time data of Chinese provinces and countries around the world, as well as historical data from China and countries around the world. The characteristics and meanings in the data set are shown in the following table:
+
+
+|List names|Meanings|
+|:--|:--|
+|date|date|
+|name|name|
+|id|number|
+|lastUpdateTime|Update time|
+|today_confirm|New confirmed cases on the same day|
+|today_suspect|Newly added on the same day|
+|today_heal|New healing on the same day|
+|today_dead|New death on the same day|
+|today_severe|Added severe illness on the same day|
+|today_storeConfirm|Existing confirmed confirmed on the day|
+|total_confirm|Cumulative confirmed cases|
+|total_suspect|Cumulative suspicion|
+|total_heal|Cumulative healing|
+|total_dead|Cumulative death|
+|total_severe|Cumulative severe illness|
+
+
+
+Pandas is an open-source Python library focussing on data analysis. It was originally developed by AQR Capital Management in April 2008 and open sourced at the end of 2009. At present, it continues to be developed and maintained by the PyData development team focussing on the development of Python data packets, which is part of the PyData project. Pandas was originally developed as a financial data analysis tool, so Pandas provides good support for time series analysis.
+
+Pandas is based on NumPy arrays, which can process relational data flexibly and conveniently complete operations such as indexing, slicing, combining and selecting data subsets. Next, let's use Pandas to conduct exploratory analysis of the epidemic data.
+
+
+# <a id=2></a>2. Real-time data exploratory analysis
+
+
+## <a id=2.1></a> 2.1 Exploratory analysis of real-time data from all over the world
+
+
+We first read the data and change the English name of the column to Chinese. Then, check the basic information of the data and process the missing values. In addition, we will add a column of disease and death rates and set the country as an index. After data preprocessing, we will check the top ten countries in the world with the current cumulative number of confirmed cases, and draw horizontal bar charts of cumulative confirmed cases, cumulative deaths and mortality rates to analyse the epidemic situation in each country.
+
+```{python}
+import pandas as pd
+
+# Read the data
+today_world = pd.read_csv("./input/today_world_2020_03_31.csv")
+```
+
+```{python}
+# Check the real-time data of countries around the world
+today_world.head()
+```
+
+```{python}
+today_world.tail()
+```
+
+```{python}
+today_world[:5]
+```
+
+The names of each column in the data table are in English, which is not easy to observe. We will modify the column names to Chinese. First, create a column name dictionary for Chinese and English comparison, and use the `rename()` function to modify the column name:
+
+```{python}
+name_dict = {'date':'date','name':'name','id':'number','lastUpdateTime':'update time',
+'today_confirm': 'new confirmed cases on the same day', 'today_suspect': 'new suspected cases on the same day',
+'today_heal': 'new healing on the same day', 'today_dead': 'new death on the same day',
+'today_severe': 'new severe cases on the same day', 'today_storeConfirm': 'existing confirmed on the same day',
+'total_confirm': 'cumulative confirmed', 'total_suspect': 'cumulative suspicion',
+'total_heal':'cumulative cure','total_dead':'cumulative death','total_severe':'cumulative severe illness'}
+
+# Change the column name
+# today_world.columns = ['Number','Update time']
+today_world.rename(columns=name_dict,inplace=True)    # The inplace parameter determines whether to modify the original data
+
+today_world.head(3)
+```
+
+When we get a piece of data, we first need to observe the basic information and statistical information of the characteristics of the data. We can use `info()` to view the basic information of the data:
+
+```{python}
+# Check the basic information of the data
+today_world.info()
+```
+
+You can use the `describe()` function to view the statistics of the data:
+
+```{python}
+# By default, only statistical information of numerical characteristics is calculated.
+today_world.describe()
+```
+
+In the data, there are a large number of missing values in the new confirmed cases, suspected, cured, death, severe cases and existing confirmed cases on the same day. In order to facilitate observation, we use the `isnull()` function to check the missing value and calculate the ratio of missing values in combination with the `sum()` function.
+
+```{python}
+today_world.isnull().sum()
+```
+
+```{python}
+# Calculate the percentage of missing values
+today_world_nan = today_world.isnull().sum()/len(today_world)
+
+# Convert to percentage
+today_world_nan.apply(lambda x: format(x, '.1%')) 
+```
+
+We found that there were many missing values of the new relevant data on that day, mainly because some countries did not update the data on the day of collecting the data, so we will no longer analyse it. Although all the existing confirmed cases on that day are empty, the missing value can be directly calculated through the existing data. The formula is:
+
+$$ \text{Existing confirmed cases on the same day} = \text{cumulative confirmed cases} - \text{cumulative cures} - \text{cumulative deaths} $$
+
+```{python}
+# Missing value processing
+
+today_world['existing confirmed on the same day'] = today_world['cumulative confirmed']-today_world['cumulative cure']-today_world['cumulative death']
+```
+
+```{python}
+today_world.head()
+```
+
+In addition to these characteristics provided in our data, the rate of morbidity is also a very important feature that reflects the severity of the disease and the level of medical care in a region. Next, let's take a look at the disease and death rates in various countries on the day of data collection. The formula for calculating the disease and death rate is:
+
+$$ \text{mortality rate} = \text{cumulative death} \div \text{cumulative confirmed cases} $$
+
+```{python}
+# Calculate the disease and death rate and keep two decimal places.
+today_world['mortality'] = (today_world['cumulative death']/today_world['cumulative confirmed']).apply(lambda x: format(x, '.2f'))
+
+# Convert the disease and death rate data type to float
+today_world['cumulative death'] = today_world['cumulative death'].astype('float')
+```
+
+```{python}
+today_world.sort_values('cumulative death',ascending=False)
+```
+
+```{python}
+# Sort according to the descending order of the death rate
+today_world.sort_values('cumulative death',ascending=False,inplace=True)
+# # Showing the top ten countries with disease and death rates
+today_world.head(10)
+```
+
+排名第一的国家苏丹病死率高达0.29，但从表中可知，该国累计确诊人数只有7例。可见，病死率应结合累计确诊人数一起查看。
+
+
+为了方便查询特定国家的数据，我们使用`set_index()`函数将国家设置为索引：
+
+```{python}
+# Set the country name as an index
+today_world.set_index('name',inplace=True)
+
+today_world.head(3)
+```
+
+```{python}
+today_world.loc['中国']    # Obtain data from multiple countries through the incoming list
+```
+
+```{python}
+today_world.sort_values(['cumulative confirmed'],ascending=True)[:10]
+```
+
+**Top 10 countries with the current cumulative number of confirmed cases**
+
+
+Next, let's use the `sort_values()` function to sort according to the cumulative number of confirmed cases, and find the three columns of data on cumulative confirmed cases, cumulative deaths and mortality rates in the top ten countries with confirmed cases:
+
+```{python}
+# Check the top ten countries with the current cumulative number of confirmed cases
+world_top10 = today_world.sort_values(['cumulative confirmed'],ascending=False)[:10]
+
+world_top10 = world_top10[['cumulative confirmed', 'cumulative death', 'mortality']]
+
+world_top10
+```
+
+It is not intuitive to observe the data directly. We need to use visualisation methods to analyse it.
+
+```{python}
+# Import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib
+
+plt.rcParams['font.sans-serif']=['SimHei']    #Normal display of Chinese
+plt.rcParams['figure.dpi'] = 120      #Set the clarity of all pictures
+matplotlib.rc("font",family='Heiti TC')
+```
+
+Draw a horizontal bar chart of the cumulative confirmed cases, cumulative deaths and mortality rates of the top 10 countries with the current cumulative number of confirmed cases.
+
+```{python}
+world_top10.head()
+```
+
+```{python}
+# Draw a bar chart
+world_top10.sort_values('cumulative confirmed').plot.barh(subplots=True,layout=(1,3),sharex=False,
+                                             figsize=(7,4),legend=False,sharey=True)
+
+plt.tight_layout()   #Adjust the spacing of the sub-picture
+plt.show()
+```
+
+```{python}
+# Draw a bar chart
+world_top10.sort_values('cumulative confirmed').plot.barh(figsize=(7,4),legend=True)
+
+plt.tight_layout()   #Adjust the spacing of the sub-picture
+plt.show()
+```
+
+It can be seen from the figure that the cumulative number of confirmed cases in the United States is much higher than that of other countries, and the number of confirmed cases in Italy and Spain is also relatively high. Italy ranks first in the chart of the disease and death rate, which shows the severity of the epidemic, followed by the disease and death rates in Spain, France, Iran, the United Kingdom and Belgium. However, the death rate of the United States, which has the highest cumulative number of confirmed cases, is relatively low. One of the reasons is the abundance of medical resources in the United States. The following figure is a national ranking bar chart of the number of ICU beds per 100,000 people:
+
+
+![](ICU.jpg)
+
+
+We found that the United States has nearly 35 ICU beds per 100,000 residents, ranking first in the world, followed by Germany with nearly 30 ICU beds. The medical resources of the two countries are much higher than those of other countries, which is also one of the reasons for the relatively low death rate of COVID-19.
+
+
+## <a id=2.2></a> 2.2 Exploratory analysis of real-time data of all provinces across the country
+
+
+Next, let's analyse the COVID-19 epidemic situation in China. The pre-processing of real-time data in all provinces across the country is basically the same as the previous process. After data cleaning, we will explore the top 10 new confirmed cases in the country and the top 10 existing confirmed cases in the country respectively.
+
+```{python}
+# Read the data
+today_province=pd.read_csv("./input/today_province_2020_03_31.csv")
+
+# Create a Chinese column name dictionary
+name_dict = {'date':'date','name':'name','id':'number','lastUpdateTime':'update time',
+'today_confirm': 'new confirmed cases on the same day', 'today_suspect': 'new suspected cases on the same day',
+'today_heal': 'new healing on the same day', 'today_dead': 'new death on the same day',
+'today_severe': 'new severe cases on the same day', 'today_storeConfirm': 'existing confirmed on the same day',
+'total_confirm': 'cumulative confirmed', 'total_suspect': 'cumulative suspicion',
+'total_heal':'cumulative cure','total_dead':'cumulative death','total_severe':'cumulative severe illness'}
+
+# Change the column name
+today_province.rename(columns=name_dict,inplace=True) # Whether the inplace parameter is modified on the basis of the original object
+today_province.head()
+```
+
+```{python}
+# Check the basic information of the data
+today_province.info()
+```
+
+Use `describe()` to view the statistical information of the data:
+
+```{python}
+# View the statistics of numerical characteristics
+today_province.describe()
+```
+
+We found that the cumulative data of suspected cases, cumulative severe cases, new suspected cases on the same day and new severe cases on the day were all 0, so we did not consider them.
+
+```{python}
+# Calculate the number of confirmed cases in each province on the same day
+
+today_province['existing confirmed on the same day'] = today_province['cumulative confirmed']-today_province['cumulative cure']-today_province['cumulative death']
+
+# Set the provincial name as an index
+
+today_province.set_index('name',inplace=True)
+
+today_province.info()
+```
+
+**Top 10 new confirmed cases in the country**
+
+
+At present, the epidemic in China has been well controlled, and we are now paying more attention to the areas with new confirmed cases.
+
+```{python}
+# Check the top 10 new confirmed cases in the country
+new_top6 = today_province['new confirmed cases on the same day'].sort_values(ascending=False)[:10]
+
+new_top6
+```
+
+```{python}
+# Draw bar charts and pie charts
+fig,ax = plt.subplots(1,2,figsize=(10,5))
+
+new_top6.sort_values(ascending=True).plot.barh(fontsize=10,ax=ax[0])
+explode = (0,0.1,0,0,0,0,0,0,0,0)
+new_top6.plot.pie(explode=explode,shadow=True,labels=None,\
+                  legend=True,autopct='%.1f%%',fontsize=10,ax=ax[1])
+
+plt.ylabel('')
+plt.title('Top 10 new confirmed cases in the country',size=15)
+plt.show()
+```
+
+It can be seen from the figure that Hong Kong and Taiwan have the largest number of new confirmed cases, and Hong Kong accounts for nearly half of the top ten new confirmed cases.
+
+
+**Top 10 areas with the number of confirmed cases in the country**
+
+
+Next, let's check the top ten existing confirmed cases in the country.
+
+```{python}
+# Check the top 10 provinces and cities with existing confirmed cases in the country
+
+store_top10 = today_province['existing confirmed on the same day'].sort_values(ascending=False)[:10]
+
+store_top10
+```
+
+```{python}
+# Draw a bar chart
+
+store_top10.sort_values(ascending=True).plot.barh(fontsize=8)
+
+plt.title('Top 10 existing confirmed cases in the country',size=10)
+plt.xlabel('Number of people', size=15)
+plt.show()
+```
+
+Although the number of confirmed cases in Hubei still ranks first, there are relatively few new confirmed cases.
+
+
+# <a id=3></a>3. Exploratory analysis of historical data
+
+
+## <a id=3.1></a> 3.1 Exploratory analysis of national historical data
+
+
+National historical data is a data type of time series, and time needs to be processed during data cleaning. At the end of this part, we will draw a line chart of the national historical data and focus on analysing the trend of the number of new confirmed cases in the country.
+
+```{python}
+# Read the data
+alltime_china = pd.read_csv("./input/alltime_China_2020_03_31.csv")
+
+# Create a Chinese column name dictionary
+name_dict = {'date':'date','name':'name','id':'number','lastUpdateTime':'update time',
+'today_confirm': 'new confirmed cases on the same day', 'today_suspect': 'new suspected cases on the same day',
+'today_heal': 'new healing on the same day', 'today_dead': 'new death on the same day',
+'today_severe': 'new severe cases on the same day', 'today_storeConfirm': 'existing confirmed on the same day',
+'total_confirm': 'cumulative confirmed', 'total_suspect': 'cumulative suspicion',
+'total_heal':'cumulative cure','total_dead':'cumulative death','total_severe':'cumulative severe illness'}
+
+# Change the column name
+
+alltime_china.rename(columns=name_dict,inplace=True)
+alltime_china.head()
+```
+
+```{python}
+alltime_china.info()
+```
+
+```{python}
+# Check the statistics of the data
+alltime_china.describe()
+```
+
+```{python}
+# Missing value processing
+# Calculate the number of existing confirmed cases on that day
+alltime_china['existing confirmed cases on the same day'] = alltime_china['cumulative confirmed']-alltime_china['cumulative cure']-alltime_china['cumulative death']
+
+# Delete the update time column
+alltime_china.drop(['update time','new severe cases on the same day'],axis=1,inplace=True)
+alltime_china.info()
+```
+
+```{python}
+alltime_china = alltime_china.reset_index()
+```
+
+Compared with real-time data, the date column of historical data is very important. We use `pd.to_datetime()` to set the data type of the date to `datetime` and set it to the row index.
+
+```{python}
+alltime_china.info()
+```
+
+```{python}
+# Change the date to datetime format
+# alltime_china['date'] = pd.to_datetime(alltime_china['date'])
+# Set the date as the index
+
+alltime_china.set_index('date',inplace=True)     # You can also use pd.read_csv("./input/alltime_China_2020_03_27.csv",parse_dates=['date'],index_col='date')
+
+alltime_china.index
+```
+
+After setting the period index, the selection of data will be very convenient.
+
+
+After data cleaning, we will draw a line chart to check the changing trend of COVID-19 data:
+
+```{python}
+# Time series data drawing line diagram
+import matplotlib.pyplot as plt
+import matplotlib.dates as dates
+import matplotlib.ticker as ticker
+import datetime
+
+fig, ax = plt.subplots(figsize=(8,4))
+
+alltime_china.plot(marker='o',ms=2,lw=1,ax=ax)
+
+ax.xaxis.set_major_locator(dates.MonthLocator())    #Set the spacing
+ax.xaxis.set_major_formatter(dates.DateFormatter('%b'))    #Set the date format
+
+fig.autofmt_xdate()    #Automatically adjust the date tilt
+
+# The position of the legend is adjusted
+plt.legend(bbox_to_anchor = [1,1])
+
+plt.title('National COVID-19 data line chart',size=15)
+plt.ylabel('Number of people')
+plt.grid(axis='y')
+plt.box(False)
+plt.show()
+```
+
+It can be seen from the figure that the cumulative number of confirmed cases in China has reached an inflection point in mid-February, and the number of existing confirmed cases has gradually decreased since February 15. At the same time, the cumulative number of cured people has risen steadily, and with the decline in the number of existing confirmed cases, it has gradually calmed down. Since the field values such as new confirmed cases are relatively small, we will analyse them separately.
+
+```{python}
+from matplotlib import dates
+
+# Time series data drawing line diagram
+fig, ax = plt.subplots(figsize=(8, 4))
+
+alltime_china[['new confirmed cases on the same day', 'new healing on the same day']].plot(
+    ax=ax, style='-', lw=1, marker='o', ms=3)  # ax=ax, not axe=axe
+
+ax.xaxis.set_major_locator(dates.MonthLocator())
+ax.xaxis.set_major_formatter(dates.DateFormatter('%b'))
+fig.autofmt_xdate()  
+
+plt.title('Line chart of new confirmed cases of COVID-19 nationwide', size=15)
+plt.ylabel('Number of people')
+plt.grid(axis='y')   
+plt.box(False)       
+plt.show()
+```
+
+It can be seen that the number of new cases has increased sharply on February 12. What is the reason for this? If you are very concerned about the epidemic, you should know that this is because the National Health Commission adjusted the criteria for confirmed cases on that day. Previously, the main reference indicator for whether the patient was diagnosed was the nucleic acid test result, and it also needed to be judged comprehensively in combination with CT images, coughing and other symptoms. With the deepening of epidemic prevention and control and the continuous accumulation of clinical data, a new situation has gradually emerged - due to the slow time of nucleic acid testing, some patients cannot be diagnosed and admitted, but the clinical manifestations of the symptoms are highly suspected of COVID-19. If the identification criteria are not changed, it will be difficult for these patients to get effective assistance, which will also have a negative impact on the whole epidemic prevention and control. The main change this time is to include clinical diagnosis in the scope of diagnosis.
+
+
+## <a id=3.2></a> 3.2 Exploratory analysis of historical data of countries around the world
+
+
+Finally, let's analyse the historical data of countries around the world. Since each country in the data table contains multiple data, we need to group the data with the help of GroupBy technology, and select the cumulative confirmed and new confirmed data of multiple countries through hierarchical indexing to check the trend of epidemic changes in various countries.
+
+```{python}
+# Read the data
+alltime_world = pd.read_csv("./input/alltime_world_2020_03_31.csv")
+
+# Create a Chinese column name dictionary
+name_dict = {'date':'date','name':'name','id':'number','lastUpdateTime':'update time',
+'today_confirm': 'new confirmed cases on the same day', 'today_suspect': 'new suspected cases on the same day',
+'today_heal': 'new healing on the same day', 'today_dead': 'new death on the same day',
+'today_severe': 'new severe cases on the same day', 'today_storeConfirm': 'existing confirmed on the same day',
+'total_confirm': 'cumulative confirmed', 'total_suspect': 'cumulative suspicion',
+'total_heal':'Cumulative cure','total_dead':'cumulative death','total_severe':'cumulative severe illness'}
+
+# Change the column name
+alltime_world.rename(columns=name_dict,inplace=True)
+alltime_world.head()
+```
+
+```{python}
+# Check the basic information of the data
+alltime_world.info()
+```
+
+```{python}
+alltime_world.describe()
+```
+
+The data preprocessing operation is basically the same as the previous method:
+
+```{python}
+# Change the date column data type to datetime
+alltime_world['date'] = pd.to_datetime(alltime_world['date'])
+
+# Calculate the current confirmed cases on the same day
+alltime_world['existing confirmed cases on the same day'] = alltime_world['cumulative confirmed']-alltime_world['Cumulative cure']-alltime_world['cumulative death']
+alltime_world.info()
+```
+
+What are the total number of countries in the data table? We can use `unique()` to view the unique value in the data:
+
+```{python}
+alltime_world['name'].nunique()
+```
+
+```{python}
+# To view the unique value, you can use len() to view the number.
+alltime_world['name'].unique()
+```
+
+At the same time, we also want to know how many countries have the COVID-19 epidemic every day. The `value_counts()` function can help us see how much data is recorded every day.
+
+```{python}
+# Count how many countries have epidemics every day.
+alltime_world['date'].value_counts().head(20)
+```
+
+According to the data, the number of countries with the epidemic on March 26 has reached 157.
+
+```{python}
+# Sort the index first
+alltime_world.sort_index(inplace=True)
+
+# Now slice works correctly
+alltime_world = alltime_world.loc[:'2020-03-31']
+```
+
+**Choose multi-country data**
+
+Next, we would like to extract data from China, Japan, South Korea, the United States, Italy, the United Kingdom, Spain and Germany to explore the trend of cumulative confirmed and new confirmed cases in these eight countries. We will use GroupBy technology and hierarchical indexing operation. GroupBy technology is a technique for grouping data and combining the calculation results of each group, including the following three processes:
+
+
+<img src='http://cookdata.cn/media/note_images/groupby技术_1585496694168_5d14.jpg' style='max-width:40%;'>
+
+
+If you want to extract data from multiple countries, you need to index the country column. We can use the `groupby()` function to group the two columns according to the date and name to convert the data into a hierarchical index.
+
+```{python}
+# groupby creates a hierarchical index
+data = alltime_world.groupby(['date','name']).mean()
+
+data.head()
+```
+
+If you want to extract some data, you can also use the `.loc` method. You need to specify whether to index the row or the column index through `.loc(axis= )` first. For example, we want to extract data from China, South Korea, the United States, Italy, the United Kingdom, Spain and Germany:
+
+```{python}
+# Extract some data
+data_part = data.loc(axis=0)[:, ['中国', '日本', '韩国', '美国', '德国']]
+data_part.tail()
+```
+
+At this time, the multi-level index has been set successfully. If we want to return it, we can use the `reset_index()` function.
+
+```{python}
+# Restore the hierarchical index
+data_part.reset_index('name',inplace=True)
+
+data_part.head()
+```
+
+**Draw a line chart of the cumulative number of confirmed cases in multiple countries**
+
+```{python}
+# Draw a line chart of the cumulative number of confirmed cases in multiple countries
+data_part.sort_index(inplace=True)  # add this
+
+fig, ax = plt.subplots(figsize=(8, 4))
+data_part.loc['2020-02':'2020-02-28'].groupby('name')['cumulative confirmed'].plot(
+    legend=True, marker='o', ms=3, lw=1)
+ax.xaxis.set_major_locator(dates.MonthLocator())
+ax.xaxis.set_major_formatter(dates.DateFormatter('%b'))
+fig.autofmt_xdate()
+plt.title('Line chart of cumulative confirmed cases of COVID-19 in various countries', size=15)
+plt.ylabel('Number of people')
+plt.grid(axis='y')
+plt.box(False)
+plt.legend(bbox_to_anchor=[1, 1])
+plt.show()
+```
+
+```{python}
+# Draw a line chart of the cumulative number of confirmed cases in multiple countries
+fig, ax = plt.subplots(figsize=(8,4))
+
+data_part[data_part['name']!='中国'].loc['2020-02':'2020-02-28'].groupby('name')['cumulative confirmed'].plot(legend=True,marker='o',ms=3,lw=1)
+
+ax.xaxis.set_major_locator(dates.MonthLocator())    #Set the spacing
+ax.xaxis.set_major_formatter(dates.DateFormatter('%b'))    #Set the date format
+
+fig.autofmt_xdate()    #Automatically adjust the date tilt
+
+plt.title('Line chart of cumulative confirmed cases of COVID-19 in various countries',size=15)
+plt.ylabel('Number of people')
+plt.grid(axis='y')
+plt.box(False)
+plt.legend(bbox_to_anchor = [1,1])
+plt.show()
+```
+
+Finally, let's observe the changes in the number of new confirmed cases in various countries. Here we only check the latest data of March.
+
+
+The number of new confirmed cases in various countries fluctuates greatly, but the overall trend is on the rise. In late March, the number of new cases in a single day in the United States and Spain exceeded 10,000 for the first time, and the latest data shows that the number of new cases in the United States has exceeded 25,000 in a single day.
+
+```{python}
+# Draw a line chart of the number of new confirmed cases in each country
+fig, ax = plt.subplots(figsize=(8,4))
+
+data_part.loc['2020-03':'2020-03-29'].groupby('name')['new confirmed cases on the same day'].plot(legend=True,marker='o',ms=3,lw=1)
+
+ax.xaxis.set_major_locator(dates.MonthLocator())    #Set the spacing
+ax.xaxis.set_major_formatter(dates.DateFormatter('%b'))    #Set the date format
+
+fig.autofmt_xdate()    #Automatically adjust the date tilt
+
+plt.title('Line chart of new confirmed cases of COVID-19 in various countries',size=15)
+plt.ylabel('Number of people')
+plt.grid(axis='y')
+plt.box(False)
+plt.legend(bbox_to_anchor = [1,1])
+plt.show()
+```
+
+In the previous two pictures, we found that it is difficult to observe the changing trend of the epidemic in Japan due to the small data. Here we separately selected two columns of data on the cumulative confirmed cases of COVID-19 in Japan and the new confirmed cases on the same day:
+
+```{python}
+alltime_world[alltime_world['name']=='日本']
+```
+
+```{python}
+japan = alltime_world[alltime_world['name']=='日本']
+
+fig, ax = plt.subplots(figsize=(12,6))
+
+japan['cumulative confirmed'].plot(ax=ax, fontsize=10, style='-',lw=1,color='c',marker='o',ms=3,legend=True)
+ax.set_ylabel('Number of people', fontsize=10)
+
+japan['Cumulative cure'].plot(ax=ax, fontsize=10, style='-',lw=1,color='g',marker='o',ms=3,legend=True)
+ax.set_ylabel('Number of people', fontsize=10)
+
+ax1 = ax.twinx()
+ax1.bar(japan.index, japan['new confirmed cases on the same day'])
+ax1.xaxis.set_major_locator(dates.DayLocator(interval = 5))
+ax1.xaxis.set_major_formatter(dates.DateFormatter('%b %d'))
+ax1.legend(['new confirmed cases on the same day'],loc='upper left',bbox_to_anchor=(0.001, 0.85))
+plt.grid(axis='y')
+plt.box(False)
+plt.title('Line chart of COVID-19 epidemic in Japan',size=15)
+
+plt.show()
+```
+
+We found that the change in the number of new confirmed cases in Japan in the early stage did not increase much, but from March 25, the number of new confirmed cases in Japan increased significantly, and the cumulative slope of confirmed cases also increased.
+
+
+# <a id=4></a>4. Summary
+
+<!-- #region jupyter={"outputs_hidden": true} -->
+This case uses kaggle platform data to conduct exploratory analysis of COVID-19 epidemic data. Among them, data preprocessing mainly includes feature column renaming, missing value processing, viewing duplicate values, data type conversion and other operations. In addition, we also use Pandas for data visualisation and explore the connotation of data through chart drawing. At the same time, we introduced the processing method of time series data and the operation method of using Groupby technology for data grouping.
+<!-- #endregion -->
+
+
