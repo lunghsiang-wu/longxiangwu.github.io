@@ -40,4 +40,4 @@ meta() %>%
   )
 ```
  
-Hi! <span class="wave">👋</span> I am a data scientist specializing in customer profiling and the development of marketing strategies for firms. I have a strong passion for data wrangling, modeling, and visualization, and am dedicated to empowering others to leverage data effectively in their own work.
+Hi! <span class="wave">👋</span> I am a data scientist specializing in customer profiling and the development of marketing strategies for a firm. I have a strong passion for data wrangling, modeling, and visualization, and am dedicated to empowering others to leverage data effectively in their own work.
