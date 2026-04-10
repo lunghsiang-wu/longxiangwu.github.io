@@ -17,28 +17,21 @@ I am currently in a stable and fulfilling stage of life, living with my family a
 
 ## Books I Am Reading
 
-<center>
-:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
-::: {style="flex-shrink: 0;"}
-![The Elements of Statistical Learning](ESL.jpg){style="height: 300px; width: auto;"}
-:::
-::: {style="flex-shrink: 0;"}
-![Statistical Foudations of Data Science](SFDS.webp){style="height: 300px; width: auto;"}
-:::
-::: {style="flex-shrink: 0;"}
-![Optimization for Data Analysis](ODA.jpg){style="height: 300px; width: auto;"}
-:::
-::: {style="flex-shrink: 0;"}
-![Introduction to Algorithms](IA.jpg){style="height: 300px; width: auto;"}
-:::
-::::
+**The Elements of Statistical Learning**. Trevor Hastie, Robert Tibshirani, and Jerome Friedman
 
-:::: {style="display: flex; gap: 10px; align-items: flex-start;"}
-::: {style="flex-shrink: 0;"}
-![Computer Age Statistical Inference](CASI.jpg){style="height: 300px; width: auto;"}
-:::
-::::
-</center>
+**Statistical Foundations of Data Science**. Jianqing Fan, Runze Li, Cun-Hui Zhang, and Hui Zou
+
+**Optimization for Data Analysis**. Stephen J. Wright, and Benjamin Recht
+
+**Introduction to Algorithms**. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein
+
+**Computer Age Statistical Inference**. Bradley Efron, and Trevor Hastie
+
+**Machine Learning: A Probabilistic Perspective**. Kevin P. Murphy
+
+**Deep Learning**. Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+
+**Reinforcement Learning: An Introduction**. Richard S. Sutton, and Andrew G. Barto
 
 ## Some Quotes
 <center>
