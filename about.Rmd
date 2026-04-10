@@ -17,6 +17,8 @@ I am currently in a stable and fulfilling stage of life, living with my family a
 
 ## Books I Am Reading
 
+**An Introduction to Statistical Learning**. Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani
+
 **The Elements of Statistical Learning**. Trevor Hastie, Robert Tibshirani, and Jerome Friedman
 
 **Statistical Foundations of Data Science**. Jianqing Fan, Runze Li, Cun-Hui Zhang, and Hui Zou
