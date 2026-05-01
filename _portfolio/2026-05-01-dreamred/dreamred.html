@@ -1,0 +1,2996 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Text Clustering Analysis of *Dream of the Red Chamber*</title>
+
+  <meta property="description" itemprop="description" content="A clustering project"/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2026-04-13"/>
+  <meta property="article:created" itemprop="dateCreated" content="2026-04-13"/>
+  <meta name="article:author" content="Longxiang Wu"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Text Clustering Analysis of *Dream of the Red Chamber*"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="A clustering project"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Text Clustering Analysis of *Dream of the Red Chamber*"/>
+  <meta property="twitter:description" content="A clustering project"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Text Clustering Analysis of *Dream of the Red Chamber*"]},{"type":"character","attributes":{},"value":["A clustering project\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Longxiang Wu"]}]}]},{"type":"character","attributes":{},"value":["2026-4-13"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["dreamred_files/figure-html5/unnamed-chunk-10-1.png","dreamred_files/figure-html5/unnamed-chunk-12-3.png","dreamred_files/figure-html5/unnamed-chunk-13-5.png","dreamred_files/figure-html5/unnamed-chunk-18-7.png","dreamred_files/figure-html5/unnamed-chunk-20-9.png","dreamred_files/figure-html5/unnamed-chunk-22-11.png","input/Dream_of_the_Red_Mansion.txt","input/Red_Mansion_Dictionary.txt","input/SimHei.ttf","input/stop_words.txt"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+    font-size: 100%;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  hr.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0px;
+  }
+
+
+  d-byline {
+    border-top: none;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+    border-top: none;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // separator
+    var separator = '<hr class="section-separator" style="clear: both"/>';
+    // prepend separator above appendix
+    $('.d-byline').before(separator);
+    $('.d-article').before(separator);
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        var author_name = front_matter.authors[i].author
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="dreamred_files/header-attrs-2.30/header-attrs.js"></script>
+  <script src="dreamred_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="dreamred_files/popper-2.6.0/popper.min.js"></script>
+  <link href="dreamred_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="dreamred_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="dreamred_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="dreamred_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="dreamred_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="dreamred_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="dreamred_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Text Clustering Analysis of *Dream of the Red Chamber*","description":"A clustering project","authors":[{"author":"Longxiang Wu","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2026-04-13T00:00:00.000+08:00","citationText":"Wu, 2026"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Text Clustering Analysis of Dream of the Red Chamber</h1>
+
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>A clustering project</p></p>
+</div>
+
+<div class="d-byline">
+  Longxiang Wu  
+  
+<br/>2026-4-13
+</div>
+
+<div class="d-article">
+<!-- #region-->
+<h1 id="catalogue">Catalogue</h1>
+<ol type="1">
+<li>[Data reading and chapter integration] (#1. Data reading and integration)</li>
+<li>[Plot trend and character frequency analysis] (#2. Plot trend and character frequency analysis)</li>
+<li>[Dream of Red Mansions Chapter Clustering and Visualisation] (#3. Dream of Red Mansions Chapter Clustering and Visualisation)</li>
+<li>[Summary] (#7. Summarise)</li>
+</ol>
+<div id="1">
+
+</div>
+<h1 id="data-reading-and-integration">1.Data reading and integration</h1>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Load the data package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;font.sans-serif&#39;</span>]<span class="op">=</span>[<span class="st">&#39;SimHei&#39;</span>]   <span class="co"># It is used to display Chinese labels normally.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;axes.unicode_minus&#39;</span>]<span class="op">=</span><span class="va">False</span>     <span class="co"># It is used to display negative signs normally.</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>matplotlib.rc(<span class="st">&quot;font&quot;</span>,family<span class="op">=</span><span class="st">&#39;Heiti TC&#39;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># %matplotlib inline</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jieba</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">&#39;ignore&#39;</span>)</span></code></pre></div>
+</div>
+<p>The introduction of the data set is as follows:
++ <code>Dream_of_the_Red_Mansion.txt</code> is the txt version of the novel Dream of Red Mansions, and the coding format is utf-8.
++ <code>Red_Mansion_Dictionary.txt</code> is a dictionary containing exclusive characters in Dream of Red Mansions, which is used to assist participles.
++ <code>stop_words.txt</code> is a list of disabled words, which contains common prohibited words such as numbers and special symbols.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Set the display preferences</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">&#39;ignore&#39;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&quot;display.max_rows&quot;</span>,<span class="va">None</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Read articles, disabled words and required dictionaries</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>stop_words <span class="op">=</span> pd.read_csv(<span class="st">&quot;./input/stop_words.txt&quot;</span>,header<span class="op">=</span><span class="va">None</span>,names <span class="op">=</span> [<span class="st">&quot;stop_words&quot;</span>])</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> pd.read_csv(<span class="st">&quot;./input/Red_Mansion_Dictionary.txt&quot;</span>,header<span class="op">=</span><span class="va">None</span>, names<span class="op">=</span>[<span class="st">&quot;dictionary&quot;</span>])</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>content <span class="op">=</span> pd.read_csv(<span class="st">&quot;./input/Dream_of_the_Red_Mansion.txt&quot;</span>,header<span class="op">=</span><span class="va">None</span>,names <span class="op">=</span> [<span class="st">&quot;content&quot;</span>])</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(content.head(),<span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">&#39;</span>,dictionary.head(),<span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">&#39;</span>,stop_words.head())</span></code></pre></div>
+<pre><code>                                             content
+0                                                第1卷
+1                              第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀
+2  　　此开卷第一回也。作者自云：因曾历过一番梦幻之后，故将真事隐去，而借“通灵”之说，撰此&lt;&lt;...
+3                 　　此回中凡用“梦”用“幻”等字，是提醒阅者眼目，亦是此书立意本旨。
+4  　　列位看官：你道此书从何而来？说起根由虽近荒唐，细按则深有趣味。待在下将此来历注明，方使阅... 
+
+   dictionary
+0         黛玉
+1         宝钗
+2         贾演
+3         贾寅
+4         贾源 
+
+   stop_words
+0          $
+1          0
+2          1
+3          2
+4          3</code></pre>
+</div>
+<p>Next, we need to preprocess the text data and integrate the display format. The first thing that needs to be analysed is whether there are missing values in the read data, which can be judged by using the <code>isnull()</code> function in Pandas.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Check whether there are blank lines in the article. If there are, delete them.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(pd.isnull(content))  </span></code></pre></div>
+<pre><code>np.int64(0)</code></pre>
+</div>
+<p>For the sake of beauty and simplicity of observation, we delete the lines occupied by text such as “Volume 1” and “Volume 2”, use regular expressions to match, and filter the indexes that meet the conditions.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Use regular expressions to choose the corresponding index.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>index_of_juan <span class="op">=</span> content.content.<span class="bu">str</span>.contains(<span class="st">&quot;^第+.+卷&quot;</span>) </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Delete unnecessary rows according to the index and reset the index.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>content <span class="op">=</span> content[<span class="op">~</span>index_of_juan].reset_index(drop<span class="op">=</span><span class="va">True</span>) </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>content.head()</span></code></pre></div>
+<pre><code>                                             content
+0                              第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀
+1  　　此开卷第一回也。作者自云：因曾历过一番梦幻之后，故将真事隐去，而借“通灵”之说，撰此&lt;&lt;...
+2                 　　此回中凡用“梦”用“幻”等字，是提醒阅者眼目，亦是此书立意本旨。
+3  　　列位看官：你道此书从何而来？说起根由虽近荒唐，细按则深有趣味。待在下将此来历注明，方使阅...
+4  　　原来女娲氏炼石补天之时，于大荒山无稽崖练成高经十二丈，方经二十四丈顽石三万六千五百零一块...</code></pre>
+</div>
+<p>Next, we extract the title of each chapter and process the characters.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Use regular expressions to choose the corresponding index.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>index_of_hui <span class="op">=</span> content.content.<span class="bu">str</span>.match(<span class="st">&quot;^第+.+回&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Choose the title of each chapter according to the index</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>chapter_names <span class="op">=</span> content.content[index_of_hui].reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>chapter_names.head()</span></code></pre></div>
+<pre><code>0    第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀
+1    第二回 贾夫人仙逝扬州城 冷子兴演说荣国府
+2    第三回 贾雨村夤缘复旧职 林黛玉抛父进京都
+3    第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案
+4    第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦
+Name: content, dtype: str</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Process the chapter name and divide the string according to the space.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>chapter_names_split <span class="op">=</span> chapter_names.<span class="bu">str</span>.split(<span class="st">&quot; &quot;</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>chapter_names_split.head()</span></code></pre></div>
+<pre><code>0    [第一回, 甄士隐梦幻识通灵, 贾雨村风尘怀闺秀]
+1    [第二回, 贾夫人仙逝扬州城, 冷子兴演说荣国府]
+2    [第三回, 贾雨村夤缘复旧职, 林黛玉抛父进京都]
+3    [第四回, 薄命女偏逢薄命郎, 葫芦僧乱判葫芦案]
+4    [第五回, 游幻境指迷十二钗, 饮仙醪曲演红楼梦]
+Name: content, dtype: object</code></pre>
+</div>
+<p>After processing the chapter title, we calculate how many lines and words each chapter contains, and integrate the content of each chapter to form a new DataFrame object.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Establish a data box to save data</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame(<span class="bu">list</span>(chapter_names_split),columns<span class="op">=</span>[<span class="st">&quot;chapter&quot;</span>,<span class="st">&quot;left_name&quot;</span>,<span class="st">&quot;right_name&quot;</span>])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Add chapter serial number and chapter name column</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;chapter_number&quot;</span>] <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">121</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;chapter_name&quot;</span>] <span class="op">=</span> data.left_name<span class="op">+</span><span class="st">&quot;,&quot;</span><span class="op">+</span>data.right_name</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">## Add the line position at the beginning of each chapter</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;start_id&quot;</span>] <span class="op">=</span> index_of_hui[index_of_hui <span class="op">==</span> <span class="va">True</span>].index</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">## Add the line position at the end of each chapter</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;end_id&quot;</span>] <span class="op">=</span> data[<span class="st">&quot;start_id&quot;</span>][<span class="dv">1</span>:<span class="bu">len</span>(data[<span class="st">&quot;start_id&quot;</span>])].reset_index(drop <span class="op">=</span> <span class="va">True</span>) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;end_id&quot;</span>][[<span class="bu">len</span>(data[<span class="st">&quot;end_id&quot;</span>])<span class="op">-</span><span class="dv">1</span>]] <span class="op">=</span> content.index[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">## Add the number of lines for each chapter</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;length_of_chapters&quot;</span>] <span class="op">=</span> data.end_id <span class="op">-</span> data.start_id</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>data.head()</span></code></pre></div>
+<pre><code>  chapter left_name right_name  ...  start_id end_id  length_of_chapters
+0     第一回  甄士隐梦幻识通灵   贾雨村风尘怀闺秀  ...         0   49.0                49.0
+1     第二回  贾夫人仙逝扬州城   冷子兴演说荣国府  ...        50   79.0                29.0
+2     第三回  贾雨村夤缘复旧职   林黛玉抛父进京都  ...        80  118.0                38.0
+3     第四回  薄命女偏逢薄命郎   葫芦僧乱判葫芦案  ...       119  148.0                29.0
+4     第五回  游幻境指迷十二钗   饮仙醪曲演红楼梦  ...       149  235.0                86.0
+
+[5 rows x 8 columns]</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Add the content of each chapter</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;content&quot;</span>] <span class="op">=</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;content&quot;</span>] <span class="op">=</span> data[<span class="st">&quot;content&quot;</span>].astype(<span class="bu">object</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> data.index:</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.isna(data.end_id[i]) <span class="kw">or</span> pd.isna(data.start_id[i]):</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    chapter_id <span class="op">=</span> np.arange(data.start_id[i]<span class="op">+</span><span class="dv">1</span>, <span class="bu">int</span>(data.end_id[i]))</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    data.at[i, <span class="st">&quot;content&quot;</span>] <span class="op">=</span> <span class="st">&quot;&quot;</span>.join(<span class="bu">list</span>(content.content[chapter_id])).replace(<span class="st">&quot;　　&quot;</span>,<span class="st">&quot;&quot;</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">## Add the number of words per chapter</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&quot;length_of_characters&quot;</span>] <span class="op">=</span> data.content.<span class="bu">apply</span>(<span class="bu">len</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>  chapter  ... length_of_characters
+0     第一回  ...                 7594
+1     第二回  ...                 5659
+
+[2 rows x 10 columns]</code></pre>
+</div>
+<h1 id="plot-trend-and-character-frequency-analysis">2.Plot trend and character frequency analysis</h1>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Divide the whole text of Dream of Red Mansions</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>row, col <span class="op">=</span> data.shape</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>jieba.load_userdict(<span class="st">&#39;./input/Red_Mansion_Dictionary.txt&#39;</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Build cutted_words as a plain dict first</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>cutted_words_dict <span class="op">=</span> {}</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> data.index:</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    cutwords <span class="op">=</span> <span class="bu">list</span>(jieba.cut(data[<span class="st">&#39;content&#39;</span>][i]))</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    cutwords <span class="op">=</span> [w <span class="cf">for</span> w <span class="kw">in</span> cutwords <span class="cf">if</span> <span class="bu">len</span>(w) <span class="op">&gt;</span> <span class="dv">1</span>]</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    cutwords <span class="op">=</span> [w <span class="cf">for</span> w <span class="kw">in</span> cutwords <span class="cf">if</span> w <span class="kw">not</span> <span class="kw">in</span> stop_words]</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    cutted_words_dict[i] <span class="op">=</span> cutwords</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">## Assign via a temporary column built from the dict — bypasses all dtype inference</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> pd.DataFrame({<span class="st">&#39;cutted_words&#39;</span>: pd.Series(cutted_words_dict)})</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data.join(temp, rsuffix<span class="op">=</span><span class="st">&#39;_new&#39;</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co">## If column already existed, replace it</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&#39;cutted_words_new&#39;</span> <span class="kw">in</span> data.columns:</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">&#39;cutted_words&#39;</span>] <span class="op">=</span> data[<span class="st">&#39;cutted_words_new&#39;</span>]</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> data.drop(columns<span class="op">=</span>[<span class="st">&#39;cutted_words_new&#39;</span>])</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="co">## Verify before computing length</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="st">&#39;cutted_words&#39;</span>].iloc[<span class="dv">0</span>][:<span class="dv">10</span>])  <span class="co"># Should show a list of words</span></span></code></pre></div>
+<pre><code>[&#39;开卷&#39;, &#39;第一回&#39;, &#39;作者&#39;, &#39;自云&#39;, &#39;因曾&#39;, &#39;历过&#39;, &#39;一番&#39;, &#39;梦幻&#39;, &#39;之后&#39;, &#39;真事&#39;]</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&#39;length_of_words&#39;</span>] <span class="op">=</span> data[<span class="st">&#39;cutted_words&#39;</span>].<span class="bu">apply</span>(<span class="bu">len</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&#39;cutted_words&#39;</span>].head()</span></code></pre></div>
+<pre><code>0    [开卷, 第一回, 作者, 自云, 因曾, 历过, 一番, 梦幻, 之后, 真事, 隐去, ...
+1    [诗云, 一局, 输赢, 料不真, 香销, 尽尚, 逡巡, 欲知, 目下, 兴衰, 旁观, ...
+2    [却说, 雨村, 回头, 看时, 不是, 别人, 乃是, 当日, 同僚, 一案, 参革, 张...
+3    [却说, 黛玉, 姊妹, 王夫人, 王夫人, 兄嫂, 计议, 家务, 姨母, 家遭, 人命官...
+4    [第四回, 薛家, 母子, 荣府内, 寄居, 事略, 表明, 此回, 不能, 如今, 且说,...
+Name: cutted_words, dtype: object</code></pre>
+</div>
+<p>We can draw a scatter plot to show the number of paragraphs and words of each chapter, so as to observe the trend of plot development.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">10</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>plt.plot(data.chapter_number,data.length_of_chapters,marker<span class="op">=</span><span class="st">&quot;o&quot;</span>, linestyle<span class="op">=</span><span class="st">&quot;-&quot;</span>,color <span class="op">=</span> <span class="st">&quot;tomato&quot;</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;章节段数&quot;</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;红楼梦120回&quot;</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>plt.hlines(np.mean(data.length_of_chapters),<span class="op">-</span><span class="dv">5</span>,<span class="dv">125</span>,<span class="st">&quot;deepskyblue&quot;</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>plt.vlines(<span class="dv">80</span>,<span class="dv">0</span>,<span class="dv">100</span>,<span class="st">&quot;darkslategray&quot;</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">40</span>,<span class="dv">90</span>,<span class="st">&#39;前80回&#39;</span>,fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">100</span>,<span class="dv">90</span>,<span class="st">&#39;后40回&#39;</span>,fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>plt.xlim((<span class="op">-</span><span class="dv">5</span>,<span class="dv">125</span>))</span></code></pre></div>
+<pre><code>(-5.0, 125.0)</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plt.plot(data.chapter_number,data.length_of_words,marker<span class="op">=</span><span class="st">&quot;o&quot;</span>, linestyle<span class="op">=</span><span class="st">&quot;-&quot;</span>,color <span class="op">=</span> <span class="st">&quot;tomato&quot;</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;章节&quot;</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;章节词数&quot;</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>plt.hlines(np.mean(data.length_of_words),<span class="op">-</span><span class="dv">5</span>,<span class="dv">125</span>,<span class="st">&quot;deepskyblue&quot;</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>plt.vlines(<span class="dv">80</span>,<span class="dv">1000</span>,<span class="dv">3000</span>,<span class="st">&quot;darkslategray&quot;</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">40</span>,<span class="dv">2800</span>,<span class="st">&#39;前80回&#39;</span>,fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">100</span>,<span class="dv">2800</span>,<span class="st">&#39;后40回&#39;</span>,fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>plt.xlim((<span class="op">-</span><span class="dv">5</span>,<span class="dv">125</span>))</span></code></pre></div>
+<pre><code>(-5.0, 125.0)</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>plt.plot(data.chapter_number,data.length_of_characters,marker<span class="op">=</span><span class="st">&quot;o&quot;</span>, linestyle<span class="op">=</span><span class="st">&quot;-&quot;</span>,color <span class="op">=</span> <span class="st">&quot;tomato&quot;</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;章节&quot;</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;章节字数&quot;</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>plt.hlines(np.mean(data.length_of_characters),<span class="op">-</span><span class="dv">5</span>,<span class="dv">125</span>,<span class="st">&quot;deepskyblue&quot;</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>plt.vlines(<span class="dv">80</span>,<span class="dv">2000</span>,<span class="dv">12000</span>,<span class="st">&quot;darkslategray&quot;</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">40</span>,<span class="dv">11000</span>,<span class="st">&#39;前80回&#39;</span>,fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plt.text(<span class="dv">100</span>,<span class="dv">11000</span>,<span class="st">&#39;后40回&#39;</span>,fontsize <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>plt.xlim((<span class="op">-</span><span class="dv">5</span>,<span class="dv">125</span>))</span></code></pre></div>
+<pre><code>(-5.0, 125.0)</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="dreamred_files/figure-html5/unnamed-chunk-10-1.png" alt="" width="1152" /></p>
+</div>
+<ul>
+<li><p>The blue line represents the average number of paragraphs and words in the chapter. It can be seen that the average number of paragraphs in each chapter is about 25, the average number of times is about 1900, and the average number of words is about 7,000, which is the most in 60-80 times.</p></li>
+<li><p>The question of “Who is the author of the Dream of Red Mansions” has caused a long debate in the Chinese literary community and has continued to this day. Many scholars believe that Cao Xueqin’s original work only has 80 times left, and the remaining 40 times are continued by Gao E in the Qing Dynasty. We divide the first 80 times and the last 40 times according to the gray line. From these interrelationships, it can be seen that there are still some differences between the first 80 chapters and the last 40 chapters.</p></li>
+</ul>
+<p>After the word segmentation is completed, we can count the word frequency of the whole book, calculate the frequency of each word and sort it.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> np.concatenate(data.cutted_words)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistical word frequency</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>word_df <span class="op">=</span> pd.DataFrame({<span class="st">&quot;word&quot;</span>:words})</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>word_frequency <span class="op">=</span> word_df.groupby(by<span class="op">=</span>[<span class="st">&quot;word&quot;</span>])[<span class="st">&quot;word&quot;</span>].agg({<span class="st">&quot;count&quot;</span>}).reset_index()</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>word_frequency.columns <span class="op">=</span> [<span class="st">&quot;word&quot;</span>,<span class="st">&quot;frequency&quot;</span>]</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>word_frequency <span class="op">=</span> word_frequency.reset_index().sort_values(by<span class="op">=</span><span class="st">&quot;frequency&quot;</span>,ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>word_frequency.head(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>       index word  frequency
+14534  14534   宝玉       3615
+4166    4166   什么       1578
+35        35   一个       1398
+35016  35016   贾母       1233
+18673  18673   我们       1185
+7674    7674   凤姐       1159
+37394  37394   那里       1135
+33547  33547   袭人       1074
+40255  40255   黛玉        995
+13622  13622   如今        975</code></pre>
+</div>
+<p>我们通过条形图将出现次数超过500的词语展示出来。</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">10</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>frequent_words <span class="op">=</span> word_frequency.loc[word_frequency.frequency <span class="op">&gt;</span> <span class="dv">500</span>].sort_values(<span class="st">&#39;frequency&#39;</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>plt.barh(y <span class="op">=</span> frequent_words[<span class="st">&quot;word&quot;</span>],width <span class="op">=</span> frequent_words[<span class="st">&quot;frequency&quot;</span>])</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(size <span class="op">=</span> <span class="dv">10</span>)  </span></code></pre></div>
+<pre><code>(array([   0.,  500., 1000., 1500., 2000., 2500., 3000., 3500., 4000.]), [Text(0.0, 0, &#39;0&#39;), Text(500.0, 0, &#39;500&#39;), Text(1000.0, 0, &#39;1000&#39;), Text(1500.0, 0, &#39;1500&#39;), Text(2000.0, 0, &#39;2000&#39;), Text(2500.0, 0, &#39;2500&#39;), Text(3000.0, 0, &#39;3000&#39;), Text(3500.0, 0, &#39;3500&#39;), Text(4000.0, 0, &#39;4000&#39;)])</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;关键词&quot;</span>)   </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;频数&quot;</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;红楼梦词频分析&quot;</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="dreamred_files/figure-html5/unnamed-chunk-12-3.png" alt="" width="768" /></p>
+</div>
+<p>It can be seen from the picture that Baoyu appears the most often and is the protagonist in the Dream of Red Mansions. Next, we will draw word clouds through the wordcloud library in Python.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>wordcloud <span class="op">=</span> WordCloud(font_path<span class="op">=</span><span class="st">&#39;./input/SimHei.ttf&#39;</span>,margin<span class="op">=</span><span class="dv">5</span>, width<span class="op">=</span><span class="dv">1800</span>, height<span class="op">=</span><span class="dv">900</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>wordcloud.generate(<span class="st">&quot;/&quot;</span>.join(np.concatenate(data.cutted_words)))</span></code></pre></div>
+<pre><code>&lt;wordcloud.wordcloud.WordCloud object at 0x128524d50&gt;</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(wordcloud)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">&quot;off&quot;</span>)</span></code></pre></div>
+<pre><code>(np.float64(-0.5), np.float64(1799.5), np.float64(899.5), np.float64(-0.5))</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="dreamred_files/figure-html5/unnamed-chunk-13-5.png" alt="" width="960" /></p>
+</div>
+<h2 id="construct-a-word-matrix">Construct a word matrix</h2>
+<p>Before text clustering, we need to vectorise words. Here, the vectorisation method is to calculate the TF-IDF matrix.</p>
+<ul>
+<li><p>TF-IDF means word frequency inverse document frequency. If a word appears frequently in an article and rarely appears in other articles, the importance of the word is higher. The importance of a word increases in proportion to the number of times it appears in the document, but at the same time decreases in inverse proportion to the frequency of its appearance in the corpus.</p></li>
+<li><p>After the TfidfVectoriser model is established, the TF-IDF matrix can be trained through the <code>fit_transform()</code> function to convert words into words; all texts can be seen through <code>get_feature_names()</code> This keyword; view the keyword number through the <code>vocabulary_</code> attribute. The output of the TfidfVectoriser model is in the form of a matrix, and the results of the TF-IDF matrix can be seen through the <code>toarray()</code> function.</p></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>content <span class="op">=</span> []</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cutword <span class="kw">in</span> data.cutted_words:</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    content.append(<span class="st">&quot; &quot;</span>.join(cutword))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co">## Build a corpus and calculate the TF-IDF matrix of the document</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>transformer <span class="op">=</span> TfidfVectorizer()</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>tfidf <span class="op">=</span> transformer.fit_transform(content)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="co">## TF-IDF is stored in the form of a sparse matrix, converting TF-IDF into an array, document-word matrix</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>word_vectors <span class="op">=</span> tfidf.toarray()</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>word_vectors</span></code></pre></div>
+<pre><code>array([[0.        , 0.        , 0.00725974, ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.        , 0.00901246, ..., 0.        , 0.        ,
+        0.        ],
+       [0.04304655, 0.        , 0.0490238 , ..., 0.        , 0.        ,
+        0.        ],
+       ...,
+       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.        , 0.00732303, ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ]], shape=(120, 40347))</code></pre>
+</div>
+<h1 id="chapter-clustering-and-visualisation-of-dream-of-red-mansions">3.Chapter clustering and visualisation of Dream of Red Mansions</h1>
+<p>K-means clustering: For a given sample set A, sample set A is divided into K clusters <span class="math inline">\(A_1,A_2,...,A_K\)</span> according to the size of the distance between the samples. Make the points in these clusters as closely as possible, and make the distance between the clusters as large as possible.</p>
+<p>The K-Means algorithm is an unsupervised clustering algorithm. The purpose is to make each point belong to the cluster <span class="math inline">\(A_i\)</span> corresponding to the nearest mean value (this is the cluster centre). Here, the K-means clustering algorithm in the sklearn library is used to cluster and analyse the data to obtain the cluster to which each chapter belongs.</p>
+<p>The number of parameter clusters <code>n_clusters = 3</code>, random seeds <code>random_state = 0</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">## K-mean clustering of word_vectors</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span><span class="dv">0</span>).fit(word_vectors)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">## The categories obtained by clustering</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>kmean_labels <span class="op">=</span> data[[<span class="st">&quot;chapter_name&quot;</span>,<span class="st">&quot;chapter&quot;</span>]]</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>kmean_labels[<span class="st">&quot;cluster&quot;</span>] <span class="op">=</span> kmeans.labels_</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>kmean_labels</span></code></pre></div>
+<pre><code>          chapter_name chapter  cluster
+0    甄士隐梦幻识通灵,贾雨村风尘怀闺秀     第一回        1
+1    贾夫人仙逝扬州城,冷子兴演说荣国府     第二回        1
+2    贾雨村夤缘复旧职,林黛玉抛父进京都     第三回        2
+3    薄命女偏逢薄命郎,葫芦僧乱判葫芦案     第四回        1
+4    游幻境指迷十二钗,饮仙醪曲演红楼梦     第五回        2
+5    贾宝玉初试云雨情,刘姥姥一进荣国府     第六回        1
+6    送宫花贾琏戏熙凤,宴宁府宝玉会秦钟     第七回        1
+7    比通灵金莺微露意,探宝钗黛玉半含酸     第八回        2
+8    恋风流情友入家塾,起嫌疑顽童闹学堂     第九回        2
+9    金寡妇贪利权受辱,张太医论病细穷源     第十回        1
+10   庆寿辰宁府排家宴,见熙凤贾瑞起淫心    第十一回        1
+11   王熙凤毒设相思局,贾天祥正照风月鉴    第十二回        1
+12   秦可卿死封龙禁尉,王熙凤协理宁国府    第十三回        1
+13   林如海捐馆扬州城,贾宝玉路谒北静王    第十四回        1
+14   王凤姐弄权铁槛寺,秦鲸卿得趣馒头庵    第十五回        2
+15   贾元春才选凤藻宫,秦鲸卿夭逝黄泉路    第十六回        1
+16   大观园试才题对额,荣国府归省庆元宵    第十七回        2
+17   隔珠帘父女勉忠勤,搦湘管姊弟裁题咏    第十八回        2
+18   情切切良宵花解语,意绵绵静日玉生香    第十九回        2
+19   王熙凤正言弹妒意,林黛玉俏语谑娇音    第二十回        2
+20   贤袭人娇嗔箴宝玉,俏平儿软语救贾琏   第二十一回        2
+21   听曲文宝玉悟禅机,制灯迷贾政悲谶语   第二十二回        2
+22   西厢记妙词通戏语,牡丹亭艳曲警芳心   第二十三回        2
+23   醉金刚轻财尚义侠,痴女儿遗帕惹相思   第二十四回        1
+24   魇魔法姊弟逢五鬼,红楼梦通灵遇双真   第二十五回        2
+25   蜂腰桥设言传心事,潇湘馆春困发幽情   第二十六回        2
+26   滴翠亭杨妃戏彩蝶,埋香冢飞燕泣残红   第二十七回        2
+27   蒋玉菡情赠茜香罗,薛宝钗羞笼红麝串   第二十八回        2
+28   享福人福深还祷福,痴情女情重愈斟情   第二十九回        2
+29   宝钗借扇机带双敲,龄官划蔷痴及局外    第三十回        2
+30   撕扇子作千金一笑,因麒麟伏白首双星   第三十一回        2
+31   诉肺腑心迷活宝玉,含耻辱情烈死金钏   第三十二回        2
+32   手足耽耽小动唇舌,不肖种种大承笞挞   第三十三回        1
+33   情中情因情感妹妹,错里错以错劝哥哥   第三十四回        2
+34   白玉钏亲尝莲叶羹,黄金莺巧结梅花络   第三十五回        2
+35   绣鸳鸯梦兆绛芸轩,识分定情悟梨香院   第三十六回        2
+36   秋爽斋偶结海棠社,蘅芜苑夜拟菊花题   第三十七回        2
+37   林潇湘魁夺菊花诗,薛蘅芜讽和螃蟹咏   第三十八回        2
+38   村姥姥是信口开合,情哥哥偏寻根究底   第三十九回        1
+39   史太君两宴大观园,金鸳鸯三宣牙牌令    第四十回        1
+40   栊翠庵茶品梅花雪,怡红院劫遇母蝗虫   第四十一回        1
+41   蘅芜君兰言解疑癖,潇湘子雅谑补余香   第四十二回        1
+42   闲取乐偶攒金庆寿,不了情暂撮土为香   第四十三回        2
+43   变生不测凤姐泼醋,喜出望外平儿理妆   第四十四回        1
+44   金兰契互剖金兰语,风雨夕闷制风雨词   第四十五回        2
+45   尴尬人难免尴尬事,鸳鸯女誓绝鸳鸯偶   第四十六回        1
+46   呆霸王调情遭苦打,冷郎君惧祸走他乡   第四十七回        0
+47   滥情人情误思游艺,慕雅女雅集苦吟诗   第四十八回        2
+48   琉璃世界白雪红梅,脂粉香娃割腥啖膻   第四十九回        2
+49   芦雪庵争联即景诗,暖香坞雅制春灯谜    第五十回        2
+50   薛小妹新编怀古诗,胡庸医乱用虎狼药   第五十一回        2
+51   俏平儿情掩虾须镯,勇晴雯病补雀金裘   第五十二回        2
+52   宁国府除夕祭宗祠,荣国府元宵开夜宴   第五十三回        1
+53   史太君破陈腐旧套,王熙凤效戏彩斑衣   第五十四回        2
+54   辱亲女愚妾争闲气,欺幼主刁奴蓄险心   第五十五回        1
+55   敏探春兴利除宿弊,时宝钗小惠全大体   第五十六回        2
+56   慧紫鹃情辞试忙玉,慈姨妈爱语慰痴颦   第五十七回        2
+57   杏子阴假凤泣虚凰,茜纱窗真情揆痴理   第五十八回        2
+58   柳叶渚边嗔莺咤燕,绛云轩里召将飞符   第五十九回        1
+59   茉莉粉替去蔷薇硝,玫瑰露引来茯苓霜    第六十回        1
+60   投鼠忌器宝玉瞒赃,判冤决狱平儿行权   第六十一回        1
+61   憨湘云醉眠芍药茵,呆香菱情解石榴裙   第六十二回        2
+62   寿怡红群芳开夜宴,死金丹独艳理亲丧   第六十三回        2
+63   幽淑女悲题五美吟,浪荡子情遗九龙佩   第六十四回        0
+64   贾二舍偷娶尤二姨,尤三姐思嫁柳二郎   第六十五回        0
+65   情小妹耻情归地府,冷二郎一冷入空门   第六十六回        0
+66   见土仪颦卿思故里,闻秘事凤姐讯家童   第六十七回        1
+67   苦尤娘赚入大观园,酸凤姐大闹宁国府   第六十八回        1
+68   弄小巧用借剑杀人,觉大限吞生金自逝   第六十九回        0
+69   林黛玉重建桃花社,史湘云偶填柳絮词    第七十回        2
+70   嫌隙人有心生嫌隙,鸳鸯女无意遇鸳鸯   第七十一回        1
+71   王熙凤恃强羞说病,来旺妇倚势霸成亲   第七十二回        1
+72   痴丫头误拾绣春囊,懦小姐不问累金凤   第七十三回        1
+73   惑奸谗抄检大观园,矢孤介杜绝宁国府   第七十四回        1
+74   开夜宴异兆发悲音,赏中秋新词得佳谶   第七十五回        1
+75   凸碧堂品笛感凄清,凹晶馆联诗悲寂寞   第七十六回        2
+76   俏丫鬟抱屈夭风流,美优伶斩情归水月   第七十七回        2
+77   老学士闲征诡画词,痴公子杜撰芙蓉诔   第七十八回        2
+78   薛文龙悔娶河东狮,贾迎春误嫁中山狼   第七十九回        2
+79   美香菱屈受贪夫棒,王道士胡诌妒妇方    第八十回        2
+80   占旺相四美钓游鱼,奉严词两番入家塾   第八十一回        2
+81   老学究讲义警顽心,病潇湘痴魂惊恶梦   第八十二回        2
+82   省宫闱贾元妃染恙,闹闺阃薛宝钗吞声   第八十三回        2
+83   试文字宝玉始提亲,探惊风贾环重结怨   第八十四回        2
+84   贾存周报升郎中任,薛文起复惹放流刑   第八十五回        2
+85   受私贿老官翻案牍,寄闲情淑女解琴书   第八十六回        2
+86   感深秋抚琴悲往事,坐禅寂走火入邪魔   第八十七回        2
+87   博庭欢宝玉赞孤儿,正家法贾珍鞭悍仆   第八十八回        1
+88   人亡物在公子填词,蛇影杯弓颦卿绝粒   第八十九回        2
+89   失绵衣贫女耐嗷嘈,送果品小郎惊叵测    第九十回        2
+90   纵淫心宝蟾工设计,布疑阵宝玉妄谈禅   第九十一回        2
+91   评女传巧姐慕贤良,玩母珠贾政参聚散   第九十二回        1
+92   甄家仆投靠贾家门,水月庵掀翻风月案   第九十三回        1
+93   宴海棠贾母赏花妖,失宝玉通灵知奇祸   第九十四回        2
+94   因讹成实元妃薨逝,以假混真宝玉疯颠   第九十五回        2
+95   瞒消息凤姐设奇谋,泄机关颦儿迷本性   第九十六回        2
+96   林黛玉焚稿断痴情,薛宝钗出闺成大礼   第九十七回        2
+97   苦绛珠魂归离恨天,病神瑛泪洒相思地   第九十八回        2
+98   守官箴恶奴同破例,阅邸报老舅自担惊   第九十九回        1
+99   破好事香菱结深恨,悲远嫁宝玉感离情   第一零零回        2
+100  大观园月夜感幽魂,散花寺神签惊异兆   第一零一回        1
+101  宁国府骨肉病灾襟,大观园符水驱妖孽   第一零二回        1
+102  施毒计金桂自焚身,昧真禅雨村空遇旧   第一零三回        2
+103  醉金刚小鳅生大浪,痴公子余痛触前情   第一零四回        1
+104  锦衣军查抄宁国府,骢马使弹劾平安州   第一零五回        1
+105  王熙凤致祸抱羞惭,贾太君祷天消祸患   第一零六回        1
+106  散余资贾母明大义,复世职政老沐天恩   第一零七回        1
+107  强欢笑蘅芜庆生辰,死缠绵潇湘闻鬼哭   第一零八回        2
+108  候芳魂五儿承错爱,还孽债迎女返真元   第一零九回        2
+109  史太君寿终归地府,王凤姐力诎失人心   第一一零回        1
+110  鸳鸯女殉主登太虚,狗彘奴欺天招伙盗   第一一一回        1
+111  活冤孽妙尼遭大劫,死雠仇赵妾赴冥曹   第一一二回        1
+112  忏宿冤凤姐托村妪,释旧憾情婢感痴郎   第一一三回        1
+113  王熙凤历幻返金陵,甄应嘉蒙恩还玉阙   第一一四回        1
+114  惑偏私惜春矢素志,证同类宝玉失相知   第一一五回        1
+115  得通灵幻境悟仙缘,送慈柩故乡全孝道   第一一六回        2
+116  阻超凡佳人双护玉,欣聚党恶子独承家   第一一七回        2
+117  记微嫌舅兄欺弱女,惊谜语妻妾谏痴人   第一一八回        2
+118  中乡魁宝玉却尘缘,沐皇恩贾家延世泽   第一一九回        1
+119  甄士隐详说太虚情,贾雨村归结红楼梦   第一二零回        1</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Check how many chapters there are in each cluster</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> kmean_labels.groupby(<span class="st">&quot;cluster&quot;</span>)[<span class="st">&#39;chapter&#39;</span>].count()</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>count</span></code></pre></div>
+<pre><code>cluster
+0     5
+1    49
+2    66
+Name: chapter, dtype: int64</code></pre>
+</div>
+<p>By setting the number of clusters to 3, we can roughly measure which chapters’ text content is closer. For example, the chapters with cluster number 2 are 4th, 79th, 80th, 91st, 103rd, etc., which shows that the text content of these chapters is relatively close. Next, use dimension reduction technology to reduce the dimension of the TF-IDF matrix, and visualise the cluster of K-means clusters compared with the dimension reduction data.</p>
+<h2 id="expanded-learning">Expanded learning</h2>
+<p>Multidimensional scaling (abbreviated as MDS, also translated as “multidimensional scaling”), also known as “Similarity structure analysis”, is a method of multivariable analysis. One is a common method of statistical empirical analysis in sociology, quantitative psychology, marketing and so on. MDS keeps the relative distance between samples as much as possible when reducing the data dimension.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> MDS</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Use MDS to reduce the dimension of data</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>mds <span class="op">=</span> MDS(n_components<span class="op">=</span><span class="dv">2</span>,random_state<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>mds_results <span class="op">=</span> mds.fit_transform(word_vectors)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>mds_results.shape</span></code></pre></div>
+<pre><code>(120, 2)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Draw the results after dimension reduction</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(mds_results[:,<span class="dv">0</span>],mds_results[:,<span class="dv">1</span>],c <span class="op">=</span> kmean_labels.cluster)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> (np.arange(<span class="dv">120</span>)):</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    plt.text(mds_results[i,<span class="dv">0</span>]<span class="op">+</span><span class="fl">0.02</span>,mds_results[i,<span class="dv">1</span>],s <span class="op">=</span> data.chapter_number[i])</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;X&quot;</span>)   </span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Y&quot;</span>) </span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;K-means MDS&quot;</span>)</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="dreamred_files/figure-html5/unnamed-chunk-18-7.png" alt="" width="768" /></p>
+</div>
+<p>After using MDS to reduce the word vector of each chapter to 2 dimensional, the cluster comparison of K-means cluster is visualised to the dimension reduction data, which can roughly verify the validity of the cluster results. For example, cluster 0 (purple dot) and cluster 2 (yellow) are displayed around the figure respectively, and the chapters of cluster 1 (green) are mainly distributed in the middle of the figure, and the relative distance between the chapters of each cluster is relatively small.</p>
+<p>PCA dimension reduction is a common data dimension reduction method. Its purpose is to convert high-dimensional data to low-dimensional data under the premise of small “information” loss, so as to reduce the amount of calculation. PCA is usually used for the exploration and visualisation of high-dimensional data sets, and can also be used for data compression, data preprocessing, etc.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Use PCA to reduce the dimension of data</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>pca.fit(word_vectors)</span></code></pre></div>
+<style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+}
+
+#sk-container-id-1.light {
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
+  --sklearn-color-icon: #696969;
+}
+
+#sk-container-id-1.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table {
+    font-family: monospace;
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
+}
+
+.default td {
+    color: black;
+    text-align: left !important;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>PCA(n_components=2)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>PCA</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html">?<span>Documentation for PCA</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_components',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=n_components,-int%2C%20float%20or%20%27mle%27%2C%20default%3DNone">
+            n_components
+            <span class="param-doc-description">n_components: int, float or 'mle', default=None<br><br>Number of components to keep.<br>if n_components is not set all components are kept::<br><br>    n_components == min(n_samples, n_features)<br><br>If ``n_components == 'mle'`` and ``svd_solver == 'full'``, Minka's<br>MLE is used to guess the dimension. Use of ``n_components == 'mle'``<br>will interpret ``svd_solver == 'auto'`` as ``svd_solver == 'full'``.<br><br>If ``0 < n_components < 1`` and ``svd_solver == 'full'``, select the<br>number of components such that the amount of variance that needs to be<br>explained is greater than the percentage specified by n_components.<br><br>If ``svd_solver == 'arpack'``, the number of components must be<br>strictly less than the minimum of n_features and n_samples.<br><br>Hence, the None case results in::<br><br>    n_components == min(n_samples, n_features) - 1</span>
+        </a>
+    </td>
+            <td class="value">2</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('copy',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=copy,-bool%2C%20default%3DTrue">
+            copy
+            <span class="param-doc-description">copy: bool, default=True<br><br>If False, data passed to fit are overwritten and running<br>fit(X).transform(X) will not yield the expected results,<br>use fit_transform(X) instead.</span>
+        </a>
+    </td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('whiten',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=whiten,-bool%2C%20default%3DFalse">
+            whiten
+            <span class="param-doc-description">whiten: bool, default=False<br><br>When True (False by default) the `components_` vectors are multiplied<br>by the square root of n_samples and then divided by the singular values<br>to ensure uncorrelated outputs with unit component-wise variances.<br><br>Whitening will remove some information from the transformed signal<br>(the relative variance scales of the components) but can sometime<br>improve the predictive accuracy of the downstream estimators by<br>making their data respect some hard-wired assumptions.</span>
+        </a>
+    </td>
+            <td class="value">False</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('svd_solver',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=svd_solver,-%7B%27auto%27%2C%20%27full%27%2C%20%27covariance_eigh%27%2C%20%27arpack%27%2C%20%27randomized%27%7D%2C%20%20%20%20%20%20%20%20%20%20%20%20default%3D%27auto%27">
+            svd_solver
+            <span class="param-doc-description">svd_solver: {'auto', 'full', 'covariance_eigh', 'arpack', 'randomized'},            default='auto'<br><br>"auto" :<br>    The solver is selected by a default 'auto' policy is based on `X.shape` and<br>    `n_components`: if the input data has fewer than 1000 features and<br>    more than 10 times as many samples, then the "covariance_eigh"<br>    solver is used. Otherwise, if the input data is larger than 500x500<br>    and the number of components to extract is lower than 80% of the<br>    smallest dimension of the data, then the more efficient<br>    "randomized" method is selected. Otherwise the exact "full" SVD is<br>    computed and optionally truncated afterwards.<br>"full" :<br>    Run exact full SVD calling the standard LAPACK solver via<br>    `scipy.linalg.svd` and select the components by postprocessing<br>"covariance_eigh" :<br>    Precompute the covariance matrix (on centered data), run a<br>    classical eigenvalue decomposition on the covariance matrix<br>    typically using LAPACK and select the components by postprocessing.<br>    This solver is very efficient for n_samples >> n_features and small<br>    n_features. It is, however, not tractable otherwise for large<br>    n_features (large memory footprint required to materialize the<br>    covariance matrix). Also note that compared to the "full" solver,<br>    this solver effectively doubles the condition number and is<br>    therefore less numerical stable (e.g. on input data with a large<br>    range of singular values).<br>"arpack" :<br>    Run SVD truncated to `n_components` calling ARPACK solver via<br>    `scipy.sparse.linalg.svds`. It requires strictly<br>    `0 < n_components < min(X.shape)`<br>"randomized" :<br>    Run randomized SVD by the method of Halko et al.<br><br>.. versionadded:: 0.18.0<br><br>.. versionchanged:: 1.5<br>    Added the 'covariance_eigh' solver.</span>
+        </a>
+    </td>
+            <td class="value">&#x27;auto&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('tol',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=tol,-float%2C%20default%3D0.0">
+            tol
+            <span class="param-doc-description">tol: float, default=0.0<br><br>Tolerance for singular values computed by svd_solver == 'arpack'.<br>Must be of range [0.0, infinity).<br><br>.. versionadded:: 0.18.0</span>
+        </a>
+    </td>
+            <td class="value">0.0</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('iterated_power',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=iterated_power,-int%20or%20%27auto%27%2C%20default%3D%27auto%27">
+            iterated_power
+            <span class="param-doc-description">iterated_power: int or 'auto', default='auto'<br><br>Number of iterations for the power method computed by<br>svd_solver == 'randomized'.<br>Must be of range [0, infinity).<br><br>.. versionadded:: 0.18.0</span>
+        </a>
+    </td>
+            <td class="value">&#x27;auto&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_oversamples',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=n_oversamples,-int%2C%20default%3D10">
+            n_oversamples
+            <span class="param-doc-description">n_oversamples: int, default=10<br><br>This parameter is only relevant when `svd_solver="randomized"`.<br>It corresponds to the additional number of random vectors to sample the<br>range of `X` so as to ensure proper conditioning. See<br>:func:`~sklearn.utils.extmath.randomized_svd` for more details.<br><br>.. versionadded:: 1.1</span>
+        </a>
+    </td>
+            <td class="value">10</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('power_iteration_normalizer',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=power_iteration_normalizer,-%7B%27auto%27%2C%20%27QR%27%2C%20%27LU%27%2C%20%27none%27%7D%2C%20default%3D%27auto%27">
+            power_iteration_normalizer
+            <span class="param-doc-description">power_iteration_normalizer: {'auto', 'QR', 'LU', 'none'}, default='auto'<br><br>Power iteration normalizer for randomized SVD solver.<br>Not used by ARPACK. See :func:`~sklearn.utils.extmath.randomized_svd`<br>for more details.<br><br>.. versionadded:: 1.1</span>
+        </a>
+    </td>
+            <td class="value">&#x27;auto&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('random_state',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=random_state,-int%2C%20RandomState%20instance%20or%20None%2C%20default%3DNone">
+            random_state
+            <span class="param-doc-description">random_state: int, RandomState instance or None, default=None<br><br>Used when the 'arpack' or 'randomized' solvers are used. Pass an int<br>for reproducible results across multiple function calls.<br>See :term:`Glossary <random_state>`.<br><br>.. versionadded:: 0.18.0</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+
+
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-1');</script></body>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca.explained_variance_ratio_)</span></code></pre></div>
+<pre><code>[0.03773426 0.02864864]</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Downsiming the data</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>pca_results <span class="op">=</span> pca.fit_transform(word_vectors)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca_results.shape)</span></code></pre></div>
+<pre><code>(120, 2)</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Draw the results after dimension reduction</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(pca_results[:,<span class="dv">0</span>],pca_results[:,<span class="dv">1</span>],c <span class="op">=</span> kmean_labels.cluster)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">120</span>):</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    plt.text(pca_results[i,<span class="dv">0</span>]<span class="op">+</span><span class="fl">0.02</span>,pca_results[i,<span class="dv">1</span>],s <span class="op">=</span> data.chapter_number[i])</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Main ingredient 1&quot;</span>)   </span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Main ingredient 2&quot;</span>)  </span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;K-means PCA&quot;</span>)  </span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>plt.show() </span></code></pre></div>
+<p><img src="dreamred_files/figure-html5/unnamed-chunk-20-9.png" alt="" width="768" /></p>
+</div>
+<p>After using PCA to reduce the word vectors of each chapter to 2D, a similar conclusion can be drawn by comparing the clusters of K-means clusters with the dimension reduction data. The two main components of cluster 2 (yellow) are relatively small and distributed in the lower left part of the figure. The main components of cluster 1 (green) are relatively large and distributed to the right, which verifies the validity of the cluster results.</p>
+<p>The above has successfully used K-means to cluster and draw documents. Now you can try another clustering algorithm. Ward clustering is a condensed clustering algorithm, that is, each processing stage divides the two objects with the smallest distance into one class. I use the pre-calculated cosine distance matrix to calculate the distance matrix, and then draw it into a tree diagram.</p>
+<p>Hierarchical Clustering is a kind of clustering algorithm that creates a hierarchical nested cluster tree by calculating the similarity between different categories of data points. In a cluster tree, the raw data points of different categories are the lowest layer of the tree, and the top layer of the tree is the root node of a cluster.|</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics.pairwise <span class="im">import</span> cosine_distances</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define labels first</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> data.chapter_number.values</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for zero vectors (chapters with no content)</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>zero_rows <span class="op">=</span> np.where(<span class="op">~</span>word_vectors.<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>))[<span class="dv">0</span>]</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Chapters with zero vectors:&quot;</span>, labels[zero_rows])</span></code></pre></div>
+<pre><code>Chapters with zero vectors: [120]</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the cosine distance matrix BEFORE checking it</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>cos_distance_matrix <span class="op">=</span> cosine_distances(word_vectors)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Now check for NaN/inf in the distance matrix</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;NaN count:&quot;</span>, np.<span class="bu">sum</span>(np.isnan(cos_distance_matrix)))</span></code></pre></div>
+<pre><code>NaN count: 0</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Inf count:&quot;</span>, np.<span class="bu">sum</span>(np.isinf(cos_distance_matrix)))</span></code></pre></div>
+<pre><code>Inf count: 0</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.cluster.hierarchy <span class="im">import</span> dendrogram,ward</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial.distance <span class="im">import</span> pdist,squareform</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Filter out chapter 120 (zero vector)</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>valid_mask <span class="op">=</span> word_vectors.<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>valid_vectors <span class="op">=</span> word_vectors[valid_mask]</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>valid_labels <span class="op">=</span> labels[valid_mask]</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Kept </span><span class="sc">{</span>valid_mask<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss"> chapters, dropped </span><span class="sc">{</span>(<span class="op">~</span>valid_mask)<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>Kept 119 chapters, dropped 1</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Recompute distance matrix on clean vectors</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>cos_distance_matrix <span class="op">=</span> squareform(pdist(valid_vectors, <span class="st">&#39;cosine&#39;</span>))</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Verify no NaN/inf remain</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;NaN count:&quot;</span>, np.<span class="bu">sum</span>(np.isnan(cos_distance_matrix)))</span></code></pre></div>
+<pre><code>NaN count: 0</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Inf count:&quot;</span>, np.<span class="bu">sum</span>(np.isinf(cos_distance_matrix)))</span></code></pre></div>
+<pre><code>Inf count: 0</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Cluster</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>ward_results <span class="op">=</span> ward(cos_distance_matrix)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Visualise</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">15</span>))</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>dendrogram(ward_results, orientation<span class="op">=</span><span class="st">&#39;right&#39;</span>, labels<span class="op">=</span>valid_labels, ax<span class="op">=</span>ax)</span></code></pre></div>
+<pre><code>{&#39;icoord&#39;: [[15.0, 15.0, 25.0, 25.0], [35.0, 35.0, 45.0, 45.0], [20.0, 20.0, 40.0, 40.0], [55.0, 55.0, 65.0, 65.0], [75.0, 75.0, 85.0, 85.0], [60.0, 60.0, 80.0, 80.0], [30.0, 30.0, 70.0, 70.0], [5.0, 5.0, 50.0, 50.0], [95.0, 95.0, 105.0, 105.0], [115.0, 115.0, 125.0, 125.0], [100.0, 100.0, 120.0, 120.0], [135.0, 135.0, 145.0, 145.0], [110.0, 110.0, 140.0, 140.0], [27.5, 27.5, 125.0, 125.0], [165.0, 165.0, 175.0, 175.0], [155.0, 155.0, 170.0, 170.0], [195.0, 195.0, 205.0, 205.0], [185.0, 185.0, 200.0, 200.0], [215.0, 215.0, 225.0, 225.0], [235.0, 235.0, 245.0, 245.0], [220.0, 220.0, 240.0, 240.0], [192.5, 192.5, 230.0, 230.0], [162.5, 162.5, 211.25, 211.25], [285.0, 285.0, 295.0, 295.0], [275.0, 275.0, 290.0, 290.0], [265.0, 265.0, 282.5, 282.5], [255.0, 255.0, 273.75, 273.75], [315.0, 315.0, 325.0, 325.0], [305.0, 305.0, 320.0, 320.0], [355.0, 355.0, 365.0, 365.0], [345.0, 345.0, 360.0, 360.0], [335.0, 335.0, 352.5, 352.5], [312.5, 312.5, 343.75, 343.75], [264.375, 264.375, 328.125, 328.125], [385.0, 385.0, 395.0, 395.0], [375.0, 375.0, 390.0, 390.0], [405.0, 405.0, 415.0, 415.0], [425.0, 425.0, 435.0, 435.0], [445.0, 445.0, 455.0, 455.0], [430.0, 430.0, 450.0, 450.0], [410.0, 410.0, 440.0, 440.0], [382.5, 382.5, 425.0, 425.0], [296.25, 296.25, 403.75, 403.75], [186.875, 186.875, 350.0, 350.0], [76.25, 76.25, 268.4375, 268.4375], [475.0, 475.0, 485.0, 485.0], [465.0, 465.0, 480.0, 480.0], [495.0, 495.0, 505.0, 505.0], [515.0, 515.0, 525.0, 525.0], [535.0, 535.0, 545.0, 545.0], [520.0, 520.0, 540.0, 540.0], [500.0, 500.0, 530.0, 530.0], [575.0, 575.0, 585.0, 585.0], [565.0, 565.0, 580.0, 580.0], [555.0, 555.0, 572.5, 572.5], [605.0, 605.0, 615.0, 615.0], [595.0, 595.0, 610.0, 610.0], [625.0, 625.0, 635.0, 635.0], [655.0, 655.0, 665.0, 665.0], [645.0, 645.0, 660.0, 660.0], [685.0, 685.0, 695.0, 695.0], [675.0, 675.0, 690.0, 690.0], [652.5, 652.5, 682.5, 682.5], [630.0, 630.0, 667.5, 667.5], [602.5, 602.5, 648.75, 648.75], [563.75, 563.75, 625.625, 625.625], [515.0, 515.0, 594.6875, 594.6875], [472.5, 472.5, 554.84375, 554.84375], [705.0, 705.0, 715.0, 715.0], [725.0, 725.0, 735.0, 735.0], [710.0, 710.0, 730.0, 730.0], [765.0, 765.0, 775.0, 775.0], [755.0, 755.0, 770.0, 770.0], [745.0, 745.0, 762.5, 762.5], [795.0, 795.0, 805.0, 805.0], [785.0, 785.0, 800.0, 800.0], [815.0, 815.0, 825.0, 825.0], [835.0, 835.0, 845.0, 845.0], [855.0, 855.0, 865.0, 865.0], [840.0, 840.0, 860.0, 860.0], [820.0, 820.0, 850.0, 850.0], [792.5, 792.5, 835.0, 835.0], [753.75, 753.75, 813.75, 813.75], [720.0, 720.0, 783.75, 783.75], [513.671875, 513.671875, 751.875, 751.875], [885.0, 885.0, 895.0, 895.0], [875.0, 875.0, 890.0, 890.0], [915.0, 915.0, 925.0, 925.0], [905.0, 905.0, 920.0, 920.0], [882.5, 882.5, 912.5, 912.5], [945.0, 945.0, 955.0, 955.0], [935.0, 935.0, 950.0, 950.0], [965.0, 965.0, 975.0, 975.0], [942.5, 942.5, 970.0, 970.0], [985.0, 985.0, 995.0, 995.0], [1005.0, 1005.0, 1015.0, 1015.0], [990.0, 990.0, 1010.0, 1010.0], [1025.0, 1025.0, 1035.0, 1035.0], [1055.0, 1055.0, 1065.0, 1065.0], [1045.0, 1045.0, 1060.0, 1060.0], [1030.0, 1030.0, 1052.5, 1052.5], [1075.0, 1075.0, 1085.0, 1085.0], [1041.25, 1041.25, 1080.0, 1080.0], [1000.0, 1000.0, 1060.625, 1060.625], [956.25, 956.25, 1030.3125, 1030.3125], [1105.0, 1105.0, 1115.0, 1115.0], [1095.0, 1095.0, 1110.0, 1110.0], [1125.0, 1125.0, 1135.0, 1135.0], [1145.0, 1145.0, 1155.0, 1155.0], [1175.0, 1175.0, 1185.0, 1185.0], [1165.0, 1165.0, 1180.0, 1180.0], [1150.0, 1150.0, 1172.5, 1172.5], [1130.0, 1130.0, 1161.25, 1161.25], [1102.5, 1102.5, 1145.625, 1145.625], [993.28125, 993.28125, 1124.0625, 1124.0625], [897.5, 897.5, 1058.671875, 1058.671875], [632.7734375, 632.7734375, 978.0859375, 978.0859375], [172.34375, 172.34375, 805.4296875, 805.4296875]], &#39;dcoord&#39;: [[0.0, np.float64(0.9228140448300489), np.float64(0.9228140448300489), 0.0], [0.0, np.float64(1.018096732383538), np.float64(1.018096732383538), 0.0], [np.float64(0.9228140448300489), np.float64(1.028279259268114), np.float64(1.028279259268114), np.float64(1.018096732383538)], [0.0, np.float64(0.9166288971619362), np.float64(0.9166288971619362), 0.0], [0.0, np.float64(0.9882298593121887), np.float64(0.9882298593121887), 0.0], [np.float64(0.9166288971619362), np.float64(1.0653459327364607), np.float64(1.0653459327364607), np.float64(0.9882298593121887)], [np.float64(1.028279259268114), np.float64(1.0997896759057029), np.float64(1.0997896759057029), np.float64(1.0653459327364607)], [0.0, np.float64(1.162614539618692), np.float64(1.162614539618692), np.float64(1.0997896759057029)], [0.0, np.float64(0.7340481392286936), np.float64(0.7340481392286936), 0.0], [0.0, np.float64(0.7802306461222308), np.float64(0.7802306461222308), 0.0], [np.float64(0.7340481392286936), np.float64(0.9542191326726478), np.float64(0.9542191326726478), np.float64(0.7802306461222308)], [0.0, np.float64(0.9861618025586952), np.float64(0.9861618025586952), 0.0], [np.float64(0.9542191326726478), np.float64(1.3846015312663054), np.float64(1.3846015312663054), np.float64(0.9861618025586952)], [np.float64(1.162614539618692), np.float64(1.9981332078575214), np.float64(1.9981332078575214), np.float64(1.3846015312663054)], [0.0, np.float64(0.9393424871436511), np.float64(0.9393424871436511), 0.0], [0.0, np.float64(1.0555687927597288), np.float64(1.0555687927597288), np.float64(0.9393424871436511)], [0.0, np.float64(1.0898742222795672), np.float64(1.0898742222795672), 0.0], [0.0, np.float64(1.1278578635392063), np.float64(1.1278578635392063), np.float64(1.0898742222795672)], [0.0, np.float64(1.1207615714572625), np.float64(1.1207615714572625), 0.0], [0.0, np.float64(1.1996800159086232), np.float64(1.1996800159086232), 0.0], [np.float64(1.1207615714572625), np.float64(1.3293166797209253), np.float64(1.3293166797209253), np.float64(1.1996800159086232)], [np.float64(1.1278578635392063), np.float64(1.3807644903167369), np.float64(1.3807644903167369), np.float64(1.3293166797209253)], [np.float64(1.0555687927597288), np.float64(1.7617350988034126), np.float64(1.7617350988034126), np.float64(1.3807644903167369)], [0.0, np.float64(0.9208022117198773), np.float64(0.9208022117198773), 0.0], [0.0, np.float64(0.9642642126720196), np.float64(0.9642642126720196), np.float64(0.9208022117198773)], [0.0, np.float64(1.0007948274146234), np.float64(1.0007948274146234), np.float64(0.9642642126720196)], [0.0, np.float64(1.1593246654535097), np.float64(1.1593246654535097), np.float64(1.0007948274146234)], [0.0, np.float64(0.9191189958085605), np.float64(0.9191189958085605), 0.0], [0.0, np.float64(1.0683443933438863), np.float64(1.0683443933438863), np.float64(0.9191189958085605)], [0.0, np.float64(0.9186819664672835), np.float64(0.9186819664672835), 0.0], [0.0, np.float64(0.9526499259823618), np.float64(0.9526499259823618), np.float64(0.9186819664672835)], [0.0, np.float64(1.093525997837979), np.float64(1.093525997837979), np.float64(0.9526499259823618)], [np.float64(1.0683443933438863), np.float64(1.1597749690039554), np.float64(1.1597749690039554), np.float64(1.093525997837979)], [np.float64(1.1593246654535097), np.float64(1.3289262305106595), np.float64(1.3289262305106595), np.float64(1.1597749690039554)], [0.0, np.float64(0.9452517580917477), np.float64(0.9452517580917477), 0.0], [0.0, np.float64(1.1112841360763694), np.float64(1.1112841360763694), np.float64(0.9452517580917477)], [0.0, np.float64(0.967318319960442), np.float64(0.967318319960442), 0.0], [0.0, np.float64(0.9978056912583335), np.float64(0.9978056912583335), 0.0], [0.0, np.float64(1.1404193387921355), np.float64(1.1404193387921355), 0.0], [np.float64(0.9978056912583335), np.float64(1.1859247881628707), np.float64(1.1859247881628707), np.float64(1.1404193387921355)], [np.float64(0.967318319960442), np.float64(1.3289248976522348), np.float64(1.3289248976522348), np.float64(1.1859247881628707)], [np.float64(1.1112841360763694), np.float64(1.5454397566821805), np.float64(1.5454397566821805), np.float64(1.3289248976522348)], [np.float64(1.3289262305106595), np.float64(1.8425575787417294), np.float64(1.8425575787417294), np.float64(1.5454397566821805)], [np.float64(1.7617350988034126), np.float64(2.1511312013790227), np.float64(2.1511312013790227), np.float64(1.8425575787417294)], [np.float64(1.9981332078575214), np.float64(2.9161840010889044), np.float64(2.9161840010889044), np.float64(2.1511312013790227)], [0.0, np.float64(1.1147794023893542), np.float64(1.1147794023893542), 0.0], [0.0, np.float64(1.2990855833228017), np.float64(1.2990855833228017), np.float64(1.1147794023893542)], [0.0, np.float64(0.8926149100468959), np.float64(0.8926149100468959), 0.0], [0.0, np.float64(0.9421662158033749), np.float64(0.9421662158033749), 0.0], [0.0, np.float64(1.064042247921597), np.float64(1.064042247921597), 0.0], [np.float64(0.9421662158033749), np.float64(1.2439349364293357), np.float64(1.2439349364293357), np.float64(1.064042247921597)], [np.float64(0.8926149100468959), np.float64(1.743825699078606), np.float64(1.743825699078606), np.float64(1.2439349364293357)], [0.0, np.float64(1.0856379918462293), np.float64(1.0856379918462293), 0.0], [0.0, np.float64(1.229826551713404), np.float64(1.229826551713404), np.float64(1.0856379918462293)], [0.0, np.float64(1.3085278452243778), np.float64(1.3085278452243778), np.float64(1.229826551713404)], [0.0, np.float64(1.236828298073499), np.float64(1.236828298073499), 0.0], [0.0, np.float64(1.3174151503084708), np.float64(1.3174151503084708), np.float64(1.236828298073499)], [0.0, np.float64(1.4395461421077471), np.float64(1.4395461421077471), 0.0], [0.0, np.float64(1.1619183156738633), np.float64(1.1619183156738633), 0.0], [0.0, np.float64(1.2466799262650645), np.float64(1.2466799262650645), np.float64(1.1619183156738633)], [0.0, np.float64(1.1525107106205448), np.float64(1.1525107106205448), 0.0], [0.0, np.float64(1.334058800563184), np.float64(1.334058800563184), np.float64(1.1525107106205448)], [np.float64(1.2466799262650645), np.float64(1.4687640114275924), np.float64(1.4687640114275924), np.float64(1.334058800563184)], [np.float64(1.4395461421077471), np.float64(1.5345656287371723), np.float64(1.5345656287371723), np.float64(1.4687640114275924)], [np.float64(1.3174151503084708), np.float64(1.7254879893299042), np.float64(1.7254879893299042), np.float64(1.5345656287371723)], [np.float64(1.3085278452243778), np.float64(1.8677315909165624), np.float64(1.8677315909165624), np.float64(1.7254879893299042)], [np.float64(1.743825699078606), np.float64(2.2028065537107415), np.float64(2.2028065537107415), np.float64(1.8677315909165624)], [np.float64(1.2990855833228017), np.float64(2.421709710521762), np.float64(2.421709710521762), np.float64(2.2028065537107415)], [0.0, np.float64(0.8388636742714383), np.float64(0.8388636742714383), 0.0], [0.0, np.float64(0.8403577744350893), np.float64(0.8403577744350893), 0.0], [np.float64(0.8388636742714383), np.float64(1.306853572382636), np.float64(1.306853572382636), np.float64(0.8403577744350893)], [0.0, np.float64(0.9476607238028847), np.float64(0.9476607238028847), 0.0], [0.0, np.float64(1.1011806167319858), np.float64(1.1011806167319858), np.float64(0.9476607238028847)], [0.0, np.float64(1.242035958309781), np.float64(1.242035958309781), np.float64(1.1011806167319858)], [0.0, np.float64(0.9944835378483551), np.float64(0.9944835378483551), 0.0], [0.0, np.float64(1.2011828699966574), np.float64(1.2011828699966574), np.float64(0.9944835378483551)], [0.0, np.float64(1.2451637684458337), np.float64(1.2451637684458337), 0.0], [0.0, np.float64(1.1327762978552998), np.float64(1.1327762978552998), 0.0], [0.0, np.float64(1.2205703080940158), np.float64(1.2205703080940158), 0.0], [np.float64(1.1327762978552998), np.float64(1.4597518989376106), np.float64(1.4597518989376106), np.float64(1.2205703080940158)], [np.float64(1.2451637684458337), np.float64(1.5179762248196527), np.float64(1.5179762248196527), np.float64(1.4597518989376106)], [np.float64(1.2011828699966574), np.float64(1.701977011711517), np.float64(1.701977011711517), np.float64(1.5179762248196527)], [np.float64(1.242035958309781), np.float64(2.102939338717569), np.float64(2.102939338717569), np.float64(1.701977011711517)], [np.float64(1.306853572382636), np.float64(2.5116850516596916), np.float64(2.5116850516596916), np.float64(2.102939338717569)], [np.float64(2.421709710521762), np.float64(2.9137043440871713), np.float64(2.9137043440871713), np.float64(2.5116850516596916)], [0.0, np.float64(0.7410730879904941), np.float64(0.7410730879904941), 0.0], [0.0, np.float64(0.859775307565276), np.float64(0.859775307565276), np.float64(0.7410730879904941)], [0.0, np.float64(0.8152180156120091), np.float64(0.8152180156120091), 0.0], [0.0, np.float64(1.100170141055813), np.float64(1.100170141055813), np.float64(0.8152180156120091)], [np.float64(0.859775307565276), np.float64(1.1381000293186347), np.float64(1.1381000293186347), np.float64(1.100170141055813)], [0.0, np.float64(0.9907298958329558), np.float64(0.9907298958329558), 0.0], [0.0, np.float64(1.0124560407416854), np.float64(1.0124560407416854), np.float64(0.9907298958329558)], [0.0, np.float64(1.080942868367166), np.float64(1.080942868367166), 0.0], [np.float64(1.0124560407416854), np.float64(1.1478615170686899), np.float64(1.1478615170686899), np.float64(1.080942868367166)], [0.0, np.float64(1.0101238850965402), np.float64(1.0101238850965402), 0.0], [0.0, np.float64(1.08690219466952), np.float64(1.08690219466952), 0.0], [np.float64(1.0101238850965402), np.float64(1.169560848817689), np.float64(1.169560848817689), np.float64(1.08690219466952)], [0.0, np.float64(1.0365087882350499), np.float64(1.0365087882350499), 0.0], [0.0, np.float64(0.9705956990668796), np.float64(0.9705956990668796), 0.0], [0.0, np.float64(1.1073601655428427), np.float64(1.1073601655428427), np.float64(0.9705956990668796)], [np.float64(1.0365087882350499), np.float64(1.1653170389432896), np.float64(1.1653170389432896), np.float64(1.1073601655428427)], [0.0, np.float64(1.1811364145678371), np.float64(1.1811364145678371), 0.0], [np.float64(1.1653170389432896), np.float64(1.3205525068062232), np.float64(1.3205525068062232), np.float64(1.1811364145678371)], [np.float64(1.169560848817689), np.float64(1.5639204641088649), np.float64(1.5639204641088649), np.float64(1.3205525068062232)], [np.float64(1.1478615170686899), np.float64(1.6890121779292586), np.float64(1.6890121779292586), np.float64(1.5639204641088649)], [0.0, np.float64(0.9313066483703376), np.float64(0.9313066483703376), 0.0], [0.0, np.float64(1.206915761178054), np.float64(1.206915761178054), np.float64(0.9313066483703376)], [0.0, np.float64(0.8323917994905665), np.float64(0.8323917994905665), 0.0], [0.0, np.float64(0.9182224291929059), np.float64(0.9182224291929059), 0.0], [0.0, np.float64(1.1826997285351957), np.float64(1.1826997285351957), 0.0], [0.0, np.float64(1.21926734567968), np.float64(1.21926734567968), np.float64(1.1826997285351957)], [np.float64(0.9182224291929059), np.float64(1.3575578375272068), np.float64(1.3575578375272068), np.float64(1.21926734567968)], [np.float64(0.8323917994905665), np.float64(1.461129659874565), np.float64(1.461129659874565), np.float64(1.3575578375272068)], [np.float64(1.206915761178054), np.float64(1.7204539223912045), np.float64(1.7204539223912045), np.float64(1.461129659874565)], [np.float64(1.6890121779292586), np.float64(2.474873672471521), np.float64(2.474873672471521), np.float64(1.7204539223912045)], [np.float64(1.1381000293186347), np.float64(3.6317223040518662), np.float64(3.6317223040518662), np.float64(2.474873672471521)], [np.float64(2.9137043440871713), np.float64(4.159779534546454), np.float64(4.159779534546454), np.float64(3.6317223040518662)], [np.float64(2.9161840010889044), np.float64(6.148640053252745), np.float64(6.148640053252745), np.float64(4.159779534546454)]], &#39;ivl&#39;: [np.int64(84), np.int64(85), np.int64(96), np.int64(81), np.int64(98), np.int64(108), np.int64(109), np.int64(94), np.int64(95), np.int64(82), np.int64(89), np.int64(57), np.int64(97), np.int64(83), np.int64(90), np.int64(119), np.int64(117), np.int64(118), np.int64(29), np.int64(23), np.int64(25), np.int64(115), np.int64(116), np.int64(33), np.int64(78), np.int64(21), np.int64(36), np.int64(34), np.int64(31), np.int64(32), np.int64(26), np.int64(28), np.int64(30), np.int64(35), np.int64(20), np.int64(8), np.int64(19), np.int64(51), np.int64(52), np.int64(77), np.int64(62), np.int64(63), np.int64(37), np.int64(49), np.int64(22), np.int64(70), np.int64(1), np.int64(2), np.int64(4), np.int64(47), np.int64(66), np.int64(68), np.int64(69), np.int64(64), np.int64(65), np.int64(7), np.int64(9), np.int64(15), np.int64(16), np.int64(5), np.int64(17), np.int64(18), np.int64(12), np.int64(105), np.int64(14), np.int64(13), np.int64(53), np.int64(102), np.int64(10), np.int64(11), np.int64(80), np.int64(103), np.int64(91), np.int64(100), np.int64(59), np.int64(61), np.int64(58), np.int64(60), np.int64(38), np.int64(50), np.int64(76), np.int64(86), np.int64(99), np.int64(48), np.int64(79), np.int64(3), np.int64(87), np.int64(6), np.int64(40), np.int64(41), np.int64(42), np.int64(39), np.int64(113), np.int64(72), np.int64(101), np.int64(110), np.int64(44), np.int64(46), np.int64(71), np.int64(75), np.int64(43), np.int64(54), np.int64(73), np.int64(74), np.int64(45), np.int64(55), np.int64(56), np.int64(27), np.int64(67), np.int64(104), np.int64(24), np.int64(88), np.int64(111), np.int64(112), np.int64(106), np.int64(107), np.int64(93), np.int64(92), np.int64(114)], &#39;leaves&#39;: [83, 84, 95, 80, 97, 107, 108, 93, 94, 81, 88, 56, 96, 82, 89, 118, 116, 117, 28, 22, 24, 114, 115, 32, 77, 20, 35, 33, 30, 31, 25, 27, 29, 34, 19, 7, 18, 50, 51, 76, 61, 62, 36, 48, 21, 69, 0, 1, 3, 46, 65, 67, 68, 63, 64, 6, 8, 14, 15, 4, 16, 17, 11, 104, 13, 12, 52, 101, 9, 10, 79, 102, 90, 99, 58, 60, 57, 59, 37, 49, 75, 85, 98, 47, 78, 2, 86, 5, 39, 40, 41, 38, 112, 71, 100, 109, 43, 45, 70, 74, 42, 53, 72, 73, 44, 54, 55, 26, 66, 103, 23, 87, 110, 111, 105, 106, 92, 91, 113], &#39;color_list&#39;: [&#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C0&#39;], &#39;leaves_color_list&#39;: [&#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C1&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;, &#39;C2&#39;]}</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>plt.yticks(size<span class="op">=</span><span class="dv">8</span>)</span></code></pre></div>
+<pre><code>(array([   5,   15,   25,   35,   45,   55,   65,   75,   85,   95,  105,
+        115,  125,  135,  145,  155,  165,  175,  185,  195,  205,  215,
+        225,  235,  245,  255,  265,  275,  285,  295,  305,  315,  325,
+        335,  345,  355,  365,  375,  385,  395,  405,  415,  425,  435,
+        445,  455,  465,  475,  485,  495,  505,  515,  525,  535,  545,
+        555,  565,  575,  585,  595,  605,  615,  625,  635,  645,  655,
+        665,  675,  685,  695,  705,  715,  725,  735,  745,  755,  765,
+        775,  785,  795,  805,  815,  825,  835,  845,  855,  865,  875,
+        885,  895,  905,  915,  925,  935,  945,  955,  965,  975,  985,
+        995, 1005, 1015, 1025, 1035, 1045, 1055, 1065, 1075, 1085, 1095,
+       1105, 1115, 1125, 1135, 1145, 1155, 1165, 1175, 1185]), [Text(0, 5, &#39;84&#39;), Text(0, 15, &#39;85&#39;), Text(0, 25, &#39;96&#39;), Text(0, 35, &#39;81&#39;), Text(0, 45, &#39;98&#39;), Text(0, 55, &#39;108&#39;), Text(0, 65, &#39;109&#39;), Text(0, 75, &#39;94&#39;), Text(0, 85, &#39;95&#39;), Text(0, 95, &#39;82&#39;), Text(0, 105, &#39;89&#39;), Text(0, 115, &#39;57&#39;), Text(0, 125, &#39;97&#39;), Text(0, 135, &#39;83&#39;), Text(0, 145, &#39;90&#39;), Text(0, 155, &#39;119&#39;), Text(0, 165, &#39;117&#39;), Text(0, 175, &#39;118&#39;), Text(0, 185, &#39;29&#39;), Text(0, 195, &#39;23&#39;), Text(0, 205, &#39;25&#39;), Text(0, 215, &#39;115&#39;), Text(0, 225, &#39;116&#39;), Text(0, 235, &#39;33&#39;), Text(0, 245, &#39;78&#39;), Text(0, 255, &#39;21&#39;), Text(0, 265, &#39;36&#39;), Text(0, 275, &#39;34&#39;), Text(0, 285, &#39;31&#39;), Text(0, 295, &#39;32&#39;), Text(0, 305, &#39;26&#39;), Text(0, 315, &#39;28&#39;), Text(0, 325, &#39;30&#39;), Text(0, 335, &#39;35&#39;), Text(0, 345, &#39;20&#39;), Text(0, 355, &#39;8&#39;), Text(0, 365, &#39;19&#39;), Text(0, 375, &#39;51&#39;), Text(0, 385, &#39;52&#39;), Text(0, 395, &#39;77&#39;), Text(0, 405, &#39;62&#39;), Text(0, 415, &#39;63&#39;), Text(0, 425, &#39;37&#39;), Text(0, 435, &#39;49&#39;), Text(0, 445, &#39;22&#39;), Text(0, 455, &#39;70&#39;), Text(0, 465, &#39;1&#39;), Text(0, 475, &#39;2&#39;), Text(0, 485, &#39;4&#39;), Text(0, 495, &#39;47&#39;), Text(0, 505, &#39;66&#39;), Text(0, 515, &#39;68&#39;), Text(0, 525, &#39;69&#39;), Text(0, 535, &#39;64&#39;), Text(0, 545, &#39;65&#39;), Text(0, 555, &#39;7&#39;), Text(0, 565, &#39;9&#39;), Text(0, 575, &#39;15&#39;), Text(0, 585, &#39;16&#39;), Text(0, 595, &#39;5&#39;), Text(0, 605, &#39;17&#39;), Text(0, 615, &#39;18&#39;), Text(0, 625, &#39;12&#39;), Text(0, 635, &#39;105&#39;), Text(0, 645, &#39;14&#39;), Text(0, 655, &#39;13&#39;), Text(0, 665, &#39;53&#39;), Text(0, 675, &#39;102&#39;), Text(0, 685, &#39;10&#39;), Text(0, 695, &#39;11&#39;), Text(0, 705, &#39;80&#39;), Text(0, 715, &#39;103&#39;), Text(0, 725, &#39;91&#39;), Text(0, 735, &#39;100&#39;), Text(0, 745, &#39;59&#39;), Text(0, 755, &#39;61&#39;), Text(0, 765, &#39;58&#39;), Text(0, 775, &#39;60&#39;), Text(0, 785, &#39;38&#39;), Text(0, 795, &#39;50&#39;), Text(0, 805, &#39;76&#39;), Text(0, 815, &#39;86&#39;), Text(0, 825, &#39;99&#39;), Text(0, 835, &#39;48&#39;), Text(0, 845, &#39;79&#39;), Text(0, 855, &#39;3&#39;), Text(0, 865, &#39;87&#39;), Text(0, 875, &#39;6&#39;), Text(0, 885, &#39;40&#39;), Text(0, 895, &#39;41&#39;), Text(0, 905, &#39;42&#39;), Text(0, 915, &#39;39&#39;), Text(0, 925, &#39;113&#39;), Text(0, 935, &#39;72&#39;), Text(0, 945, &#39;101&#39;), Text(0, 955, &#39;110&#39;), Text(0, 965, &#39;44&#39;), Text(0, 975, &#39;46&#39;), Text(0, 985, &#39;71&#39;), Text(0, 995, &#39;75&#39;), Text(0, 1005, &#39;43&#39;), Text(0, 1015, &#39;54&#39;), Text(0, 1025, &#39;73&#39;), Text(0, 1035, &#39;74&#39;), Text(0, 1045, &#39;45&#39;), Text(0, 1055, &#39;55&#39;), Text(0, 1065, &#39;56&#39;), Text(0, 1075, &#39;27&#39;), Text(0, 1085, &#39;67&#39;), Text(0, 1095, &#39;104&#39;), Text(0, 1105, &#39;24&#39;), Text(0, 1115, &#39;88&#39;), Text(0, 1125, &#39;111&#39;), Text(0, 1135, &#39;112&#39;), Text(0, 1145, &#39;106&#39;), Text(0, 1155, &#39;107&#39;), Text(0, 1165, &#39;93&#39;), Text(0, 1175, &#39;92&#39;), Text(0, 1185, &#39;114&#39;)])</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;The hierarchical clustering of each chapter of Dream of Red Mansions&quot;</span>)</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="dreamred_files/figure-html5/unnamed-chunk-22-11.png" alt="" width="960" /></p>
+</div>
+<p>Hierarchical clustering can clearly represent the hierarchical relationship between chapters. The chapters and the closest chapters are merged to continuously recurse to form a tree. From the hierarchical cluster tree diagram, we can see which episodes of Dream of Red Mansions are the closest, such as the closest distance between 114 and 115, the closest distance between 117 and 118, etc…</p>
+<h1 id="sum-up">4. Sum up</h1>
+<p>In this case, we first cleaned and sorted out the text data of the 120th episode of the Dream of Red Mansions; then we analysed the basic situation such as chapter structure, number of times and word count in a macroscopic way; then displayed it through word division, word frequency analysis and visualisation methods; finally, through two clustering methods for each chapter The text of the section is clustered, and the clustering results are verified and visualised using two dimension reduction methods. Dream of Red Mansions was rated as the pinnacle of Chinese classical chapters and novels, with extremely high ideological and artistic value. The study of the Dream of Red Mansions has always been a hot topic of traditional Chinese literature. Red scholars have different opinions and ideas and views. In this case, we have made some simple analyses of the Dream of Red Mansions from the perspectives of statistical analysis and text mining. In addition, the social relationship of the characters in the novel is also a hot topic. In the next case, we try to analyse the relationship between the characters in the Dream of Red Mansions through pictures and network structures.|</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
