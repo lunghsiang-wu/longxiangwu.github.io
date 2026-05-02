@@ -1,39 +1,32 @@
 {
   "articles": [
     {
-      "path": "about.knit.html",
-      "title": "Longxiang Wu",
-      "author": [],
-      "contents": "\n\nProfessional\nI have over ten years of experience working with a variety of partners in the technology and industry sectors, and I am a data scientist who is enthusiastic. My responsibilities encompass the entire data pipeline, from exploratory analysis to production-ready predictive models. Notable projects include the development of sales forecasting models for JD.com and the conduct of in-depth logistics data analysis to enhance operational efficiency. I am a member of the Irish Statistical Association.\nPersonal\nI am currently in a stable and fulfilling stage of life, living with my family and fully committed to both personal growth and professional development. The support and perspective offered by my family environment provide me with balance and inform my work approach, allowing me to operate with patience, care, and a long-term outlook. Beyond my professional interests in data and technology, I place a high value on building meaningful relationships, pursuing continuous learning, and bringing a holistic and authentic perspective to my work. I believe that the most impactful contributions come from individuals who are fully engaged both personally and professionally.\nContact\nWant to chat? Go ahead, pipe up! Feel free to contact me on email, or LinkedIn. I hope to hear from you!\nBooks I Am Reading\n\n\n\nThe Elements of Statistical Learning\n\nStatistical Foudations of Data Science\n\nOptimization for Data Analysis\n\nIntroduction to Algorithms\n\n\n\nComputer Age Statistical Inference\n\n\nSome Quotes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSome Paintings by Claude Monet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2026-04-08T16:48:35+08:00"
-    },
-    {
       "path": "about.html",
       "title": "Longxiang Wu",
       "author": [],
       "contents": "\n\nProfessional\nI have over ten years of experience working with a variety of partners in the technology and industry sectors, and I am a data scientist who is enthusiastic. My responsibilities encompass the entire data pipeline, from exploratory analysis to production-ready predictive models. Notable projects include the development of sales forecasting models for JD.com and the conduct of in-depth logistics data analysis to enhance operational efficiency. I am a member of the Irish Statistical Association.\nPersonal\nI am currently in a stable and fulfilling stage of life, living with my family and fully committed to both personal growth and professional development. The support and perspective offered by my family environment provide me with balance and inform my work approach, allowing me to operate with patience, care, and a long-term outlook. Beyond my professional interests in data and technology, I place a high value on building meaningful relationships, pursuing continuous learning, and bringing a holistic and authentic perspective to my work. I believe that the most impactful contributions come from individuals who are fully engaged both personally and professionally.\nBooks I Am Reading\nAn Introduction to Statistical Learning. Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani\nThe Elements of Statistical Learning. Trevor Hastie, Robert Tibshirani, and Jerome Friedman\nStatistical Foundations of Data Science. Jianqing Fan, Runze Li, Cun-Hui Zhang, and Hui Zou\nOptimization for Data Analysis. Stephen J. Wright, and Benjamin Recht\nIntroduction to Algorithms. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein\nComputer Age Statistical Inference. Bradley Efron, and Trevor Hastie\nMachine Learning: A Probabilistic Perspective. Kevin P. Murphy\nDeep Learning. Ian Goodfellow, Yoshua Bengio, and Aaron Courville\nReinforcement Learning: An Introduction. Richard S. Sutton, and Andrew G. Barto\nSome Quotes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nContact\nWant to chat? Go ahead, pipe up! Feel free to contact me on email, or LinkedIn. I hope to hear from you!\nPaintings by Claude Monet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2026-04-15T09:13:46+08:00"
+      "last_modified": "2026-05-02T10:11:03+08:00"
     },
     {
       "path": "blog.html",
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2026-04-11T18:21:27+08:00"
+      "last_modified": "2026-05-02T10:11:05+08:00"
     },
     {
       "path": "index.html",
       "title": "Longxiang Wu",
       "author": [],
       "contents": "\n\n          \n          \n          Longxiang Wu\n          \n          \n          Home\n          About\n          Blog\n          Portfolio\n          CV\n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            Longxiang Wu\n          \n          \n            \n              Hi! 👋 I am a marketing data\n              scientist specializing in predictive modeling, data mining\n              and customer profiling. I have a strong passion for data\n              wrangling, modeling, and visualization, and am dedicated\n              to empowering others to leverage data effectively in their\n              own work.\n            \n            \n              Hi! 👋 I am a marketing data\n              scientist specializing in predictive modeling, data mining\n              and customer profiling. I have a strong passion for data\n              wrangling, modeling, and visualization, and am dedicated\n              to empowering others to leverage data effectively in their\n              own work.\n            \n          \n\n          \n            \n              \n                  \n                    \n                       GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                       LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                       Mastodon\n                    \n                  \n                \n                                \n                  \n                    \n                       Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                     GitHub\n                  \n                \n                                \n                  \n                     LinkedIn\n                  \n                \n                                \n                  \n                     Mastodon\n                  \n                \n                                \n                  \n                     Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2026-04-18T06:39:25+08:00"
+      "last_modified": "2026-05-02T10:11:10+08:00"
     },
     {
       "path": "portfolio.html",
       "title": "Portfolio",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2026-04-11T18:21:35+08:00"
+      "last_modified": "2026-05-02T10:11:12+08:00"
     }
   ],
   "collections": ["blog/blog.json", "portfolio/portfolio.json"]

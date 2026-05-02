@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
-    <loc>https://lunghsiang-wu.github.io/longxiangwu/about.knit.html</loc>
-    <lastmod>2026-05-01T12:54:54+08:00</lastmod>
-  </url>
-  <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/about.html</loc>
     <lastmod>2026-05-01T12:54:54+08:00</lastmod>
   </url>
@@ -26,242 +22,242 @@
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-mart/</loc>
-    <lastmod>2026-03-29T14:06:04+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-mcmc/</loc>
-    <lastmod>2026-03-29T14:16:35+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-manyo/</loc>
-    <lastmod>2026-03-29T13:58:53+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-logrank/</loc>
-    <lastmod>2026-03-29T13:50:26+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-local/</loc>
-    <lastmod>2026-03-29T13:38:46+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-kernel/</loc>
-    <lastmod>2026-03-29T13:28:50+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-jacobian/</loc>
-    <lastmod>2026-03-29T13:20:28+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-jacknife/</loc>
-    <lastmod>2026-03-29T13:14:27+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-ipf/</loc>
-    <lastmod>2026-03-29T13:37:20+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-harmonic/</loc>
-    <lastmod>2026-03-29T10:54:04+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-fuzzy/</loc>
-    <lastmod>2026-03-29T10:39:20+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-fourier/</loc>
-    <lastmod>2026-03-29T10:31:06+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-factor/</loc>
-    <lastmod>2026-03-29T10:23:01+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-eu/</loc>
-    <lastmod>2026-03-29T10:11:34+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-diggle/</loc>
-    <lastmod>2026-03-29T09:50:47+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-delta/</loc>
-    <lastmod>2026-03-29T09:33:17+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-da/</loc>
-    <lastmod>2026-03-29T09:22:10+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-29-ann/</loc>
-    <lastmod>2026-03-29T09:07:06+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-23-ci/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-23-asso/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-23-anova/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-23-cs/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-21-cochran-armitage/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-23-df/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-23-discriminant/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-23-distance/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/blog/2026-03-19-whatisbayesiananalysis/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:49+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-05-01-dreamred/</loc>
-    <lastmod>2026-05-01T15:27:36+08:00</lastmod>
+    <lastmod>2026-05-01T15:27:37+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-04-25-loandefaults/</loc>
-    <lastmod>2026-04-25T20:38:00+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-04-25-hangzhou/</loc>
-    <lastmod>2026-04-25T18:25:35+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-04-05-edacovid/</loc>
-    <lastmod>2026-04-05T10:42:50+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-04-04-mexicans/</loc>
-    <lastmod>2026-04-04T15:46:23+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-04-04-ifc/</loc>
-    <lastmod>2026-04-04T14:54:26+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-04-04-taobao/</loc>
-    <lastmod>2026-04-04T10:30:17+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-facial/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-community/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-reviews/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-spam/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-stock/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:51+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-speech/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:51+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-chinese/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-skirt/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-building/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-20-wheat/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:51+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-bank/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-course/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-face/</loc>
-    <lastmod>2026-03-28T21:20:56+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-mesothelioma/</loc>
-    <lastmod>2026-03-28T21:28:35+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-handwritten/</loc>
-    <lastmod>2026-03-28T21:31:29+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-retail/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-survey/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-filmrec/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-cluster/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-kmeans/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-svm/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-knn/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-desisontrees1/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-linearregression/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-vastcar/</loc>
-    <lastmod>2026-03-27T18:35:43+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
   <url>
     <loc>https://lunghsiang-wu.github.io/longxiangwu/portfolio/2026-03-19-londonmarathon/</loc>
-    <lastmod>2026-03-27T18:35:42+08:00</lastmod>
+    <lastmod>2026-05-01T12:54:50+08:00</lastmod>
   </url>
 </urlset>
